@@ -16,12 +16,6 @@ PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysid BUILD_ID=ICL53F BUILD_FINGERP
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
-#random 
-PRODUCT_PACKAGES := \
-    Camera \
-    Gallery2 \
-    Stk 
-
 # Blobs necessary for drm
 PRODUCT_COPY_FILES +=  \
    vendor/fnv/proprietary/common/lib/libfrsdk.so:system/lib/libfrsdk.so \
