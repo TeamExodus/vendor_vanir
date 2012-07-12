@@ -1,0 +1,32 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 	         Color Control                  +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "1) Omap Gamma Control"
+echo "2) Gamma Offsets"
+echo "3) Color Multipliers"
+echo "R) Return to Menu Script"
+echo "X) Exit Script"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) sh /system/xbin/popcorn_cc1;;
+      2) sh /system/xbin/popcorn_cc2;;
+      3) sh /system/xbin/popcorn_cc3;;
+      R) sh /system/xbin/popcorn;;
+      X) exit 1;;
+      *) echo "Invalid option" && sh /system/xbin/popcorn_cc;;
+     
+    esac
+  fi
+

@@ -1,0 +1,34 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/module/bcmdhd/parameters/wifi_pm)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 	     Wifi Low-Latency Toggle            +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Setting: $OLD"
+echo "1) Enable Wifi Low-Latency--default"
+echo "2) Disable Wifi Low-Latency"
+echo "B) Set Current Settings on Boot"
+echo "R) Return to Main Menu"
+echo "X) Exit Script"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) echo "Y" > /sys/module/bcmdhd/parameters/wifi_pm && echo "Wifi Low Latency mode enabled" && sleep 2 && sh /system/xbin/popcorn_wll;;
+      2) echo "N" > /sys/module/bcmdhd/parameters/wifi_pm && echo "Wifi Low Latency mode disabled" && sleep 2 && sh /system/xbin/popcorn_wll;;
+      B) sed -i "s|^wll=.*|wll=$OLD|" $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_wll;;
+      R) sh /system/xbin/popcorn;;
+      X) exit 1;;
+   *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_wll;;
+     
+    esac
+  fi
+

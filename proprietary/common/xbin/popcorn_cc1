@@ -1,0 +1,41 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/devices/platform/omapdss/manager0/gamma)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 	    OMAP Gamma Control                  +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Setting: $OLD"
+echo "Pick a number from 1-10. 0=lowest contrast, 10=highest contrast. Default = 6"
+echo "Press B to set the current settings on boot"
+echo "Press R to return to Original Color Control Menu or Press X to exit script" 
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      0) echo "0" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 0" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      1) echo "1" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 1" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      2) echo "2" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 2" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      3) echo "3" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 3" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      4) echo "4" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 4" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      5) echo "5" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 5" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      6) echo "6" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 6" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      7) echo "7" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 7" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      8) echo "8" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 8" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      9) echo "9" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 9" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+     10) echo "10" > /sys/devices/platform/omapdss/manager0/gamma && echo "Omap Color Control Value Set to 10" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      B) sed -i "s|^OMAPgamma=.*|OMAPgamma=$OLD|" $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+      R) sh /system/xbin/popcorn_cc;;
+      X) exit 1;;
+      *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_cc1;;
+     
+    esac
+  fi
+

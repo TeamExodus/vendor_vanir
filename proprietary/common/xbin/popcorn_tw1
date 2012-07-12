@@ -1,0 +1,30 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/class/misc/touchwake/delay)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+             Touch Wake Params                   +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Delay Time: $OLD"
+echo "State Delay Time (this number should be a numerical value---default is 45000"
+echo "Press B to set the current settings on boot"
+echo "Press R to return to TouchWake Menu or X to Exit Script"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      B) sed -i "s|^TWdelay=.*|TWdelay=$OLD|" $initPath && echo "TouchWake Delay Time set on boot" && sleep 2 && sh /system/xbin/popcorn_tw1;;
+      R) sh /system/xbin/popcorn_tw;;
+      X) exit 1;;
+      $opt) echo "$opt" > /sys/class/misc/touchwake/delay && echo "Your Touch Wake delay value is $opt" && sleep 2 && sh /system/xbin/popcorn_tw1;;
+
+    esac
+  fi
+

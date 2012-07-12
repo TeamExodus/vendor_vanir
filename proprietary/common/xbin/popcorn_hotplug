@@ -1,0 +1,36 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/devices/system/cpu/cpu1/online)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 		Hotplug Control                 +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "NOTE: If Hotplugging is enabled (0) CPU1 is turned off. If Hotplugging is disabled (1), CPU1 is turned on."
+echo
+echo "HOTPLUGGING IS: $OLD (0 is enabled, 1 is disabled)"
+echo "What do you want to do with Hotplugging?:"
+echo "0) Enable Hotplug (turn off CPU1)"
+echo "1) Turn off Hotplug (turn on CPU1)"
+echo "B) Set Current Settings on Boot"
+echo "R) Return to Main Menu"
+echo "X) Exit Script"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      0) echo "0" > /sys/devices/system/cpu/cpu1/online && echo "Hotplugging Enabled" && sleep 2 && sh /system/xbin/popcorn_hotplug;;
+      1) echo "1" > /sys/devices/system/cpu/cpu1/online && echo "Hotplugging Disabled" && sleep 2 && sh /system/xbin/popcorn_hotplug;;
+      B) sed -i "s|^hotPlug=.*|hotPlug=$OLD|" $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_hotplug;;
+      R) sh /system/xbin/popcorn;;
+      X) exit 1;;
+      *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_hotplug;;
+    esac
+  fi
+

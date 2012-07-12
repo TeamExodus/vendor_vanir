@@ -1,0 +1,45 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ Welcome to the PopcornKernel Customizer utility +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "1) SmartReflex Toggle"
+echo "2) GPU Overclock"
+echo "3) BLX Params"
+echo "4) Touch Wake Toggle/Params"
+echo "5) Fast Charge Toggle"
+echo "6) Wifi Low-Latency Toggle"
+echo "7) Color Control"
+echo "8) Sound Control"
+echo "9) Governor Control"
+echo "10) CPU Control"
+echo "11) HotPlugging Control"
+echo "X) Exit Script"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) sh /system/xbin/popcorn_sr;;
+      2) sh /system/xbin/popcorn_gpu;;
+      3) sh /system/xbin/popcorn_blx;;
+      4) sh /system/xbin/popcorn_tw;;
+      5) sh /system/xbin/popcorn_fc;;
+      6) sh /system/xbin/popcorn_wll;;
+      7) sh /system/xbin/popcorn_cc;;
+      8) sh /system/xbin/popcorn_sc;;
+      9) sh /system/xbin/popcorn_govs;;
+      10) sh /system/xbin/popcorn_oc;;
+      11) sh /system/xbin/popcorn_hotplug;;
+      12) sh /system/xbin/popcorn_logger;;
+      X) echo "Goodbye."; echo; exit 1;;
+      *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn;;
+    esac
+  fi
+

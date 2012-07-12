@@ -1,0 +1,48 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 	       Governor Control                 +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Governor: $OLD"
+echo "1) Set AggressiveX Governor"
+echo "2) Set Agressive Governor"
+echo "3) Set GallimaufryX Governor"
+echo "4) Set Gallimaufry Governor"
+echo "5) Set PegasusQ Governor"
+echo "6) Set InteractiveX Governor"
+echo "7) Set Interactive Governor"
+echo "8) Set Ondemand Governor"
+echo "9) Set Performance Governor"
+echo "B) Set Current Settings on Boot"
+echo "R) Return to Main Menu"
+echo "X) Exit Script"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) echo "aggressivex" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to AggressiveX" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      2) echo "aggressive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to Agressive" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      3) echo "gallimaufryx" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to GallimaufryX" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      4) echo "gallimaufry" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to Gallimaufry" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      5) echo "pegasusq" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to PegasusQ" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      6) echo "interactivex" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to InteractiveX" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      7) echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to Interactive" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      8) echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to Ondemand" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      9) echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor && echo "Governor Set to Performance" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      B) sed -i 's|^scaleGov=.*|scaleGov=$OLD|' $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_govs;;
+      R) sh /system/xbin/popcorn;;
+      X) exit 1;;
+   *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_govs;;
+     
+    esac
+  fi
+

@@ -1,0 +1,130 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/class/misc/batterylifeextender/charging_limit)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 		BLX Parameters                  +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Setting: $OLD"
+echo "Please pick a BLX Value between 1-100 (DEFAULT 100, 96 is recommended)"
+echo "Press B to set the current settings on boot"
+echo "Press R to return to the Menu Script, or Press X to exit"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      0) echo "0" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      1) echo "1" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt"  && sh /system/xbin/popcorn_blx;;
+      2) echo "2" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      3) echo "3" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      4) echo "4" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      5) echo "5" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      6) echo "6" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      7) echo "7" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      8) echo "8" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      9) echo "9" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      10) echo "10" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      11) echo "11" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      12) echo "12" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      13) echo "13" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      14) echo "14" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      15) echo "15" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt"&& sh /system/xbin/popcorn_blx;;
+      16) echo "16" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      17) echo "17" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      18) echo "18" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      19) echo "19" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      20) echo "20" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      21) echo "21" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      22) echo "22" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      23) echo "23" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      24) echo "24" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      25) echo "25" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      26) echo "26" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      27) echo "27" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      28) echo "28" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      29) echo "29" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      30) echo "30" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      31) echo "31" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      32) echo "32" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      33) echo "33" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      34) echo "34" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      35) echo "35" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      36) echo "36" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      37) echo "37" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      38) echo "38" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      39) echo "39" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      40) echo "40" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      41) echo "41" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      42) echo "42" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      43) echo "43" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      44) echo "44" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      45) echo "45" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      46) echo "46" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      47) echo "47" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      48) echo "48" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      49) echo "49" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      50) echo "50" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      51) echo "51" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      52) echo "52" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      53) echo "53" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      54) echo "54" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      55) echo "55" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      56) echo "56" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      57) echo "57" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      58) echo "58" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      59) echo "59" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      60) echo "60" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      61) echo "61" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      62) echo "62" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      63) echo "63" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      64) echo "64" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      65) echo "65" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      66) echo "66" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      67) echo "67" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      68) echo "68" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      69) echo "69" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      70) echo "70" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      71) echo "71" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      72) echo "72" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      73) echo "73" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      74) echo "74" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      75) echo "75" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      76) echo "76" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      77) echo "77" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      78) echo "78" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      79) echo "79" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      80) echo "80" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      81) echo "81" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      82) echo "82" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      83) echo "83" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      84) echo "84" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      85) echo "85" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      86) echo "86" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      87) echo "87" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      88) echo "88" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      89) echo "89" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      90) echo "90" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      91) echo "91" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      92) echo "92" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      93) echo "93" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      94) echo "94" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      95) echo "95" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      96) echo "96" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      97) echo "97" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      98) echo "98" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      99) echo "99" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      100) echo "100" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
+      B) sed -i "s|^BLX=.*|BLX=$OLD|" $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_blx;;
+      R) sh /system/xbin/popcorn;;
+      X) exit 1;;
+      *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_blx;;
+    esac
+  fi
+

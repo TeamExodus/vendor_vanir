@@ -1,0 +1,32 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/class/misc/colorcontrol/v1_offset)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 	         Gamma Offsets                     +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Setting: $OLD"
+echo "Pick your offsets. Recommended values are -6 0 7"
+echo "Press B to set the current settings on boot"
+echo "Press R to return to Original Color Control Script or press X to exit the script"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+    B) sed -i "s|^GammaOffset=.*|GammaOffset=$OLD|" $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_cc2;;
+    R) sh /system/xbin/popcorn_cc;;
+    X) exit 1;;
+  $opt) echo "$opt" > /sys/class/misc/colorcontrol/v1_offset && echo "V1 Offsets Set at $opt" && sleep 2 && sh /system/xbin/popcorn_cc;;
+
+
+     
+    esac
+  fi
+

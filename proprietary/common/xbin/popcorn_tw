@@ -1,0 +1,34 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/class/misc/touchwake/enabled)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+             Touch Wake Toggle                   +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Status of TouchWake: $OLD"
+echo "1) Toggle Touch Wake (0=off 1=on)"
+echo "2) Touch Wake Params"
+echo "B) Set Current Toggle Status on Boot"
+echo "R) Return to Main Menu"
+echo "X) Exit"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      0) echo "0" > /sys/class/misc/touchwake/enabled && echo "TouchWake is Disabled" && sleep 2 && sh /system/xbin/popcorn_tw;;
+      1) echo "1" > /sys/class/misc/touchwake/enabled && echo "TouchWake is enabled" && sleep 2 && sh /system/xbin/popcorn_tw;;
+      2) sh /system/xbin/popcorn_tw1;;
+      B) sed -i "s|^TWstatus=.*|TWstatus=$OLD|" $initPath && echo "TouchWake Toggle set on boot" && sleep 2 && sh /system/xbin/popcorn_tw;;
+      R) sh /system/xbin/popcorn;;
+      X) exit 1;;
+      *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_tw;;
+     
+    esac
+  fi 

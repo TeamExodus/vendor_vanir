@@ -1,0 +1,48 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLDSAFE=$(cat /sys/class/misc/colorcontrol/safety_enabled)
+OLDMULT=$(cat /sys/class/misc/colorcontrol/multiplier)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 	      Color Multipliers                 +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Settings: Safety = $OLDSAFE"
+echo "Multipliers = $OLDMULT"
+echo "1) Enable Safety Feature"
+echo "2) Disable Safety Feature"
+echo 
+echo "Or pick your multipliers. Default values are 200 200 200"
+echo "NOTE: You only have to enter 3-digit numbers since they are scaled up automatically"
+echo "Press B to set the current settings on boot"
+echo "Press R to return to Main Color Control script or press X to exit script"
+echo
+echo
+echo -n "Enter option, or Red Multiplier: "
+read red
+if [ "$?" != "1" ]
+  then
+    case $red in
+   1) echo "1" > /sys/class/misc/colorcontrol/safety_enabled && echo "Color Multipliers Safety Enabled" && sleep 2 && sh /system/xbin/popcorn_cc3;;
+   2) echo "0" > /sys/class/misc/colorcontrol/safety_enabled && echo "Color Multipliers Safety Disabled" && sleep 2 && sh /system/xbin/popcorn_cc3;;
+   B) sed -i "s|^ColorSafety=.*|ColorSafety=$OLDSAFE|" $initPath && sed -i "s|^ColorMult=.*|ColorMult=$OLDMULT|" $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_cc3;;
+   R) sh /system/xbin/popcorn_cc;;
+   X) exit 1;;
+  $red) 
+	red=$(($red * 10000000))
+	echo -n "Enter Green Multiplier:" 
+	read green
+	green=$(($green * 10000000))	
+	echo -n "Enter Blue Multiplier:"
+	read blue
+	blue=$(($blue * 10000000))
+	echo "$red $green $blue" > /sys/class/misc/colorcontrol/multiplier 
+	echo "Color Multipliers set to $red $green $blue"
+	sleep 2
+	sh /system/xbin/popcorn_cc3
+	;;  
+    esac
+  fi
+

@@ -1,0 +1,34 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/kernel/fast_charge/force_fast_charge)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 		Fast Charge Toggle              +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current Setting: $OLD"
+echo "1) Enable Fast Charge"
+echo "2) Disable Fast Charge"
+echo "B) Set Current Settings on Boot"
+echo "R) Return to Main Menu"
+echo "X) Exit"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) echo "1" > /sys/kernel/fast_charge/force_fast_charge && echo "Fast Charge Enabled" && sleep 2 && sh /system/xbin/popcorn_fc;;
+      2) echo "0" > /sys/kernel/fast_charge/force_fast_charge && echo "Fast Charge Disabled" && sleep 2 && sh /system/xbin/popcorn_fc;;
+      B) sed -i "s|^ffc=.*|ffc=$OLD|" $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_fc;;
+      R) sh /system/xbin/popcorn;;
+      X) exit 1;;
+      *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_fc;;
+
+    esac
+  fi
+

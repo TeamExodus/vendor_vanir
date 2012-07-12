@@ -1,0 +1,60 @@
+#!/system/bin/sh
+mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+initPath=/system/etc/init.d/99sonic
+OLD=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq)
+OLD1=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                 +"
+echo "+ 	        CPU Overclock                   +"
+echo "+                                                 +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+echo "Current MaxFreq Setting: $OLD"
+echo "Current MinFreq Setting: $OLD1"
+echo "1) Set 230MHz as Max Freq"
+echo "2) Set 230MHz as Min Freq"
+echo "3) Set 350MHz as Max Freq"
+echo "4) Set 350MHz as Min Freq"
+echo "5) Set 700MHz as Max Freq"
+echo "6) Set 700MHz as Min Freq"
+echo "7) Set 1060MHz as Max Freq"
+echo "8) Set 1060MHz as Min Freq"
+echo "9) Set 1200MHz as Max Freq"
+echo "10) Set 1200MHz as Min Freq"
+echo "11) Set 1350MHz as Max Freq"
+echo "12) Set 1350MHz Min Freq"
+echo "13) Set 1420MHz as Max Freq"
+echo "14) Set 1420MHz as Min Freq"
+echo "B) Set Current Settings on Boot"
+echo "R) Return to Main Menu"
+echo "X) Exit Script"
+echo
+echo
+echo
+echo -n "Enter option: "
+read opt
+if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) zecho "230000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq && echo "MaxFreq Set to 230MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      2) echo "230000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq && echo "MinFreq Set to 230MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      3) echo "350000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq && echo "MaxFreq Set to 350MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      4) echo "350000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq && echo "MinFreq Set to 350MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      5) echo "700000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq && echo "MaxFreq Set to 700MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      6) echo "700000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq && echo "MinFreq Set to 700MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      7) echo "1060000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq && echo "MaxFreq Set to 1060MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      8) echo "1060000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq && echo "MinFreq Set to 1060MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      9) echo "1200000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq && echo "MaxFreq Set to 1200MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+     10) echo "1200000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq && echo "MinFreq Set to 1200MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+     11) echo "1350000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq && echo "MaxFreq Set to 1350MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+     12) echo "1350000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq && echo "MinFreq Set to 1350MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+     13) echo "1420000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq && echo "MaxFreq Set to 1420MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+     14) echo "1420000" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq && echo "MinFreq Set to 1420MHz" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      B) sed -i 's|^maxFreq=.*|maxFreq=$OLD|' $initPath && busybox sed -i 's|^minFreq=.*|minFreq=$OLD1|' $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_oc;;
+      R) sh /system/xbin/popcorn;;
+      X) exit 1;;
+   *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_oc;;
+     
+    esac
+  fi
+
