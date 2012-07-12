@@ -103,8 +103,15 @@ PRODUCT_COPY_FILES += \
 
 # Misc Files
 PRODUCT_COPY_FILES +=  \
-vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \
-vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf 
+    vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \
+    vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf 
+
+#init.d Tweaks
+PRODUCT_COPY_FILES +=  \
+    vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
+    vendor/vanir/proprietary/common/etc/init.d/01self-destruct:system/etc/init.d/01self-destruct \
+    vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
+    vendor/vanir/proprietary/common/etc/init.d/99sonic:system/etc/init.d/99sonic
 
 # Audio Packages
 include frameworks/base/data/sounds/AudioPackage7.mk
