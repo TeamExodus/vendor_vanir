@@ -1,0 +1,45 @@
+#!/system/bin/sh
+
+#
+# SQLite Vacuuming
+#
+for i in \
+`busybox find /data -iname "*.db"`; 
+do \
+	/system/xbin/sqlite3 $i 'VACUUM;'; 
+	/system/xbin/sqlite3 $i 'REINDEX;'; 
+done;
+
+if [ -d "/dbdata" ]; then
+	for i in \
+	`busybox find /dbdata -iname "*.db"`; 
+	do \
+		/system/xbin/sqlite3 $i 'VACUUM;'; 
+		/system/xbin/sqlite3 $i 'REINDEX;'; 
+	done;
+fi;
+
+
+if [ -d "/datadata" ]; then
+	for i in \
+	`busybox find /datadata -iname "*.db"`; 
+	do \
+		/system/xbin/sqlite3 $i 'VACUUM;'; 
+		/system/xbin/sqlite3 $i 'REINDEX;'; 
+	done;
+fi;
+
+
+for i in \
+`busybox find /sdcard -iname "*.db"`; 
+do \
+	/system/xbin/sqlite3 $i 'VACUUM;'; 
+	/system/xbin/sqlite3 $i 'REINDEX;'; 
+done;
+
+# Nuking run once scripts
+#
+ busybox mount -o rw,remount /system
+ rm /system/etc/init.d/01dhotheory
+ #! /bin/rm -f
+ busybox mount -o ro,remount /system

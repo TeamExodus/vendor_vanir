@@ -1,0 +1,124 @@
+#!/system/bin/sh
+# Consolidated T5UN4MI Script
+# PrimeDirective, Sonicxml, DHO
+# With inspiration from DroidTh3ory
+
+sysrw
+
+#
+# Enable Sysctl Tweaks
+#
+sysctl -p /system/etc/sysctl.conf
+
+#
+# Set SD Card Cache
+#
+if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ]; then
+echo 2048 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
+fi
+
+#
+# Start crond
+#
+echo "root:x:0:0::data/cron:/system/xbin/bash" > /system/etc/passwd
+mount -o remount,rw rootfs /
+ln -s /system/xbin /xbin
+mount -o remount,ro rootfs /
+timezone=`date +%z`
+if [ $timezone = "-0800" ]; then
+TZ=PST8PDT
+elif [ $timezone = "-0700" ]; then
+TZ=MST7MDT
+elif [ $timezone = "-0600" ]; then
+TZ=CST6CDT
+elif [ $timezone = "-0500" ]; then
+TZ=EST5EDT
+else TZ=EST5EDT
+fi
+export TZ
+crond -c /data/cron
+
+#
+# Nice Tweaks
+#
+renice -15 `pidof com.android.launcher`
+renice -12 `pidof com.android.chrome`
+renice -12 `pidof com.google.android.browser`
+renice -10 `pidof com.android.phone`
+renice -10 `pidof com.android.systemui`
+renice -7 `pidof com.google.android.inputmethod.latin`
+ionice -c2 -n0 `pidof com.android.camera`
+ionice -c1 -n1 `pidof com.google.android.music`
+
+#
+# Sysctl & VM Tweaks
+#
+sysctl -w vm.page-cluster=3
+sysctl -w vm.drop_caches=3
+sysctl -w vm.dirty_expire_centisecs=750
+sysctl -w vm.dirty_writeback_centisecs=1500
+sysctl -w kernel.random.write_wakeup_threshold=256
+sysctl -w kernel.random.read_wakeup_threshold=128
+sysctl -w kernel.sched_features=15834233
+sysctl -w kernel.panic=0
+sysctl -w kernel.panic_on_oops=1
+sysctl -w kernel.msgmni=2048
+sysctl -w kernel.msgmax=64000
+sysctl -w kernel.shmmax=268435500
+sysctl -w kernel.sem=500,512000,64,2048
+sysctl -w kernel.hung_task_timeout_secs=0
+sysctl -w kernel.sched_compat_yield=1
+sysctl -w kernel.sched_shares_ratelimit=256000
+sysctl -w kernel.sched_child_runs_first=0
+sysctl -w kernel.threads-max=525810
+sysctl -w kernel.multi_threading=2
+echo "1" > /proc/sys/vm/laptop_mode
+
+
+#
+# CPU Tweaks
+#
+echo "6" > /sys/devices/system/cpu/cpu0/cpufreq/deepsleep_cpulevel
+echo "2" > /sys/devices/system/cpu/cpu0/cpufreq/deepsleep_buslevel
+echo "3" > /sys/module/cpuidle/parameters/enable_mask
+echo "0 0 0 1 1 1 2 2" > /sys/devices/system/cpu/cpu0/cpufreq/busfreq_static
+echo "enabled" > /sys/devices/system/cpu/cpu0/cpufreq/busfreq_static
+echo "1" > /sys/devices/system/cpu/sched_mc_power_savings
+echo "0" > /sys/devices/system/cpu/cpu0/cpufreq/smooth_target
+echo "0" > /sys/devices/system/cpu/cpu0/cpufreq/smooth_offset
+echo "0" > /sys/devices/system/cpu/cpu0/cpufreq/smooth_step
+
+#
+# File System Tweaks & Cleanup
+#
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /dev
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /proc
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /sys
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev,data=writeback,barrier=0 -t auto /system
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /data
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /data/data
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /cache
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /acct
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /dev/pts
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /dev/cpuctl
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /mnt/asec
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /mnt/obb
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /storage/sdcard0
+tune2fs -o journal_data_writeback /dev/block/mmcblk0p1
+tune2fs -O ^has_journal /dev/block/mmcblk0p1
+tune2fs -o journal_data_writeback /dev/block/mmcblk0p8
+tune2fs -O ^has_journal /dev/block/mmcblk0p8
+tune2fs -o journal_data_writeback /block/path/to/system
+tune2fs -O ^has_journal /block/path/to/system
+tune2fs -o journal_data_writeback /block/path/to/cache
+tune2fs -O ^has_journal /block/path/to/cache
+tune2fs -o journal_data_writeback /block/path/to/data
+tune2fs -O ^has_journal /block/path/to/data
+echo "10" > /proc/sys/fs/lease-break-time
+
+#
+# Network Optimizations
+#
+echo 0 > /proc/sys/net/ipv4/tcp_timestamps
+echo 1 > /proc/sys/net/ipv4/tcp_no_metrics_save
