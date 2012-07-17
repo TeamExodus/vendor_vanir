@@ -189,7 +189,12 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \
     vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf 
 
-#init.d Tweaks
+# Data Files
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/data/cron/root:data/cron/root \
+    vendor/vanir/proprietary/common/data/data/com.android.settings/shared_prefs:data/data/com.android.settings/shared_prefs
+
+# init.d Tweaks
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/vanir/proprietary/common/etc/init.d/01self-destruct:system/etc/init.d/01self-destruct \
