@@ -40,6 +40,6 @@ done;
 # Nuking run once scripts
 #
  busybox mount -o rw,remount /system
- rm /system/etc/init.d/01dhotheory
+ rm /system/etc/init.d/01self-destruct
  #! /bin/rm -f
  busybox mount -o ro,remount /system
