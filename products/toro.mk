@@ -31,6 +31,12 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd \
     vendor/vanir/proprietary/tuna/lib/hw/power.tuna.so:system/lib/hw/power.tuna.so
 
+# Copy missing files
+PRODUCT_COPY_FILES +=  \
+    vendor/vanir/proprietary/tuna/vendor/etc/sirfgps.conf:vendor/etc/sirfgps.conf \
+    vendor/vanir/proprietary/tuna/vendor/lib/hw/gps.omap4.so:vendor/lib/hw/gps.omap4.so \
+    vendor/vanir/proprietary/tuna/vendor/firmware/ducati-m3.bin:vendor/firmware/ducati-m3.bin 
+
 # Beats Audio
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/app/AudioEffectService.apk:system/app/AudioEffectService.apk \
