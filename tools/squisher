@@ -28,7 +28,8 @@ if [ "$TARGET_BUILD_TYPE" = "debug" ]; then
 elif [ "$TARGET_BUILD_VARIANT" = "userdebug" ]; then
     OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip
 else
-    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-$TARGET_BUILD_VARIANT.$USER.zip
+#    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-$TARGET_BUILD_VARIANT.$USER.zip
+    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip
 fi
 if [ ! -f "$OTAPACKAGE" ]; then
 	echo "$OTAPACKAGE doesn't exist!";
@@ -82,6 +83,7 @@ mkdir $REPACK/ota
 cd $REPACK/ota
 printf "Unpacking $OTAPACKAGE..."
 unzip $QUIET $OTAPACKAGE
+cp -r $OUT/data $REPACK/ota/data
 echo
 cd $REPACK/ota/system/framework
 $OPTICHARGER framework-res.apk
@@ -127,7 +129,7 @@ $SED -i \
 
 
 # Delete unnecessary binaries
-( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )
+# ( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )
 
 # Delete leftover wireless driver
 # rm -rf $REPACK/ota/system/lib/modules/*/kernel/drivers/net
