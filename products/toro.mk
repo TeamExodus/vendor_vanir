@@ -150,8 +150,5 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/libvisualizer.so:system/lib/libvisualizer.so \
     vendor/vanir/proprietary/tuna/lib/libvoAudioFR.so:system/lib/libvoAudioFR.so \
     vendor/vanir/proprietary/tuna/lib/bluez-plugin/audio.so:system/lib/bluez-plugin/audio.so \
-    vendor/vanir/proprietary/tuna/lib/hw/audio.a2dp.default.so:system/lib/hw/audio.a2dp.default.so \
-    vendor/vanir/proprietary/tuna/lib/hw/audio.primary.default.so:system/lib/hw/audio.primary.default.so \
-    vendor/vanir/proprietary/tuna/lib/hw/audio.primary.tuna.so:system/lib/hw/audio.primary.tuna.so \
     vendor/vanir/proprietary/tuna/lib/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
