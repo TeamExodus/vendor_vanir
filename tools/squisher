@@ -139,6 +139,9 @@ rm -rf $REPACK/ota/recovery
 [ -d $REPACK/ota/system/lib/modules ] && \
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
+# Remove bugmailer
+rm -f $REPACK/ota/system/bin/bugmailer.sh
+
 # Determine what to name the new signed package
 
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
