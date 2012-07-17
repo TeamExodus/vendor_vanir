@@ -143,7 +143,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/libacdbmapper.so:system/lib/libacdbmapper.so \
     vendor/vanir/proprietary/tuna/lib/libaudcal.so:system/lib/libaudcal.so \
     vendor/vanir/proprietary/tuna/lib/libaudioalsa.so:system/lib/libaudioalsa.so \
-    vendor/vanir/proprietary/tuna/lib/libaudioeffect_jni.so:system/lib/libaudioeffect_jni.so \
     vendor/vanir/proprietary/tuna/lib/libaudioeq.so:system/lib/libaudioeq.so \
     vendor/vanir/proprietary/tuna/lib/libaudio_init.so:system/lib/libaudio_init.so \
     vendor/vanir/proprietary/tuna/lib/libAudioTrimmer.so:system/lib/libAudioTrimmer.so \
