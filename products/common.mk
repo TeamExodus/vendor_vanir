@@ -1,6 +1,6 @@
 # Generic product
-PRODUCT_NAME := Vanir
-PRODUCT_BRAND := Vanir
+PRODUCT_NAME := vanir
+PRODUCT_BRAND := vanir
 PRODUCT_DEVICE := generic
 
 # Build Properties
