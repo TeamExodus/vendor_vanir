@@ -1,2 +1,2 @@
-add_lunch_combo vanir_toro-userdebug
+add_lunch_combo vanir_toro-user
 

@@ -1,0 +1,21 @@
+# Drop vm caches at 4am
+
+0 4 * * * sync; echo 3 > /proc/sys/vm/drop_caches
+
+# Drop vm caches at 12pm
+
+0 12 * * * sync; echo 3 > /proc/sys/vm/drop_caches
+
+# Drop vm caches at 8pm
+
+0 20 * * * sync; echo 3 > /proc/sys/vm/drop_caches
+
+# Clear cache from 11am-11pm
+# Prime Directive
+# 0 11-23 * * * sync; cache -rmdata
+# Let's just clear caches every six hours
+
+0 0 * * * sync; cache -rmdata
+0 6 * * * sync; cache -rmdata
+0 12 * * * sync; cache -rmdata
+0 18 * * * sync; cache -rmdata
