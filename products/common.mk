@@ -145,3 +145,7 @@ PRODUCT_COPY_FILES +=  \
 
 # Audio Packages
 include frameworks/base/data/sounds/AudioPackage7.mk
+
+# Included apps
+PRODUCT_PACKAGES += \
+    SpeakerProximity
