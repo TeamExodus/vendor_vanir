@@ -16,7 +16,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Hydra.ogg \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
-    ro.modversion=$(shell date +"%m-%d-%Y") 
+    ro.modversion=v1.0 
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -90,7 +90,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.swiqi.enable=1
 
 # Version information used on all builds
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRN84D BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRO03C BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
