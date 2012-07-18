@@ -1,5 +1,5 @@
 #!/system/bin/sh
 
-mount -o remount,ro,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
+mount -o remount,ro,noatime,nodiratime -t ext4 /dev/block/mmcblk0p25 /system
 
 
