@@ -145,6 +145,14 @@ rm -rf $REPACK/ota/recovery
 rm -f $REPACK/ota/system/bin/bugmailer.sh
 
 # Fix Beats
+rm -f $REPACK/ota/system/etc/audio_effects.conf
+rm -f $REPACK/ota/system/etc/media_profiles.xml
+rm -f $REPACK/ota/system/lib/bluez-plugin/audio.so
+rm -f $REPACK/ota/system/lib/soundfx/libaudiopreprocessing.so
+rm -f $REPACK/ota/system/lib/soundfx/libbundlewrapper.so
+rm -f $REPACK/ota/system/lib/soundfx/libreverbwrapper.so
+rm -f $REPACK/ota/system/lib/soundfx/libvisualizer.so
+rm -f $REPACK/ota/system/lib/libSR_AudioIn.so
 cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/etc/audio_effects.conf $REPACK/ota/system/etc/audio_effects.conf
 cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/etc/media_profiles.xml $REPACK/ota/system/etc/media_profiles.xml
 cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/lib/bluez-plugin/audio.so $REPACK/ota/system/lib/bluez-plugin/audio.so
