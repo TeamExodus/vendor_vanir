@@ -141,9 +141,6 @@ rm -rf $REPACK/ota/recovery
 [ -d $REPACK/ota/system/lib/modules ] && \
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
-# Remove bugmailer
-rm -f $REPACK/ota/system/bin/bugmailer.sh
-
 # Fix Beats
 rm -f $REPACK/ota/system/etc/audio_effects.conf
 rm -f $REPACK/ota/system/etc/media_profiles.xml
