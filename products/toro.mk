@@ -35,6 +35,12 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/tuna/app/SpeakerProximity.apk:system/app/SpeakerProximity.apk 
 
+# Copy missing files
+PRODUCT_COPY_FILES +=  \
+    vendor/vanir/proprietary/tuna/vendor/etc/sirfgps.conf:vendor/etc/sirfgps.conf \
+    vendor/vanir/proprietary/tuna/vendor/lib/hw/gps.omap4.so:vendor/lib/hw/gps.omap4.so \
+    vendor/vanir/proprietary/tuna/vendor/firmware/ducati-m3.bin:vendor/firmware/ducati-m3.bin 
+
 # Beats Audio
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/app/AudioEffectService.apk:system/app/AudioEffectService.apk \
