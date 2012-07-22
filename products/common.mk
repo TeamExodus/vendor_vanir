@@ -5,7 +5,8 @@ PRODUCT_DEVICE := generic
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
-    AppWidgetPicker
+    AppWidgetPicker \
+    busybox
 
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -99,7 +100,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRO03C BUILD_VERSION_TAGS=relea
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
-    vendor/vanir/proprietary/common/xbin/busybox:system/xbin/busybox \
     vendor/vanir/proprietary/common/xbin/su:system/xbin/su \
     vendor/vanir/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/vanir/proprietary/common/xbin/sysro:system/xbin/sysro \
