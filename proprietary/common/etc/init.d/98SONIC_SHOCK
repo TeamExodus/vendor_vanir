@@ -1,8 +1,9 @@
 #!/system/bin/sh
 # Consolidated T5UN4MI Script
-# PrimeDirective, Sonicxml, DHO
+# PrimeDirective, Sonicxml, DHO, Nuclearmistake
 # With inspiration from DroidTh3ory
 
+sync
 sysrw
 
 #
@@ -84,16 +85,6 @@ busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev
 busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /mnt/asec
 busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /mnt/obb
 busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /storage/sdcard0
-tune2fs -o journal_data_writeback /dev/block/mmcblk0p1
-tune2fs -O ^has_journal /dev/block/mmcblk0p1
-tune2fs -o journal_data_writeback /dev/block/mmcblk0p8
-tune2fs -O ^has_journal /dev/block/mmcblk0p8
-tune2fs -o journal_data_writeback /block/path/to/system
-tune2fs -O ^has_journal /block/path/to/system
-tune2fs -o journal_data_writeback /block/path/to/cache
-tune2fs -O ^has_journal /block/path/to/cache
-tune2fs -o journal_data_writeback /block/path/to/data
-tune2fs -O ^has_journal /block/path/to/data
 echo "10" > /proc/sys/fs/lease-break-time
 
 #
