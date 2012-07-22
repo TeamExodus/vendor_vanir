@@ -132,7 +132,7 @@ PRODUCT_COPY_FILES += \
 
 # TWEAK SETTINGS FILE
 PRODUCT_COPY_FILES +=  \
-	vendor/vanir/proprietary/common/etc/vanir.cfg:system/etc/vanir.cfg
+    vendor/vanir/proprietary/common/etc/vanir.cfg:system/etc/vanir.cfg
 
 # Misc Files
 PRODUCT_COPY_FILES +=  \
@@ -141,9 +141,9 @@ PRODUCT_COPY_FILES +=  \
 
 # bash stuff... config files and so's
 PRODUCT_COPY_FILES += \
-	vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
-	vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
-	vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc
+    vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
+    vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
+    vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc
 
 # Data Files
 PRODUCT_COPY_FILES += \
