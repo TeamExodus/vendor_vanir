@@ -133,7 +133,13 @@ PRODUCT_COPY_FILES += \
 # Misc Files
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \
-    vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf 
+    vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
+
+# bash stuff... config files and so's
+PRODUCT_COPY_FILES += \
+	vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
+	vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
+	vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc
 
 # Data Files
 PRODUCT_COPY_FILES += \
@@ -144,6 +150,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/vanir/proprietary/common/etc/init.d/01self-destruct:system/etc/init.d/01self-destruct \
+    vendor/vanir/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
     vendor/vanir/proprietary/common/etc/init.d/99sonic:system/etc/init.d/99sonic
 

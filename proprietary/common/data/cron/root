@@ -1,21 +1,12 @@
-# Drop vm caches at 4am
+# Prime Directive, Nuclearmistake
 
-0 4 * * * sync; echo 3 > /proc/sys/vm/drop_caches
-
-# Drop vm caches at 12pm
-
-0 12 * * * sync; echo 3 > /proc/sys/vm/drop_caches
-
-# Drop vm caches at 8pm
-
+# Drop vm caches every 8 hours
 0 20 * * * sync; echo 3 > /proc/sys/vm/drop_caches
 
-# Clear cache from 11am-11pm
-# Prime Directive
-# 0 11-23 * * * sync; cache -rmdata
-# Let's just clear caches every six hours
+# Clear cache every six hours
+0 0/6 * * * sync; cache -rmdata
 
-0 0 * * * sync; cache -rmdata
-0 6 * * * sync; cache -rmdata
-0 12 * * * sync; cache -rmdata
-0 18 * * * sync; cache -rmdata
+# Put shell scripts in these folders, and they will run at the named interval... like a bawss
+01 * * * * busybox run-parts /system/etc/cron/cron.hourly
+02 4 * * * busybox run-parts /system/etc/cron/cron.daily
+22 4 * * 0 busybox run-parts /system/etc/cron/cron.weekly
