@@ -3,6 +3,10 @@ PRODUCT_NAME := vanir
 PRODUCT_BRAND := vanir
 PRODUCT_DEVICE := generic
 
+# Build packages included in manifest
+PRODUCT_PACKAGES += \
+    AppWidgetPicker
+
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
