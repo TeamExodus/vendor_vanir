@@ -152,6 +152,10 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/libsrsfx.so:system/lib/libsrsfx.so \
     vendor/vanir/proprietary/tuna/lib/libvisualizer.so:system/lib/libvisualizer.so \
     vendor/vanir/proprietary/tuna/lib/libvoAudioFR.so:system/lib/libvoAudioFR.so \
+    vendor/vanir/proprietary/tuna/lib/soundfx/libbeatsbass.so:system/lib/soundfx/libbeatsbass.so \
+    vendor/vanir/proprietary/tuna/lib/soundfx/libcyanogen-dsp.so:system/lib/soundfx/libcyanogen-dsp.so \
+    vendor/vanir/proprietary/tuna/lib/soundfx/libsrsfx.so:system/lib/soundfx/libsrsfx.so \
+    vendor/vanir/proprietary/tuna/lib/soundfx/libxloudwrapper.so:system/lib/soundfx/libxloudwrapper.so \
     vendor/vanir/proprietary/tuna/lib/bluez-plugin/audio.so:system/lib/bluez-plugin/audio.so \
     vendor/vanir/proprietary/tuna/lib/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
