@@ -1,27 +1,12 @@
-#!/system/bin/sh
-# Sonicxml
-# Inspiration from Jakebites
+#!/system/xbin/bash
+# Sonicxml, Nuclearmistake
+# Inspiration from Jakebites and Liberty's liberty.cfg and associated init.d scripts
 
-# Definition of Variables #
-srMPU=1
-srIVA=1
-srCORE=1
-gpuOC=0
-BLX=100
-TWstatus=0
-TWdelay=4500
-ffc=0
-wll=N
-OMAPgamma=6
-GammaOffset=-6 0 8
-ColorSafety=1
-ColorMult=2000000000 2000000000 20000000
-VolBoost=0
-HighPerf=0
-scaleGov=aggressive
-maxFreq=1200000
-minFreq=350000
-hotPlug=1
+. /etc/vanir.cfg
+
+#prevent conflicts for people using leantweaks instead
+[ -e /etc/init.d/99leantweaks ] && [ $force_override_leantweaks -eq 0 ] && exit
+
 
 # This allows you to turn SmartReflex on or off
 # For MPU
@@ -31,21 +16,10 @@ echo "$srCORE" > /sys/kernel/debug/smartreflex/sr_core/autocomp
 # For IVA
 echo "$srIVA" > /sys/kernel/debug/smartreflex/sr_iva/autocomp
 
+
+
 # GPU Overclock
 echo "$gpuOC" > /sys/devices/system/cpu/cpu0/cpufreq/gpu_oc
-
-# BLX (Battery Life Extender)
-echo "$BLX" > /sys/class/misc/batterylifeextender/charging_limit
-
-# Touch Wake
-echo "$TWstatus" > /sys/class/misc/touchwake/enabled
-echo "$TWdelay" > /sys/class/misc/touchwake/delay
-
-# Enable/disable USB fast charging
-echo "$ffc" > /sys/kernel/fast_charge/force_fast_charge
-
-# Enabled/disable the low latency mode for the WiFi during screen-off
-echo "$wll" > /sys/module/bcmdhd/parameters/wifi_pm
 
 # Governor Control
 echo "$scaleGov" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -54,7 +28,29 @@ echo "$scaleGov" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 echo "$maxFreq" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 echo "$minFreq" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
-#### COLOR CONTROL ####
+### HOTPLUGGING ###
+echo "$hotPlug" > /sys/devices/system/cpu/cpu1/online
+
+
+
+# Touch Wake
+echo "$TWstatus" > /sys/class/misc/touchwake/enabled
+echo "$TWdelay" > /sys/class/misc/touchwake/delay
+
+
+
+
+# BLX (Battery Life Extender)
+echo "$BLX" > /sys/class/misc/batterylifeextender/charging_limit
+
+# Enable/disable USB fast charging
+echo "$ffc" > /sys/kernel/fast_charge/force_fast_charge
+
+# Enabled/disable the low latency mode for the WiFi during screen-off
+echo "$wll" > /sys/module/bcmdhd/parameters/wifi_pm
+
+
+
 
 # Selects GAMMA preset to control contrast
 echo "$OMAPgamma" > /sys/devices/platform/omapdss/manager0/gamma
@@ -66,13 +62,12 @@ echo "$GammaOffset" > /sys/class/misc/colorcontrol/v1_offset
 echo "$ColorSafety" > /sys/class/misc/colorcontrol/safety_enabled
 echo "$ColorMult" > /sys/class/misc/colorcontrol/multiplier
 
-#### SOUND CONTROL ####
+
+
+
 
 # Headset Volume Boost
 echo "$VolBoost" > /sys/class/misc/soundcontrol/volume_boost
 
 # High Performance Audio
 echo "$HighPerf" > /sys/class/misc/soundcontrol/highperf_enabled
-
-### HOTPLUGGING ###
-echo "$hotPlug" > /sys/devices/system/cpu/cpu1/online

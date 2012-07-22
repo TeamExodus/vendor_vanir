@@ -130,6 +130,10 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/ssh:system/xbin/ssh \
     vendor/vanir/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
+# TWEAK SETTINGS FILE
+PRODUCT_COPY_FILES +=  \
+	vendor/vanir/proprietary/common/etc/vanir.cfg:system/etc/vanir.cfg
+
 # Misc Files
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \
