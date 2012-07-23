@@ -128,7 +128,8 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/scp:system/xbin/scp \
     vendor/vanir/proprietary/common/xbin/sh:system/xbin/sh \
     vendor/vanir/proprietary/common/xbin/ssh:system/xbin/ssh \
-    vendor/vanir/proprietary/common/xbin/zipalign:system/xbin/zipalign
+    vendor/vanir/proprietary/common/xbin/zipalign:system/xbin/zipalign \
+    vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd
 
 # TWEAK SETTINGS FILE
 PRODUCT_COPY_FILES +=  \
@@ -140,13 +141,13 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
 
 # bash stuff... config files and so's
-PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
     vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
     vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc
 
 # Data Files
-PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/data/cron/root:data/cron/root \
     vendor/vanir/proprietary/common/data/data/com.android.settings/shared_prefs:data/data/com.android.settings/shared_prefs
 
