@@ -71,3 +71,6 @@ echo "$VolBoost" > /sys/class/misc/soundcontrol/volume_boost
 
 # High Performance Audio
 echo "$HighPerf" > /sys/class/misc/soundcontrol/highperf_enabled
+
+sync
+sysro
