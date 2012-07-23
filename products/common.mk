@@ -108,22 +108,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/crontab:system/xbin/crontab \
     vendor/vanir/proprietary/common/xbin/nano:system/xbin/nano \
     vendor/vanir/proprietary/common/xbin/openvpn:system/xbin/openvpn \
-    vendor/vanir/proprietary/common/xbin/popcorn:system/xbin/popcorn \
-    vendor/vanir/proprietary/common/xbin/popcorn_blx:system/xbin/popcorn_blx \
-    vendor/vanir/proprietary/common/xbin/popcorn_cc:system/xbin/popcorn_cc \
-    vendor/vanir/proprietary/common/xbin/popcorn_cc1:system/xbin/popcorn_cc1 \
-    vendor/vanir/proprietary/common/xbin/popcorn_cc2:system/xbin/popcorn_cc2 \
-    vendor/vanir/proprietary/common/xbin/popcorn_cc3:system/xbin/popcorn_cc3 \
-    vendor/vanir/proprietary/common/xbin/popcorn_fc:system/xbin/popcorn_fc \
-    vendor/vanir/proprietary/common/xbin/popcorn_govs:system/xbin/popcorn_govs \
-    vendor/vanir/proprietary/common/xbin/popcorn_gpu:system/xbin/popcorn_gpu \
-    vendor/vanir/proprietary/common/xbin/popcorn_hotplug:system/xbin/popcorn_hotplug \
-    vendor/vanir/proprietary/common/xbin/popcorn_oc:system/xbin/popcorn_oc \
-    vendor/vanir/proprietary/common/xbin/popcorn_sc:system/xbin/popcorn_sc \
-    vendor/vanir/proprietary/common/xbin/popcorn_sr:system/xbin/popcorn_sr \
-    vendor/vanir/proprietary/common/xbin/popcorn_tw:system/xbin/popcorn_tw \
-    vendor/vanir/proprietary/common/xbin/popcorn_tw1:system/xbin/popcorn_tw1 \
-    vendor/vanir/proprietary/common/xbin/popcorn_wll:system/xbin/popcorn_wll \
     vendor/vanir/proprietary/common/xbin/run-parts:system/xbin/run-parts \
     vendor/vanir/proprietary/common/xbin/scp:system/xbin/scp \
     vendor/vanir/proprietary/common/xbin/sh:system/xbin/sh \
@@ -145,7 +129,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/vanir/proprietary/common/etc/init.d/01self-destruct:system/etc/init.d/01self-destruct \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
-    vendor/vanir/proprietary/common/etc/init.d/99sonic:system/etc/init.d/99sonic
 
 # Audio Packages
 include frameworks/base/data/sounds/AudioPackage7.mk
