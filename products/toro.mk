@@ -1,6 +1,9 @@
 # Inherit AOSP device configuration for toro.
 $(call inherit-product, device/samsung/toro/full_toro.mk)
 
+#... and then make the AOSP device configuration for toro get on its knees and sing the national anthem into our "microphones"
+PRODUCT_LOCALES := en_US
+
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common.mk)
 
