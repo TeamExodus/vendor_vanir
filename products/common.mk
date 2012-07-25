@@ -21,7 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Hydra.ogg \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
-    ro.modversion=v1.0 
+    ro.modversion=v2.0
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \

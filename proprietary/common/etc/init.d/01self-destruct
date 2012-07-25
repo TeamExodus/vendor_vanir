@@ -37,9 +37,16 @@ do \
 	/system/xbin/sqlite3 $i 'REINDEX;'; 
 done;
 
+busybox mount -o rw,remount /system
+# SYMLINK ALL OF THEM BUSYBOX APPLETS THERE INTO YURR XBIN WHEEEEEEEEEEE
+#
+for M in `busybox --help | busybox grep 'Currently defined functions:' -A30 | busybox grep -v 'Currently defined functions:'|busybox tr , '\n'|busybox tr -d '\n\t'|busybox tr ' ' '\n'`; do ln -s busybox /system/xbin/$M; done
+
+
+
 # Nuking run once scripts
 #
- busybox mount -o rw,remount /system
- rm /system/etc/init.d/01self-destruct
- #! /bin/rm -f
- busybox mount -o ro,remount /system
+rm /system/etc/init.d/01self-destruct
+
+
+busybox mount -o ro,remount /system
