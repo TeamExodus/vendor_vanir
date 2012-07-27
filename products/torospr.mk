@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for torospr.
-$(call inherit-product, device/samsung/torospr/full_torospr.mk)
+$(call inherit-product, device/samsung/torospr/full_toroplus.mk)
 
 #... and then make the AOSP device configuration for toro get on its knees and sing the national anthem into our "microphones"
 PRODUCT_LOCALES := en_US
@@ -155,7 +155,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/libsrsfx.so:system/lib/libsrsfx.so \
     vendor/vanir/proprietary/tuna/lib/libvisualizer.so:system/lib/libvisualizer.so \
     vendor/vanir/proprietary/tuna/lib/libvoAudioFR.so:system/lib/libvoAudioFR.so \
-	vendor/vanir/proprietary/tuna/lib/soundfx/libbeatsbass.so:system/lib/soundfx/libbeatsbass.so \
+    vendor/vanir/proprietary/tuna/lib/soundfx/libbeatsbass.so:system/lib/soundfx/libbeatsbass.so \
     vendor/vanir/proprietary/tuna/lib/soundfx/libcyanogen-dsp.so:system/lib/soundfx/libcyanogen-dsp.so \
     vendor/vanir/proprietary/tuna/lib/soundfx/libsrsfx.so:system/lib/soundfx/libsrsfx.so \
     vendor/vanir/proprietary/tuna/lib/soundfx/libxloudwrapper.so:system/lib/soundfx/libxloudwrapper.so \
