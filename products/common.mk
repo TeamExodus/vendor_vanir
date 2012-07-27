@@ -130,6 +130,11 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
     vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc
 
+# missing guts for stuff that needs guts
+PRODUCT_COPY_FILES +=  \
+    vendor/vanir/proprietary/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
+    vendor/vanir/proprietary/common/lib/libjni_eglfence.so:system/lib/libjni_eglfence.so
+
 # Data Files
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/data/cron/root:data/cron/root \
