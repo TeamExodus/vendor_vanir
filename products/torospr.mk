@@ -10,11 +10,11 @@ $(call inherit-product, vendor/vanir/products/common.mk)
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_torospr
 PRODUCT_BRAND := google
-PRODUCT_DEVICE := torospr
+PRODUCT_DEVICE := toroplus
 PRODUCT_MODEL := Galaxy Nexus
 PRODUCT_MANUFACTURER := samsung
 
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysid BUILD_ID=JRN84D BUILD_FINGERPRINT=google/mysid/torospr:4.1.1/JRN84D/336647:user/release-keys PRIVATE_BUILD_DESC="mysid-user 4.1.1 JRN84D 336647 release-keys" BUILD_NUMBER=235179
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysidspr BUILD_ID=JRN84D BUILD_FINGERPRINT=google/mysidspr/toroplus:4.1.1/JRN84D/336647:user/release-keys PRIVATE_BUILD_DESC="mysidspr-user 4.1.1 JRN84D 336647 release-keys" BUILD_NUMBER=235179
 
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
