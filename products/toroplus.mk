@@ -1,5 +1,5 @@
-# Inherit AOSP device configuration for torospr.
-$(call inherit-product, device/samsung/torospr/full_toroplus.mk)
+# Inherit AOSP device configuration for toroplus.
+$(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 
 #... and then make the AOSP device configuration for toro get on its knees and sing the national anthem into our "microphones"
 PRODUCT_LOCALES := en_US
@@ -8,9 +8,9 @@ PRODUCT_LOCALES := en_US
 $(call inherit-product, vendor/vanir/products/common.mk)
 
 # Setup device specific product configuration.
-PRODUCT_NAME := vanir_torospr
+PRODUCT_NAME := vanir_toroplus
 PRODUCT_BRAND := google
-PRODUCT_DEVICE := torospr
+PRODUCT_DEVICE := toroplus
 PRODUCT_MODEL := Galaxy Nexus
 PRODUCT_MANUFACTURER := samsung
 
@@ -27,7 +27,7 @@ PRODUCT_COPY_FILES +=  \
    vendor/vanir/proprietary/common/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
    vendor/vanir/proprietary/common/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so 
 
-# Copy torospr specific prebuilt files
+# Copy toroplus specific prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/vanir/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
