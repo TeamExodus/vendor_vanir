@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Whether device has camera flash or torch capabilities -->
+    <bool name="has_torch">true</bool>
+
+</resources>
