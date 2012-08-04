@@ -165,9 +165,6 @@ cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/media/bootanimation.zip $
 rm -f $REPACK/ota/system/vendor/firmware/ducati-m3.bin
 cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/vendor/firmware/ducati-m3.bin $REPACK/ota/system/vendor/firmware/ducati-m3.bin
 
-# Silly gallery
-rm -f $REPACK/ota/system/app/Gallery2.apk
-
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
 OUTVERSION="$TARGET_PRODUCT"_"$MODVERSION"
