@@ -4,6 +4,10 @@ $(call inherit-product, device/samsung/maguro/full_maguro.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common.mk)
 
+# Overlays
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tuna
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/maguro
+
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_maguro
 PRODUCT_BRAND := google
