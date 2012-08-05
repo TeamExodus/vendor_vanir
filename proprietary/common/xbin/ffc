@@ -1,7 +1,0 @@
-#!/system/xbin/bash
-STATUS=`cat /sys/kernel/fast_charge/force_fast_charge`
-STATUS=`expr 1 - $STATUS`
-[ $STATUS -eq 0 ] && echo "Disabling FFC" || echo "Enabling FFC"
-su -c "echo $STATUS > /sys/kernel/fast_charge/force_fast_charge"
-. /etc/vanir.cfg
-[ $ffc -eq 0 ] && echo "When you reboot, FFC will be disabled." || echo "When you reboot, FFC will be enabled."

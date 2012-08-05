@@ -113,8 +113,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/sh:system/xbin/sh \
     vendor/vanir/proprietary/common/xbin/ssh:system/xbin/ssh \
     vendor/vanir/proprietary/common/xbin/zipalign:system/xbin/zipalign \
-    vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd \
-    vendor/vanir/proprietary/common/xbin/ffc:system/xbin/ffc
+    vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd
 
 # TWEAK SETTINGS FILE
 PRODUCT_COPY_FILES +=  \
