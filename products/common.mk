@@ -135,11 +135,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
     vendor/vanir/proprietary/common/lib/libjni_eglfence.so:system/lib/libjni_eglfence.so
 
-# Data Files
-PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/data/cron/root:data/cron/root \
-    vendor/vanir/proprietary/common/data/data/com.android.settings/shared_prefs:data/data/com.android.settings/shared_prefs
-
 # init.d Tweaks
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \

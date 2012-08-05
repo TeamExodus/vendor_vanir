@@ -83,7 +83,7 @@ mkdir $REPACK/ota
 cd $REPACK/ota
 printf "Unpacking $OTAPACKAGE..."
 unzip $QUIET $OTAPACKAGE
-cp -r $OUT/data $REPACK/ota/data
+
 echo
 cd $REPACK/ota/system/framework
 $OPTICHARGER framework-res.apk
