@@ -19,16 +19,21 @@ echo 2048 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
 fi
 
 #
+# Enable KSM
+#
+echo 1 > /sys/kernel/mm/ksm/run
+
+#
 # Nice Tweaks
 #
-renice -15 `pidof com.android.launcher`
-renice -12 `pidof com.android.chrome`
-renice -12 `pidof com.google.android.browser`
-renice -10 `pidof com.android.phone`
-renice -10 `pidof com.android.systemui`
-renice -7 `pidof com.google.android.inputmethod.latin`
-ionice -c2 -n0 `pidof com.android.camera`
-ionice -c1 -n1 `pidof com.google.android.music`
+renice -15 $(pidof com.android.launcher)
+renice -12 $(pidof com.android.chrome)
+renice -12 $(pidof com.google.android.browser)
+renice -10 $(pidof com.android.phone)
+renice -10 $(pidof com.android.systemui)
+renice -7 $(pidof com.google.android.inputmethod.latin)
+ionice -c2 -n0 $(pidof com.android.camera)
+ionice -c1 -n1 $(pidof com.google.android.music)
 
 #
 # Sysctl & VM Tweaks
@@ -39,52 +44,34 @@ busybox sysctl -w vm.dirty_expire_centisecs=750
 busybox sysctl -w vm.dirty_writeback_centisecs=1500
 busybox sysctl -w kernel.random.write_wakeup_threshold=256
 busybox sysctl -w kernel.random.read_wakeup_threshold=128
-busybox sysctl -w kernel.sched_features=15834233
 busybox sysctl -w kernel.panic=0
 busybox sysctl -w kernel.panic_on_oops=1
 busybox sysctl -w kernel.msgmni=2048
 busybox sysctl -w kernel.msgmax=64000
 busybox sysctl -w kernel.shmmax=268435500
 busybox sysctl -w kernel.sem=500,512000,64,2048
-busybox sysctl -w kernel.hung_task_timeout_secs=0
-busybox sysctl -w kernel.sched_compat_yield=1
-busybox sysctl -w kernel.sched_shares_ratelimit=256000
 busybox sysctl -w kernel.sched_child_runs_first=0
 busybox sysctl -w kernel.threads-max=525810
-busybox sysctl -w kernel.multi_threading=2
 echo "1" > /proc/sys/vm/laptop_mode
 
 
 #
-# CPU Tweaks
-#
-echo "6" > /sys/devices/system/cpu/cpu0/cpufreq/deepsleep_cpulevel
-echo "2" > /sys/devices/system/cpu/cpu0/cpufreq/deepsleep_buslevel
-echo "3" > /sys/module/cpuidle/parameters/enable_mask
-echo "0 0 0 1 1 1 2 2" > /sys/devices/system/cpu/cpu0/cpufreq/busfreq_static
-echo "enabled" > /sys/devices/system/cpu/cpu0/cpufreq/busfreq_static
-echo "1" > /sys/devices/system/cpu/sched_mc_power_savings
-echo "0" > /sys/devices/system/cpu/cpu0/cpufreq/smooth_target
-echo "0" > /sys/devices/system/cpu/cpu0/cpufreq/smooth_offset
-echo "0" > /sys/devices/system/cpu/cpu0/cpufreq/smooth_step
-
-#
 # File System Tweaks & Cleanup
 #
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /dev
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /proc
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /sys
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev,data=writeback,barrier=0 -t auto /system
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /data
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /data/data
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /cache
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /acct
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /dev/pts
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /dev/cpuctl
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /mnt/asec
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /mnt/obb
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nosuid,nodev,data=writeback,barrier=0 -t auto /storage/sdcard0
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /dev
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /proc
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /sys
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /system
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /data
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /data/data
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /cache
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /acct
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /dev/pts
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /dev/cpuctl
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /mnt/asec
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /mnt/obb
+busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /storage/sdcard0
 echo "10" > /proc/sys/fs/lease-break-time
 
 #
