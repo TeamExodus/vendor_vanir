@@ -18,7 +18,7 @@
  =====================================================================
 ' 
 
-#	With scripts from PrimeDirective's cron.jobs, and bawss sauce from Nuclearmistake
+#	With scripts from PrimeDirective and Sonicxml's cron.jobs, and bawss sauce from Nuclearmistake
 
 # crond has "/bin/sh" hardcoded
 mount -o remount,rw rootfs /
@@ -49,7 +49,7 @@ if busybox [ ! -d /data/cron ]; then
 fi
 if busybox [ ! -f /data/cron/root ]; then
 	cat > /data/cron/root << EOF
-# Prime Directive, Nuclearmistake
+# Prime Directive, Nuclearmistake, Sonicxml
 
 # Drop vm caches every 8 hours
 0 20 * * * sync; echo 3 > /proc/sys/vm/drop_caches
