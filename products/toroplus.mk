@@ -35,8 +35,7 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/vanir/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd \
-    vendor/vanir/proprietary/tuna/lib/hw/power.tuna.so:system/lib/hw/power.tuna.so
+    vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Copy missing apps
 PRODUCT_COPY_FILES +=  \
