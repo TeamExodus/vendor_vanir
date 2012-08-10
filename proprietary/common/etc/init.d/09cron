@@ -46,6 +46,8 @@ export TZ
 # rebuild crontab if it got pwned somehow
 if busybox [ ! -d /data/cron ]; then
 	busybox mkdir -p /data/cron
+fi
+if busybox [ ! -f /data/cron/root ]; then
 	cat > /data/cron/root << EOF
 # Prime Directive, Nuclearmistake
 
