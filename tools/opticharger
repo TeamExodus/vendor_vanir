@@ -30,7 +30,7 @@ fi
 
 if [ "$APKCERTS" = "" ];
 then
-    if [ "$TARGET_BUILD_VARIANT" = "userdebug" ]; then
+    if [ "$TARGET_BUILD_VARIANT" = "userdebug" ] || [ "$TARGET_BUILD_VARIANT" = "user" ]; then
        TARGET_BUILD_VARIANT="eng"
     fi
 
