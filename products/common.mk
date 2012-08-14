@@ -137,9 +137,8 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/init.d/01self-destruct:system/etc/init.d/01self-destruct \
     vendor/vanir/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
-	vendor/vanir/proprietary/common/etc/init.d/99afterboot:system/etc/init.d/99afterboot \
-	vendor/vanir/proprietary/common/etc/cron/cron.hourly/nicetweaks.sh:/system/etc/cron/cron.hourly/nicetweaks.sh
-
+	vendor/vanir/proprietary/common/etc/init.d/99afterboot:system/etc/init.d/99afterboot
+	
 # Audio Packages
 include frameworks/base/data/sounds/AudioPackage7.mk
 
