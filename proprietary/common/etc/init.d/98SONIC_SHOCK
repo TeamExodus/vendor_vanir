@@ -22,6 +22,41 @@ fi
 # Enable KSM
 #
 echo 1 > /sys/kernel/mm/ksm/run
+echo 1200 > /sys/kernel/mm/ksm/sleep_millisecs
+echo 256 > /sys/kernel/mm/ksm/pages_to_scan
+
+#RQ_Affinity
+echo 1 > /sys/block/dm-0/queue/rq_affinity
+echo 1 > /sys/block/dm-1/queue/rq_affinity
+echo 1 > /sys/block/dm-2/queue/rq_affinity
+echo 1 > /sys/block/loop0/queue/rq_affinity
+echo 1 > /sys/block/loop1/queue/rq_affinity
+echo 1 > /sys/block/loop2/queue/rq_affinity
+echo 1 > /sys/block/loop3/queue/rq_affinity
+echo 1 > /sys/block/loop4/queue/rq_affinity
+echo 1 > /sys/block/loop5/queue/rq_affinity
+echo 1 > /sys/block/loop6/queue/rq_affinity
+echo 1 > /sys/block/loop7/queue/rq_affinity
+echo 1 > /sys/block/mmcblk0/queue/rq_affinity
+echo 1 > /sys/block/mmcblk0boot0/queue/rq_affinity
+echo 1 > /sys/block/mmcblk0boot1/queue/rq_affinity
+echo 1 > /sys/block/mtdblock0/queue/rq_affinity
+echo 1 > /sys/block/ram0/queue/rq_affinity
+echo 1 > /sys/block/ram1/queue/rq_affinity
+echo 1 > /sys/block/ram2/queue/rq_affinity
+echo 1 > /sys/block/ram3/queue/rq_affinity
+echo 1 > /sys/block/ram4/queue/rq_affinity
+echo 1 > /sys/block/ram5/queue/rq_affinity
+echo 1 > /sys/block/ram6/queue/rq_affinity
+echo 1 > /sys/block/ram7/queue/rq_affinity
+echo 1 > /sys/block/ram8/queue/rq_affinity
+echo 1 > /sys/block/ram9/queue/rq_affinity
+echo 1 > /sys/block/ram10/queue/rq_affinity
+echo 1 > /sys/block/ram11/queue/rq_affinity
+echo 1 > /sys/block/ram12/queue/rq_affinity
+echo 1 > /sys/block/ram13/queue/rq_affinity
+echo 1 > /sys/block/ram14/queue/rq_affinity
+echo 1 > /sys/block/ram15/queue/rq_affinity
 
 #
 # Sysctl & VM Tweaks
