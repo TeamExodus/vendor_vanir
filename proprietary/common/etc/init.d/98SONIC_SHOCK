@@ -26,37 +26,7 @@ echo 1200 > /sys/kernel/mm/ksm/sleep_millisecs
 echo 256 > /sys/kernel/mm/ksm/pages_to_scan
 
 #RQ_Affinity
-echo 1 > /sys/block/dm-0/queue/rq_affinity
-echo 1 > /sys/block/dm-1/queue/rq_affinity
-echo 1 > /sys/block/dm-2/queue/rq_affinity
-echo 1 > /sys/block/loop0/queue/rq_affinity
-echo 1 > /sys/block/loop1/queue/rq_affinity
-echo 1 > /sys/block/loop2/queue/rq_affinity
-echo 1 > /sys/block/loop3/queue/rq_affinity
-echo 1 > /sys/block/loop4/queue/rq_affinity
-echo 1 > /sys/block/loop5/queue/rq_affinity
-echo 1 > /sys/block/loop6/queue/rq_affinity
-echo 1 > /sys/block/loop7/queue/rq_affinity
-echo 1 > /sys/block/mmcblk0/queue/rq_affinity
-echo 1 > /sys/block/mmcblk0boot0/queue/rq_affinity
-echo 1 > /sys/block/mmcblk0boot1/queue/rq_affinity
-echo 1 > /sys/block/mtdblock0/queue/rq_affinity
-echo 1 > /sys/block/ram0/queue/rq_affinity
-echo 1 > /sys/block/ram1/queue/rq_affinity
-echo 1 > /sys/block/ram2/queue/rq_affinity
-echo 1 > /sys/block/ram3/queue/rq_affinity
-echo 1 > /sys/block/ram4/queue/rq_affinity
-echo 1 > /sys/block/ram5/queue/rq_affinity
-echo 1 > /sys/block/ram6/queue/rq_affinity
-echo 1 > /sys/block/ram7/queue/rq_affinity
-echo 1 > /sys/block/ram8/queue/rq_affinity
-echo 1 > /sys/block/ram9/queue/rq_affinity
-echo 1 > /sys/block/ram10/queue/rq_affinity
-echo 1 > /sys/block/ram11/queue/rq_affinity
-echo 1 > /sys/block/ram12/queue/rq_affinity
-echo 1 > /sys/block/ram13/queue/rq_affinity
-echo 1 > /sys/block/ram14/queue/rq_affinity
-echo 1 > /sys/block/ram15/queue/rq_affinity
+for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
 
 #
 # Sysctl & VM Tweaks
@@ -81,20 +51,9 @@ echo "1" > /proc/sys/vm/laptop_mode
 #
 # File System Tweaks & Cleanup
 #
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /dev
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /proc
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /sys
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /system
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /data
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /data/data
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /cache
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /acct
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /dev/pts
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /dev/cpuctl
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /mnt/asec
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /mnt/obb
-busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev -t auto /storage/sdcard0
+for m in "/" "/dev" "/proc" "/sys" "/system" "/data" "/data/data" "/cache" "/acct" "/dev/pts" "/dev/cpuctl" "/mnt/asec" "/mnt/obb" "/storage/sdcard0"; do
+    busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev $m
+done
 echo "10" > /proc/sys/fs/lease-break-time
 
 #
@@ -102,3 +61,7 @@ echo "10" > /proc/sys/fs/lease-break-time
 #
 echo 0 > /proc/sys/net/ipv4/tcp_timestamps
 echo 1 > /proc/sys/net/ipv4/tcp_no_metrics_save
+
+
+sync
+sysro
