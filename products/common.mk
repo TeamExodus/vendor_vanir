@@ -100,6 +100,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRO03L BUILD_VERSION_TAGS=relea
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
+    vendor/vanir/proprietary/common/bin/fix_permissions:system/bin/fix_permissions \
     vendor/vanir/proprietary/common/xbin/su:system/xbin/su \
     vendor/vanir/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/vanir/proprietary/common/xbin/sysro:system/xbin/sysro \
