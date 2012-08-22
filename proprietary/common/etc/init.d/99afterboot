@@ -3,7 +3,7 @@
 # PrimeDirective and Sonicxml
 # Thanks to mike1986 for the wait for boot code
 
-(
+bash -c "
 while : ; do
 	COMPLETED=$(logcat -d *:I *:D | grep -c android.intent.action.BOOT_COMPLETED)
 	if [ $COMPLETED -ne 0 ] ; then
@@ -18,5 +18,4 @@ while : ; do
 		exit 0
 	fi
 	sleep 1
-done
-) &
+done" &
