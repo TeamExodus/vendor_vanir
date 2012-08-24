@@ -49,7 +49,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.enable.a53=1 \
     ro.ril.hsupa.category=5 \
     net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960  \
-    net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960 \
     net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960 \
     net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960 \
     net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960 \
