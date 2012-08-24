@@ -32,7 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=384m \
     dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.dexopt-flags=v=n,o=v,u=y,m=y \
+    dalvik.vm.dexopt-flags=v=n,o=v,u=n,m=y \
     dalvik.vm.lockprof.threshold=75 \
     dalvik.vm.verify-bytecode=false \
     ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
