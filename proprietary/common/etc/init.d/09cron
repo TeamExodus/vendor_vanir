@@ -18,7 +18,7 @@
  =====================================================================
 ' 
 
-#	With scripts from PrimeDirective and Sonicxml's cron.jobs, and bawss sauce from Nuclearmistake
+# With scripts from PrimeDirective and Sonicxml's cron.jobs, and bawss sauce from Nuclearmistake
 
 # crond has "/bin/sh" hardcoded
 mount -o remount,rw rootfs /
@@ -42,10 +42,6 @@ else
 	TZ=PST8PDT
 fi
 export TZ
-
-# If user dirty flashed and still had the old cron script, then they won't
-# get the benefits of the new one
-rm -f /data/cron/root
 
 # rebuild crontab if it got pwned somehow
 if busybox [ ! -d /data/cron ]; then
