@@ -62,8 +62,6 @@ echo "10" > /proc/sys/fs/lease-break-time
 echo 0 > /proc/sys/net/ipv4/tcp_timestamps
 echo 1 > /proc/sys/net/ipv4/tcp_no_metrics_save
 
-#
-# Fix Permissions
-#
+sync
+sysro
 
-sh -c "/system/bin/fix_permissions; sync; sysro;" &
