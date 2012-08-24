@@ -6,7 +6,8 @@
 bash -c "
 while : ; do
 	COMPLETED=$(logcat -d *:I *:D | grep -c android.intent.action.BOOT_COMPLETED)
-	if [ $COMPLETED -ne 0 ] ; then
+	TEST=$"0"
+	if busybox [ $COMPLETED -ne $TEST ] ; then
 		renice -15 $(pidof com.android.launcher)
 		renice -12 $(pidof com.android.chrome)
 		renice -12 $(pidof com.google.android.browser)
