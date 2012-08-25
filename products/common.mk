@@ -35,15 +35,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=v=n,o=v,u=n,m=y \
     dalvik.vm.lockprof.threshold=75 \
     dalvik.vm.verify-bytecode=false \
-    ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
-    ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
-    ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000 \
-    ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000 \
-    ro.cdma.otaspnumschema=SELC,1,80,99 \
-    net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960  \
-    net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960 \
-    net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960 \
-    net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960 \
     ro.kernel.android.checkjni=0 \
     ro.media.enc.jpeg.quality=100 \
     debug.sf.hw=1 \
@@ -54,12 +45,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     pm.sleep_mode=1 \
     ro.HOME_APP_ADJ=1 \
     persist.sys.use_dithering=0 \
-    ro.ril.disable.power.collapse=0 \
     ro.media.dec.jpeg.memcap=8000000 \
     ro.media.enc.hprof.vid.bps=8000000 \
     ro.media.enc.hprof.vid.fps=65 \
     ro.config.nocheckin=1 \
-    ro.mot.eri.losalert.delay=1000 \
     ro.config.vc_call_vol_steps=12 \
     ring.delay=0 \
     ro.telephony.call_ring.delay=500 \
@@ -71,7 +60,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.mot.eri.losalert.delay=900 \
     ro.ril.fast.dormancy.rule=0 \
     ro.HOME_APP_MEM=8192 \
-    ro.FOREGROUND_APP_MEM=6144 \
+    ro.FOREGROUND_APP_MEM=8192 \
     ro.VISIBLE_APP_MEM=8192 \
     ro.max.fling_velocity=15000 \
     ro.min.fling_velocity=10000 \
