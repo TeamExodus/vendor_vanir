@@ -27,7 +27,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=300 \
     net.bt.name=Android \
-    dalvik.vm.stack-trace-file=/data/anr/traces.txt \
+    dalvik.vm.stack-trace-file=/tmp/stack-trace.txt \
     dalvik.vm.heapstartsize=48m \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=384m \
@@ -40,14 +40,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000 \
     ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000 \
     ro.cdma.otaspnumschema=SELC,1,80,99 \
-    ro.ril.enable.3g.prefix=1 \
-    ro.ril.hep=1 \
-    ro.ril.hsxpa=2 \
-    ro.ril.enable.dtm=1 \
-    ro.ril.gprsclass=12 \
-    ro.ril.hsdpa.category=8 \
-    ro.ril.enable.a53=1 \
-    ro.ril.hsupa.category=5 \
     net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960  \
     net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960 \
     net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960 \
