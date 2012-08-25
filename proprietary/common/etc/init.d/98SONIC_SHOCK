@@ -56,12 +56,6 @@ for m in "/" "/dev" "/proc" "/sys" "/system" "/data" "/data/data" "/cache" "/acc
 done
 echo "10" > /proc/sys/fs/lease-break-time
 
-#
-# Network Optimizations
-#
-echo 0 > /proc/sys/net/ipv4/tcp_timestamps
-echo 1 > /proc/sys/net/ipv4/tcp_no_metrics_save
-
 sync
 sysro
 
