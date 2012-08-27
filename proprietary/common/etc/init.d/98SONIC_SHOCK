@@ -29,6 +29,14 @@ echo 256 > /sys/kernel/mm/ksm/pages_to_scan
 for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
 
 #
+# Disable IPv6 Forwarding
+#
+
+echo 0 >/proc/sys/net/ipv6/conf/all/forwarding
+setprop net.ipv4.compat ""
+
+#
+#
 # Sysctl & VM Tweaks
 #
 busybox sysctl -w vm.page-cluster=3
