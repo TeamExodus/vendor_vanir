@@ -12,4 +12,6 @@ while busybox [ ! $(logcat -d *:I *:D | grep -c android.intent.action.BOOT_COMPL
 		busybox renice -10 $(pidof com.android.systemui)
 		busybox renice -7 $(pidof com.google.android.inputmethod.latin)
 		busybox ionice -c2 -n0 $(pidof com.android.camera)
-		busybox ionice -c1 -n1 $(pidof com.google.android.music)" &
+		busybox ionice -c1 -n1 $(pidof com.google.android.music)
+		echo 0 >/proc/sys/net/ipv6/conf/all/forwarding
+		setprop net.ipv4.compat """ &
