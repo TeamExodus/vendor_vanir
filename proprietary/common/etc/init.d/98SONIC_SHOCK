@@ -34,7 +34,6 @@ for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
 
 echo 0 >/proc/sys/net/ipv6/conf/all/forwarding
 setprop net.ipv4.compat ""
-busybox sysctl -w net.ipv6.conf.default.disable_ipv6 = 1
 
 #
 #
