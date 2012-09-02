@@ -114,14 +114,14 @@ PRODUCT_COPY_FILES +=  \
 
 # Data Files
 PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/data/cron/root:data/cron/root \
-    vendor/vanir/proprietary/common/data/data/com.android.settings/shared_prefs:data/data/com.android.settings/shared_prefs
-
+    vendor/vanir/proprietary/common/data/cron/root:data/cron/root 
+    
 # init.d Tweaks
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/vanir/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
+    vendor/vanir/proprietary/common/etc/init.d/99gpuspeed:system/etc/init.d/99gpuspeed \
     vendor/vanir/proprietary/common/etc/init.d/ZZafterboot:system/etc/init.d/ZZafterboot \
     vendor/vanir/proprietary/common/etc/cron/cron.hourly/nicetweaks.sh:/system/etc/cron/cron.hourly/nicetweaks.sh \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
