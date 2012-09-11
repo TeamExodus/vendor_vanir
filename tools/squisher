@@ -40,7 +40,6 @@ OPTICHARGER=$ANDROID_BUILD_TOP/vendor/vanir/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
-
 # Some products want a squashfs for xbin for space
 case "$TARGET_PRODUCT" in
 	cyanogen_dream_sapphire) WANT_SQUASHFS=1 ;;
@@ -75,7 +74,6 @@ printf "Sanitizing environment..."
 rm -rf $REPACK
 mkdir -p $REPACK
 echo
-
 
 # Unpack the otapackage and opticharge all apks
 mkdir $REPACK/ota
@@ -118,7 +116,7 @@ if [ "$WANT_SQUASHFS" -eq 1 ]; then
 	chmod -R 555 $REPACK/_xbin/*
 
 	# Create symlinks for su and busybox (since updater-script can't work on the squashfs filesystem).
-	# Forgive me for the regex hell here. 
+	# Forgive me for the regex hell here.
 	ln -s ../bin/su $REPACK/_xbin/su
 	for link in `sed -n -e's/,//g' -e'/symlink(.*busybox/,/xbin.*);/p' $updater | tr '"' '\n' | sed -n -e'\,/system/xbin/,s,/system/xbin/,,p'`
 	do
@@ -135,13 +133,11 @@ if [ "$WANT_SQUASHFS" -eq 1 ]; then
 	$SED -i -e's,system/xbin/su,system/bin/su,g' -e'/xbin/d' $updater
 fi
 
-
 # Fix build.prop
 $SED -i \
 	-e '/ro\.kernel\.android\.checkjni/d' \
 	-e '/ro\.build\.type/s/eng/user/' \
 	$REPACK/ota/system/build.prop
-
 
 # Delete unnecessary binaries
 # ( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )

@@ -4,7 +4,7 @@ initPath=/system/etc/init.d/99sonic
 OLD=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 	       Governor Control                 +"
+echo "+                 Governor Control                +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -42,7 +42,5 @@ if [ "$?" != "1" ]
       R) sh /system/xbin/popcorn;;
       X) exit 1;;
    *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_govs;;
-     
     esac
-  fi
-
+fi

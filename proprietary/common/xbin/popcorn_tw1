@@ -4,7 +4,7 @@ initPath=/system/etc/init.d/99sonic
 OLD=$(cat /sys/class/misc/touchwake/delay)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+             Touch Wake Params                   +"
+echo "+                Touch Wake Params                +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -24,7 +24,5 @@ if [ "$?" != "1" ]
       R) sh /system/xbin/popcorn_tw;;
       X) exit 1;;
       $opt) echo "$opt" > /sys/class/misc/touchwake/delay && echo "Your Touch Wake delay value is $opt" && sleep 2 && sh /system/xbin/popcorn_tw1;;
-
     esac
-  fi
-
+fi

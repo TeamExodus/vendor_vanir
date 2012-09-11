@@ -4,7 +4,7 @@ initPath=/system/etc/init.d/99sonic
 OLD=$(cat /sys/devices/platform/omapdss/manager0/gamma)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 	    OMAP Gamma Control                  +"
+echo "+                OMAP Gamma Control               +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -35,7 +35,5 @@ if [ "$?" != "1" ]
       R) sh /system/xbin/popcorn_cc;;
       X) exit 1;;
       *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_cc1;;
-     
     esac
-  fi
-
+fi

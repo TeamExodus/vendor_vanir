@@ -129,7 +129,7 @@ then
 
     [ $QUIET ] || echo "Repacking apk.."
     aapt p -0 .dat -0 .dict -0 .arsc -F $NAME .
-    
+
     [ $QUIET ] || echo "Resigning with cert: `echo $CERT`"
 
     [ $QUIET ] || echo java -jar $ANDROID_HOST_OUT/framework/signapk.jar $ANDROID_BUILD_TOP/$CERT $ANDROID_BUILD_TOP/$KEY $NAME signed_$NAME

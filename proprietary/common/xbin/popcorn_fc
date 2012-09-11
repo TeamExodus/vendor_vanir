@@ -4,7 +4,7 @@ initPath=/system/etc/init.d/99sonic
 OLD=$(cat /sys/kernel/fast_charge/force_fast_charge)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 		Fast Charge Toggle              +"
+echo "+                Fast Charge Toggle               +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -28,7 +28,5 @@ if [ "$?" != "1" ]
       R) sh /system/xbin/popcorn;;
       X) exit 1;;
       *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_fc;;
-
     esac
-  fi
-
+fi

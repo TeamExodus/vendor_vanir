@@ -4,7 +4,7 @@ initPath=/system/etc/init.d/99sonic
 OLD=$(cat /sys/class/misc/batterylifeextender/charging_limit)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 		BLX Parameters                  +"
+echo "+                  BLX Parameters                 +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -126,5 +126,4 @@ if [ "$?" != "1" ]
       X) exit 1;;
       *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_blx;;
     esac
-  fi
-
+fi

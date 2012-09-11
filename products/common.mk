@@ -114,8 +114,8 @@ PRODUCT_COPY_FILES +=  \
 
 # Data Files
 PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/data/cron/root:data/cron/root 
-    
+    vendor/vanir/proprietary/common/data/cron/root:data/cron/root
+
 # init.d Tweaks
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \

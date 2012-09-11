@@ -6,7 +6,7 @@ OLDCORE=$(cat /sys/kernel/debug/smartreflex/sr_core/autocomp)
 OLDIVA=$(cat /sys/kernel/debug/smartreflex/sr_iva/autocomp)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 		Smart Reflex Toggle             +"
+echo "+               Smart Reflex Toggle               +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -41,5 +41,4 @@ if [ "$?" != "1" ]
       X) exit 1;;
       *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_sr;;
     esac
-  fi
-
+fi

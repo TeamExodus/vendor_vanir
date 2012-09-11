@@ -29,6 +29,5 @@ if [ "$?" != "1" ]
       R) sh /system/xbin/popcorn;;
       X) exit 1;;
       *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_tw;;
-     
     esac
-  fi 
+fi

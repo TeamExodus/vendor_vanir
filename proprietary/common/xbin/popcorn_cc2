@@ -4,7 +4,7 @@ initPath=/system/etc/init.d/99sonic
 OLD=$(cat /sys/class/misc/colorcontrol/v1_offset)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 	         Gamma Offsets                     +"
+echo "+                  Gamma Offsets                  +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -24,9 +24,5 @@ if [ "$?" != "1" ]
     R) sh /system/xbin/popcorn_cc;;
     X) exit 1;;
   $opt) echo "$opt" > /sys/class/misc/colorcontrol/v1_offset && echo "V1 Offsets Set at $opt" && sleep 2 && sh /system/xbin/popcorn_cc;;
-
-
-     
     esac
-  fi
-
+fi

@@ -4,7 +4,7 @@ initPath=/system/etc/init.d/99sonic
 OLD=$(cat /sys/module/bcmdhd/parameters/wifi_pm)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 	     Wifi Low-Latency Toggle            +"
+echo "+             Wifi Low-Latency Toggle             +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -28,7 +28,5 @@ if [ "$?" != "1" ]
       R) sh /system/xbin/popcorn;;
       X) exit 1;;
    *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_wll;;
-     
     esac
-  fi
-
+fi

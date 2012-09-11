@@ -3,7 +3,7 @@ mount -o remount,rw,noatime,nodiratime -t ext3 /dev/block/mmcblk0p25 /system
 initPath=/system/etc/init.d/99sonic
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 	         Color Control                  +"
+echo "+                   Color Control                 +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -26,7 +26,5 @@ if [ "$?" != "1" ]
       R) sh /system/xbin/popcorn;;
       X) exit 1;;
       *) echo "Invalid option" && sh /system/xbin/popcorn_cc;;
-     
     esac
-  fi
-
+fi

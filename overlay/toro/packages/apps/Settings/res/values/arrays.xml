@@ -18,7 +18,7 @@
 		<item>NFC</item>
 		<item>FCHARGE</item>
 	</string-array>
-	
+
 	<string-array name="available_toggles_values">
 		<item>@string/toggle_auto_rotate</item>
 		<item>@string/toggle_bluetooth</item>

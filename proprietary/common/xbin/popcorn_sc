@@ -5,7 +5,7 @@ OLDBOOST=$(cat /sys/class/misc/soundcontrol/volume_boost)
 OLDPERF=$(cat /sys/class/misc/soundcontrol/highperf_enabled)
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                 +"
-echo "+ 	        Sound Control                   +"
+echo "+                 Sound Control                   +"
 echo "+                                                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
@@ -36,8 +36,6 @@ if [ "$?" != "1" ]
    B) sed -i "s|^VolBoost=.*|VolBoost=$OLDBOOST|" $initPath && busybox sed -i "s|^HighPerf=.*|HighPerf=$OLDPERF|" $initPath && echo "Settings set on boot" && sleep 2 && sh /system/xbin/popcorn_sc;;
    R) sh /system/xbin/popcorn;;
    X) exit 1;;
-   *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_sc;;     
-
+   *) echo "Invalid option" && sleep 2 && sh /system/xbin/popcorn_sc;;
     esac
-  fi
-
+fi

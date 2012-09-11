@@ -55,7 +55,6 @@ busybox sysctl -w kernel.sched_child_runs_first=0
 busybox sysctl -w kernel.threads-max=525810
 echo "1" > /proc/sys/vm/laptop_mode
 
-
 #
 # File System Tweaks & Cleanup
 #
@@ -66,4 +65,3 @@ echo "10" > /proc/sys/fs/lease-break-time
 
 sync
 sysro
-
