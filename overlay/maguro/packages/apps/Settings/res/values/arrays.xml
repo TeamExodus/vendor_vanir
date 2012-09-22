@@ -2,7 +2,6 @@
 <resources>
 
 	<string-array name="available_toggles_entries">
-		<item>ROTATE</item>
 		<item>BT</item>
 		<item>GPS</item>
 		<item>WIFI</item>
@@ -20,7 +19,6 @@
 	</string-array>
 
 	<string-array name="available_toggles_values">
-		<item>@string/toggle_auto_rotate</item>
 		<item>@string/toggle_bluetooth</item>
 		<item>@string/toggle_gps</item>
 		<item>@string/toggle_wifi</item>
