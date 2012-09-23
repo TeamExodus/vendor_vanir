@@ -75,7 +75,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.swiqi.enable=1
 
 # Version information used on all builds
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRO03L BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRO03R BUILD_ID=JRO03R BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
