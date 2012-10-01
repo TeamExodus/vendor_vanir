@@ -18,13 +18,6 @@ if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ]; then
 	echo 2048 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
 fi
 
-#
-# Enable KSM
-#
-echo 1 > /sys/kernel/mm/ksm/run
-echo 1200 > /sys/kernel/mm/ksm/sleep_millisecs
-echo 256 > /sys/kernel/mm/ksm/pages_to_scan
-
 #RQ_Affinity
 for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
 
