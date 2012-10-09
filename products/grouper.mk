@@ -2,7 +2,7 @@
 $(call inherit-product, device/asus/grouper/full_grouper.mk)
 
 # Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common.mk)
+$(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/grouper
 
@@ -15,9 +15,8 @@ PRODUCT_MANUFACTURER := asus
 
 PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=nakasi BUILD_FINGERPRINT=google/nakasi/grouper:4.1.1/JRO03H/405518:user/release-keys PRIVATE_BUILD_DESC="nakasi-user 4.1.1 JRO03H 405518 release-keys" BUILD_NUMBER=405518
 
-# Copy maguro specific prebuilt files
-PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
+# Need custom boot in proper resolution
+
 
 # Copy missing apps
 PRODUCT_COPY_FILES +=  \
