@@ -4,7 +4,8 @@ PRODUCT_BRAND := vanir
 PRODUCT_DEVICE := generic
 
 # Tablet Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/common_tabs
+# Uncomment this when working, remove variables
+# PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/common_tabs
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
