@@ -8,6 +8,7 @@
 busybox renice -15 $(pidof com.android.launcher)
 busybox renice -12 $(pidof com.android.chrome)
 busybox renice -12 $(pidof com.google.android.browser)
+busybox renice -11 $(pidof com.google.android.googlequicksearchbox)
 busybox renice -10 $(pidof com.android.phone)
 busybox renice -10 $(pidof com.android.systemui)
 busybox renice -7 $(pidof com.google.android.inputmethod.latin)
