@@ -17,7 +17,3 @@ PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=nakasi BUILD_FINGERPRINT=google/nak
 
 # Need custom boot in proper resolution
 
-
-# Copy missing apps
-PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/tuna/app/SpeakerProximity.apk:system/app/SpeakerProximity.apk
