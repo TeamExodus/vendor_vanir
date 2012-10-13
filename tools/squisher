@@ -4,6 +4,8 @@
 # cyanogen
 #
 
+. $ANDROID_BUILD_TOP/vendor/vanir/tools/functions
+
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
 then
@@ -19,7 +21,7 @@ else
 fi
 
 if [ -z "$OUT" -o ! -d "$OUT" ]; then
-	echo "ERROR: $0 only works with a full build environment. $OUT should exist."
+	echo -e $CL_RED"ERROR: $0 only works with a full build environment. $OUT should exist."$CL_RST
 	exit 1
 fi
 
@@ -32,7 +34,7 @@ else
     OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip
 fi
 if [ ! -f "$OTAPACKAGE" ]; then
-	echo "$OTAPACKAGE doesn't exist!";
+	echo -e $CL_RED"$OTAPACKAGE doesn't exist!"$CL_RST;
 	exit 1
 fi
 
@@ -206,7 +208,7 @@ img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
 $MD5 $img >$img.md5sum
 echo
-echo "Package complete: $OUTFILE"
+echo $CL_GRN"Package complete: $OUTFILE"$CL_RST
 cat $img.md5sum
 echo
 )
