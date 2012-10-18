@@ -138,6 +138,10 @@ $SED -i \
 	-e '/ro\.kernel\.android\.checkjni/d' \
 	-e '/ro\.build\.type/s/eng/user/' \
 	$REPACK/ota/system/build.prop
+	
+# Fix build.prop step 2
+echo "Fixing \"move hyst\" property name... whoever put a space in it is a butthead."
+$SED 's/movehyst/move hyst/g' -i $REPACK/ota/system/build.prop
 
 # Delete unnecessary binaries
 # ( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )

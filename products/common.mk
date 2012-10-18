@@ -21,7 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Hydra.ogg \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
-    ro.modversion=v2.2-RC3
+    ro.modversion=v3.0
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -65,7 +65,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.max.fling_velocity=15000 \
     ro.min.fling_velocity=10000 \
     movfilter=40 \
-    move hyst=0 \
+    movehyst=0 \
     per_sec=300 \
     TCHTHR=28 \
     ro.semc.xloud.supported=true \
@@ -75,7 +75,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.swiqi.enable=1
 
 # Version information used on all builds
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRO03R BUILD_ID=JZO54K BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JZO54K BUILD_ID=JZO54K BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
