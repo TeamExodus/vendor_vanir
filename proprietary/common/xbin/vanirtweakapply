@@ -1,0 +1,85 @@
+#!/system/xbin/bash
+# Nuclearmistake, Sonicxml
+# Inspiration from Jakebites and Liberty's liberty.cfg and associated init.d scripts
+
+#check for persistent settings file on sdcard
+if [ ! -e /sdcard/vanir.cfg ] && [ -e /system/etc/vanir.cfg ]; then
+    #virgin sdcard... let's change that.
+    echo "SLIPPING YOUR /SDCARD THE BEEF INJECTION"
+    sync
+    sysrw
+    cp /system/etc/vanir.cfg /sdcard/vanir.cfg
+    rm system/etc/vanir.cfg
+    sync
+    sysro
+elif [ -e /sdcard/vanir.cfg ] && [ -e /system/etc/vanir.cfg ]; then
+    #config from previous install on sdcard already
+    #### TODO: DO SOMETHING COOL, LIKE COMPARING THE VALUES FROM THE 2 FILES AND ADDING LINES FOR NEW VALUES TO EXISTING CONFIGURATION ON SDCARD
+    sync
+    sysrw
+    rm /system/etc/vanir.cfg
+    sync
+    sysro
+fi
+
+#if neither file exists, it's probably for a reason... so gtfo.
+[ ! -e /sdcard/vanir.cfg ] && exit 0;
+
+. /sdcard/vanir.cfg
+
+t()
+{
+	[ ! $1 ] && return 1 || [ ! $2 ] && return 1 || [ ! $3 ] && echo "Skipping application because $1 not defined in config" && return 1 || [ ! -e $2 ] && echo "Skipping application because $3 does not exist" && return 1
+	sedsafepath=`echo $2 | sed 's/\//\\\\\//g'`
+	args="`echo $* | sed "s/.*$sedsafepath //g"`"
+	echo "Applying $1. Echoing \"$args\" > $2" && echo "$args" > $2
+	return 0
+}
+
+#prevent conflicts for people using leantweaks instead
+[ -e /etc/init.d/99leantweaks ] && [ $force_override_leantweaks -eq 0 ] && exit
+
+#helper that checks for target existence and value definition in sourced config file before applying
+t=t #"/system/xbin/individualtweakhelper"
+
+#########################################
+########### apply settings ##############
+#########################################
+
+# SmartReflex
+$t srMPU /sys/kernel/debug/smartreflex/sr_mpu/autocomp         $srMPU      # For MPU
+$t srCPRE /sys/kernel/debug/smartreflex/sr_core/autocomp        $srCORE     # For Core
+$t srIVA /sys/kernel/debug/smartreflex/sr_iva/autocomp         $srIVA      # For IVA
+
+$t gpuOC /sys/devices/system/cpu/cpu0/cpufreq/gpu_oc           $gpuOC      # GPU Overclock
+
+$t scaleGov /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor $scaleGov   # Governor Control
+
+$t maxFreq /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq $maxFreq    #CPU max
+$t minFreq /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq $minFreq    #CPU min
+$t maxFreqScreenOff /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq $maxFreqScreenOff
+
+$t hotPlug /sys/devices/system/cpu/cpu1/online                   $hotPlug    #hotplugging
+
+$t TWstatus /sys/class/misc/touchwake/enabled                     $TWstatus   # Touch Wake enable
+$t TWdelay /sys/class/misc/touchwake/delay                       $TWdelay    # Touch wake delay
+
+$t BLX /sys/class/misc/batterylifeextender/charging_limit    $BLX        # BLX (Battery Life Extender)
+
+$t ffc /sys/kernel/fast_charge/force_fast_charge             $ffc        # Enable/disable USB fast charging
+
+$t wll /sys/module/bcmdhd/parameters/wifi_pm                 $wll        # Enabled/disable the low latency mode for the WiFi during screen-off
+
+$t OMAPgamma /sys/devices/platform/omapdss/manager0/gamma          $OMAPgamma  # Selects GAMMA preset to control contrast
+
+$t GammaOffset /sys/class/misc/colorcontrol/v1_offset               $GammaOffset # V1 Gamma Offsets
+
+$t ColorSafety /sys/class/misc/colorcontrol/safety_enabled           $ColorSafety
+$t ColorMult /sys/class/misc/colorcontrol/multiplier               $ColorMult  # Color Multipliers
+
+$t VolBoost /sys/class/misc/soundcontrol/volume_boost             $VolBoost   # Headset Volume Boost
+
+$t HighPerf /sys/class/misc/soundcontrol/highperf_enabled         $HighPerf   # High Performance Audio
+
+#disable logcat?
+[ $disableLogcat ] && [ $disableLogcat -eq 1 ] && [ -e /dev/log/main ] && rm /dev/log/main

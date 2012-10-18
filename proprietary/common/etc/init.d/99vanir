@@ -1,0 +1,5 @@
+#!/system/bin/sh
+logwrapper bash -c "while busybox [ ! $(logcat -d *:I *:D | grep -c android.intent.action.BOOT_COMPLETED) ]; do echo \"vanir tweaks is waiting for boot to be complete.\"; sleep 1; done
+echo \"applying settings\"
+vanirtweakapply
+echo \"DONE\"" &

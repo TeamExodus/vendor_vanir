@@ -94,7 +94,9 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/sh:system/xbin/sh \
     vendor/vanir/proprietary/common/xbin/ssh:system/xbin/ssh \
     vendor/vanir/proprietary/common/xbin/zipalign:system/xbin/zipalign \
-    vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd
+    vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd \
+    vendor/vanir/proprietary/common/xbin/vanircheckcpu:system/xbin/vanircheckcpu \
+    vendor/vanir/proprietary/common/xbin/vanirtweakapply:system/xbin/vanirtweakapply
 
 # Misc Files
 PRODUCT_COPY_FILES +=  \
@@ -116,12 +118,16 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/data/cron/root:data/cron/root
 
+# Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
+PRODUCT_COPY_FILES +=  \
+    vendor/vanir/proprietary/common/etc/vanir.cfg:system/etc/vanir.cfg
+
 # init.d Tweaks
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
-    vendor/vanir/proprietary/common/etc/init.d/01gpuspeed:system/etc/init.d/01gpuspeed \
     vendor/vanir/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
+    vendor/vanir/proprietary/common/etc/init.d/99vanir:system/etc/init.d/99vanir \
     vendor/vanir/proprietary/common/etc/init.d/ZZafterboot:system/etc/init.d/ZZafterboot \
     vendor/vanir/proprietary/common/etc/cron/cron.hourly/nicetweaks.sh:/system/etc/cron/cron.hourly/nicetweaks.sh \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
