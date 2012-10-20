@@ -21,12 +21,6 @@ fi
 #RQ_Affinity
 for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
 
-#
-# Disable IPv6 Forwarding
-#
-
-echo 0 >/proc/sys/net/ipv6/conf/all/forwarding
-setprop net.ipv4.compat ""
 
 #
 #
