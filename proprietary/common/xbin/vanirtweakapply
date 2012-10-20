@@ -73,6 +73,3 @@ t ColorMult /sys/class/misc/colorcontrol/multiplier               $ColorMult  # 
 t VolBoost /sys/class/misc/soundcontrol/volume_boost             $VolBoost   # Headset Volume Boost
 
 t HighPerf /sys/class/misc/soundcontrol/highperf_enabled         $HighPerf   # High Performance Audio
-
-#disable logcat?
-[ $disableLogcat ] && [ $disableLogcat -eq 1 ] && [ -e /dev/log/main ] && rm /dev/log/main
