@@ -35,7 +35,10 @@ t()
 [ -e /etc/init.d/99leantweaks ] && [ $force_override_leantweaks -eq 0 ] && exit
 
 #if not enabled, then set gpuOC for user experience insurance, then exit
-if [ -z "$enableTweaks" ] || [ ! $enableTweaks ]; then
+
+echo $enableTweaks
+
+if [ -z "$enableTweaks" ] || [ $enableTweaks -eq 0 ]; then
     [ ! -z "$gpuOC" ] && t gpuOC /sys/devices/system/cpu/cpu0/cpufreq/gpu_oc           $gpuOC || t gpuOC /sys/devices/system/cpu/cpu0/cpufreq/gpu_oc 1
     exit
 fi
@@ -57,13 +60,6 @@ t maxFreq /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq $maxFreq    #CPU
 t minFreq /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq $minFreq    #CPU min
 t maxFreqScreenOff /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq $maxFreqScreenOff
 
-## SET HOTPLUG AUTOMATICALLY BASED ON GOVERNOR CHOICE
-echo 0 >> /sys/devices/system/cpu/cpu1/online
-[ ! -z "$scaleGov" ] && [[ "$scaleGov" =~ .*x ]] && echo "Enabling hotplugging automatically because you chouse $scaleGov as your governor." && echo 1 >> /sys/devices/system/cpu/cpu1/online
-[ ! -z "$scaleGov" ] && [[ "$scaleGov" =~ interactive.* ]] && echo "Enabling hotplugging automatically because you chouse $scaleGov as your governor." && echo 1 >> /sys/devices/system/cpu/cpu1/online
-echo "hot plugging is now:"
-cat /sys/devices/system/cpu/cpu1/online
-
 t TWstatus /sys/class/misc/touchwake/enabled                     $TWstatus   # Touch Wake enable
 t TWdelay /sys/class/misc/touchwake/delay                       $TWdelay    # Touch wake delay
 
@@ -83,3 +79,5 @@ t ColorMult /sys/class/misc/colorcontrol/multiplier               $ColorMult  # 
 t VolBoost /sys/class/misc/soundcontrol/volume_boost             $VolBoost   # Headset Volume Boost
 
 t HighPerf /sys/class/misc/soundcontrol/highperf_enabled         $HighPerf   # High Performance Audio
+
+t hotPlug /sys/devices/system/cpu/cpu1/online $hotPlug

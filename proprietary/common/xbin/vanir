@@ -223,6 +223,12 @@ menu_cc32()
     prompt ColorSafety "(1=enabled/safe, 0=disabled)" bool
     return 0
 }
+menu_hot()
+{
+    sectionheader "Force Cpu1 on"
+    . /sdcard/vanir.cfg
+    prompt HotPlug "0=force off, 1=force on, D=default (aka unset)" bool
+}
 menu_cpu()
 {
     sectionheader "CPU Control"
@@ -230,6 +236,7 @@ menu_cpu()
     echo "1) Frequency Control"
     echo "2) Governor Control"
     echo "3) Smart Reflex"
+    echo "4) Force 2nd core online"
     echo "M) Return to main menu"
     echo "Q) Quit"
     read -p "Enter option: " opt
@@ -238,6 +245,7 @@ menu_cpu()
       1) menu freq;;
       2) menu gov;;
       3) menu sr;;
+      4) menu hot;;
       [Mm]) return 0;;
       [Qq]) apply; exit 0;;
       *) echo "Invalid option"; sleep 1; menu_cpu; return 0;;
