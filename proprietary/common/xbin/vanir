@@ -1,0 +1,475 @@
+#!/system/xbin/bash
+# Nuclearmistake - based on popcornscripts by sonicxml
+
+#export TESTING=1
+
+menu()
+{
+    [ ! $1 ] && menu_main || menu_$1
+}
+
+menu_main()
+{
+    [ ! $TESTING ] && [ ! -e /sdcard/vanir.cfg ] && echo "/sdcard/vanir.cfg is missing. Popcorn scripts modification cannot continue."    
+    sectionheader "Main Menu"
+    echo "1) CPU Tweaks"
+    echo "2) GPU Overclock"
+    echo "3) BLX Params"
+    echo "4) Fast Charge Toggle"
+    echo "5) Wifi Low-Latency Toggle"
+    echo "6) Color Control"
+    echo "7) Sound Control"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) choice="cpu";;
+      2) choice="gpu";;
+      3) choice="blx";;
+      4) choice="fc";;
+      5) choice="wll";;
+      6) choice="cc";;
+      7) choice="sc";;
+      [Qq]) echo "Goodbye."; echo; exit 0;;
+      *) echo "Invalid option" && sleep 1;;
+    esac
+    if [ ! -z $choice ]; then
+        menu $choice
+    fi
+    menu
+}
+
+menu_sr()
+{
+    sectionheader "Smart Reflex"
+    . /sdcard/vanir.cfg
+    echo "1) MPU"
+    echo "2) IVA"
+    echo "3) Core"
+    echo "M) Return to main menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) choice="srmpu";;
+      2) choice="sriva";;
+      3) choice="srcore";;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1; menu_sr; return 0;;
+    esac
+    if [ ! -z "$choice" ]; then
+        menu $choice
+    fi
+    menu sr
+    return 0;
+}
+
+menu_srmpu()
+{
+    sectionheader "MPU Smart Reflex"
+    . /sdcard/vanir.cfg
+    prompt srMPU "(0=disabled, 1=enabled--default)" bool
+    return 0
+}
+
+menu_sriva()
+{
+    sectionheader "IVA Smart Reflex"
+    . /sdcard/vanir.cfg
+    prompt srIVA "(0=disabled, 1=enabled--default)" bool
+    return 0
+}
+
+menu_srcore()
+{
+    sectionheader "Core Smart Reflex"
+    . /sdcard/vanir.cfg
+    prompt srCORE "(0=disabled, 1=enabled--default)" bool
+    return 0
+}
+
+menu_sc()
+{
+    sectionheader "Sound Control"
+    . /sdcard/vanir.cfg
+    echo "1) Volume Boost"
+    echo "2) High Performance"
+    echo "M) Return to main menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) menu vb;;
+      2) menu hp;;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1; menu_sc; return 0;;
+    esac
+    menu sc
+    return 0;
+}
+menu_vb()
+{
+    sectionheader "Volume Boost"
+    . /sdcard/vanir.cfg
+    prompt VolBoost "(0=no boost, 1=slight boost, 2=moderate boost, 3=max boost)" num 0 3
+    return 0
+}
+menu_hp()
+{
+    sectionheader "High Performance Sound"
+    . /sdcard/vanir.cfg
+    prompt HighPerf "(0=disabled, 1=enabled (may drain battery))" bool
+    return 0
+}
+menu_gpu()
+{
+    sectionheader "GPU Overclock"
+    . /sdcard/vanir.cfg
+    prompt gpuOC "(0=307MHz--default, 1=384MHz, 2=460MHz, 3=512MHz)" num 0 3
+    return 0
+}
+menu_fc()
+{
+    sectionheader "Force Fast Charge"
+    echo "(at boot)"
+    . /sdcard/vanir.cfg
+    prompt ffc "(0=disabled--default, 1=enabled)" bool
+    return 0
+}
+menu_wll()
+{
+    sectionheader "Wireless Low-latency"
+    . /sdcard/vanir.cfg
+    prompt wll "(N=saves battery--default, Y=lower wireless latency when screen is off (for streaming, etc.))" yn
+    return 0
+}
+menu_blx()
+{
+    sectionheader "BLX Params"
+    . /sdcard/vanir.cfg
+    prompt BLX "1-100" num 1 100
+    return 0
+}
+
+menu_cc()
+{
+    sectionheader "Color Control"
+    . /sdcard/vanir.cfg
+    echo "1) Omap Gamma Control"
+    echo "2) Gamma Offsets"
+    echo "3) Color Multipliers"
+    echo "M) Return to main menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) menu cc1;;
+      2) menu cc2;;
+      3) menu cc3;;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1; menu_cc; return 0;;
+    esac
+    menu cc
+    return 0;
+}
+
+menu_cc1()
+{
+    sectionheader "OMAP Gamma"
+    . /sdcard/vanir.cfg
+    prompt OMAPgamma "1-10. (0=lowest contrast, 10=highest contrast, 6=default)" num 1 10
+    return 0
+}
+menu_cc2()
+{
+    sectionheader "Gamma Offsets"
+    . /sdcard/vanir.cfg
+    prompt GammaOffset "3 numbers, separated by spaces. Recommended: -6 0 7" multinum 3 -100 100
+    return 0;
+}
+menu_cc3()
+{
+    sectionheader "Color Multipliers"
+    . /sdcard/vanir.cfg
+    echo "1) Set multipliers"
+    echo "2) Enable/disable multipler safety"
+    echo "M) Return to previous menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) menu cc31;;
+      2) menu cc32;;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1;;
+    esac
+    menu cc3
+    return 0;
+}
+menu_cc31()
+{
+    sectionheader "Set Multipliers"
+    . /sdcard/vanir.cfg
+    prompt ColorMult "3 three-digit numbers. default: 200 200 200" multinum 3 0 999 10000000
+}
+menu_cc32()
+{
+    sectionheader "Multiplier Safety"
+    . /sdcard/vanir.cfg
+    prompt ColorSafety "(1=enabled/safe, 0=disabled)" bool
+    return 0
+}
+menu_hot()
+{
+    sectionheader "Force Cpu1 on"
+    . /sdcard/vanir.cfg
+    prompt HotPlug "0=force off, 1=force on, D=default (aka unset)" bool
+}
+menu_cpu()
+{
+    sectionheader "CPU Control"
+    . /sdcard/vanir.cfg
+    echo "1) Frequency Control"
+    echo "2) Governor Control"
+    echo "3) Smart Reflex"
+    echo "4) Force 2nd core online"
+    echo "M) Return to main menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) menu freq;;
+      2) menu gov;;
+      3) menu sr;;
+      4) menu hot;;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1; menu_cpu; return 0;;
+    esac
+    menu cpu
+    return 0;
+}
+menu_freq()
+{
+    sectionheader "Frequencies"
+    . /sdcard/vanir.cfg
+    echo "1) Set MAX Frequency"
+    echo "2) Set MIN Frequency"
+    echo "3) Set SCREEN-OFF-MAX Frequency"
+    echo "M) Return to main menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) choice="maxFreq";;
+      2) choice="minFreq";;
+      3) choice="maxFreqScreenOff";;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1; menu_freq; return 0;;
+    esac
+    if [ -z "$choice" ]; then menu freq; fi
+    . /sdcard/vanir.cfg
+    eval curr=\$$choice
+    [ -z $curr ] && curr="D" || curr=$(expr $curr / 1000)
+    sectionheader "$choice"
+    echo "C: to use current setting"
+    echo "D: to use the stock value"
+    echo "Available frequencies:"
+    for i in $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies); do
+        echo "$(expr $i / 1000)"
+    done
+    echo "Current $choice: $curr"
+    read -p "Enter $choice value: " val
+    export VAL=$val
+    case $val in
+        [Cc]) apply; return 0;;
+        [Dd]) export VAL=; commit $1; return 0;;
+        [Mm]) return 0;;
+        [Qq]) exit 0;;
+        y) val="Y";;
+        n) val="N";;
+        *) 
+            v=$(expr $val \* 1000);
+            success=0;
+            for i in $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies); do
+                if [ $v = $i ]; then
+                    VAL=$v;
+                    commit $choice;
+                    apply;
+                    success=1;
+                    break;
+                fi;
+            done;
+            if [ $success  -eq 0 ]; then
+                echo "Invalid option"; sleep 1; menu_freq; return 0;
+            fi;;
+    esac
+    return 0;
+}
+menu_gov()
+{
+    sectionheader "Governor Selection"
+    . /sdcard/vanir.cfg
+    choice="scaleGov"    
+    eval curr=\$$choice
+    [ -z $curr ] && curr="D"
+    j=1
+    for i in $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors); do
+        echo "$j) $i"
+        j=$(expr $j + 1)
+    done
+    echo "C: to use current setting"
+    echo "D: to use the stock value"
+    echo "Current governor: $curr"
+    read -p "Enter choice: " val
+    case $val in
+        [Cc]) apply; return 0;;
+        [Dd]) export VAL=; commit $1; return 0;;
+        [Mm]) return 0;;
+        [Qq]) exit 0;;
+        [0-9]*)         
+            export VAL=$val
+            j=1
+            gov=""
+            for i in $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors); do
+                if [ $j -eq $val ]; then
+                    gov=$i
+                    break
+                fi
+                j=$(expr $j + 1)
+            done
+            export VAL=$gov            
+            commit $choice;
+            apply;;
+         *) echo "Invalid option"; sleep 1; menu_gov; return 0;;
+    esac
+    return 0;
+}
+prompt()
+{
+    #  $1 = setting name
+    #  $2 = valid input (string)
+    #  $3 = name of val test function
+    . /sdcard/vanir.cfg    
+    eval curr=\$$1
+    [ -z $curr ] && curr="D"
+    echo "C: to use current setting"
+    echo "D: to use the stock value"
+    echo "M: return to previous menu"
+    echo "Q: quit"
+    echo "Valid settings: $2"
+    echo "Current Setting: $curr"
+    read -p "Enter value: " val
+    export VAL=$val
+    case $val in
+        [Cc]) apply; return 0;;
+        [Dd]) export VAL=; commit $1; return 0;;
+        [Mm]) return 0;;
+        [Qq]) exit 0;;
+        y) val="Y";;
+        n) val="N";;
+        *) test $3 $4 $5 $6 $7 $8 $9 $10 && commit $1 $7 && apply && return 0;;
+    esac
+    echo "Invalid input. Please try again"
+    prompt $1 "$2" $3 && return 0
+    return 1
+}
+
+test() { [ -z "$1" ] && return 1; test_$* && return 0; return 1; }
+test_yn() { [[ $VAL =~ [Yy] ]] && return 0 || [[ $VAL =~ [Nn] ]] && return 0; return 1; }
+test_bool() { test_num 0 1 && return 0; return 1; }
+test_num() { test_singlenum $VAL $1 $2 && return 0; return 1; }
+test_singlenum() { [[ $1 =~ \-*[0-9]* ]] && [ $1 -le $3 ] && [ $1 -ge $2 ] && return 0; return 1; } # $2 = min, $3 = max
+test_multinum() { echo $VAL; echo $*; vals=$(echo "$VAL" | wc -w); echo $vals; [ $vals -ne $1 ] && return 1; for i in $VAL; do echo $i; if ! test_singlenum $i $2 $3; then return 1; fi; done; return 0; }
+
+commit()
+{
+    #   $1=name of setting
+    #   $VAL=new value
+    if [ $(echo "$VAL" | wc -w) -gt 1 ]; then
+        newval=""
+        if [ $2 ]; then
+            for i in $VAL; do
+                newval="$newval$(expr $i \* $2) "
+            done
+            VAL=$newval
+        fi
+        export VAL="\"$VAL\""
+    fi
+    echo "SETTING $1=$VAL"
+    sed "s/#$1/$1/g" -i /sdcard/vanir.cfg
+    if [ ! $VAL ]; then         
+        [ $(cat /sdcard/vanir.cfg | grep "$1" | wc -l) ] && sed "s/$1=.*/#&/g" -i /sdcard/vanir.cfg || echo "#$1=" >> /sdcard/vanir.cfg
+        export VAL=
+        return 0
+    fi
+    [ $(cat /sdcard/vanir.cfg | grep "$1" | wc -l) ] && sed "s/$1=.*/$1=$VAL/g" -i /sdcard/vanir.cfg || echo "$1=$VAL" >> /sdcard/vanir.cfg
+    export VAL=
+    return 0
+}
+
+apply()
+{
+    . /sdcard/vanir.cfg
+    [ $TESTING ] && echo "APPLYING STUFF" || vanirtweakapply &> /dev/null
+}
+
+sectionheader()
+{
+    total=$(echo "      Vanir Tweaks      " | wc -c)
+    title=$(echo "$1" | wc -c)
+    diff=$(expr $total - $title)
+    lpadc=$(expr $diff / 2)
+    rpadc=$(expr $diff - $lpadc)
+    lpad=""
+    rpad=""
+    while [ $lpadc -gt 0 ]; do lpad="$lpad "; lpadc=$(expr $lpadc - 1); done
+    while [ $rpadc -gt 0 ]; do rpad="$rpad "; rpadc=$(expr $rpadc - 1); done
+    echo
+    echo
+    echo "++++++++++++++++++++++++++++"
+    echo "+       Vanir Tweaks       +"
+    echo "+$lpad $1 $rpad+"
+    echo "++++++++++++++++++++++++++++"
+}
+
+disable()
+{    
+    export VAL=0
+    commit enableTweaks
+    echo "Vanir Tweaks disabled. Reboot required to take effect."
+}
+
+enable()
+{
+    export VAL=1
+    commit enableTweaks
+    . /sdcard/vanir.cfg
+    vanirtweakapply
+    echo "Vanir Tweaks enabled."
+}
+
+showusage()
+{
+    echo "Usage:";
+    echo "    vanir config     - displays menu to change tweak settings.";
+    echo "    vanir disable    - prevents tweak settings from being applied at boot."; 
+    echo "    vanir enable     - applies your current settings. All tweaks will auto-apply at boot."
+}
+
+if [ ! $1 ]; then 
+    showusage
+else
+    
+    case $1 in
+        "enable") [ $TESTING ] && enable || [ $(whoami) = "root" ] && enable || echo "You must run this as root. run: su -c vanir enable";;
+        "disable") disable;;
+        "config") [ $TESTING ] && menu || [ $(whoami) = "root" ] && menu || echo "You must run this as root. run: su -c vanir config";;
+        *) showusage;;
+    esac
+fi
