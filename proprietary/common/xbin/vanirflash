@@ -1,0 +1,42 @@
+#!/system/xbin/bash
+checkminimum()
+{
+    [ -e /sdcard/vanir_rom.zip ] || echo "You must copy the ROM zip you want to flash to /sdcard/vanir_rom.zip" && return 0
+    [ -e /sdcard/vanir_gapps.zip ] || echo "You must copy the gapps zip you want to flash to /sdcard/vanir_gapps.zip" && return 0
+    return 1
+}
+su()
+{
+    echo su $*
+}
+checkminimum || exit 0
+echo "This feature requires TWRP recovery to work. Install it if you haven't already."
+read -p "Are you sure you want to flash vanir_rom.zip, vanir_gapps.zip, and any zips in /sdcard/vanir_addons/? <Y/n> " doit
+case $doit in
+    [Nn]) echo "canceling"; exit 0;;
+    *) echo "Generating auto-flash script.";;
+esac
+su -c 'echo set tw_signed_zip_verify 0 > /cache/recovery/openrecoveryscript'
+for C in "wipe cache" "wipe dalvik" "install /sdcard/vanir_rom.zip" "install /sdcard/vanir_gapps.zip"; do
+    su -c "echo $C >> /cache/recovery/openrecoveryscript"
+done
+
+if  [ -d /sdcard/vanir_addons ]; then
+    cd /sdcard/vanir_addons/
+    for C in $(ls | grep -i .zip)
+    do
+        su -c "echo install /sdcard/vanir_addons/$C >> /cache/recovery/openrecoveryscript"
+    done
+else
+    echo "If you would like to install more zips than just the rom in gapps, you can do so automagically by placing them in /sdcard/vanir_addons/"
+    read -p "Continue anyways? <Y/n> " doit
+    case $doit in
+        [Nn]) echo "canceling"; exit 0;;
+        *) ;;
+    esac
+fi
+sync
+echo "THIS IS HAPPENING. COME TO TERMS WITH IT!"
+sleep 1
+su -c reboot recovery
+exit 0

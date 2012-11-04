@@ -97,7 +97,9 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd \
     vendor/vanir/proprietary/common/xbin/vanircheckcpu:system/xbin/vanircheckcpu \
     vendor/vanir/proprietary/common/xbin/vanirtweakapply:system/xbin/vanirtweakapply \
-    vendor/vanir/proprietary/common/xbin/vanir:system/xbin/vanir
+    vendor/vanir/proprietary/common/xbin/vanir:system/xbin/vanir \
+    vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash
+
 
 # Misc Files
 PRODUCT_COPY_FILES +=  \

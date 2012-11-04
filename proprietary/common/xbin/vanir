@@ -460,6 +460,11 @@ showusage()
     echo "    vanir config     - displays menu to change tweak settings.";
     echo "    vanir disable    - prevents tweak settings from being applied at boot."; 
     echo "    vanir enable     - applies your current settings. All tweaks will auto-apply at boot."
+    echo "    vanir flash      - flashes a fresh version of vanir (\"dirty\" -- data UNTOUCHED)"
+    echo "                     (REQUIRES TWRP!!)"
+    echo "                        ROM ZIP MUST BE COPIED/MOVED TO /sdcard/vanir_rom.zip"
+    echo "                        GAPPS ZIP MUST BE COPIED/MOVED TO /sdcard/vanir_gapps.zip"
+    echo "                        (optional) ADDITIONAL ZIPS TO FLASH MUST BE IN /sdcard/vanir_addons/"
 }
 
 if [ ! $1 ]; then 
@@ -470,6 +475,7 @@ else
         "enable") [ $TESTING ] && enable || [ $(whoami) = "root" ] && enable || echo "You must run this as root. run: su -c vanir enable";;
         "disable") disable;;
         "config") [ $TESTING ] && menu || [ $(whoami) = "root" ] && menu || echo "You must run this as root. run: su -c vanir config";;
+        "flash") [ $TESTING ] || vanirflash;;
         *) showusage;;
     esac
 fi
