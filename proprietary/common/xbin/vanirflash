@@ -5,10 +5,6 @@ checkminimum()
     [ -e /sdcard/vanir_gapps.zip ] || echo "You must copy the gapps zip you want to flash to /sdcard/vanir_gapps.zip" && return 0
     return 1
 }
-su()
-{
-    echo su $*
-}
 checkminimum || exit 0
 echo "This feature requires TWRP recovery to work. Install it if you haven't already."
 read -p "Are you sure you want to flash vanir_rom.zip, vanir_gapps.zip, and any zips in /sdcard/vanir_addons/? <Y/n> " doit
