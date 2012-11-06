@@ -21,7 +21,11 @@ PRODUCT_MANUFACTURER := samsung
 PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysid BUILD_FINGERPRINT=google/mysid/toro:4.1.2/JZO54K/424425:user/release-keys PRIVATE_BUILD_DESC="mysid-user 4.1.2 JZO54K 424425 release-keys" BUILD_NUMBER=235179
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
+    drm.service.enabled=true \
+    ro.config.vc_call_vol_steps=7 \
+    ring.delay=0 \
+    ro.telephony.call_ring.delay=50 \
+    ro.ril.fast.dormancy.rule=0
 
 # Blobs necessary for drm
 PRODUCT_COPY_FILES +=  \
