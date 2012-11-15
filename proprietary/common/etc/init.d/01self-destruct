@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+busybox mount -o remount,rw /system
+for M in `busybox --help | busybox grep 'Currently defined functions:' -A30 | busybox grep -v 'Currently defined functions:'|busybox tr , '\n'|busybox tr -d '\n\t'|busybox tr ' ' '\n'`; do ln -s busybox /system/xbin/$M; done
+rm /system/etc/init.d/01self-destruct
+busybox mount -o remount,ro /system
