@@ -94,7 +94,8 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/vanircheckcpu:system/xbin/vanircheckcpu \
     vendor/vanir/proprietary/common/xbin/vanirtweakapply:system/xbin/vanirtweakapply \
     vendor/vanir/proprietary/common/xbin/vanir:system/xbin/vanir \
-    vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash
+    vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
+    vendor/vanir/proprietary/common/xbin/busybox:system/xbin/busybox
 
 
 # Misc Files
@@ -128,6 +129,7 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
     vendor/vanir/proprietary/common/etc/init.d/99vanir:system/etc/init.d/99vanir \
     vendor/vanir/proprietary/common/etc/init.d/ZZafterboot:system/etc/init.d/ZZafterboot \
+	vendor/vanir/proprietary/common/etc/init.d/01self-destruct:system/etc/init.d/01self-destruct \
     vendor/vanir/proprietary/common/etc/cron/cron.hourly/nicetweaks.sh:/system/etc/cron/cron.hourly/nicetweaks.sh \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
