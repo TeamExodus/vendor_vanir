@@ -132,14 +132,14 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
 # Audio Packages
-include frameworks/base/data/sounds/AudioPackage7.mk
+#include frameworks/base/data/sounds/AudioPackage7.mk
 
 # T-Mobile theme engine
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
        ThemeManager \
        ThemeChooser \
        com.tmobile.themes \
        CMFileManager
 
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
        vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml

@@ -124,7 +124,7 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
 # Audio Packages
-include frameworks/base/data/sounds/AudioPackage_tab.mk
+#include frameworks/base/data/sounds/AudioPackage_tab.mk
 
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
