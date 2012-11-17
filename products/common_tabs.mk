@@ -1,15 +1,17 @@
+THIS IS SO OUT OF DATE, I BROKE IT SO SOMEBODY HAS TO FIX IT. ENJOI
+
 # Tablet products
 PRODUCT_NAME := vanir
 PRODUCT_BRAND := vanir
 PRODUCT_DEVICE := generic
 
 # Tablet Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/common_tabs
+#PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/common_tabs
 
 # Build packages included in manifest
-PRODUCT_PACKAGES += \
-    AppWidgetPicker \
-    busybox
+#PRODUCT_PACKAGES += \
+#    AppWidgetPicker \
+#    busybox
 
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -110,8 +112,8 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Data Files
-PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/data/cron/root:data/cron/root
+#PRODUCT_COPY_FILES +=  \
+#    vendor/vanir/proprietary/common/data/cron/root:data/cron/root
 
 # init.d Tweaks
 PRODUCT_COPY_FILES +=  \
@@ -127,11 +129,11 @@ PRODUCT_COPY_FILES +=  \
 include frameworks/base/data/sounds/AudioPackage_tab.mk
 
 # T-Mobile theme engine
-PRODUCT_PACKAGES += \
-       ThemeManager \
-       ThemeChooser \
-       com.tmobile.themes \
-       CMFileManager
+#PRODUCT_PACKAGES += \
+#       ThemeManager \
+#       ThemeChooser \
+#       com.tmobile.themes \
+#       CMFileManager
 
-PRODUCT_COPY_FILES += \
-       vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
+#PRODUCT_COPY_FILES += \
+#       vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml

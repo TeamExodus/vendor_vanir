@@ -4,9 +4,9 @@ PRODUCT_BRAND := vanir
 PRODUCT_DEVICE := generic
 
 # Build packages included in manifest
-PRODUCT_PACKAGES += \
-    AppWidgetPicker \
-    busybox
+#PRODUCT_PACKAGES += \
+#    AppWidgetPicker \
+#    busybox
 
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -105,18 +105,18 @@ PRODUCT_COPY_FILES +=  \
 
 # bash stuff... config files and so's
 PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
     vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
-    vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc
+    vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc #\
+#    vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
 
 # missing guts for stuff that needs guts
-PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
-    vendor/vanir/proprietary/common/lib/libjni_eglfence.so:system/lib/libjni_eglfence.so
+#PRODUCT_COPY_FILES +=  \
+#    vendor/vanir/proprietary/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
+#    vendor/vanir/proprietary/common/lib/libjni_eglfence.so:system/lib/libjni_eglfence.so
 
 # Data Files
-PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/data/cron/root:data/cron/root
+#PRODUCT_COPY_FILES +=  \
+#    vendor/vanir/proprietary/common/data/cron/root:data/cron/root
 
 # Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
 PRODUCT_COPY_FILES +=  \
@@ -137,11 +137,11 @@ PRODUCT_COPY_FILES +=  \
 include frameworks/base/data/sounds/AudioPackage7.mk
 
 # T-Mobile theme engine
-PRODUCT_PACKAGES += \
-       ThemeManager \
-       ThemeChooser \
-       com.tmobile.themes \
-       CMFileManager
+#PRODUCT_PACKAGES += \
+#       ThemeManager \
+#       ThemeChooser \
+#       com.tmobile.themes \
+#       CMFileManager
 
-PRODUCT_COPY_FILES += \
-       vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
+#PRODUCT_COPY_FILES += \
+#       vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
