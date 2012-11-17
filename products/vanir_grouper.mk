@@ -4,8 +4,6 @@ $(call inherit-product, device/asus/grouper/full_grouper.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/grouper
-
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_grouper
 PRODUCT_BRAND := google

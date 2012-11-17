@@ -7,10 +7,6 @@ PRODUCT_LOCALES := en_US
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common.mk)
 
-# Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tuna
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/toroplus
-
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_toroplus
 PRODUCT_BRAND := google
