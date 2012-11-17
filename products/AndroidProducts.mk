@@ -1,5 +1,5 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/toro.mk \
-    $(LOCAL_DIR)/maguro.mk \
-    $(LOCAL_DIR)/toroplus.mk \
-    $(LOCAL_DIR)/grouper.mk
+    $(LOCAL_DIR)/vanir_toro.mk \
+    $(LOCAL_DIR)/vanir_maguro.mk \
+    $(LOCAL_DIR)/vanir_toroplus.mk \
+    $(LOCAL_DIR)/vanir_grouper.mk
