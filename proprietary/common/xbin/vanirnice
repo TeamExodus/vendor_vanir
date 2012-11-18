@@ -1,0 +1,20 @@
+#!/system/xbin/bash
+# Nice Tweaks
+# Nuclearmistake, PrimeDirective and Sonicxml
+
+findpackage()
+{
+    pm list packages | sed 's/package://g' | grep $1
+    return 0
+}
+for kb in "com.google.android.inputmethod" "pckeyboard" "swype" "swiftkey"; do
+    for pack in $(findpackage $kb); do echo "renicing input method: $kb ($pack) (($(pidof pack)))"; renice -13 $(pidof pack); done
+done
+for pack in $(findpackage launcher | grep -v com.anddoes.launcher.pro); do echo "renicing launcher: $pack ($(pidof $pack))"; renice -12 $(pidof $pack); done
+renice -12 $(pidof com.android.chrome)
+renice -12 $(pidof com.google.android.browser)
+renice -12 $(pidof com.android.systemui)
+renice -11 $(pidof com.google.android.googlequicksearchbox)
+renice -10 $(pidof com.android.phone)
+ionice $(pidof com.android.camera) be 0
+ionice $(pidof com.google.android.music) rt 1

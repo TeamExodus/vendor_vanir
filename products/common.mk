@@ -95,7 +95,8 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/vanirtweakapply:system/xbin/vanirtweakapply \
     vendor/vanir/proprietary/common/xbin/vanir:system/xbin/vanir \
     vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
-    vendor/vanir/proprietary/common/xbin/busybox:system/xbin/busybox
+    vendor/vanir/proprietary/common/xbin/busybox:system/xbin/busybox \
+    vendor/vanir/proprietary/common/xbin/vanirnice:system/xbin/banirnice
 
 
 # Misc Files
