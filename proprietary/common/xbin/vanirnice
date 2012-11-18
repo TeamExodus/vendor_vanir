@@ -4,17 +4,37 @@
 
 findpackage()
 {
-    pm list packages | sed 's/package://g' | grep $1
+    #pm is fat, so do this once an hour.
+    mkdir -p /cache/vanirnicecache
+    cd /cache/vanirnicecache
+    for x in $(find -name '[A-Za-z0-9/]*' -mmin +60); do rm $x; done
+    if [ -e /cache/vanirnicecache/$1 ]; then
+        cat /cache/vanirnicecache/$1
+        return 0
+    fi
+    pm list packages | sed 's/package://g' | grep $1 | tee /cache/vanirnicecache/$1
     return 0
 }
+smartrenice()
+{
+    pid=$(pidof $2)
+    [ $pid ] && renice $1 $pid && return 0
+    return 1
+}
+smartionice()
+{
+    pid=$(pidof $1)
+    [ $pid ] && ionice $pid $2 $3 >& /dev/null && return 0
+    return 1
+}
 for kb in "com.google.android.inputmethod" "pckeyboard" "swype" "swiftkey"; do
-    for pack in $(findpackage $kb); do echo "renicing input method: $kb ($pack) (($(pidof pack)))"; renice -13 $(pidof pack); done
+    for pack in $(findpackage $kb | grep -v dictionary); do smartrenice -13 $pack; done
 done
-for pack in $(findpackage launcher | grep -v com.anddoes.launcher.pro); do echo "renicing launcher: $pack ($(pidof $pack))"; renice -12 $(pidof $pack); done
-renice -12 $(pidof com.android.chrome)
-renice -12 $(pidof com.google.android.browser)
-renice -12 $(pidof com.android.systemui)
-renice -11 $(pidof com.google.android.googlequicksearchbox)
-renice -10 $(pidof com.android.phone)
-ionice $(pidof com.android.camera) be 0
-ionice $(pidof com.google.android.music) rt 1
+for pack in $(findpackage launcher | grep -v com.anddoes.launcher.pro); do smartrenice -12 $pack; done
+smartrenice -12 com.android.chrome
+smartrenice -12 com.google.android.browser
+smartrenice -12 com.android.systemui
+smartrenice -11 com.google.android.googlequicksearchbox
+smartrenice -10 com.android.phone
+for pack in $(findpackage com.android.gallery); do smartionice $pack be 0; done
+smartionice com.google.android.music rt 1
