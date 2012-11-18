@@ -58,6 +58,7 @@ if busybox [ ! -f /data/cron/root ]; then
 0 0/6 * * * sync; cache -rmdata
 
 # Put shell scripts in these folders, and they will run at the named interval... like a bawss
+* * * * *  logwrapper busybox run-parts /system/etc/cron/cron.minutely
 01 * * * * logwrapper busybox run-parts /system/etc/cron/cron.hourly
 02 4 * * * logwrapper busybox run-parts /system/etc/cron/cron.daily
 22 4 * * 0 logwrapper busybox run-parts /system/etc/cron/cron.weekly
@@ -65,6 +66,7 @@ EOF
 fi
 if busybox [ ! -d /system/etc/cron/cron.hourly ] || [ ! -d /system/etc/cron/cron.daily ] || [ ! -d /system/etc/cron/cron.weekly ]; then
 	busybox mount -o remount,rw /system
+    busybox mkdir -p /system/etc/cron/cron.minutely
 	busybox mkdir -p /system/etc/cron/cron.hourly
 	busybox mkdir -p /system/etc/cron/cron.daily
 	busybox mkdir -p /system/etc/cron/cron.weekly
