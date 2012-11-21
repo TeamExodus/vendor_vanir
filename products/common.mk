@@ -106,8 +106,8 @@ PRODUCT_COPY_FILES +=  \
 # bash stuff... config files and so's
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
-    vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc #\
-#    vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
+    vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc \
+    vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so 
 
 # missing guts for stuff that needs guts
 #PRODUCT_COPY_FILES +=  \
