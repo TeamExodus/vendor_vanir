@@ -9,8 +9,7 @@ if [ -e /system/etc/vanir.cfg ]; then
     if [ ! -e /sdcard/vanir.cfg ]; then
         #virgin sdcard... let's change that.
         echo "SLIPPING YOUR /SDCARD THE BEEF INJECTION"
-        cp /system/etc/vanir.cfg /sdcard/vanir.cfg
-    #else DO SOMETHING COOL TO UPDATE THE SDCARD VERSION WITH NEW CONFIGURABLE VALUES OR SOMETHING        
+        cp /system/etc/vanir.cfg /sdcard/vanir.cfg            
     fi   
     rm /system/etc/vanir.cfg
     sync
@@ -20,6 +19,8 @@ fi
 
 if [ -e /sdcard/vanir.cfg ]; then 
     . /sdcard/vanir.cfg
+elif [ -e /data/media/vanir.cfg ]; then
+    . /data/media/vanir.cfg
 fi
 
 t()

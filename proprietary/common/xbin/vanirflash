@@ -1,4 +1,6 @@
 #!/system/xbin/bash
+if [ -e /sdcard/vanir_rom.zip ]; then EXTERNAL_STORAGE=/sdcard; elif [ -e /data/media/vanir_rom.zip ]; then EXTERNAL_STORAGE=/data/media; fi
+
 checkminimum()
 {
     [ -e ${EXTERNAL_STORAGE}/vanir_rom.zip ] || echo "You must copy the ROM zip you want to flash to /sdcard/vanir_rom.zip" && return 0

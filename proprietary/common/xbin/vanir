@@ -3,6 +3,11 @@
 
 #export TESTING=1
 
+SDWTF=/sdcard
+if [ ! -e /sdcard/vanir.cfg ] && [ -e /data/media/vanir.cfg ]; then
+   SDWTF=/data/media
+fi
+
 menu()
 {
     [ ! $1 ] && menu_main || menu_$1
@@ -10,7 +15,7 @@ menu()
 
 menu_main()
 {
-    [ ! $TESTING ] && [ ! -e /sdcard/vanir.cfg ] && echo "/sdcard/vanir.cfg is missing. Popcorn scripts modification cannot continue."    
+    [ ! $TESTING ] && [ ! -e $SDWTF/vanir.cfg ] && echo "$SDWTF/vanir.cfg is missing. Popcorn scripts modification cannot continue."    
     sectionheader "Main Menu"
     echo "1) CPU Tweaks"
     echo "2) GPU Overclock"
@@ -42,7 +47,7 @@ menu_main()
 menu_sr()
 {
     sectionheader "Smart Reflex"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     echo "1) MPU"
     echo "2) IVA"
     echo "3) Core"
@@ -68,7 +73,7 @@ menu_sr()
 menu_srmpu()
 {
     sectionheader "MPU Smart Reflex"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt srMPU "(0=disabled, 1=enabled--default)" bool
     return 0
 }
@@ -76,7 +81,7 @@ menu_srmpu()
 menu_sriva()
 {
     sectionheader "IVA Smart Reflex"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt srIVA "(0=disabled, 1=enabled--default)" bool
     return 0
 }
@@ -84,7 +89,7 @@ menu_sriva()
 menu_srcore()
 {
     sectionheader "Core Smart Reflex"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt srCORE "(0=disabled, 1=enabled--default)" bool
     return 0
 }
@@ -92,7 +97,7 @@ menu_srcore()
 menu_sc()
 {
     sectionheader "Sound Control"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     echo "1) Volume Boost"
     echo "2) High Performance"
     echo "M) Return to main menu"
@@ -112,21 +117,21 @@ menu_sc()
 menu_vb()
 {
     sectionheader "Volume Boost"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt VolBoost "(0=no boost, 1=slight boost, 2=moderate boost, 3=max boost)" num 0 3
     return 0
 }
 menu_hp()
 {
     sectionheader "High Performance Sound"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt HighPerf "(0=disabled, 1=enabled (may drain battery))" bool
     return 0
 }
 menu_gpu()
 {
     sectionheader "GPU Overclock"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt gpuOC "(0=307MHz--default, 1=384MHz, 2=460MHz, 3=512MHz)" num 0 3
     return 0
 }
@@ -134,21 +139,21 @@ menu_fc()
 {
     sectionheader "Force Fast Charge"
     echo "(at boot)"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt ffc "(0=disabled--default, 1=enabled)" bool
     return 0
 }
 menu_wll()
 {
     sectionheader "Wireless Low-latency"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt wll "(N=saves battery--default, Y=lower wireless latency when screen is off (for streaming, etc.))" yn
     return 0
 }
 menu_blx()
 {
     sectionheader "BLX Params"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt BLX "1-100" num 1 100
     return 0
 }
@@ -156,7 +161,7 @@ menu_blx()
 menu_cc()
 {
     sectionheader "Color Control"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     echo "1) Omap Gamma Control"
     echo "2) Gamma Offsets"
     echo "3) Color Multipliers"
@@ -179,21 +184,21 @@ menu_cc()
 menu_cc1()
 {
     sectionheader "OMAP Gamma"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt OMAPgamma "1-10. (0=lowest contrast, 10=highest contrast, 6=default)" num 1 10
     return 0
 }
 menu_cc2()
 {
     sectionheader "Gamma Offsets"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt GammaOffset "3 numbers, separated by spaces. Recommended: -6 0 7" multinum 3 -100 100
     return 0;
 }
 menu_cc3()
 {
     sectionheader "Color Multipliers"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     echo "1) Set multipliers"
     echo "2) Enable/disable multipler safety"
     echo "M) Return to previous menu"
@@ -213,26 +218,26 @@ menu_cc3()
 menu_cc31()
 {
     sectionheader "Set Multipliers"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt ColorMult "3 three-digit numbers. default: 200 200 200" multinum 3 0 999 10000000
 }
 menu_cc32()
 {
     sectionheader "Multiplier Safety"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt ColorSafety "(1=enabled/safe, 0=disabled)" bool
     return 0
 }
 menu_hot()
 {
     sectionheader "Force Cpu1 on"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     prompt HotPlug "0=force off, 1=force on, D=default (aka unset)" bool
 }
 menu_cpu()
 {
     sectionheader "CPU Control"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     echo "1) Frequency Control"
     echo "2) Governor Control"
     echo "3) Smart Reflex"
@@ -256,7 +261,7 @@ menu_cpu()
 menu_freq()
 {
     sectionheader "Frequencies"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     echo "1) Set MAX Frequency"
     echo "2) Set MIN Frequency"
     echo "3) Set SCREEN-OFF-MAX Frequency"
@@ -273,7 +278,7 @@ menu_freq()
       *) echo "Invalid option"; sleep 1; menu_freq; return 0;;
     esac
     if [ -z "$choice" ]; then menu freq; fi
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     eval curr=\$$choice
     [ -z $curr ] && curr="D" || curr=$(expr $curr / 1000)
     sectionheader "$choice"
@@ -314,7 +319,7 @@ menu_freq()
 menu_gov()
 {
     sectionheader "Governor Selection"
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     choice="scaleGov"    
     eval curr=\$$choice
     [ -z $curr ] && curr="D"
@@ -355,7 +360,7 @@ prompt()
     #  $1 = setting name
     #  $2 = valid input (string)
     #  $3 = name of val test function
-    . /sdcard/vanir.cfg    
+    . $SDWTF/vanir.cfg    
     eval curr=\$$1
     [ -z $curr ] && curr="D"
     echo "C: to use current setting"
@@ -402,20 +407,20 @@ commit()
         export VAL="\"$VAL\""
     fi
     echo "SETTING $1=$VAL"
-    sed "s/#$1/$1/g" -i /sdcard/vanir.cfg
+    sed "s/#$1/$1/g" -i $SDWTF/vanir.cfg
     if [ ! $VAL ]; then         
-        [ $(cat /sdcard/vanir.cfg | grep "$1" | wc -l) ] && sed "s/$1=.*/#&/g" -i /sdcard/vanir.cfg || echo "#$1=" >> /sdcard/vanir.cfg
+        [ $(cat $SDWTF/vanir.cfg | grep "$1" | wc -l) ] && sed "s/$1=.*/#&/g" -i $SDWTF/vanir.cfg || echo "#$1=" >> $SDWTF/vanir.cfg
         export VAL=
         return 0
     fi
-    [ $(cat /sdcard/vanir.cfg | grep "$1" | wc -l) ] && sed "s/$1=.*/$1=$VAL/g" -i /sdcard/vanir.cfg || echo "$1=$VAL" >> /sdcard/vanir.cfg
+    [ $(cat $SDWTF/vanir.cfg | grep "$1" | wc -l) ] && sed "s/$1=.*/$1=$VAL/g" -i $SDWTF/vanir.cfg || echo "$1=$VAL" >> $SDWTF/vanir.cfg
     export VAL=
     return 0
 }
 
 apply()
 {
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     [ $TESTING ] && echo "APPLYING STUFF" || vanirtweakapply &> /dev/null
 }
 
@@ -449,7 +454,7 @@ enable()
 {
     export VAL=1
     commit enableTweaks
-    . /sdcard/vanir.cfg
+    . $SDWTF/vanir.cfg
     vanirtweakapply
     echo "Vanir Tweaks enabled."
 }
@@ -462,9 +467,9 @@ showusage()
     echo "    vanir enable     - applies your current settings. All tweaks will auto-apply at boot."
     echo "    vanir flash      - flashes a fresh version of vanir (\"dirty\" -- data UNTOUCHED)"
     echo "                     (REQUIRES TWRP!!)"
-    echo "                        ROM ZIP MUST BE COPIED/MOVED TO /sdcard/vanir_rom.zip"
-    echo "                        GAPPS ZIP MUST BE COPIED/MOVED TO /sdcard/vanir_gapps.zip"
-    echo "                        (optional) ADDITIONAL ZIPS TO FLASH MUST BE IN /sdcard/vanir_addons/"
+    echo "                        ROM ZIP MUST BE COPIED/MOVED TO $SDWTF/vanir_rom.zip"
+    echo "                        GAPPS ZIP MUST BE COPIED/MOVED TO $SDWTF/vanir_gapps.zip"
+    echo "                        (optional) ADDITIONAL ZIPS TO FLASH MUST BE IN $SDWTF/vanir_addons/"
 }
 
 if [ ! $1 ]; then 
