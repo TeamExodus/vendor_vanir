@@ -474,8 +474,7 @@ showusage()
 
 if [ ! $1 ]; then 
     showusage
-else
-    
+else    
     case $1 in
         "enable") [ $TESTING ] && enable || [ $(whoami) = "root" ] && enable || echo "You must run this as root. run: su -c vanir enable";;
         "disable") disable;;
