@@ -1,10 +1,9 @@
 #!/system/xbin/bash
-if [ -e /sdcard/vanir_rom.zip ]; then EXTERNAL_STORAGE=/sdcard; elif [ -e /data/media/vanir_rom.zip ]; then EXTERNAL_STORAGE=/data/media; fi
 
 checkminimum()
 {
-    [ -e ${EXTERNAL_STORAGE}/vanir_rom.zip ] || echo "You must copy the ROM zip you want to flash to /sdcard/vanir_rom.zip" && return 0
-    [ -e ${EXTERNAL_STORAGE}/vanir_gapps.zip ] || echo "You must copy the gapps zip you want to flash to /sdcard/vanir_gapps.zip" && return 0
+    [ -e /sdcard/vanir_rom.zip ] || echo "You must copy the ROM zip you want to flash to /sdcard/vanir_rom.zip" && return 0
+    [ -e /sdcard/vanir_gapps.zip ] || echo "You must copy the gapps zip you want to flash to /sdcard/vanir_gapps.zip" && return 0
     return 1
 }
 checkminimum || exit 0
@@ -15,15 +14,15 @@ case $doit in
     *) echo "Generating auto-flash script.";;
 esac
 su -c 'echo set tw_signed_zip_verify 0 > /cache/recovery/openrecoveryscript'
-for C in "wipe cache" "wipe dalvik" "install ${EXTERNAL_STORAGE}/vanir_rom.zip" "install ${EXTERNAL_STORAGE}/vanir_gapps.zip"; do
+for C in "wipe cache" "wipe dalvik" "install /sdcard/vanir_rom.zip" "install /sdcard/vanir_gapps.zip"; do
     su -c "echo $C >> /cache/recovery/openrecoveryscript"
 done
 
-if  [ -d ${EXTERNAL_STORAGE}/vanir_addons ]; then
-    cd ${EXTERNAL_STORAGE}/vanir_addons/
+if  [ -d /sdcard/vanir_addons ]; then
+    cd /sdcard/vanir_addons/
     for C in $(ls | grep -i .zip)
     do
-        su -c "echo install ${EXTERNAL_STORAGE}/vanir_addons/$C >> /cache/recovery/openrecoveryscript"
+        su -c "echo install /sdcard/vanir_addons/$C >> /cache/recovery/openrecoveryscript"
     done
 else
     echo "If you would like to install more zips than just the rom in gapps, you can do so automagically by placing them in /sdcard/vanir_addons/"
@@ -36,5 +35,6 @@ fi
 sync
 echo "THIS IS HAPPENING. COME TO TERMS WITH IT!"
 sleep 1
+#cat /cache/recovery/openrecoveryscript
 su -c reboot recovery
 exit 0
