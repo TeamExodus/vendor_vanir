@@ -137,11 +137,11 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
 
 # T-Mobile theme engine
-#PRODUCT_PACKAGES += \
-#       ThemeManager \
-#       ThemeChooser \
-#       com.tmobile.themes \
-#       CMFileManager
+PRODUCT_PACKAGES += \
+       ThemeManager \
+       ThemeChooser \
+       com.tmobile.themes \
+       CMFileManager
 
-#PRODUCT_COPY_FILES += \
-#       vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
+PRODUCT_COPY_FILES += \
+       vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
