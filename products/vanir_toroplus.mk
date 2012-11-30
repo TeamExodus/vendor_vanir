@@ -5,7 +5,7 @@ $(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 PRODUCT_LOCALES := en_US
 
 # Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common.mk)
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_toroplus

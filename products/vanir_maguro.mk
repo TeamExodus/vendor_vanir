@@ -2,7 +2,7 @@
 $(call inherit-product, device/samsung/maguro/full_maguro.mk)
 
 # Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common.mk)
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_maguro

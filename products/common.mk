@@ -134,9 +134,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/cron/cron.minutely/nicetweaks.sh:/system/etc/cron/cron.minutely/nicetweaks.sh \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
-# Audio Packages
-include frameworks/base/data/sounds/AudioPackage7.mk
-
 # T-Mobile theme engine
 #PRODUCT_PACKAGES += \
 #       ThemeManager \
