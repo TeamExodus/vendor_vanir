@@ -134,6 +134,8 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/cron/cron.minutely/nicetweaks.sh:/system/etc/cron/cron.minutely/nicetweaks.sh \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
+
 # T-Mobile theme engine
 #PRODUCT_PACKAGES += \
 #       ThemeManager \
