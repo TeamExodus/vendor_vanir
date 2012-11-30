@@ -108,7 +108,9 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
     vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc \
-    vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so 
+    vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
+    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
+    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
 
 # missing guts for stuff that needs guts
 #PRODUCT_COPY_FILES +=  \
