@@ -4,9 +4,9 @@ PRODUCT_BRAND := vanir
 PRODUCT_DEVICE := generic
 
 # Build packages included in manifest
-#PRODUCT_PACKAGES += \
-#    AppWidgetPicker \
-#    busybox
+PRODUCT_PACKAGES += \
+    AppWidgetPicker \
+    busybox
 
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -95,7 +95,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/vanirtweakapply:system/xbin/vanirtweakapply \
     vendor/vanir/proprietary/common/xbin/vanir:system/xbin/vanir \
     vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
-    vendor/vanir/proprietary/common/xbin/busybox:system/xbin/busybox \
     vendor/vanir/proprietary/common/xbin/vanirnice:system/xbin/vanirnice
 
 
@@ -108,18 +107,9 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
     vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc \
-    vendor/vanir/proprietary/common/lib/libncurses.so:system/lib/libncurses.so \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
 
-# missing guts for stuff that needs guts
-#PRODUCT_COPY_FILES +=  \
-#    vendor/vanir/proprietary/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
-#    vendor/vanir/proprietary/common/lib/libjni_eglfence.so:system/lib/libjni_eglfence.so
-
-# Data Files
-#PRODUCT_COPY_FILES +=  \
-#    vendor/vanir/proprietary/common/data/cron/root:data/cron/root
 
 # Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
 PRODUCT_COPY_FILES +=  \
@@ -132,7 +122,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
     vendor/vanir/proprietary/common/etc/init.d/99vanir:system/etc/init.d/99vanir \
     vendor/vanir/proprietary/common/etc/init.d/ZZafterboot:system/etc/init.d/ZZafterboot \
-    vendor/vanir/proprietary/common/etc/init.d/01self-destruct:system/etc/init.d/01self-destruct \
     vendor/vanir/proprietary/common/etc/cron/cron.minutely/nicetweaks.sh:/system/etc/cron/cron.minutely/nicetweaks.sh \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
