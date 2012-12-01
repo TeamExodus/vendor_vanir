@@ -7,12 +7,7 @@ checkminimum()
     return 1
 }
 checkminimum || exit 0
-echo "This feature requires TWRP recovery to work. Install it if you haven't already."
-read -p "Are you sure you want to flash vanir_rom.zip, vanir_gapps.zip, and any zips in /sdcard/vanir_addons/? <Y/n> " doit
-case $doit in
-    [Nn]) echo "canceling"; exit 0;;
-    *) echo "Generating auto-flash script.";;
-esac
+echo "generating auto-flash script"
 su -c 'echo set tw_signed_zip_verify 0 > /cache/recovery/openrecoveryscript'
 for C in "wipe cache" "wipe dalvik" "install /sdcard/vanir_rom.zip" "install /sdcard/vanir_gapps.zip"; do
     su -c "echo $C >> /cache/recovery/openrecoveryscript"
