@@ -98,7 +98,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
     vendor/vanir/proprietary/common/xbin/vanirnice:system/xbin/vanirnice
 
-
 # Misc Files
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \
@@ -110,7 +109,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
-
 
 # Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
 PRODUCT_COPY_FILES +=  \
