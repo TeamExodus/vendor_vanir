@@ -390,7 +390,7 @@ test_yn() { [[ $VAL =~ [Yy] ]] && return 0 || [[ $VAL =~ [Nn] ]] && return 0; re
 test_bool() { test_num 0 1 && return 0; return 1; }
 test_num() { test_singlenum $VAL $1 $2 && return 0; return 1; }
 test_singlenum() { [[ $1 =~ \-*[0-9]* ]] && [ $1 -le $3 ] && [ $1 -ge $2 ] && return 0; return 1; } # $2 = min, $3 = max
-test_multinum() { vals=$(echo "$VAL" | wc -w); [ $vals -ne $1 ] && return 1; for i in $VAL; if ! test_singlenum $i $2 $3; then return 1; fi; done; return 0; }
+test_multinum() { vals=$(echo "$VAL" | wc -w); [ $vals -ne $1 ] && return 1; for i in $VAL; do if ! test_singlenum $i $2 $3; then return 1; fi; done; return 0; }
 
 commit()
 {
