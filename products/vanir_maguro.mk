@@ -158,3 +158,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/bluez-plugin/audio.so:system/lib/bluez-plugin/audio.so \
     vendor/vanir/proprietary/tuna/lib/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
+# More Language support for Maguro LatinIME
+    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
