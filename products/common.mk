@@ -6,6 +6,7 @@ PRODUCT_DEVICE := generic
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     AppWidgetPicker \
+    Email \
     busybox
 
 # Build Properties
