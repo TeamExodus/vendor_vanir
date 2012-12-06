@@ -28,14 +28,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=300 \
     net.bt.name=Android \
-    dalvik.vm.stack-trace-file=/tmp/stack-trace.txt \
     dalvik.vm.heapstartsize=48m \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=384m \
-    dalvik.vm.execution-mode=int:jit \
     dalvik.vm.dexopt-flags=v=n,o=v,u=n,m=y \
     dalvik.vm.lockprof.threshold=850 \
-    dalvik.vm.verify-bytecode=false \
+    dalvik.vm.stack-trace-file=/data/anr/traces.txt \
     ro.kernel.android.checkjni=0 \
     ro.media.enc.jpeg.quality=100 \
     debug.sf.hw=1 \
@@ -81,16 +79,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/su:system/xbin/su \
     vendor/vanir/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/vanir/proprietary/common/xbin/sysro:system/xbin/sysro \
-    vendor/vanir/proprietary/common/xbin/bash:system/xbin/bash \
-    vendor/vanir/proprietary/common/xbin/crond:system/xbin/crond \
-    vendor/vanir/proprietary/common/xbin/crontab:system/xbin/crontab \
-    vendor/vanir/proprietary/common/xbin/nano:system/xbin/nano \
-    vendor/vanir/proprietary/common/xbin/openvpn:system/xbin/openvpn \
-    vendor/vanir/proprietary/common/xbin/run-parts:system/xbin/run-parts \
-    vendor/vanir/proprietary/common/xbin/scp:system/xbin/scp \
-    vendor/vanir/proprietary/common/xbin/sh:system/xbin/sh \
-    vendor/vanir/proprietary/common/xbin/ssh:system/xbin/ssh \
-    vendor/vanir/proprietary/common/xbin/zipalign:system/xbin/zipalign \
     vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd \
     vendor/vanir/proprietary/common/xbin/vanircheckcpu:system/xbin/vanircheckcpu \
     vendor/vanir/proprietary/common/xbin/vanirtweakapply:system/xbin/vanirtweakapply \
@@ -105,8 +93,6 @@ PRODUCT_COPY_FILES +=  \
 
 # bash stuff... config files and so's
 PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/etc/bash/bash_logout:system/etc/bash/bash_logout \
-    vendor/vanir/proprietary/common/etc/bash/bashrc:system/etc/bash/bashrc \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
 
