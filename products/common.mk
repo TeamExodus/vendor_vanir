@@ -31,8 +31,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=48m \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=384m \
+    dalvik.vm.execution-mode=int:jit \
     dalvik.vm.dexopt-flags=v=n,o=v,u=n,m=y \
     dalvik.vm.lockprof.threshold=850 \
+    dalvik.vm.verify-bytecode=false \
     dalvik.vm.stack-trace-file=/data/anr/traces.txt \
     ro.kernel.android.checkjni=0 \
     ro.media.enc.jpeg.quality=100 \
