@@ -1,18 +1,3 @@
-# Inherit AOSP device configuration for grouper
-$(call inherit-product, device/asus/grouper/full_grouper.mk)
-
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common_tabs.mk)
-
-# Setup device specific product configuration.
-PRODUCT_NAME := vanir_grouper
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := grouper
-PRODUCT_MODEL := Nexus 7
-PRODUCT_MANUFACTURER := asus
-
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=nakasi BUILD_FINGERPRINT=google/nakasi/grouper:4.2.1/JOP40D/405518:user/release-keys PRIVATE_BUILD_DESC="nakasi-user 4.2.1 JOP40D 405518 release-keys" BUILD_NUMBER=405518
-
 # Blobs necessary for drm
 PRODUCT_COPY_FILES +=  \
    vendor/vanir/proprietary/common/lib/libfrsdk.so:system/lib/libfrsdk.so \
@@ -152,3 +137,18 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/bluez-plugin/audio.so:system/lib/bluez-plugin/audio.so \
     vendor/vanir/proprietary/tuna/lib/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
+# Inherit AOSP device configuration for grouper
+$(call inherit-product, device/asus/grouper/full_grouper.mk)
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/common_tabs.mk)
+
+# Setup device specific product configuration.
+PRODUCT_NAME := vanir_grouper
+PRODUCT_BRAND := google
+PRODUCT_DEVICE := grouper
+PRODUCT_MODEL := Nexus 7
+PRODUCT_MANUFACTURER := asus
+
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=nakasi BUILD_FINGERPRINT=google/nakasi/grouper:4.2.1/JOP40D/405518:user/release-keys PRIVATE_BUILD_DESC="nakasi-user 4.2.1 JOP40D 405518 release-keys" BUILD_NUMBER=405518

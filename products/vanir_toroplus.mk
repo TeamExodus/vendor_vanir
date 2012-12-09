@@ -1,21 +1,3 @@
-# Inherit AOSP device configuration for toroplus.
-$(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
-
-#... and then make the AOSP device configuration for toro get on its knees and sing the national anthem into our "microphones"
-PRODUCT_LOCALES := en_US
-
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common_phones.mk)
-
-# Setup device specific product configuration.
-PRODUCT_NAME := vanir_toroplus
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := toroplus
-PRODUCT_MODEL := Galaxy Nexus
-PRODUCT_MANUFACTURER := samsung
-
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysidspr BUILD_FINGERPRINT=google/mysidspr/toroplus:4.2.1/JOP40D/336647:user/release-keys PRIVATE_BUILD_DESC="mysidspr-user 4.2.1 JOP40D 336647 release-keys" BUILD_NUMBER=235179
-
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     ro.config.vc_call_vol_steps=7 \
@@ -165,3 +147,21 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/bluez-plugin/audio.so:system/lib/bluez-plugin/audio.so \
     vendor/vanir/proprietary/tuna/lib/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
+
+# Inherit AOSP device configuration for toroplus.
+$(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
+
+#... and then make the AOSP device configuration for toro get on its knees and sing the national anthem into our "microphones"
+PRODUCT_LOCALES := en_US
+
+# Setup device specific product configuration.
+PRODUCT_NAME := vanir_toroplus
+PRODUCT_BRAND := google
+PRODUCT_DEVICE := toroplus
+PRODUCT_MODEL := Galaxy Nexus
+PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysidspr BUILD_FINGERPRINT=google/mysidspr/toroplus:4.2.1/JOP40D/336647:user/release-keys PRIVATE_BUILD_DESC="mysidspr-user 4.2.1 JOP40D 336647 release-keys" BUILD_NUMBER=235179

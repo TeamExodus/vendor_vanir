@@ -1,21 +1,3 @@
-# Inherit AOSP device configuration for toro.
-$(call inherit-product, device/samsung/toro/full_toro.mk)
-
-#... and then make the AOSP device configuration for toro get on its knees and sing the national anthem into our "microphones"
-PRODUCT_LOCALES := en_US
-
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common_phones.mk)
-
-# Setup device specific product configuration.
-PRODUCT_NAME := vanir_toro
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := toro
-PRODUCT_MODEL := Galaxy Nexus
-PRODUCT_MANUFACTURER := samsung
-
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysid BUILD_FINGERPRINT=google/mysid/toro:4.2.1/JOP40D/424425:user/release-keys PRIVATE_BUILD_DESC="mysid-user 4.2.1 JOP40D 424425 release-keys" BUILD_NUMBER=235179
-
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     ro.config.vc_call_vol_steps=7 \
@@ -165,3 +147,21 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/bluez-plugin/audio.so:system/lib/bluez-plugin/audio.so \
     vendor/vanir/proprietary/tuna/lib/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
+
+# Inherit AOSP device configuration for toro.
+$(call inherit-product, device/samsung/toro/full_toro.mk)
+
+#... and then make the AOSP device configuration for toro get on its knees and sing the national anthem into our "microphones"
+PRODUCT_LOCALES := en_US
+
+# Setup device specific product configuration.
+PRODUCT_NAME := vanir_toro
+PRODUCT_BRAND := google
+PRODUCT_DEVICE := toro
+PRODUCT_MODEL := Galaxy Nexus
+PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysid BUILD_FINGERPRINT=google/mysid/toro:4.2.1/JOP40D/424425:user/release-keys PRIVATE_BUILD_DESC="mysid-user 4.2.1 JOP40D 424425 release-keys" BUILD_NUMBER=235179

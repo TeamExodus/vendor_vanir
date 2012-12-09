@@ -1,18 +1,3 @@
-# Inherit AOSP device configuration for maguro.
-$(call inherit-product, device/samsung/maguro/full_maguro.mk)
-
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common_phones.mk)
-
-# Setup device specific product configuration.
-PRODUCT_NAME := vanir_maguro
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := maguro
-PRODUCT_MODEL := Galaxy Nexus
-PRODUCT_MANUFACTURER := Samsung
-
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=yakju BUILD_FINGERPRINT=google/yakju/maguro:4.2.1/JOP40D/336647:user/release-keys PRIVATE_BUILD_DESC="yakju-user 4.2.1 JOP40D 336647 release-keys" BUILD_NUMBER=235179
-
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
@@ -160,4 +145,19 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 # More Language support for Maguro LatinIME
-    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
+
+# Inherit AOSP device configuration for maguro.
+$(call inherit-product, device/samsung/maguro/full_maguro.mk)
+
+# Setup device specific product configuration.
+PRODUCT_NAME := vanir_maguro
+PRODUCT_BRAND := google
+PRODUCT_DEVICE := maguro
+PRODUCT_MODEL := Galaxy Nexus
+PRODUCT_MANUFACTURER := Samsung
+
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=yakju BUILD_FINGERPRINT=google/yakju/maguro:4.2.1/JOP40D/336647:user/release-keys PRIVATE_BUILD_DESC="yakju-user 4.2.1 JOP40D 336647 release-keys" BUILD_NUMBER=235179
