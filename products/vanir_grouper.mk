@@ -138,11 +138,11 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
-# Inherit AOSP device configuration for grouper
-$(call inherit-product, device/asus/grouper/full_grouper.mk)
-
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
+
+# Inherit AOSP device configuration for grouper
+$(call inherit-product, device/asus/grouper/full_grouper.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_grouper
