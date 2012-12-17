@@ -143,6 +143,12 @@ $SED -i \
 echo "Fixing \"move hyst\" property name... whoever put a space in it is a butthead."
 $SED 's/movehyst/move hyst/g' -i $REPACK/ota/system/build.prop
 
+# Delete unnecessary binaries
+# ( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )
+
+# Delete leftover wireless driver
+# rm -rf $REPACK/ota/system/lib/modules/*/kernel/drivers/net
+
 # No need for recovery
 rm -rf $REPACK/ota/recovery
 
@@ -169,8 +175,10 @@ cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/lib/soundfx/libvisualizer
 cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/lib/libSR_AudioIn.so $REPACK/ota/system/lib/libSR_AudioIn.so
 
 # Other files
-# rm -f $REPACK/ota/system/vendor/firmware/ducati-m3.bin
-# cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/vendor/firmware/ducati-m3.bin $REPACK/ota/system/vendor/firmware/ducati-m3.bin
+rm -f $REPACK/ota/system/media/bootanimation.zip
+cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/media/bootanimation.zip $REPACK/ota/system/media/bootanimation.zip
+rm -f $REPACK/ota/system/vendor/firmware/ducati-m3.bin
+cp -f $ANDROID_BUILD_TOP/vendor/vanir/proprietary/tuna/vendor/firmware/ducati-m3.bin $REPACK/ota/system/vendor/firmware/ducati-m3.bin
 
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
