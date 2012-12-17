@@ -97,11 +97,12 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
 
-# missing guts for gallery
+# init.vanir.rc, 2 copies of it for compatibility, and some shell scripts from CM
 PRODUCT_COPY_FILES +=  \
-    vendor/vanir/proprietary/common/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
-    vendor/vanir/proprietary/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
-    vendor/vanir/proprietary/common/lib/liblightcycle.so:system/lib/liblightcycle.so
+    vendor/vanir/proprietary/common/init.vanir.rc:root/init.vanir.rc \
+    vendor/vanir/proprietary/common/bin/compcache:system/bin/compcache \
+    vendor/vanir/proprietary/common/bin/handle_compcache:system/bin/handle_compcache \
+    vendor/vanir/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
 PRODUCT_COPY_FILES +=  \
