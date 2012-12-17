@@ -7,7 +7,6 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGES += \
     AppWidgetPicker \
     Email \
-    Provision \
     busybox
 
 # Build Properties
