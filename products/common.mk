@@ -2,6 +2,7 @@
 PRODUCT_NAME := vanir
 PRODUCT_BRAND := vanir
 PRODUCT_DEVICE := generic
+DHO_VENDOR := vanir
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
