@@ -3,7 +3,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=7 \
     ring.delay=0 \
     ro.telephony.call_ring.delay=50 \
-    ro.ril.fast.dormancy.rule=0
+    ro.ril.fast.dormancy.rule=0 \
+    dalvik.vm.heapstartsize=48m \
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapsize=384m \
+    dalvik.vm.dexopt-flags=v=n,o=v,u=n,m=y \
+    dalvik.vm.lockprof.threshold=850 \
+    dalvik.vm.verify-bytecode=false \
+    dalvik.vm.stack-trace-file=/data/anr/traces.txt 
 
 # Blobs necessary for drm
 PRODUCT_COPY_FILES +=  \

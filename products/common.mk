@@ -22,19 +22,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Hydra.ogg \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
-    ro.modversion=v4.0beta
+    ro.modversion=v4.0_RC1
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=300 \
     net.bt.name=Android \
-    dalvik.vm.heapstartsize=48m \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapsize=384m \
-    dalvik.vm.dexopt-flags=v=n,o=v,u=n,m=y \
-    dalvik.vm.lockprof.threshold=850 \
-    dalvik.vm.verify-bytecode=false \
-    dalvik.vm.stack-trace-file=/data/anr/traces.txt \
     ro.kernel.android.checkjni=0 \
     ro.media.enc.jpeg.quality=100 \
     debug.sf.hw=1 \
