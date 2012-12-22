@@ -32,6 +32,10 @@ busybox sysctl -w vm.dirty_expire_centisecs=750
 busybox sysctl -w vm.dirty_writeback_centisecs=1500
 busybox sysctl -w kernel.random.write_wakeup_threshold=256
 busybox sysctl -w kernel.random.read_wakeup_threshold=128
+busybox sysctl -w fs.file-max=524288
+busybox sysctl -w fs.inotify.max_queued_events=32000
+busybox sysctl -w fs.inotify.max_user_instances=256
+busybox sysctl -w fs.inotify.max_user_watches=10240
 busybox sysctl -w kernel.panic=0
 busybox sysctl -w kernel.panic_on_oops=1
 busybox sysctl -w kernel.msgmni=2048
@@ -47,10 +51,6 @@ echo "1" > /proc/sys/vm/laptop_mode
 #
 for m in "/" "/dev" "/proc" "/sys" "/system" "/data" "/data/data" "/cache" "/acct" "/dev/pts" "/dev/cpuctl" "/mnt/asec" "/mnt/obb"; do
     busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev $m
-done
-
-for m in "/storage/sdcard0"; do
-    busybox mount -o remount,noatime,nodiratime,discard,nodev,noauto_da_alloc,journal_async_commit $m
 done
 
 echo "10" > /proc/sys/fs/lease-break-time
