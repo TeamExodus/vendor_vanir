@@ -62,7 +62,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.xloud.enable=1 \
     ro.semc.sound_effects_enabled=true \
     ro.service.swiqi.supported=true \
-    persist.service.swiqi.enable=1
+    persist.service.swiqi.enable=1 \
+    ro.rommanager.developerid=vanir \
+    ro.goo.developerid=vanir \
+    ro.goo.version=4
+
 
 # Version information used on all builds
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JOP40C BUILD_ID=JOP40C BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
