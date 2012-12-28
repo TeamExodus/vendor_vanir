@@ -2,6 +2,13 @@
 # Nice Tweaks
 # Nuclearmistake, PrimeDirective and Sonicxml
 
+DEBUG=1
+
+db()
+{
+    [ -z $DEBUG ] && return 0
+    echo "$*"
+}
 findpackage()
 {
     #pm is fat, so do this once an hour.
@@ -18,13 +25,13 @@ findpackage()
 smartrenice()
 {
     pid=$(pidof $2)
-    [ $pid ] && renice $1 $pid && return 0
+    [ $pid ] && db "RENICING $2 to $1" && renice $1 $pid && return 0
     return 1
 }
 smartionice()
 {
     pid=$(pidof $1)
-    [ $pid ] && ionice $pid $2 $3 >& /dev/null && return 0
+    [ $pid ] && db "IONICING $1 to $2 $3" && ionice $pid $2 $3 >& /dev/null && return 0
     return 1
 }
 for kb in "com.google.android.inputmethod" "pckeyboard" "swype" "swiftkey"; do
@@ -38,3 +45,4 @@ smartrenice -11 com.google.android.googlequicksearchbox
 smartrenice -10 com.android.phone
 for pack in $(findpackage com.android.gallery); do smartionice $pack be 0; done
 smartionice com.google.android.music rt 1
+exit 0

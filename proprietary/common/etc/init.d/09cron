@@ -57,10 +57,10 @@ echo '# Prime Directive, Nuclearmistake, Sonicxml
 0 0/6 * * * sync; cache -rmdata
 
 # Put shell scripts in these folders, and they will run at the named interval... like a bawss
-* * * * *  logwrapper busybox run-parts /system/etc/cron/cron.minutely
-01 * * * * logwrapper busybox run-parts /system/etc/cron/cron.hourly
-02 4 * * * logwrapper busybox run-parts /system/etc/cron/cron.daily
-22 4 * * 0 logwrapper busybox run-parts /system/etc/cron/cron.weekly' > /data/cron/root
+* * * * * /system/bin/cronlogger /system/etc/cron/cron.minutely
+01 * * * * /system/bin/cronlogger /system/etc/cron/cron.hourly
+02 4 * * * /system/bin/cronlogger /system/etc/cron/cron.daily
+22 4 * * 0 /system/bin/cronlogger /system/etc/cron/cron.weekly' > /data/cron/root
 
 if busybox [ ! -d /system/etc/cron/cron.hourly ] || [ ! -d /system/etc/cron/cron.daily ] || [ ! -d /system/etc/cron/cron.weekly ]; then
     sync
