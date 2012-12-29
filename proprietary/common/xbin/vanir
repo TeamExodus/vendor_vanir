@@ -15,7 +15,7 @@ menu()
 
 menu_main()
 {
-    [ ! $TESTING ] && [ ! -e $SDWTF/vanir.cfg ] && echo "$SDWTF/vanir.cfg is missing. Popcorn scripts modification cannot continue."    
+    [ ! $TESTING ] && [ ! -e $SDWTF/vanir.cfg ] && echo "$SDWTF/vanir.cfg is missing. Popcorn scripts modification cannot continue."
     sectionheader "Main Menu"
     echo "1) CPU Tweaks"
     echo "2) GPU Overclock"
@@ -298,7 +298,7 @@ menu_freq()
         [Qq]) exit 0;;
         y) val="Y";;
         n) val="N";;
-        *) 
+        *)
             v=$val;
             success=0;
             for i in $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies); do
@@ -320,7 +320,7 @@ menu_gov()
 {
     sectionheader "Governor Selection"
     . $SDWTF/vanir.cfg
-    choice="scaleGov"    
+    choice="scaleGov"
     eval curr=\$$choice
     [ -z $curr ] && curr="D"
     j=1
@@ -337,7 +337,7 @@ menu_gov()
         [Dd]) export VAL=; commit $1; return 0;;
         [Mm]) return 0;;
         [Qq]) exit 0;;
-        [0-9]*)         
+        [0-9]*)
             export VAL=$val
             j=1
             gov=""
@@ -348,7 +348,7 @@ menu_gov()
                 fi
                 j=$(expr $j + 1)
             done
-            export VAL=$gov            
+            export VAL=$gov
             commit $choice;
             apply;;
          *) echo "Invalid option"; sleep 1; menu_gov; return 0;;
@@ -360,7 +360,7 @@ prompt()
     #  $1 = setting name
     #  $2 = valid input (string)
     #  $3 = name of val test function
-    . $SDWTF/vanir.cfg    
+    . $SDWTF/vanir.cfg
     eval curr=\$$1
     [ -z "$curr" ] && curr="D"
     echo "C: to use current setting"
@@ -407,7 +407,7 @@ commit()
         export VAL="\"$VAL\""
     fi
     echo "SETTING $1=$VAL"
-    sed "s/#$1/$1/g" -i $SDWTF/vanir.cfg    
+    sed "s/#$1/$1/g" -i $SDWTF/vanir.cfg
     if [ ! "$VAL" ]; then
         [ $(cat $SDWTF/vanir.cfg | grep "$1" | wc -l) ] && sed "s/$1=.*/#&/g" -i $SDWTF/vanir.cfg || echo "#$1=" >> $SDWTF/vanir.cfg
         export VAL=
@@ -448,13 +448,13 @@ dovanirflash()
     echo "This feature requires TWRP recovery to work. Install it if you haven't already."
     read -p "Are you sure you want to flash vanir_rom.zip, vanir_gapps.zip, and any zips in /sdcard/vanir_addons/? <Y/n> " doit
     case $doit in
-    	[Nn]) echo "canceling"; exit 0;;
-    	*) vanirflash;;
+        [Nn]) echo "canceling"; exit 0;;
+        *) vanirflash;;
     esac
 }
 
 disable()
-{    
+{
     export VAL=0
     commit enableTweaks
     echo "Vanir Tweaks disabled. Reboot required to take effect."
@@ -473,7 +473,7 @@ showusage()
 {
     echo "Usage:";
     echo "    vanir config     - displays menu to change tweak settings.";
-    echo "    vanir disable    - prevents tweak settings from being applied at boot."; 
+    echo "    vanir disable    - prevents tweak settings from being applied at boot.";
     echo "    vanir enable     - applies your current settings. All tweaks will auto-apply at boot."
     echo "    vanir flash      - flashes a fresh version of vanir (\"dirty\" -- data UNTOUCHED)"
     echo "                     (REQUIRES TWRP!!)"
@@ -482,9 +482,9 @@ showusage()
     echo "                        (optional) ADDITIONAL ZIPS TO FLASH MUST BE IN $SDWTF/vanir_addons/"
 }
 
-if [ ! $1 ]; then 
+if [ ! $1 ]; then
     showusage
-else    
+else
     case $1 in
         "enable") [ $TESTING ] && enable || [ $(whoami) = "root" ] && enable || echo "You must run this as root. run: su -c vanir enable";;
         "disable") disable;;
