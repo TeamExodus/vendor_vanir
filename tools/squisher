@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# Squish a CM otapackage for distribution
-# cyanogen
+# Squish a Vanir otapackage for distribution
+# credit for original version: CM
 #
 
 . $ANDROID_BUILD_TOP/vendor/vanir/tools/functions
@@ -95,7 +95,7 @@ cp $REPACK/ota/system/framework/framework-res.apk .
 cp $REPACK/ota/system/app/*.apk .
 
 # Do optimization in parallel
-find ./ -name \*.apk | $XARGS $OPTICHARGER
+find ./ -name \*.apk | $XARGS $OPTICHARGER 
 
 # Move optimized apks to repack directory
 mv -f $REPACK/parallel/framework-res.apk $REPACK/ota/system/framework/framework-res.apk
@@ -204,13 +204,32 @@ echo
 
 # Create a md5 checksum image of the repacked package
 (
+echo ""
+echo ""
+echo $CL_GRN"================  "$CL_RST OTA package information $CL_GRN"  ================"$CL_RST
+echo ""
+echo $CL_BLU"Product name:"$CL_RST $TARGET_PRODUCT-ota-eng.$USER.zip
+
 img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
+STRING="$TARGET_PRODUCT-ota-eng.$USER.zip"
+OTASIZE=`ls -lah $STRING | awk '{ print $5}' `
+echo $CL_BLU"Package Size: "$CL_YLW "$OTASIZE" $CL_RST
+echo $CL_BLU"Target Location: " $CL_RST
+echo $CL_YLW"$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip" $CL_RST
+echo ""
+
 $MD5 $img >$img.md5sum
-echo
-echo $CL_GRN"Package complete: $OUTFILE"$CL_RST
-cat $img.md5sum
-echo
+ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
+echo $CL_GRN"================"$CL_RST $TARGET_PRODUCT-$TARGET_BUILD_VARIANT: $CL_RED"completed"$CL_RST $CL_GRN"================"$CL_RST
+echo ""
+echo $CL_BLU"Product name:"$CL_RST $OUTVERSION.zip
+echo $CL_BLU"Package Size: "$CL_YLW"$ZIPSIZE     " 
+echo $CL_BLU"md5:"$CL_RST $CL_YLW" $(cat $img.md5sum | awk '{ print $1 }')"$CL_RST 
+echo $CL_BLU"Target location:"$CL_RST
+echo $CL_YLW $OUTFILE $CL_RST
+echo ""
+echo ""
 )
 
 exit 0
