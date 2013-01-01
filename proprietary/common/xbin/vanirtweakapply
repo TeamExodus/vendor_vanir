@@ -36,8 +36,6 @@ t()
 
 #if not enabled, then set gpuOC for user experience insurance, then exit
 
-echo $enableTweaks
-
 if [ -z "$enableTweaks" ] || [ $enableTweaks -eq 0 ]; then
     [ ! -z "$gpuOC" ] && t gpuOC /sys/devices/system/cpu/cpu0/cpufreq/gpu_oc           $gpuOC || t gpuOC /sys/devices/system/cpu/cpu0/cpufreq/gpu_oc 1
     exit
@@ -67,7 +65,28 @@ t BLX /sys/class/misc/batterylifeextender/charging_limit    $BLX        # BLX (B
 
 t ffc /sys/kernel/fast_charge/force_fast_charge             $ffc        # Enable/disable USB fast charging
 
-t wll /sys/module/bcmdhd/parameters/wifi_pm                 $wll        # Enabled/disable the low latency mode for the WiFi during screen-off
+#################################################
+############### wll v2.0 ########################
+
+# check for legacy value (Y/N) and update to 0=false, 1=true
+[ ! -z "$wll" ] && [[ $wll =~ [Yy] ]] && sed -i 's/wll=[Yy]/wll=1/g' || [[ $wll =~ [Nn] ]] && sed -i 's/wll=[Nn]/wll=0/g'
+
+# to support more kernels, let's see what value is currently in /sys/module/bcmdhd/parameters/wifi_pm, and echo the correct thing
+currwll=$(cat /sys/module/bcmdhd/parameters/wifi_pm)
+case $wll in
+    0)  case $currwll in
+            [YN]) t wll /sys/module/bcmdhd/parameters/wifi_pm N;;
+            [yn]) t wll /sys/module/bcmdhd/parameters/wifi_pm n;;
+            [01]) t wll /sys/module/bcmdhd/parameters/wifi_pm 0;;
+        esac;;
+    1)  case $currwll in
+            [YN]) t wll /sys/module/bcmdhd/parameters/wifi_pm Y;;
+            [yn]) t wll /sys/module/bcmdhd/parameters/wifi_pm y;;
+            [01]) t wll /sys/module/bcmdhd/parameters/wifi_pm 1;;
+        esac;;
+esac
+
+################################################
 
 t OMAPgamma /sys/devices/platform/omapdss/manager0/gamma          $OMAPgamma  # Selects GAMMA preset to control contrast
 
