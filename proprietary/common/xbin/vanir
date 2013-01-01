@@ -24,6 +24,7 @@ menu_main()
     echo "5) Wifi Low-Latency Toggle"
     echo "6) Color Control"
     echo "7) Sound Control"
+    echo "8) Memory Mgmt"
     echo "Q) Quit"
     read -p "Enter option: " opt
     choice=""
@@ -35,6 +36,7 @@ menu_main()
       5) choice="wll";;
       6) choice="cc";;
       7) choice="sc";;
+      8) choice="mm";;
       [Qq]) echo "Goodbye."; echo; exit 0;;
       *) echo "Invalid option" && sleep 1;;
     esac
@@ -353,6 +355,34 @@ menu_gov()
     esac
     return 0;
 }
+
+menu_mm()
+{
+    sectionheader "Memory mgmt"
+    . $SDWTF/vanir.cfg
+    echo "1) ZRAM"
+    echo "M) Return to main menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) menu zram;;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1; menu_mm; return 0;;
+    esac
+    menu mm
+    return 0;
+}
+
+menu_zram()
+{
+    sectionheader "ZRAM enable/disable"
+    . $SDWTF/vanir.cfg
+    prompt zramStatus "(1=increases virtual memory using compression or something, 0=doesn't)" bool
+    return 0
+}
+
 prompt()
 {
     #  $1 = setting name
@@ -374,7 +404,7 @@ prompt()
         [Dd]) export VAL=; export $1=; commit $1; return 0;;
         [Mm]) return 0;;
         [Qq]) exit 0;;
-        *) test $3 $4 $5 $6 $7 $8 $9 && echo "1=$1 2=$2 3=$3 4=$4 5=$5 6=$6 7=$7 8=$8 9=$9" && commit $1 $7 && apply && return 0;;
+        *) test $3 $4 $5 $6 $7 $8 $9 && commit $1 $7 && apply && return 0;;
     esac
     echo "Invalid input. Please try again"
     prompt $1 "$2" $3 && return 0

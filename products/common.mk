@@ -85,6 +85,10 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
     vendor/vanir/proprietary/common/xbin/vanirnice:system/xbin/vanirnice
 
+#Imoseyon's zram script
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/xbin/zram:system/xbin/zram
+
 # Misc Files
 PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \

@@ -10,6 +10,17 @@ if [ -e /system/etc/vanir.cfg ]; then
         #virgin sdcard... let's change that.
         echo "SLIPPING YOUR /SDCARD THE BEEF INJECTION"
         cp /system/etc/vanir.cfg /sdcard/vanir.cfg
+    else
+        #vanir.cfg exists, so let's add defaults for config values that may not have previously existed
+        if [ `cat /sdcard/vanir.cfg | grep '### ZRAM' | wc -l` -eq 0 ]; then
+            echo >> /sdcard/vanir.cfg
+            echo >> /sdcard/vanir.cfg
+            echo '### ZRAM' >> /sdcard/vanir.cfg
+            echo '### This increases virtual memory using swap or compression or something' >> /sdcard/vanir.cfg
+            echo '### (1=enabled/recommended, 0=disabled)' >> /sdcard/vanir.cfg
+            echo >> /sdcard/vanir.cfg
+            echo 'zramStatus=1' >> /sdcard/vanir.cfg
+        fi
     fi
     rm /system/etc/vanir.cfg
     sync
@@ -100,3 +111,6 @@ t VolBoost /sys/class/misc/soundcontrol/volume_boost             $VolBoost   # H
 t HighPerf /sys/class/misc/soundcontrol/highperf_enabled         $HighPerf   # High Performance Audio
 
 t hotPlug /sys/devices/system/cpu/cpu1/online $hotPlug
+
+#apply zram setting
+[ ! $zramStatus ] && echo "Skipping application because zramStatus not defined in config" || [ $zramStatus -eq 1 ] && zram on || zram off

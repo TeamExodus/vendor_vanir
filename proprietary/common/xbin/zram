@@ -1,0 +1,29 @@
+#!/system/xbin/busybox ash
+### Credit Imoseyon - modified to live in Vanir's xbin by Nuclearmistake
+bb="/system/xbin/busybox"
+RAMSIZE=`grep MemTotal /proc/meminfo | awk '{ print \$2 }'`
+ZRAMSIZE=$(($RAMSIZE*100))
+if [ $1 ]; then
+    if [ ! -e /etc/init.d/05zram ] && [[ $1 == "enable" || $1 == "on" ]]; then
+        mount -o rw,remount /system /system
+        echo "#!/system/xbin/busybox ash" > /etc/init.d/05zram
+        echo "### Credit Imoseyon" >> /etc/init.d/05zram
+        echo "echo 1 > /sys/block/zram0/reset" >> /etc/init.d/05zram
+        echo "echo $ZRAMSIZE > /sys/block/zram0/disksize" >> /etc/init.d/05zram
+        echo "mkswap /dev/block/zram0" >> /etc/init.d/05zram
+        echo "swapon /dev/block/zram0" >> /etc/init.d/05zram
+        echo 'echo "500,1000,20000,20000,20000,25000" > /sys/module/lowmemorykiller/parameters/minfree'  >> /etc/init.d/05zram
+        echo 'echo -n "ZRAM STATUS = "; free | tail -1' >> /etc/init.d/05zram
+        chmod 555 /etc/init.d/05zram
+        /system/etc/init.d/05zram
+        echo "zram enabled and activated"
+        mount -o ro,remount /system /system
+    elif [ -e /etc/init.d/05zram ] && [[ $1 != "enable" && $1 != "on" ]]; then
+        mount -o rw,remount /system /system
+        swapoff /dev/block/zram0 >/dev/null 2>&1
+        echo 1 > /sys/block/zram0/reset >/dev/null 2>&1
+        $bb rm -f /etc/init.d/05zram
+        echo "zram deactivated and disabled"
+        mount -o ro,remount /system /system
+    fi
+fi
