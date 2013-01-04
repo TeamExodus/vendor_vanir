@@ -139,7 +139,6 @@ PRODUCT_COPY_FILES +=  \
 #RNGD MODS
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/vanirentropy:system/xbin/vanirentropy \
-    vendor/vanir/proprietary/common/xbin/vanirrngdd:system/xbin/vanirrngdd
     vendor/vanir/proprietary/common/xbin/rngd:system/xbin/rngd
 
 #LatinIME core files

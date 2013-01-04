@@ -43,7 +43,7 @@ busybox sysctl -w kernel.threads-max=525810
 # START wrapper script that brute-forces rngd until it stays alive
 #
 ####
-vanirrngdd &
+rngd
 
 #
 # File System Tweaks & Cleanup
