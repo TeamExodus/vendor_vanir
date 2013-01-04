@@ -1,0 +1,21 @@
+#!/system/bin/sh
+bash -c 'alive=0
+while [ $alive -lt 4 ]; do
+    sleep $alive
+    foundit=0    
+    PIDS="`pgrep -f rngd`"
+    [ -e /data/rngd.pid ] && for x in $PIDS; do
+        if [ `cat /data/rngd.pid` -eq $x ]; then
+            foundit=1
+            break
+        fi
+    done    
+    if [ $foundit -eq 0 ]; then
+        alive=0        
+        echo "RNGD not running yet. Starting it"
+        /system/xbin/rngd
+        sleep 1
+        continue
+    fi
+    echo "RNGD on pass \#$alive"; alive=`expr $alive + 1`;
+done; echo "RNGD WILL NEVER DIE! --evil laugh--"; exit 0'

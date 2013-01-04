@@ -136,6 +136,12 @@ PRODUCT_COPY_FILES +=  \
     vendor/vanir/proprietary/common/etc/cron/cron.minutely/00nicetweaks:/system/etc/cron/cron.minutely/00nicetweaks \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
+#RNGD MODS
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/xbin/vanirentropy:system/xbin/vanirentropy \
+    vendor/vanir/proprietary/common/xbin/vanirrngdd:system/xbin/vanirrngdd
+    vendor/vanir/proprietary/common/xbin/rngd:system/xbin/rngd
+
 #LatinIME core files
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
     

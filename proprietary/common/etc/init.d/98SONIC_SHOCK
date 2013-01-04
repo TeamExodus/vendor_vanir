@@ -26,8 +26,9 @@ for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
 #
 # Sysctl & VM Tweaks
 #
-busybox sysctl -w kernel.random.write_wakeup_threshold=256
-busybox sysctl -w kernel.random.read_wakeup_threshold=128
+### NEW RANDOM VALUES FOR RANDOM SEED HACK
+busybox sysctl -e -w kernel.random.read_wakeup_threshold=1024
+busybox sysctl -e -w kernel.random.write_wakeup_threshold=2048
 busybox sysctl -w fs.file-max=524288
 busybox sysctl -w fs.inotify.max_queued_events=32000
 busybox sysctl -w kernel.panic=0
@@ -37,6 +38,12 @@ busybox sysctl -w kernel.msgmax=64000
 busybox sysctl -w kernel.shmmax=268435500
 busybox sysctl -w kernel.sem=500,512000,64,2048
 busybox sysctl -w kernel.threads-max=525810
+
+#
+# START wrapper script that brute-forces rngd until it stays alive
+#
+####
+vanirrngdd &
 
 #
 # File System Tweaks & Cleanup
