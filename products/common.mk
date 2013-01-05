@@ -32,14 +32,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false \
-    dalvik.vm.dexopt-flags=v=n,o=v,u=n,m=y \
+    dalvik.vm.dexopt-flags=m=y \
     dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.heapgrowthlimit=96m \
-    dalvik.vm.heapmaxfree=8m \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapsize=256m \
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapsize=384m \
     dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.stack-trace-file=/data/anr/traces.txt \
     dalvik.vm.verify-bytecode=false \
@@ -79,9 +76,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     windowsmgr.max_events_per_sec=280
 
 ### Possible culprits in random reboots I THINK?... difference is negligible without these
-#    debug.composition.type=gpu \
-#    debug.performance.tuning=1 \
-#    debug.sf.hw=1 \
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.composition.type=gpu
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.performance.tuning=1
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.hw=1
 
 ### These will prevent any FC popups from showing... ever. (lol)
 #    profiler.force_disable_err_rpt=1 \
