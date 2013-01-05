@@ -4,6 +4,9 @@ PRODUCT_BRAND := vanir
 PRODUCT_DEVICE := generic
 DHO_VENDOR := vanir
 
+# Theme files
+    PRODUCT_PACKAGE_OVERLAYS += vendor/commotio/overlay/theme
+
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     AppWidgetPicker \
