@@ -1,3 +1,6 @@
+#Squisher Choosing
+DHO_VENDOR := vanir
+
 # Run these first or they will not stick
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-GROUPER

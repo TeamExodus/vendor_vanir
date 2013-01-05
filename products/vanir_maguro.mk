@@ -1,3 +1,6 @@
+#Squisher Choosing
+DHO_VENDOR := vanir
+
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     ro.goo.rom=vanir-MAGURO
