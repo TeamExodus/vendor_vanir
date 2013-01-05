@@ -23,7 +23,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Hydra.ogg \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
-    ro.modversion=v4.0_RC1
+    ro.goo.version=4.02 \
+    ro.modversion=v4.0_RC2
+    
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -52,7 +54,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.hwfeature_wakeupkey=0 \
     ro.ext4fs=1 \
     ro.goo.developerid=vanir \
-    ro.goo.version=4 \
     ro.HOME_APP_ADJ=1 \
     ro.HOME_APP_MEM=8192 \
     ro.FOREGROUND_APP_MEM=8192 \
