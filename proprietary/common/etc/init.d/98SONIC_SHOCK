@@ -15,12 +15,11 @@ sysctl -p /system/etc/sysctl.conf
 # Set SD Card Cache
 #
 if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ]; then
-	echo 2048 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
+  echo 2048 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
 fi
 
 #RQ_Affinity
 for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
-
 
 #
 #
@@ -53,7 +52,7 @@ rngd
 # File System Tweaks & Cleanup
 #
 for m in "/" "/dev" "/proc" "/sys" "/system" "/data" "/data/data" "/cache" "/acct" "/dev/pts" "/dev/cpuctl" "/mnt/asec" "/mnt/obb"; do
-    busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev $m
+  busybox mount -o remount,noatime,nodiratime,discard,noauto_da_alloc,nodev $m
 done
 
 echo "10" > /proc/sys/fs/lease-break-time

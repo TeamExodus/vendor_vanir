@@ -13,7 +13,7 @@ echo "Current Settings: Safety = $OLDSAFE"
 echo "Multipliers = $OLDMULT"
 echo "1) Enable Safety Feature"
 echo "2) Disable Safety Feature"
-echo 
+echo
 echo "Or pick your multipliers. Default values are 200 200 200"
 echo "NOTE: You only have to enter 3-digit numbers since they are scaled up automatically"
 echo "Press B to set the current settings on boot"
@@ -31,17 +31,17 @@ if [ "$?" != "1" ]
    R) sh /system/xbin/popcorn_cc;;
    X) exit 1;;
   $red)
-	red=$(($red * 10000000))
-	echo -n "Enter Green Multiplier:"
-	read green
-	green=$(($green * 10000000))
-	echo -n "Enter Blue Multiplier:"
-	read blue
-	blue=$(($blue * 10000000))
-	echo "$red $green $blue" > /sys/class/misc/colorcontrol/multiplier
-	echo "Color Multipliers set to $red $green $blue"
-	sleep 2
-	sh /system/xbin/popcorn_cc3
-	;; 
+    red=$(($red * 10000000))
+    echo -n "Enter Green Multiplier:"
+    read green
+    green=$(($green * 10000000))
+    echo -n "Enter Blue Multiplier:"
+    read blue
+    blue=$(($blue * 10000000))
+    echo "$red $green $blue" > /sys/class/misc/colorcontrol/multiplier
+    echo "Color Multipliers set to $red $green $blue"
+    sleep 2
+    sh /system/xbin/popcorn_cc3
+    ;;
     esac
 fi

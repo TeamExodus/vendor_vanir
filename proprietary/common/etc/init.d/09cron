@@ -39,13 +39,13 @@ elif busybox [ $timezone = "-0600" ]; then
 elif busybox [ $timezone = "-0500" ]; then
   TZ=EST5EDT
 else
-	TZ=PST8PDT
+  TZ=PST8PDT
 fi
 export TZ
 
 # rebuild crontab if it got pwned somehow
 if busybox [ ! -d /data/cron ]; then
-	busybox mkdir -p /data/cron
+  busybox mkdir -p /data/cron
 fi
 
 echo '# Prime Directive, Nuclearmistake, Sonicxml
@@ -66,9 +66,9 @@ if busybox [ ! -d /system/etc/cron/cron.hourly ] || [ ! -d /system/etc/cron/cron
     sync
     busybox mount -o remount,rw /system
     busybox mkdir -p /system/etc/cron/cron.minutely
-	busybox mkdir -p /system/etc/cron/cron.hourly
-	busybox mkdir -p /system/etc/cron/cron.daily
-	busybox mkdir -p /system/etc/cron/cron.weekly
+    busybox mkdir -p /system/etc/cron/cron.hourly
+    busybox mkdir -p /system/etc/cron/cron.daily
+    busybox mkdir -p /system/etc/cron/cron.weekly
     sync
     busybox mount -o remount,ro /system
 fi

@@ -21,7 +21,7 @@ if [ "$?" != "1" ]
   then
     case $opt in
       0) echo "0" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
-      1) echo "1" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt"  && sh /system/xbin/popcorn_blx;;
+      1) echo "1" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
       2) echo "2" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
       3) echo "3" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
       4) echo "4" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
@@ -35,7 +35,7 @@ if [ "$?" != "1" ]
       12) echo "12" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
       13) echo "13" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
       14) echo "14" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
-      15) echo "15" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt"&& sh /system/xbin/popcorn_blx;;
+      15) echo "15" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
       16) echo "16" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
       17) echo "17" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;
       18) echo "18" > /sys/class/misc/batterylifeextender/charging_limit && echo "BLX Value Set to $opt" && sh /system/xbin/popcorn_blx;;

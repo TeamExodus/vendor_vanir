@@ -6,7 +6,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-GROUPER
 
 # Blobs necessary for drm
-PRODUCT_COPY_FILES +=  \
+PRODUCT_COPY_FILES += \
    vendor/vanir/proprietary/common/lib/libfrsdk.so:system/lib/libfrsdk.so \
    vendor/vanir/proprietary/common/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
    vendor/vanir/proprietary/common/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
@@ -15,7 +15,7 @@ PRODUCT_COPY_FILES +=  \
 
 # Copy grouper specific prebuilt files
 ## FIX ME: bootanimation
-PRODUCT_COPY_FILES +=  \
+PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/smalltab/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/vanir/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd

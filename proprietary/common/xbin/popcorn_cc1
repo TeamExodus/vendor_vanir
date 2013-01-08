@@ -11,7 +11,7 @@ echo
 echo "Current Setting: $OLD"
 echo "Pick a number from 1-10. 0=lowest contrast, 10=highest contrast. Default = 6"
 echo "Press B to set the current settings on boot"
-echo "Press R to return to Original Color Control Menu or Press X to exit script" 
+echo "Press R to return to Original Color Control Menu or Press X to exit script"
 echo
 echo
 echo

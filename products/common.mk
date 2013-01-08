@@ -27,7 +27,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
     ro.goo.version=4.02 \
     ro.modversion=v4.0_RC2
-    
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -109,27 +108,27 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/zram:system/xbin/zram
 
 # Misc Files
-PRODUCT_COPY_FILES +=  \
+PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \
     vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
 
 # bash stuff... config files and so's
-PRODUCT_COPY_FILES +=  \
+PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
 
 # init.vanir.rc, 2 copies of it for compatibility, and some shell scripts from CM
-PRODUCT_COPY_FILES +=  \
+PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/init.vanir.rc:root/init.vanir.rc \
     vendor/vanir/proprietary/common/bin/sysinit:system/bin/sysinit \
     vendor/vanir/proprietary/common/bin/cronlogger:system/bin/cronlogger
 
 # Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
-PRODUCT_COPY_FILES +=  \
+PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/vanir.cfg:system/etc/vanir.cfg
 
 # init.d Tweaks
-PRODUCT_COPY_FILES +=  \
+PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/vanir/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties \
     vendor/vanir/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
@@ -146,7 +145,7 @@ PRODUCT_COPY_FILES += \
 
 #LatinIME core files
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
-    
+
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
        ThemeManager \

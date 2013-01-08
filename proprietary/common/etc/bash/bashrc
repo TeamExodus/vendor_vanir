@@ -9,8 +9,8 @@
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
 if [[ $- != *i* ]] ; then
-	# Shell is non-interactive.  Be done now!
-	return
+    # Shell is non-interactive.  Be done now!
+    return
 fi
 
 # Bash won't get SIGWINCH if another process is in the foreground.
@@ -30,15 +30,15 @@ TERM=linux
 
 # enable colorful terminal
 if [[ ${EUID} == 0 ]] ; then
-	PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
+    PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
 else
-	PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 fi
 
 # Set up a ton of aliases to cover toolbox with the nice busybox
 # equivalents of its commands
 for i in cat chmod chown df insmod ln lsmod mkdir mount mv rm rmdir rmmod umount; do
-	eval alias ${i}=\"busybox ${i}\"
+    eval alias ${i}=\"busybox ${i}\"
 done
 unset i
 alias ls='busybox ls --color=auto'
