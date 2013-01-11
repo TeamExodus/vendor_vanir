@@ -9,8 +9,9 @@ PRODUCT_DEVICE := generic
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     AppWidgetPicker \
-    Email \
-    busybox
+    busybox \
+    DSPManager \
+    Email
 
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
