@@ -2,7 +2,7 @@
 # Nice Tweaks
 # Nuclearmistake, PrimeDirective and Sonicxml
 
-DEBUG=1
+#DEBUG=1
 
 db()
 {
@@ -17,32 +17,39 @@ findpackage()
     for x in $(find -name '[A-Za-z0-9/]*' -mmin +60); do rm $x; done
     if [ -e /cache/vanirnicecache/$1 ]; then
         cat /cache/vanirnicecache/$1
+        #db $(cat /cache/vanirnicecache/$1) >&2
         return 0
     fi
-    pm list packages | sed 's/package://g' | grep $1 | tee /cache/vanirnicecache/$1
+    packs=""
+    for p in $(pm list packages | sed 's/package://g' | grep $1); do
+        packs="$p $packs"
+    done
+    echo $packs | tee /cache/vanirnicecache/$1
+    #db $(cat /cache/vanirnicecache/$1 >&2)
     return 0
 }
 smartrenice()
 {
-    pid=$(pidof $2)
-    [ $pid ] && db "RENICING $2 to $1" && renice $1 $pid && return 0
+    pid=$(pidof $1)
+    [ $pid ] && db "RENICING $1 to $2" && renice $2 $pid && return 0
+    db "Not reniceing $1. Not running yet."
     return 1
 }
 smartionice()
 {
     pid=$(pidof $1)
     [ $pid ] && db "IONICING $1 to $2 $3" && ionice $pid $2 $3 >& /dev/null && return 0
+    db "Not ioniceing $1. Not running yet"
     return 1
 }
-for kb in "com.google.android.inputmethod" "pckeyboard" "swype" "swiftkey"; do
-    for pack in $(findpackage $kb | grep -v dictionary); do smartrenice -13 $pack; done
+for kb in "android.inputmethod.latin" "pckeyboard" "swype" "swiftkey"; do
+    for pack in $(findpackage $kb); do smartrenice $pack -13; done
 done
-for pack in $(findpackage launcher | grep -v com.anddoes.launcher.pro); do smartrenice -12 $pack; done
-smartrenice -12 com.android.chrome
-smartrenice -12 com.google.android.browser
-smartrenice -12 com.android.systemui
-smartrenice -11 com.google.android.googlequicksearchbox
-smartrenice -10 com.android.phone
+for pack in $(findpackage launcher); do smartrenice $pack -13; done
+for browser in "dolphin" "com.android.browser" "chrome"; do for b in $(findpackage $browser); do smartrenice $b -12; done; done
+smartrenice com.android.systemui -12
+smartrenice com.google.android.googlequicksearchbox -11
+smartrenice com.android.phone -10
 for pack in $(findpackage com.android.gallery); do smartionice $pack be 0; done
 smartionice com.google.android.music rt 1
 exit 0
