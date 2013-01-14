@@ -30,8 +30,6 @@ PRODUCT_COPY_FILES += \
 # Beats Audio
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/app/AudioEffectService.apk:system/app/AudioEffectService.apk \
-    vendor/vanir/proprietary/tuna/app/DSPManager.apk:system/app/DSPManager.apk \
-    vendor/vanir/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/vanir/proprietary/tuna/bin/basimage_gec.bin:system/bin/basimage_gec.bin \
     vendor/vanir/proprietary/tuna/bin/basimage_gec_x.bin:system/bin/basimage_gec_x.bin \
     vendor/vanir/proprietary/tuna/bin/basimage_ibeats.bin:system/bin/basimage_ibeats.bin \
