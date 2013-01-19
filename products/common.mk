@@ -6,6 +6,13 @@ PRODUCT_DEVICE := generic
 # Theme files
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
 
+# Optional CM packages
+PRODUCT_PACKAGES += \
+    VideoEditor \
+    VoiceDialer \
+    SoundRecorder \
+    Basic
+
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     AppWidgetPicker \
@@ -113,10 +120,12 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/hosts:system/etc/hosts \
     vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
 
-# bash stuff... config files and so's
+# proprietary guts
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
-    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
+    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so \
+    vendor/vanir/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # init.vanir.rc, 2 copies of it for compatibility, and some shell scripts from CM
 PRODUCT_COPY_FILES += \
@@ -145,7 +154,39 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/rngd:system/xbin/rngd
 
 #LatinIME core files
-    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
+
+# Required CM packages
+PRODUCT_PACKAGES += \
+    Camera \
+    Development \
+    LatinIME
+
+# Extra tools in CM
+PRODUCT_PACKAGES += \
+    openvpn \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    bash \
+    vim \
+    nano \
+    htop \
+    powertop
+
+# Openssh
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+
+# rsync
+PRODUCT_PACKAGES += \
+    rsync
 
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
