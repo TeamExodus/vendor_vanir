@@ -16,9 +16,7 @@ PRODUCT_COPY_FILES += \
 # Copy grouper specific prebuilt files
 ## FIX ME: bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/smalltab/media/bootanimation.zip:system/media/bootanimation.zip \
-    vendor/vanir/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/vanir/proprietary/smalltab/media/bootanimation.zip:system/media/bootanimation.zip
 
 # Beats Audio
 PRODUCT_COPY_FILES += \
