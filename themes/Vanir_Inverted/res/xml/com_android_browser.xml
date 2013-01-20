@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource-redirections>
+    <item name="drawable/bg_browsertabs">@color/black</item>
+    <item name="drawable/bg_urlbar">@color/black</item>
+    <item name="drawable/browser_background_holo">@color/black</item>
+</resource-redirections>

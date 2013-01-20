@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<theme-redirections
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:pluto="http://www.w3.org/2001/pluto.html">
+    <package-redirections android:name="android" android:resource="@xml/android" android:minSdkVersion="7" />
+    <package-redirections android:name="com.android.phone" android:resource="@xml/com_android_phone" android:minSdkVersion="7" />
+    <package-redirections android:name="com.android.contacts" android:resource="@xml/com_android_contacts" android:minSdkVersion="7" />
+    <package-redirections android:name="com.android.mms" android:resource="@xml/com_android_mms" android:minSdkVersion="7" />
+    <package-redirections android:name="com.android.systemui" android:resource="@xml/com_android_systemui" android:minSdkVersion="7" />
+    <package-redirections android:name="com.android.inputmethod.latin" android:resource="@xml/com_android_inputmethod_latin" android:minSdkVersion="7" />
+    <package-redirections android:name="com.android.browser" android:resource="@xml/com_android_browser" android:minSdkVersion="7" />
+</theme-redirections>

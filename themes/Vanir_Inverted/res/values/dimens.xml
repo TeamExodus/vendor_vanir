@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="contact_browser_list_item_text_indent">8.0dip</dimen>
+    <dimen name="contact_browser_list_item_photo_size">64.0dip</dimen>
+    <dimen name="list_section_divider_min_height">32.0dip</dimen>
+    <dimen name="line_spacing_extra">4.0dip</dimen>
+</resources>
