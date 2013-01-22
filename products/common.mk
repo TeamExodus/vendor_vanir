@@ -6,13 +6,6 @@ PRODUCT_DEVICE := generic
 # Theme files
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
 
-# Optional CM packages
-PRODUCT_PACKAGES += \
-    VideoEditor \
-    VoiceDialer \
-    SoundRecorder \
-    Basic
-
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     AppWidgetPicker \
@@ -163,6 +156,11 @@ PRODUCT_PACKAGES += \
     Camera \
     Development \
     LatinIME
+    
+# Optional CM packages
+PRODUCT_PACKAGES += \
+    Basic \
+    SoundRecorder
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
