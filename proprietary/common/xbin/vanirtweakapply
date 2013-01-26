@@ -21,6 +21,14 @@ if [ -e /system/etc/vanir.cfg ]; then
             echo >> /sdcard/vanir.cfg
             echo 'zramStatus=1' >> /sdcard/vanir.cfg
         fi
+        if [ `cat /sdcard/vanir.cfg | grep '### KSM' | wc -l` -eq 0 ]; then
+            echo >> /sdcard/vanir.cfg
+            echo >> /sdcard/vanir.cfg
+            echo '### KSM' >> /sdcard/vanir.cfg
+            echo 'ksmRun=1' >> /sdcard/vanir.cfg
+            echo 'ksmSleep=4000' >> /sdcard/vanir.cfg
+            echo 'ksmPagesToScan=128' >> /sdcard/vanir.cfg
+        fi
     fi
     rm /system/etc/vanir.cfg
     sync
@@ -114,3 +122,8 @@ t hotPlug /sys/devices/system/cpu/cpu1/online $hotPlug
 
 #apply zram setting
 [ ! $zramStatus ] && echo "Skipping application because zramStatus not defined in config" || [ $zramStatus -eq 1 ] && zram on || zram off
+
+#apply KSM setting
+t ksmRun /sys/kernel/mm/ksm/run $ksmRun
+[ $ksmRun ] && t ksmSleep /sys/kernel/mm/ksm/sleep_millisecs $ksmSleep
+[ $ksmRun ] && t ksmPagesToScan /sys/kernel/mm/ksm/pages_to_scan $ksmPagesToScan

@@ -361,12 +361,14 @@ menu_mm()
     sectionheader "Memory mgmt"
     . $SDWTF/vanir.cfg
     echo "1) ZRAM"
+    echo "2) KSM"
     echo "M) Return to main menu"
     echo "Q) Quit"
     read -p "Enter option: " opt
     choice=""
     case $opt in
       1) menu zram;;
+      2) menu ksm;;
       [Mm]) return 0;;
       [Qq]) apply; exit 0;;
       *) echo "Invalid option"; sleep 1; menu_mm; return 0;;
@@ -380,6 +382,30 @@ menu_zram()
     sectionheader "ZRAM enable/disable"
     . $SDWTF/vanir.cfg
     prompt zramStatus "(1=increases virtual memory using compression or something, 0=doesn't)" bool
+    return 0
+}
+
+menu_ksm()
+{
+    sectionheader "KSM options"
+    echo "<DANGER WILL ROBINSON>"
+    . $SDWTF/vanir.cfg
+    echo "1) Enable/disable"
+    echo "2) KSM Sleep Time"
+    echo "3) Pages to scan"
+    echo "M) Return to main menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) sectionheader "KSM enable/disable"; prompt ksmRun "(1=default/allows DVM to merge pages - may increase performance, 0 =doesn't)" bool ;;
+      2) sectionheader "KSM sleep"; prompt ksmSleep "(ms to sleep between mergings. longer = safer, higher = more efficient merging - default=40001)" num 1000 30000 ;;
+      3) sectionheader "KSM pages"; prompt ksmPagesToScan "(pages to merge per scan - default=128)" num 64 512 ;;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1; menu_ksm; return 0;;
+    esac
+    menu ksm
     return 0
 }
 
