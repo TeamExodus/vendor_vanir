@@ -9,47 +9,26 @@ db()
     [ -z $DEBUG ] && return 0
     echo "$*"
 }
-findpackage()
-{
-    #pm is fat, so do this once an hour.
-    mkdir -p /cache/vanirnicecache
-    cd /cache/vanirnicecache
-    for x in $(find -name '[A-Za-z0-9/]*' -mmin +60); do rm $x; done
-    if [ -e /cache/vanirnicecache/$1 ]; then
-        cat /cache/vanirnicecache/$1
-        #db $(cat /cache/vanirnicecache/$1) >&2
-        return 0
-    fi
-    packs=""
-    for p in $(pm list packages | sed 's/package://g' | grep $1); do
-        packs="$p $packs"
-    done
-    echo $packs | tee /cache/vanirnicecache/$1
-    #db $(cat /cache/vanirnicecache/$1 >&2)
-    return 0
-}
 smartrenice()
 {
-    pid=$(pidof $1)
-    [ $pid ] && db "RENICING $1 to $2" && renice $2 $pid && return 0
-    db "Not reniceing $1. Not running yet."
-    return 1
+    for pid in `pgrep -f $1`; do
+        [ $pid ] && db "RENICING $1 to $2" && renice $2 $pid
+    done
+    return 0
 }
 smartionice()
 {
-    pid=$(pidof $1)
-    [ $pid ] && db "IONICING $1 to $2 $3" && ionice $pid $2 $3 >& /dev/null && return 0
-    db "Not ioniceing $1. Not running yet"
-    return 1
+    for pid in `pgrep -f $1`; do
+        [ $pid ] && db "IONICING $1 to $2 $3" && ionice $pid $2 $3 >& /dev/null
+    done
+    return 0
 }
-for kb in "android.inputmethod.latin" "pckeyboard" "swype" "swiftkey"; do
-    for pack in $(findpackage $kb); do smartrenice $pack -13; done
-done
-for pack in $(findpackage launcher); do smartrenice $pack -13; done
-for browser in "dolphin" "com.android.browser" "chrome"; do for b in $(findpackage $browser); do smartrenice $b -12; done; done
+for kb in "android.inputmethod.latin" "pckeyboard" "swype" "swiftkey"; do smartrenice $kb -13; done
+for browser in "dolphin" "com.android.browser" "chrome"; do smartrenice $browser -12; done
+smartrenice launcher -13
 smartrenice com.android.systemui -12
 smartrenice com.google.android.googlequicksearchbox -11
 smartrenice com.android.phone -10
-for pack in $(findpackage com.android.gallery); do smartionice $pack be 0; done
+smartionice com.android.gallery be 0
 smartionice com.google.android.music rt 1
 exit 0
