@@ -21,10 +21,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip
 
-# Copy Speaker Proximity App
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/tuna/app/SpeakerProximity.apk:system/app/SpeakerProximity.apk
-
 # Beats Audio
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/app/AudioEffectService.apk:system/app/AudioEffectService.apk \
