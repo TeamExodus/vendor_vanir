@@ -49,7 +49,7 @@
     <color name="com_android_mms_widget_subject_text_color_read">#ffcccccc</color>
     <color name="com_android_mms_widget_subject_text_color_unread">#ffffffff</color>
     <color name="com_android_mms_action_bar_button_text_color">#ffffffff</color>
-    <color name="com_android_mms_compose_message_edit_text">#ff000000</color>
+    <color name="com_android_mms_compose_message_edit_text">#ff6c6c6c</color>
     <color name="com_android_mms_actionbar_text">#ffffffff</color>
     <color name="com_android_mms_delete_thread_dialog">#ff33b5e5</color>
     <color name="com_android_mms_delivery_report_header">#ffffffff</color>
