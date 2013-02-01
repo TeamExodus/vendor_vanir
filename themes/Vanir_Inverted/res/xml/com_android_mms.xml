@@ -83,8 +83,6 @@
     <item name="drawable/ic_mms_music">@drawable/com_android_mms_ic_mms_music</item>
     <item name="drawable/ic_mms_text_bottom">@drawable/com_android_mms_ic_mms_text_bottom</item>
     <item name="drawable/ic_mms_text_top">@drawable/com_android_mms_ic_mms_text_top</item>
-    <item name="drawable/ic_send_disabled_holo_light">@drawable/com_android_mms_ic_send_disabled_holo_light</item>
-    <item name="drawable/ic_send_holo_light">@drawable/com_android_mms_ic_send_holo_light</item>
     <item name="drawable/stat_notify_sms_0">@drawable/com_android_mms_stat_notify_sms_0</item>
     <item name="drawable/stat_notify_sms_1">@drawable/com_android_mms_stat_notify_sms_1</item>
     <item name="drawable/stat_notify_sms_2">@drawable/com_android_mms_stat_notify_sms_2</item>
@@ -187,8 +185,9 @@
     <item name="drawable/ic_mms_layout">@drawable/com_android_mms_ic_mms_layout</item>
     <item name="drawable/ic_mms_music">@drawable/com_android_mms_ic_mms_music</item>
     <item name="drawable/ic_mms_text_bottom">@drawable/com_android_mms_ic_mms_text_bottom</item>
-    <item name="drawable/ic_mms_text_top">@drawable/com_android_mms_ic_mms_text_top</item>
+    <item name="drawable/ic_send_disabled_holo_dark">@drawable/com_android_mms_ic_send_disabled_holo_light</item>
     <item name="drawable/ic_send_disabled_holo_light">@drawable/com_android_mms_ic_send_disabled_holo_light</item>
+    <item name="drawable/ic_send_holo_dark">@drawable/com_android_mms_ic_send_holo_light</item>
     <item name="drawable/ic_send_holo_light">@drawable/com_android_mms_ic_send_holo_light</item>
     <item name="drawable/ic_sms_mms_delivered">@drawable/com_android_mms_ic_sms_mms_delivered</item>
     <item name="drawable/ic_sms_mms_details">@drawable/com_android_mms_ic_sms_mms_details</item>
