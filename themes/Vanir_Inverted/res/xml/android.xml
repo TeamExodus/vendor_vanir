@@ -12,4 +12,5 @@
     <item name="drawable/toast_frame">@drawable/toast_frame</item>
     <item name="drawable/toast_frame_holo">@drawable/toast_frame_holo</item>
     <item name="style/Theme.Holo.Light.Dialog">@style/Theme.Holo.Light.Dialog</item>
+    <item name="color/primary_text_holo_light">@color/lightgrey</item>
 </resource-redirections>
