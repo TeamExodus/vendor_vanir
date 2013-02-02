@@ -92,7 +92,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JOP40C BUILD_ID=JOP40C BUILD_VE
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
+    vendor/vanir/proprietary/common/app/SuperSU.apk:system/app/SuperSU.apk \
     vendor/vanir/proprietary/common/bin/fix_permissions:system/bin/fix_permissions \
     vendor/vanir/proprietary/common/xbin/su:system/xbin/su \
     vendor/vanir/proprietary/common/xbin/sysrw:system/xbin/sysrw \
