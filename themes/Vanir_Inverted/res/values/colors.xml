@@ -3,7 +3,6 @@
     <color name="white">#ffffffff</color>
     <color name="transparent">#00000000</color>
     <color name="semitransparent">#e1000000</color>
-    <color name="lightgrey">#ffbbbbbb</color>
     <color name="holo_blue_light">#ff33b5e5</color>
     <color name="holo_blue_dark">#ff33b5e5</color>
     <color name="holo_blue_bright">#ff33b5e5</color>
