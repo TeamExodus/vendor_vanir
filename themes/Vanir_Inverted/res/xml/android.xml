@@ -11,4 +11,5 @@
     <item name="drawable/dialog_bottom_holo_dark">@color/black</item>
     <item name="drawable/toast_frame">@drawable/toast_frame</item>
     <item name="drawable/toast_frame_holo">@drawable/toast_frame_holo</item>
+    <item name="style/Theme.Holo.Light.Dialog.Alert.ActPic">@style/Theme.Holo.Light.Dialog.Alert.ActPic</item>
 </resource-redirections>
