@@ -27,7 +27,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
     ro.goo.version=4.02 \
-    ro.modversion=v4.0
+    ro.modversion=v4.001
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
