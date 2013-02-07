@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Vanir_Inverted" parent="@*android:style/Theme" />
-    <style name="Theme.Holo.Light.Dialog" parent="@*android:style/Theme.Holo.Dialog">
+    <style name="Theme.Holo.Light.Dialog.Alert.ActPic" parent="@*android:style/Theme.Holo.Dialog">
         <item name="android:textAppearance">@*android:style/TextAppearance.Holo</item>
         <item name="android:textAppearanceInverse">@*android:style/TextAppearance.Holo.Inverse</item>
         <item name="android:textColorPrimary">@color/holo_blue_light</item>
