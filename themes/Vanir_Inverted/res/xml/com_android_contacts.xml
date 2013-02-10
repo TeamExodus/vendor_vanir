@@ -14,7 +14,7 @@
     <item name="drawable/ab_stacked_opaque_dark_holo">@drawable/com_android_contacts_ab_stacked_opaque_dark_holo</item>
     <item name="drawable/ab_stacked_solid_inverse_holo">@drawable/com_android_contacts_ab_stacked_solid_inverse_holo</item>
     <item name="drawable/aggregation_suggestions_bg_light_holo">@drawable/com_android_contacts_aggregation_suggestions_bg_light_holo</item>
-    <item name="drawable/background_dial_holo_dark">@drawable/com_android_contacts_background_dial_holo_dark</item>
+    <item name="drawable/background_dial_holo_dark">@color/black</item>
     <item name="drawable/bg_people_updates_holo">@drawable/com_android_contacts_bg_people_updates_holo</item>
     <item name="drawable/bg_status_contact_widget">@drawable/com_android_contacts_bg_status_contact_widget</item>
     <item name="drawable/btn_call_pressed">@drawable/com_android_contacts_btn_call_pressed</item>
@@ -36,10 +36,8 @@
     <item name="drawable/ic_contact_picture_180_holo_light">@drawable/com_android_contacts_ic_contact_picture_180_holo_light</item>
     <item name="drawable/ic_contact_picture_holo_dark">@drawable/com_android_contacts_ic_contact_picture_holo_dark</item>
     <item name="drawable/ic_contact_picture_holo_light">@drawable/com_android_contacts_ic_contact_picture_holo_light</item>
-    <item name="drawable/ic_menu_remove_field_holo_light">@drawable/com_android_contacts_ic_menu_remove_field_holo_light</item>
     <item name="drawable/ic_text_holo_light">@drawable/com_android_contacts_badge_action_sms</item>
     <item name="drawable/list_background_holo">@drawable/com_android_contacts_list_background_holo</item>
-    <item name="drawable/list_item_divider">@drawable/com_android_contacts_list_item_divider</item>
     <item name="drawable/list_section_divider_holo_custom">@drawable/com_android_contacts_list_section_divider_holo_custom</item>
     <item name="drawable/list_selector_disabled_holo_dark">@drawable/com_android_contacts_list_selector_disabled_holo_dark</item>
     <item name="drawable/list_title_holo">@drawable/com_android_contacts_list_title_holo</item>
@@ -47,12 +45,6 @@
     <item name="drawable/panel_favorites_holo_light">@drawable/com_android_contacts_panel_favorites_holo_light</item>
     <item name="drawable/panel_message">@drawable/com_android_contacts_panel_message</item>
     <item name="drawable/quickcon_background_texture">@drawable/com_android_contacts_quickcon_background_texture</item>
-    <item name="drawable/tab_selected_focused_holo">@drawable/com_android_contacts_tab_selected_focused_holo</item>
-    <item name="drawable/tab_selected_holo">@drawable/com_android_contacts_tab_selected_holo</item>
-    <item name="drawable/tab_selected_pressed_holo">@drawable/com_android_contacts_tab_selected_pressed_holo</item>
-    <item name="drawable/tab_unselected_focused_holo">@drawable/com_android_contacts_tab_unselected_focused_holo</item>
-    <item name="drawable/tab_unselected_holo">@drawable/com_android_contacts_tab_unselected_holo</item>
-    <item name="drawable/tab_unselected_pressed_holo">@drawable/com_android_contacts_tab_unselected_pressed_holo</item>
     <item name="style/DetailActivityTheme">@style/DetailActivityTheme</item>
     <item name="style/SectionDivider">@style/SectionDivider</item>
     <item name="style/EditorActivityTheme">@style/EditorActivityTheme</item>
@@ -69,10 +61,9 @@
     <item name="style/ContactsPreferencesTheme">@style/ContactsPreferencesTheme</item>
     <item name="style/ContactListFilterTheme">@style/ContactListFilterTheme</item>
     <item name="style/CustomContactListFilterView">@style/CustomContactListFilterView</item>
-    <item name="style/DirectoryHeader">@style/DirectoryHeader</item>
     <item name="style/NonPhoneActivityTheme">@style/NonPhoneActivityTheme</item>
     <item name="style/NonPhoneDialogTheme">@style/NonPhoneDialogTheme</item>
-    <item name="style/ConfirmAddDetailDialogTheme">@style/ConfirmAddDetailDialogThemee</item>
+    <item name="style/ConfirmAddDetailDialogTheme">@style/ConfirmAddDetailDialogTheme</item>
     <item name="style/ContactEditorAccountsChangedActivityTheme">@style/ContactEditorAccountsChangedActivityTheme</item>
     <item name="style/DialtactsActionBarStyle">@style/DialtactsActionBarStyle</item>
     <item name="style/QuickContactListBottomStyle">@style/QuickContactListBottomStyle</item>
@@ -86,7 +77,6 @@
     <item name="color/background_social_updates">@color/com_android_contacts_background_social_updates</item>
     <item name="color/black_text">@color/com_android_contacts_black_text</item>
     <item name="color/call_detail_background">@color/com_android_contacts_call_detail_background</item>
-    <item name="color/call_detail_blank_background">@color/com_android_contacts_call_detail_blank_background</item>
     <item name="color/call_detail_photo_bg">@color/com_android_contacts_call_detail_photo_bg</item>
     <item name="color/call_detail_separator">@color/com_android_contacts_call_detail_separator</item>
     <item name="color/call_log_divider">@color/com_android_contacts_call_log_divider</item>
@@ -96,7 +86,6 @@
     <item name="color/call_log_secondary_text_color">@color/com_android_contacts_call_log_secondary_text_color</item>
     <item name="color/call_log_secondary_background_color">@color/com_android_contacts_call_log_secondary_background_color</item>
     <item name="color/call_log_header_color">@color/com_android_contacts_call_log_header_color</item>
-    <item name="color/call_log_tab_divider">@color/com_android_contacts_call_log_tab_divider</item>
     <item name="color/call_log_voicemail_highlight_color">@color/com_android_contacts_call_log_voicemail_highlight_color</item>
     <item name="color/call_log_voicemail_status_background_color">@color/com_android_contacts_call_log_voicemail_status_background_color</item>
     <item name="color/call_log_voicemail_status_text_color">@color/com_android_contacts_call_log_voicemail_status_text_color</item>
