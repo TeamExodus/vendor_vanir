@@ -151,7 +151,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
 # Inherit AOSP device configuration for grouper
-$(call inherit-product, device/asus/grouper/full_tilapia.mk)
+$(call inherit-product, device/asus/tilapia/full_tilapia.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_tilapia
@@ -160,4 +160,4 @@ PRODUCT_DEVICE := tilapia
 PRODUCT_MODEL := Nexus 7 GSM
 PRODUCT_MANUFACTURER := asus
 
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=nakasi BUILD_FINGERPRINT=google/nakasi/grouper:4.2.2/JDQ39/405518:user/release-keys PRIVATE_BUILD_DESC="nakasi-user 4.2.2 JDQ39 405518 release-keys" BUILD_NUMBER=405518
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=nakasi BUILD_FINGERPRINT=google/nakasig/tilapia:4.2.2/JDQ39/405518:user/release-keys PRIVATE_BUILD_DESC="nakasig-user 4.2.2 JDQ39 405518 release-keys" BUILD_NUMBER=405518
