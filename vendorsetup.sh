@@ -3,8 +3,10 @@ add_lunch_combo vanir_maguro-userdebug
 add_lunch_combo vanir_toroplus-userdebug
 add_lunch_combo vanir_tilapia-userdebug
 add_lunch_combo vanir_grouper-userdebug
+add_lunch_combo vanir_manta-userdebug
 add_lunch_combo vanir_toro-user
 add_lunch_combo vanir_maguro-user
 add_lunch_combo vanir_toroplus-user
 add_lunch_combo vanir_grouper-user
 add_lunch_combo vanir_tilapia-user
+add_lunch_combo vanir_manta-user
