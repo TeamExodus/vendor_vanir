@@ -69,6 +69,16 @@ t srMPU /sys/kernel/debug/smartreflex/sr_mpu/autocomp         $srMPU      # For 
 t srCPRE /sys/kernel/debug/smartreflex/sr_core/autocomp        $srCORE     # For Core
 t srIVA /sys/kernel/debug/smartreflex/sr_iva/autocomp         $srIVA      # For IVA
 
+# replace vestigial 512 value with more popular 512mhz value
+if [ $gpuOC ] && [ $gpuOC -gt 2 ]; then
+    if [ -e /sdcard/vanir.cfg ]; then
+        sed -i 's/gpuOC.*/gpuOC=2/g' /sdcard/vanir.cfg
+        . /sdcard/vanir.cfg
+    elif [ -e /data/media/vanir.cfg ]; then
+        sed -i 's/gpuOC.*/gpuOC=2/g' /data/media/vanir.cfg
+        . /data/media/vanir.cfg
+    fi
+fi
 t gpuOC /sys/devices/system/cpu/cpu0/cpufreq/gpu_oc           $gpuOC      # GPU Overclock
 
 t scaleGov /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor $scaleGov   # Governor Control

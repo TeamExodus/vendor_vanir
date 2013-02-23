@@ -134,7 +134,7 @@ menu_gpu()
 {
     sectionheader "GPU Overclock"
     . $SDWTF/vanir.cfg
-    prompt gpuOC "(0=307MHz--default, 1=384MHz, 2=460MHz, 3=512MHz)" num 0 3
+    prompt gpuOC "(0=307MHz--default, 1=384MHz, 2=512MHz)" num 0 2
     return 0
 }
 menu_fc()
