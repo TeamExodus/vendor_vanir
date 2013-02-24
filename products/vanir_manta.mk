@@ -1,13 +1,16 @@
 #Squisher Choosing
 DHO_VENDOR := vanir
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES := \
     drm.service.enabled=true \
     ro.config.vc_call_vol_steps=7 \
     ring.delay=0 \
     ro.telephony.call_ring.delay=50 \
     ro.ril.fast.dormancy.rule=0 \
     ro.goo.rom=vanir-MANTA
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker
@@ -148,18 +151,11 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common_tabs.mk)
-
-# Inherit AOSP device configuration for toroplus.
+# Inherit AOSP device configuration for Manta.
 $(call inherit-product, device/samsung/manta/full_manta.mk)
 
-# More Language support for Maguro LatinIME
+# More Language support for International LatinIME
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
-
-PRODUCT_PROPERTY_OVERRIDES := \
-        net.dns1=8.8.8.8 \
-        net.dns2=8.8.4.4
 
 PRODUCT_NAME := vanir_manta
 PRODUCT_DEVICE := manta

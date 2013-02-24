@@ -150,6 +150,9 @@ PRODUCT_COPY_FILES += \
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
+# GSM APNs and Simcard app
+$(call inherit-product, vendor/vanir/products/gsm.mk)
+
 # Inherit AOSP device configuration for grouper
 $(call inherit-product, device/asus/tilapia/full_tilapia.mk)
 
