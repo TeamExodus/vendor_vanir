@@ -9,8 +9,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.fast.dormancy.rule=0 \
     ro.goo.rom=vanir-MAKO
 
-# Using Tuna for now
-$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
+# place boot animation here once we make one
+
+# Vanir configuration
+$(call inherit-product, vendor/vanir/products/vanir_gsm.mk)
 
 # Inherit AOSP device configuration for toro.
 $(call inherit-product, device/lge/mako/full_mako.mk)
