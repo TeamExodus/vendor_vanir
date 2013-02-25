@@ -123,7 +123,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/etc/be_movie:system/etc/be_movie \
     vendor/vanir/proprietary/tuna/etc/be_photo:system/etc/be_photo \
     vendor/vanir/proprietary/tuna/etc/CodecDSPID.txt:system/etc/CodecDSPID.txt \
-    vendor/vanir/proprietary/tuna/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    device/samsung/manta/media_profiles.xml:system/etc/media_profiles.xml \
     vendor/vanir/proprietary/tuna/etc/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
     vendor/vanir/proprietary/tuna/etc/TPA2051_CFG_BEATS_HW.csv:system/etc/TPA2051_CFG_BEATS_HW.csv \
     vendor/vanir/proprietary/tuna/framework/com.google.android.media.effects.jar:system/framework/com.google.android.media.effects.jar \
