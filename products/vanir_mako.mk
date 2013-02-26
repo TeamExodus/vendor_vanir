@@ -16,10 +16,16 @@ PRODUCT_COPY_FILES += \
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
-$(call inherit-product, vendor/vanir/products/common_phones.mk)
-
 # Inherit AOSP device configuration for mako.
 $(call inherit-product, device/lge/mako/full_mako.mk)
+
+# Generic product
+PRODUCT_NAME := vanir
+PRODUCT_BRAND := vanir
+PRODUCT_DEVICE := generic
+
+# Theme files
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_mako
@@ -34,6 +40,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=occam BUILD_FINGERPRINT=google/occa
 PRODUCT_PACKAGES += \
     SpeakerProximity
 
+# Audio Packages
+include frameworks/base/data/sounds/AudioPackage7.mk
 
 # Theme files
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
@@ -226,6 +234,3 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
        vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
-
-# Inherit AOSP device configuration for toro.
-$(call inherit-product, device/lge/mako/full_mako.mk)
