@@ -16,7 +16,7 @@ PRODUCT_COPY_FILES += \
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/vanir_gsm.mk)
 
-# Inherit AOSP device configuration for toro.
+# Inherit AOSP device configuration for mako.
 $(call inherit-product, device/lge/mako/full_mako.mk)
 
 # Setup device specific product configuration.
