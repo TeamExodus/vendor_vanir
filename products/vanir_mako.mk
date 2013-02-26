@@ -10,6 +10,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-MAKO
 
 # place boot animation here once we make one
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/mako/media/bootanimation.zip:system/media/bootanimation.zip
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/vanir_gsm.mk)
@@ -21,7 +23,7 @@ $(call inherit-product, device/lge/mako/full_mako.mk)
 PRODUCT_NAME := vanir_mako
 PRODUCT_DEVICE := mako
 PRODUCT_BRAND := Google
-PRODUCT_MODEL := Nexus 10
+PRODUCT_MODEL := Nexus 4
 PRODUCT_MANUFACTURER := LGE
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
