@@ -14,7 +14,9 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/mako/media/bootanimation.zip:system/media/bootanimation.zip
 
 # Vanir configuration
-$(call inherit-product, vendor/vanir/products/vanir_gsm.mk)
+$(call inherit-product, vendor/vanir/products/gsm.mk)
+
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Inherit AOSP device configuration for mako.
 $(call inherit-product, device/lge/mako/full_mako.mk)
