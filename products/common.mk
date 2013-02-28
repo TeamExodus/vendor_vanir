@@ -92,10 +92,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JDQ39 BUILD_ID=JDQ39 BUILD_VERS
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
     vendor/vanir/proprietary/common/bin/fix_permissions:system/bin/fix_permissions \
-    vendor/vanir/proprietary/common/xbin/su:system/xbin/su \
-    vendor/vanir/proprietary/common/bin/.ext/.su:system/bin/.ext/.su \
     vendor/vanir/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/vanir/proprietary/common/xbin/sysro:system/xbin/sysro \
     vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd \
@@ -150,11 +147,16 @@ PRODUCT_COPY_FILES += \
 #LatinIME core files
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
 
+#Define thirdparty for Koush's SU
+SUPERUSER_PACKAGE := com.vanir.superuser
+
 # Required CM packages
 PRODUCT_PACKAGES += \
     Camera \
     Development \
-    LatinIME
+    LatinIME \
+    Superuser \
+    su
     
 # Optional CM packages
 PRODUCT_PACKAGES += \
