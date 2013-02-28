@@ -23,10 +23,9 @@ PRODUCT_COPY_FILES += \
    vendor/vanir/proprietary/common/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
    vendor/vanir/proprietary/common/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so
 
-# Copy grouper specific prebuilt files
-## FIX ME: bootanimation
-# PRODUCT_COPY_FILES += \
-#    vendor/vanir/proprietary/smalltab/media/bootanimation.zip:system/media/bootanimation.zip
+# bootanimation
+PRODUCT_COPY_FILES += \
+   vendor/vanir/proprietary/manta/media/bootanimation.zip:system/media/bootanimation.zip
     
 # Beats Audio
 PRODUCT_COPY_FILES += \
@@ -162,6 +161,5 @@ PRODUCT_DEVICE := manta
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 10
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mantaray BUILD_FINGERPRINT=google/mantaray/manta:4.2.2/JDQ39/573038:user/release-keys PRIVATE_BUILD_DESC="mantaray-user 4.2.2 JDQ39 573038 release-keys"
