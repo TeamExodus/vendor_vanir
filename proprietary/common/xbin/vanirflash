@@ -28,8 +28,8 @@ else
     esac
 fi
 sync
+cat /cache/recovery/openrecoveryscript
 echo "THIS IS HAPPENING. COME TO TERMS WITH IT!"
 sleep 1
-#cat /cache/recovery/openrecoveryscript
-su -c reboot recovery
+su -c 'reboot recovery'
 exit 0
