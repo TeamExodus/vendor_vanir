@@ -13,6 +13,22 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip
 
+# Bravia 2 engine
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/tuna/etc/be_movie:system/etc/be_movie \
+    vendor/vanir/proprietary/tuna/etc/be_movie_setting:system/etc/be_movie_setting \
+    vendor/vanir/proprietary/tuna/etc/be2_album:system/etc/be2_album \
+    vendor/vanir/proprietary/tuna/etc/be_album:system/etc/be_album \
+    vendor/vanir/proprietary/tuna/etc/permissions/com.sonyericsson.android.SwIqiBmp.xml:system/etc/permissions/com.sonyericsson.android.SwIqiBmp.xml \
+    vendor/vanir/proprietary/tuna/lib/libiwi.so:system/lib/libiwi.so \
+    vendor/vanir/proprietary/tuna/lib/libiwiOmx.so:system/lib/libiwiOmx.so \
+    vendor/vanir/proprietary/tuna/lib/libiwiOmxUtil.so:system/lib/libiwiOmxUtil.so \
+    vendor/vanir/proprietary/tuna/lib/libmbe.so:system/lib/libmbe.so \
+    vendor/vanir/proprietary/tuna/lib/libmbe_paramselector.so:system/lib/libmbe_paramselector.so \
+    vendor/vanir/proprietary/tuna/lib/libSwiqiController.so:system/lib/libSwiqiController.so \
+    vendor/vanir/proprietary/tuna/lib/libswiqisettinghelper.so:system/lib/libswiqisettinghelper.so \
+    vendor/vanir/proprietary/tuna/framework/com.sonyericsson.android.SwIqiBmp.jar:system/framework/com.sonyericsson.android.SwIqiBmp.jar
+
 # Beats Audio
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/app/AudioEffectService.apk:system/app/AudioEffectService.apk \
@@ -105,8 +121,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/etc/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \
     vendor/vanir/proprietary/tuna/etc/AIC3254_REG_XD.csv:system/etc/AIC3254_REG_XD.csv \
     vendor/vanir/proprietary/tuna/etc/audio_effects.conf:system/etc/audio_effects.conf \
-    vendor/vanir/proprietary/tuna/etc/be_movie:system/etc/be_movie \
-    vendor/vanir/proprietary/tuna/etc/be_photo:system/etc/be_photo \
     vendor/vanir/proprietary/tuna/etc/CodecDSPID.txt:system/etc/CodecDSPID.txt \
     vendor/vanir/proprietary/tuna/etc/media_profiles.xml:system/etc/media_profiles.xml \
     vendor/vanir/proprietary/tuna/etc/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
