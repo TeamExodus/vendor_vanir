@@ -8,7 +8,7 @@ checkminimum()
 }
 checkminimum || exit 0
 echo "generating auto-flash script"
-su -c 'echo set tw_signed_zip_verify 0 > /cache/recovery/openrecoveryscript'
+su -c 'echo -n "" > /cache/recovery/openrecoveryscript'
 for C in "wipe cache" "wipe dalvik" "install /sdcard/vanir_rom.zip" "install /sdcard/vanir_gapps.zip"; do
     su -c "echo $C >> /cache/recovery/openrecoveryscript"
 done
