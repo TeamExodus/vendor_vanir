@@ -2,4 +2,6 @@
 <permissions>
     <library name="semc_audioeffectif"
              file="/system/framework/semc_audioeffectif.jar"/>
+    <library name="com.sonymobile.audioeffect"
+             file="/system/framework/semc_audioeffectif.jar"/>
 </permissions>

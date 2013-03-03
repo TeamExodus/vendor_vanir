@@ -1,0 +1,53 @@
+#!/system/bin/sh
+# AwesomeBeats Premium Feature
+# Edited for Vanir by DHO
+
+busybox echo "persist.audio.SupportHTCHWAEC=1" >> /system/build.prop
+busybox echo "persist.audio.vr.enable=false" >> /system/build.prop
+busybox echo "persist.audio.handset.mic=analog" >> /system/build.prop
+sleep 4
+busybox echo "af.resample=52000" >> /system/build.prop
+busybox echo "af.resampler.quality=255" >> /system/build.prop
+busybox echo "persist.dev.pm.dyn_samplingrate=1" >> /system/build.prop
+busybox echo "persist.af.resampler.quality=255" >> /system/build.prop
+busybox echo "persist.af.resample=52000" >> /system/build.prop
+busybox echo "ro.audio.samplerate=48000" >> /system/build.prop
+sleep 4
+busybox echo "ro.audio.pcm.samplerate=48000" >> /system/build.prop
+busybox echo "ro.sound.driver=alsa" >> /system/build.prop
+busybox echo "ro.sound.alsa=snd_pcm" >> /system/build.prop
+busybox echo "alsa.mixer.playback.master=Speaker" >> /system/build.prop
+busybox echo "alsa.mixer.capture.master=Mic" >> /system/build.prop
+busybox echo "alsa.mixer.playback.earpiece=Earpiece" >> /system/build.prop
+busybox echo "alsa.mixer.capture.earpiece=Mic" >> /system/build.prop
+busybox echo "alsa.mixer.playback.headset=Headset" >> /system/build.prop
+sleep 4
+busybox echo "alsa.mixer.capture.headset=Mic" >> /system/build.prop
+busybox echo "alsa.mixer.playback.speaker=Speaker" >> /system/build.prop
+busybox echo "alsa.mixer.capture.speaker=Mic" >> /system/build.prop
+busybox echo "alsa.mixer.playback.bt.sco=BTHeadset" >> /system/build.prop
+busybox echo "alsa.mixer.capture.bt.sco=BTHeadset" >> /system/build.prop
+busybox echo "mpq.audio.decode=true" >> /system/build.prop
+busybox echo "ro.semc.enhance.supported=true" >> /system/build.prop
+sleep 4
+busybox echo "persist.service.walkman.enable=1" >> /system/build.prop
+busybox echo "setprop htc.audio.global.state=0" >> /system/build.prop
+busybox echo "setprop htc.audio.lpa.a2dp=0" >> /system/build.prop
+busybox echo "setprop htc.audio.global.profile=0" >> /system/build.prop
+busybox echo "setprop htc.audio.q6.topology=0" >> /system/build.prop
+busybox echo "setprop htc.audio.enable_dmic=1" >> /system/build.prop
+busybox echo "setprop persist.htc.audio.pcm.samplerate=44100" >> /system/build.prop
+busybox echo "setprop persist.htc.audio.pcm.channels=2" >> /system/build.prop
+busybox echo "setprop persist.audio.fluence.mode=endfire" >> /system/build.prop
+busybox echo "setprop persist.audio.vr.enable=false" >> /system/build.prop
+busybox echo "setprop persist.audio.handset.mic=analog" >> /system/build.prop
+sleep 4
+busybox echo "htc.audio.lpa.a2dp=0" >> /system/build.prop
+busybox echo "htc.audio.global.state=0" >> /system/build.prop
+busybox echo "htc.audio.global.profile=0" >> /system/build.prop
+busybox echo "htc.audio.q6.topology=0" >> /system/build.prop
+busybox echo "htc.audio.enable_dmic=1" >> /system/build.prop
+busybox echo "persist.htc.audio.pcm.samplerate=44100" >> /system/build.prop
+busybox echo "persist.htc.audio.pcm.channels=2" >> /system/build.prop
+busybox echo "persist.audio.fluence.mode=endfire" >> /system/build.prop
+sleep 2

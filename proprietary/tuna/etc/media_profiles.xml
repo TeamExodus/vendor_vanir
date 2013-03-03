@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
 
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <!DOCTYPE MediaSettings [
 <!ELEMENT MediaSettings (CamcorderProfiles,
                          EncoderOutputFileFormat+,
@@ -201,10 +214,10 @@
                    channels="1" />
         </EncoderProfile>
 
-        <ImageEncoding quality="130" />
-        <ImageEncoding quality="100" />
         <ImageEncoding quality="95" />
-        <ImageDecoding memCap="25000000" />
+        <ImageEncoding quality="80" />
+        <ImageEncoding quality="70" />
+        <ImageDecoding memCap="20000000" />
 
     </CamcorderProfiles>
 
@@ -310,10 +323,10 @@
                    channels="1" />
         </EncoderProfile>
 
-        <ImageEncoding quality="130" />
-        <ImageEncoding quality="100" />
-        <ImageEncoding quality="90" />
-        <ImageDecoding memCap="25000000" />
+        <ImageEncoding quality="95" />
+        <ImageEncoding quality="80" />
+        <ImageEncoding quality="70" />
+        <ImageDecoding memCap="20000000" />
 
     </CamcorderProfiles>
 
@@ -326,7 +339,7 @@
          or query the capabilities of the codec at all if it is disabled
     -->
     <VideoEncoderCap name="h264" enabled="true"
-        minBitRate="35000000" maxBitRate="60000000"
+        minBitRate="64000" maxBitRate="12000000"
         minFrameWidth="176" maxFrameWidth="1920"
         minFrameHeight="144" maxFrameHeight="1080"
         minFrameRate="15" maxFrameRate="30" />
@@ -344,7 +357,7 @@
         minFrameRate="15" maxFrameRate="30" />
 
     <AudioEncoderCap name="aac" enabled="true"
-        minBitRate="8000" maxBitRate="288000"
+        minBitRate="758" maxBitRate="288000"
         minSampleRate="8000" maxSampleRate="48000"
         minChannels="1" maxChannels="1" />
 
