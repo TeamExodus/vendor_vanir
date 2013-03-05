@@ -57,7 +57,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.checkjni=0 \
     ro.kernel.checkjni=0 \
     wifi.supplicant_scan_interval=300 \
-    windowsmgr.max_events_per_sec=280
+    windowsmgr.max_events_per_sec=280 \
+    ro.goo.version=4.02 \
+    ro.modversion=v4.002-beta
 
 # Version information used on all builds
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JDQ39 BUILD_ID=JDQ39 BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
