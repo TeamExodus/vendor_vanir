@@ -13,6 +13,14 @@ PRODUCT_PACKAGES += \
     DSPManager \
     Email
 
+Vanir_Version=4.002-beta
+
+Vanir_BUILD=$(Vanir_Version)
+
+ifneq ($(env RELEASE),)
+Vanir_BUILD=$(Vanir_Version)$(shell date +".%m%d%y")
+endif
+
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -26,8 +34,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Hydra.ogg \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
-    ro.goo.version=4.02 \
-    ro.modversion=v4.002-beta
+    ro.modversion=$(Vanir_BUILD) \
+    ro.goo.version=$(Vanir_BUILD)
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
