@@ -238,6 +238,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     htc.audio.alc.enable=1 \
     htc.audio.swalt.enable=1 \
     htc.audio.swalt.mingain=14512
+    
+# Tablet Overlays no radios
+    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio
 
 # Copy grouper specific prebuilt files
 ## FIX ME: bootanimation
