@@ -48,6 +48,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.swiqi2.enable=1 \
     ro.service.swiqi2.supported=true 
 
+# Tablet Overlays no radios
+    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio
+
 # Inherit AOSP device configuration for Manta.
 $(call inherit-product, device/samsung/manta/full_manta.mk)
 

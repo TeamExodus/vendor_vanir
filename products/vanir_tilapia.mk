@@ -23,6 +23,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/smalltab/media/bootanimation.zip:system/media/bootanimation.zip
 
+# Tablet Overlays with radios
+    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_radio
+
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
