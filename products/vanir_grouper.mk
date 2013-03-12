@@ -1,9 +1,10 @@
 #Squisher Choosing
 DHO_VENDOR := vanir
 
-KERNEL_SPAM := Faux Kernel v013u IN THE HIZNOUSE
+KERNEL_SPAM := Faux Kernel v013u IN THE H1ZNOUSE
 
 PRODUCT_PACKAGES += \
+    Camera \
     LiveWallpapersPicker
 
 # Run these first or they will not stick
@@ -109,7 +110,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/etc/HP_Audio.csv:system/etc/HP_Audio.csv \
     vendor/vanir/proprietary/tuna/etc/HP_Audio.csv:system/etc/HP_Audio.csv \
     vendor/vanir/proprietary/tuna/etc/lmfilter.txt:system/etc/lmfilter.txt \
-    vendor/vanir/proprietary/tuna/etc/media_profiles.xml:system/etc/media_profiles.xml \
     vendor/vanir/proprietary/tuna/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     vendor/vanir/proprietary/tuna/etc/peqimage_gec.bin:system/etc/peqimage_gec.bin \
     vendor/vanir/proprietary/tuna/etc/peqimage_gec_bt.bin:system/etc/peqimage_gec_bt.bin \
