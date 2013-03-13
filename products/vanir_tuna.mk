@@ -196,7 +196,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/libsrscorehtc.so:system/lib/libsrscorehtc.so \
     vendor/vanir/proprietary/tuna/lib/libsrsprocessing.so:system/lib/libsrsprocessing.so \
     vendor/vanir/proprietary/tuna/lib/libswiqisettinghelper.so:system/lib/libswiqisettinghelper.so \
-    vendor/vanir/proprietary/tuna/lib/libtinyalsa.so:system/lib/libtinyalsa.so \
     vendor/vanir/proprietary/tuna/lib/soundfx/libaudiopreprocessing.so:system/lib/soundfx/libaudiopreprocessing.so \
     vendor/vanir/proprietary/tuna/lib/soundfx/libbeatsbass.so:system/lib/soundfx/libbeatsbass.so \
     vendor/vanir/proprietary/tuna/lib/soundfx/libbundlewrapper.so:system/lib/soundfx/libbundlewrapper.so \
@@ -217,13 +216,10 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/soundfx/libxloudwrapper.so:system/lib/soundfx/libxloudwrapper.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
-# ? skipped files
-# AudioEffectService.apk
-# ? need to re-add SRS framework?
-# ? Did not include any precompiled lib/hw ,... very well may be needed
-# did not include precompiled libaudioflinger.so
-
 # Notes
+# skipped files: AudioEffectService.apk
+# Did not include any precompiled lib/hw ,... very well may be needed on some devices
+# did not include precompiled libaudioflinger.so, libtinyalsa/so
 # try compiling without audio_effects.conf + media_profiles.xml and compare files
 
 # Build.Prop Tweaks

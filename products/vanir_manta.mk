@@ -26,7 +26,7 @@ PRODUCT_COPY_FILES += \
 # bootanimation
 PRODUCT_COPY_FILES += \
    vendor/vanir/proprietary/manta/media/bootanimation.zip:system/media/bootanimation.zip
-    
+
 # Bravia 2 engine
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/etc/be_movie:system/etc/be_movie \
@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
 # Beats Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.swiqi2.enable=1 \
-    ro.service.swiqi2.supported=true 
+    ro.service.swiqi2.supported=true
 
 # Tablet Overlays no radios
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio
