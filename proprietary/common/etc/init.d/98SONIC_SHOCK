@@ -42,6 +42,9 @@ busybox sysctl -w kernel.sem=500,512000,64,2048
 busybox sysctl -w kernel.threads-max=525810
 echo "1" > /proc/sys/vm/laptop_mode
 
+
+for i in `find /sys/device/platform -name iostats`; do echo "0" > $i; done
+
 #
 # START wrapper script that brute-forces rngd until it stays alive
 #
