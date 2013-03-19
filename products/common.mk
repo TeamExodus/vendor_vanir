@@ -13,11 +13,11 @@ PRODUCT_PACKAGES += \
     DSPManager \
     Email
 
-Vanir_Version=4.2.2
+Vanir_Version=4.2.2.1
 
 Vanir_BUILD=$(Vanir_Version)
 
-ifeq ($(env RELEASE),)
+ifeq ($ENV{RELEASE},)
 Vanir_BUILD=$(Vanir_Version)$(shell date +".%m%d%y")
 endif
 
