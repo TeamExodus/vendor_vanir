@@ -17,7 +17,7 @@ Vanir_Version=4.2.2.1
 
 Vanir_BUILD=$(Vanir_Version)
 
-ifeq ($ENV{RELEASE},)
+ifeq ($(RELEASE),)
 Vanir_BUILD=$(Vanir_Version)$(shell date +".%m%d%y")
 endif
 
