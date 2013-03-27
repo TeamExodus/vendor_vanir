@@ -76,7 +76,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.VISIBLE_APP_MEM=8192 \
     video.accelerate.hw=1 \
     wifi.supplicant_scan_interval=300 \
-    windowsmgr.max_events_per_sec=280
+    windowsmgr.max_events_per_sec=280 \
+    persist.sys.root_access=3
 
 ### Possible culprits in random reboots I THINK?... difference is negligible without these
 PRODUCT_PROPERTY_OVERRIDES += \
