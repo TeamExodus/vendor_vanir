@@ -8,7 +8,6 @@ PRODUCT_DEVICE := generic
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
-    AppWidgetPicker \
     busybox \
     DSPManager \
     Email
