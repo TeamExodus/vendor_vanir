@@ -10,7 +10,8 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGES += \
     busybox \
     DSPManager \
-    Email
+    Email \
+    mGerrit
 
 Vanir_Version=4.2.2.1
 
