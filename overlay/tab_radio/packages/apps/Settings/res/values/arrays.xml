@@ -26,6 +26,7 @@
         <item>2G</item>
         <item>QUICKRECORD</item>
         <item>MEMORY</item>
+        <item>REBOOTMENU</item>
     </string-array>
 
     <string-array name="available_toggles_values" translatable="false">
@@ -53,6 +54,7 @@
         <item>@string/toggle_2g</item>
         <item>@string/toggle_quickrecord</item>
         <item>@string/toggle_memory</item>
+        <item>@string/toggle_rebootmenu</item>
     </string-array>
 
 </resources>
