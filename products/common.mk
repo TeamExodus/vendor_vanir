@@ -40,7 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false \
-    dalvik.vm.dexopt-flags=v=n,o=v,m=y \
+    dalvik.vm.dexopt-flags=v=n,o=a,m=y \
     dalvik.vm.execution-mode=int:jit \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=384m \
