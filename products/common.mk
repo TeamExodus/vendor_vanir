@@ -42,9 +42,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false \
     dalvik.vm.dexopt-flags=m=y \
     dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapsize=384m \
-    dalvik.vm.heapstartsize=8m \
     dalvik.vm.lockprof.threshold=850 \
     dalvik.vm.stack-trace-file=/data/anr/traces.txt \
     dalvik.vm.verify-bytecode=false \
