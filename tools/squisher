@@ -218,13 +218,13 @@ echo $CL_BLU"Target Location: " $CL_RST
 echo $CL_YLW"$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip" $CL_RST
 echo ""
 
-$MD5 $img >$img.md5sum
+$MD5 $img >$img.md5
 ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
 echo $CL_GRN"================"$CL_RST $TARGET_PRODUCT-$TARGET_BUILD_VARIANT: $CL_RED"completed"$CL_RST $CL_GRN"================"$CL_RST
 echo ""
 echo $CL_BLU"Product name:"$CL_RST $OUTVERSION.zip
 echo $CL_BLU"Package Size: "$CL_YLW"$ZIPSIZE     "
-echo $CL_BLU"md5:"$CL_RST $CL_YLW" $(cat $img.md5sum | awk '{ print $1 }')"$CL_RST
+echo $CL_BLU"md5:"$CL_RST $CL_YLW" $(cat $img.md5 | awk '{ print $1 }')"$CL_RST
 echo $CL_BLU"Target location:"$CL_RST
 echo $CL_YLW $OUTFILE $CL_RST
 echo ""
