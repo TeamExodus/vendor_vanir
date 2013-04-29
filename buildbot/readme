@@ -1,0 +1,3 @@
+Copy all files to your source directory and run it instead of build/envsetup.sh
+
+Has external script support for cherry-picks from gerrit, see picks.sh as a template which must be edited
