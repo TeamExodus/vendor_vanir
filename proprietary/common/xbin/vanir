@@ -295,7 +295,7 @@ menu_freq()
     export VAL=$val
     case $val in
         [Cc]) apply; return 0;;
-        [Dd]) export VAL=; commit $1; return 0;;
+        [Dd]) export VAL=; commit $choice; return 0;;
         [Mm]) return 0;;
         [Qq]) exit 0;;
         *)
