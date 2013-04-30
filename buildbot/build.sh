@@ -1,8 +1,10 @@
 #!/bin/bash -e
 
 CONFIG="build-config"
-FTPCONFIG="ftp-config"
 TEMP="temp-config"
+FTPCONFIG="ftp-config"
+SCPCONFIG="scp-config"
+CRONCONFIG="cron-config"
 #Let's check to see if build-config exists
 if [ ! -e $CONFIG ]; then (
 echo -n "Enter DEVICE'S BOARD NAME (LOWERCASE INPUT ONLY) and press [ENTER]: "
@@ -12,9 +14,14 @@ read -n1 CLOBBER
 echo
 echo -n "Enable Auto FTP Upload?[Y/y to enable]: "
 read -n1 FTPYN
+echo
+echo -n "Enable Auto SCP Upload?[Y/y to enable]: "
+read -n1 SCPYN
+echo
 echo "DEVICE=$DEVICE">> "$CONFIG"
 echo "CLOBBER=$CLOBBER">> "$CONFIG"
 echo "FTPYN=$FTPYN" >> "$CONFIG"
+echo "SCPYN=$SCPYN" >> "$CONFIG"
 (if [[ "$FTPYN" == "Y" || "$FTPYN" == "y" ]]; then
 echo -n "Enter FTP USERNAME and press [ENTER]: "
 read -r USERNAME
@@ -29,20 +36,35 @@ echo "PASSWORD=$PASSWORD">> "$FTPCONFIG"
 echo "SERVER=$SERVER">> "$FTPCONFIG"
 echo "FTPHOMEDIR=$FTPHOMEDIR">> "$FTPCONFIG"
 fi)
+(if [[ "$SCPYN" == "Y" || "$SCPYN" == "y" ]]; then
+echo -n "Enter SCP USERNAME and press [ENTER]: "
+read -r SCPUSERNAME
+echo -n "Enter SCP PASSWORD(leave blank if auto-connects) and press [ENTER]: "
+read -r SCPPASSWORD
+echo -n "Enter SERVER DOMAIN and press [ENTER]: "
+read -r SCPSERVER
+echo -n "Enter FTP Destination directory(leave blank for root) and press [ENTER]: "
+read -r SCPHOMEDIR
+echo "SCPUSERNAME=$SCPUSERNAME" >> "$SCPCONFIG"
+echo "SCPPASSWORD=$SCPPASSWORD">> "$SCPCONFIG"
+echo "SCPSERVER=$SCPSERVER">> "$SCPCONFIG"
+echo "SCPFTPHOMEDIR=$SCPFTPHOMEDIR">> "$SCPCONFIG"
+fi)
 )
 #And if it does we will source it for current values
 else
 (
 . $CONFIG
 . $FTPCONFIG
-echo "Current device:$DEVICE Auto-Clobber:$CLOBBER FTP Auto Upload:$FTPYN to $SERVER"
+. $SCPCONFIG
+echo "Current device:$DEVICE Auto-Clobber:$CLOBBER FTP Auto Upload:$FTPYN to $SERVER SCP Auto Upload:$SCPYN to $SCPSERVER"
 term="/dev/$(ps -p$$ -o tty="")"
 exec < $term
 #Just cleared STDIN to allow proper values to be placed in build-config
 echo -n "Change these values?[Y/y/N/n]: "
 read -n1 MODIFY
 echo
-if [[ "$MODIFY" == "Y" || "$MODIFY" == "y" ]]; then
+if [[ "$MODIFY" == "Y" || "$MODIFY" == "y" ]]; then(
 echo -n "Enter NEW DEVICE'S BOARD NAME (LOWERCASE INPUT ONLY) and press [ENTER]: "
 read -r DEVICE
 echo -n "Clobber source after lunch?[Y/y to enable]: "
@@ -51,14 +73,19 @@ echo
 echo -n "Enable Auto FTP Upload?[Y/y to enable]: "
 read -n1 FTPYN
 echo
+echo -n "Enable Auto SCP Upload?[Y/y to enable]: "
+read -n1 SCPYN
+echo
 echo "DEVICE=$DEVICE"> "$CONFIG"
 echo "CLOBBER=$CLOBBER">> "$CONFIG"
 echo "FTPYN=$FTPYN" >> "$CONFIG"
+echo "SCPYN=$SCPYN" >> "$CONFIG")
 (if [[ "$FTPYN" == "Y" || "$FTPYN" == "y" ]]; then
-(if [ -e $FTPCONFIG ]; then (
+(if [ -e $FTPCONFIG ]; then 
 echo "FTP configuration is as follows:"
 cat $FTPCONFIG 
-echo "If you wish to change these edit/delete ftp-config and run this script again")else(
+echo "If you wish to change these edit/delete ftp-config and run this script again"
+else
 echo -n "Enter FTP USERNAME and press [ENTER]: "
 read -r USERNAME
 echo -n "Enter FTP PASSWORD and press [ENTER]: "
@@ -70,9 +97,35 @@ read -r FTPHOMEDIR
 echo "USERNAME=$USERNAME" >> "$FTPCONFIG"
 echo "PASSWORD=$PASSWORD">> "$FTPCONFIG"
 echo "SERVER=$SERVER">> "$FTPCONFIG"
-echo "FTPHOMEDIR=$FTPHOMEDIR">> "$FTPCONFIG")fi)fi)
+echo "FTPHOMEDIR=$FTPHOMEDIR">> "$FTPCONFIG"
+fi)
+fi)
+(if [[ "$SCPYN" == "Y" || "$SCPYN" == "y" ]]; then
+(if [ -e $SCPCONFIG ]; then
+echo "SCP configuration is as follows:"
+cat $SCPCONFIG 
+echo "If you wish to change these edit/delete scp-config and run this script again"
+else
+echo -n "Enter SCP USERNAME and press [ENTER]: "
+read -r SCPUSERNAME
+echo -n "Enter SCP PASSWORD(leave blank if auto-connects) and press [ENTER]: "
+read -r SCPPASSWORD
+echo -n "Enter SERVER DOMAIN and press [ENTER]: "
+read -r SCPSERVER
+echo -n "Enter SCP Destination home directory(leave blank for root) and press [ENTER]: "
+read -r SCPHOMEDIR
+echo "SCPUSERNAME=$SCPUSERNAME" >> "$SCPCONFIG"
+echo "SCPPASSWORD=$SCPPASSWORD">> "$SCPCONFIG"
+echo "SCPSERVER=$SCPSERVER">> "$SCPCONFIG"
+echo "SCPFTPHOMEDIR=$SCPHOMEDIR">> "$SCPCONFIG"
+fi)
+fi)
 fi)
 fi
+
+
+
+
 
 
 DIR1="${BASH_SOURCE[0]}"
@@ -87,6 +140,7 @@ rm $CONFIG
 grep DEVICE= "$TEMP" > "$CONFIG"
 grep CLOBBER= "$TEMP" >> "$CONFIG"
 grep FTPYN= "$TEMP" >> "$CONFIG"
+grep SCPYN= "$TEMP" >> "$CONFIG"
 echo "REPODIR=$REPODIR" >> "$CONFIG"
 grep Vanir_Version= "$REPODIR/vendor/vanir/products/common.mk" >>$CONFIG
 grep 'PRODUCT_NAME :=' "$REPODIR/vendor/vanir/products/common.mk" >>$CONFIG
@@ -115,6 +169,8 @@ read SYNC
 echo -n "Enter -j flag brunch number and press [ENTER]: "
 read BRUNCH
 
+echo "SYNC=$SYNC" > "$CRONCONFIG"
+echo "BRUNCH=$BRUNCH">> "$CRONCONFIG"
 echo "Starting with a fresh source"
 cd $REPODIR
 repo sync -j$SYNC
@@ -149,6 +205,21 @@ mput "$ROMNAME"_"$DEVICE""$DATE".zip.md5
 mput "$ROMNAME"_"$DEVICE""$DATE".zip
 quit
 EOF
+)fi
+if [[ "$SCPYN" == "Y" || "$SCPYN" == "y" ]]; then(
+. scp-config
+echo "Uploading the following"
+echo "$ROMNAME"_"$DEVICE""$DATE"".zip"
+echo "$ROMNAME"_"$DEVICE""$DATE"".md5"
+echo "From"
+echo $REPODIR/$DEVICE
+cd $REPODIR/$DEVICE
+md5sum "$ROMNAME"_"$DEVICE""$DATE".zip > "$ROMNAME"_"$DEVICE""$DATE".zip.md5
+# login to via scp and transfer file
+scp $REPODIR/$DEVICE/"$ROMNAME"_"$DEVICE""$DATE".zip.md5 $USERNAME@$SERVER:$FTPHOMEDIR/$ROMNAME/"$ROMNAME"_"$DEVICE""$DATE".zip.md5
+echo $SCPPASSWORD
+scp $REPODIR/$DEVICE/"$ROMNAME"_"$DEVICE""$DATE".zip $USERNAME@$SERVER:$FTPHOMEDIR/$ROMNAME/"$ROMNAME"_"$DEVICE""$DATE".zip
+echo $SCPPASSWORD
 )fi
 cd $REPODIR
 if [[ "$CLOBBER" == "Y" || "$CLOBBER" == "y" ]]; then
