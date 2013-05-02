@@ -20,6 +20,10 @@ $(call inherit-product, vendor/vanir/products/gsm.mk)
 # Inherit AOSP device configuration for mako.
 $(call inherit-product, device/lge/mako/full_mako.mk)
 
+# Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/etc/mako-vanir.cfg:system/etc/vanir.cfg
+
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_mako
 PRODUCT_DEVICE := mako
