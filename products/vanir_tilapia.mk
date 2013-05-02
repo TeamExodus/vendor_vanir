@@ -28,6 +28,7 @@ PRODUCT_COPY_FILES += \
 
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
+$(call inherit-product, vendor/vanir/products/beats_bravia.mk)
 
 # GSM APNs and Simcard app
 $(call inherit-product, vendor/vanir/products/gsm.mk)

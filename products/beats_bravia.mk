@@ -1,24 +1,3 @@
-#Squisher Choosing
-DHO_VENDOR := vanir
-
-KERNEL_SPAM := Faux Kernel v013u IN THE H1ZNOUSE
-
-PRODUCT_PACKAGES += \
-    Camera \
-    LiveWallpapersPicker
-
-# Run these first or they will not stick
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.rom=vanir-GROUPER
-
-# Blobs necessary for drm
-PRODUCT_COPY_FILES += \
-   vendor/vanir/proprietary/common/lib/libfrsdk.so:system/lib/libfrsdk.so \
-   vendor/vanir/proprietary/common/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
-   vendor/vanir/proprietary/common/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
-   vendor/vanir/proprietary/common/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
-   vendor/vanir/proprietary/common/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so
-
 # Bravia 2 engine
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/etc/be_movie:system/etc/be_movie \
@@ -110,6 +89,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/etc/HP_Audio.csv:system/etc/HP_Audio.csv \
     vendor/vanir/proprietary/tuna/etc/HP_Audio.csv:system/etc/HP_Audio.csv \
     vendor/vanir/proprietary/tuna/etc/lmfilter.txt:system/etc/lmfilter.txt \
+    vendor/vanir/proprietary/tuna/etc/media_profiles.xml:system/etc/media_profiles.xml \
     vendor/vanir/proprietary/tuna/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     vendor/vanir/proprietary/tuna/etc/peqimage_gec.bin:system/etc/peqimage_gec.bin \
     vendor/vanir/proprietary/tuna/etc/peqimage_gec_bt.bin:system/etc/peqimage_gec_bt.bin \
@@ -221,7 +201,13 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/lib/soundfx/libxloudwrapper.so:system/lib/soundfx/libxloudwrapper.so \
     vendor/vanir/proprietary/tuna/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
-# Beats Build.Prop Tweaks
+# Notes
+# skipped files: AudioEffectService.apk
+# Did not include any precompiled lib/hw ,... very well may be needed on some devices
+# did not include precompiled libaudioflinger.so, libtinyalsa/so
+# try compiling without audio_effects.conf + media_profiles.xml and compare files
+
+# Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.clearaudio.enable=1 \
     persist.service.clearphase.enable=1 \
@@ -237,27 +223,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     htc.audio.alc.enable=1 \
     htc.audio.swalt.enable=1 \
     htc.audio.swalt.mingain=14512
-    
-# Tablet Overlays no radios
-    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio
-
-# Copy grouper specific prebuilt files
-## FIX ME: bootanimation
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/smalltab/media/bootanimation.zip:system/media/bootanimation.zip
-
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common_tabs.mk)
-$(call inherit-product, vendor/vanir/products/beats_bravia.mk)
-
-# Inherit AOSP device configuration for grouper
-$(call inherit-product, device/asus/grouper/full_grouper.mk)
-
-# Setup device specific product configuration.
-PRODUCT_NAME := vanir_grouper
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := grouper
-PRODUCT_MODEL := Nexus 7
-PRODUCT_MANUFACTURER := asus
-
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=nakasi BUILD_FINGERPRINT=google/nakasi/grouper:4.2.2/JDQ39E/405518:user/release-keys PRIVATE_BUILD_DESC="nakasi-user 4.2.2 JDQ39E 405518 release-keys" BUILD_NUMBER=405518
