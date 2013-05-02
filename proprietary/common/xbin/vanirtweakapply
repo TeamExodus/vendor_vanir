@@ -99,7 +99,7 @@ t ffc /sys/kernel/fast_charge/force_fast_charge             $ffc        # Enable
 ############### wll v2.0 ########################
 
 # check for legacy value (Y/N) and update to 0=false, 1=true
-[ ! -z "$wll" ] && [[ $wll =~ [Yy] ]] && sed -i 's/wll=[Yy]/wll=1/g' || [[ $wll =~ [Nn] ]] && sed -i 's/wll=[Nn]/wll=0/g'
+[ ! -z "$wll" ] && [ `echo $wll | grep -i y | wc -l` -gt 0 ] && sed -i 's/wll=[Yy]/wll=1/g' || [ `echo $wll | grep -i n | wc -l` -gt 0 ] && sed -i 's/wll=[Nn]/wll=0/g'
 
 # to support more kernels, let's see what value is currently in /sys/module/bcmdhd/parameters/wifi_pm, and echo the correct thing
 currwll=$(cat /sys/module/bcmdhd/parameters/wifi_pm)
