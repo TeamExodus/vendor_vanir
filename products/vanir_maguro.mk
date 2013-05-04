@@ -8,12 +8,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # More Language support for Maguro LatinIME
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
 
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
-$(call inherit-product, vendor/vanir/products/gsm.mk)
-
 # Inherit AOSP device configuration for maguro.
 $(call inherit-product, device/samsung/maguro/full_maguro.mk)
+
+$(call inherit-product, vendor/vanir/products/gsm.mk)
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_maguro
