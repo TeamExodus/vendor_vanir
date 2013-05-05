@@ -9,7 +9,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.ril.fast.dormancy.rule=0 \
     ro.goo.rom=vanir-MANTA
 
-NO_BEATS_BRAVIA := true
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker
@@ -52,9 +53,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Inherit AOSP device configuration for Manta.
 $(call inherit-product, device/samsung/manta/full_manta.mk)
-
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
 # More Language support for International LatinIME
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
