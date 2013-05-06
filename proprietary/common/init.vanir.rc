@@ -1,4 +1,6 @@
 on init
+    export TERMINFO /system/etc/terminfo
+    export TERM linux
     export ANDROID_CACHE /cache
 
 on post-fs-data
