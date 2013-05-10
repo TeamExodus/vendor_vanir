@@ -11,6 +11,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
+$(call inherit-product, vendor/vanir/products/non-beats.mk)
 
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker
