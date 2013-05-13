@@ -3,11 +3,13 @@ DHO_VENDOR := vanir
 
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
-    ro.config.vc_call_vol_steps=7 \
-    ring.delay=0 \
-    ro.telephony.call_ring.delay=50 \
-    ro.ril.fast.dormancy.rule=0 \
     ro.goo.rom=vanir-TORO
+
+# trusting defaults
+#    ro.config.vc_call_vol_steps=7 \
+#    ring.delay=0 \
+#    ro.telephony.call_ring.delay=0 \
+#    ro.ril.fast.dormancy.rule=0 \
 
 $(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
 
