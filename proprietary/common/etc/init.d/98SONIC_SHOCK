@@ -15,20 +15,25 @@ sysctl -p /system/etc/sysctl.conf
 # Set SD Card Cache
 #
 if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ]; then
-  echo 2048 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
+  echo 256 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
 fi
 
-#RQ_Affinity
-for b in /sys/block/*; do echo 1 > $b/queue/rq_affinity; done
+#
+# General Queue Tweaks
+#
+for i in /sys/block/*/queue; do
+  echo 256 > $i/nr_requests;
+  echo 256 > $i/read_ahead_kb;
+  echo 2 > $i/rq_affinity;
+  echo 0 > $i/nomerges;
+  echo 0 > $i/add_random;
+  echo 0 > $i/rotational;
+done;
 
 #
 #
 # Sysctl & VM Tweaks
 #
-busybox sysctl -w vm.page-cluster=3
-busybox sysctl -w vm.drop_caches=3
-busybox sysctl -w vm.dirty_expire_centisecs=750
-busybox sysctl -w vm.dirty_writeback_centisecs=1500
 busybox sysctl -w kernel.random.write_wakeup_threshold=256
 busybox sysctl -w kernel.random.read_wakeup_threshold=128
 busybox sysctl -w fs.file-max=524288
@@ -54,14 +59,11 @@ rngd
 #
 # File System Tweaks & Cleanup
 #
-busybox mount -o remount,noatime,noauto_da_alloc,nodiratime,barrier=0,nobh,data=writeback /system
+busybox mount -o remount,noatime,noauto_da_alloc,nodiratime,barrier=0,data=writeback /system
 for m in "/data" "/cache"; do
-  busybox mount -o remount,commit=19,barrier=0,discard,nomblk_io_submit,noauto_da_alloc,nobh,nouser_xattr,errors=continue,noatime,nodiratime,nosuid,nodev,data=writeback $m
+  busybox mount -o remount,commit=19,barrier=0,discard,nomblk_io_submit,noauto_da_alloc,errors=continue,noatime,nodiratime,nosuid,nodev,data=writeback $m
 done
 
-
-
-echo "10" > /proc/sys/fs/lease-break-time
 
 sync
 sysro
