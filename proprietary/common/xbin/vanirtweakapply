@@ -2,6 +2,8 @@
 # Nuclearmistake, Sonicxml
 # Inspiration from Jakebites and Liberty's liberty.cfg and associated init.d scripts
 
+
+
 #check for persistent settings file on sdcard
 if [ -e /system/etc/vanir.cfg ]; then
     sync
@@ -11,8 +13,12 @@ if [ -e /system/etc/vanir.cfg ]; then
         echo "SLIPPING YOUR /SDCARD THE BEEF INJECTION"
         cp /system/etc/vanir.cfg /sdcard/vanir.cfg
     else
+        cat /sdcard/vanir.cfg | uniq -s 2 -u > /sdcard/vanir.cfg2
+        mv /sdcard/vanir.cfg2 /sdcard/vanir.cfg
         #vanir.cfg exists, so let's add defaults for config values that may not have previously existed
-        if [ `cat /sdcard/vanir.cfg | grep '### ZRAM' | wc -l` -eq 0 ]; then
+        if [ `cat /sdcard/vanir.cfg | grep '### *ZRAM' | wc -l` -ne 1 ]; then
+            cat /sdcard/vanir.cfg | grep -vi "zram" > /sdcard/vanir.cfg2
+            mv /sdcard/vanir.cfg2 /sdcard/vanir.cfg
             echo >> /sdcard/vanir.cfg
             echo >> /sdcard/vanir.cfg
             echo '### ZRAM' >> /sdcard/vanir.cfg
@@ -21,14 +27,18 @@ if [ -e /system/etc/vanir.cfg ]; then
             echo >> /sdcard/vanir.cfg
             echo 'zramStatus=1' >> /sdcard/vanir.cfg
         fi
-        if [ `cat /sdcard/vanir.cfg | grep '### KSM' | wc -l` -eq 0 ]; then
+        if [ `cat /sdcard/vanir.cfg | grep '### *KSM2' | wc -l` -eq 0 ]; then
+            echo "Switching KSM to new defaults"
+            cat /sdcard/vanir.cfg | grep -vi "ksm" > /sdcard/vanir.cfg2
+            mv /sdcard/vanir.cfg2 /sdcard/vanir.cfg
             echo >> /sdcard/vanir.cfg
             echo >> /sdcard/vanir.cfg
-            echo '### KSM' >> /sdcard/vanir.cfg
-            echo 'ksmRun=1' >> /sdcard/vanir.cfg
-            echo 'ksmSleep=4000' >> /sdcard/vanir.cfg
-            echo 'ksmPagesToScan=128' >> /sdcard/vanir.cfg
+            echo '### KSM2' >> /sdcard/vanir.cfg
+            echo '#ksmRun=1' >> /sdcard/vanir.cfg
+            echo '#ksmSleep=4000' >> /sdcard/vanir.cfg
+            echo '#ksmPagesToScan=128' >> /sdcard/vanir.cfg
         fi
+        cat /sdcard/vanir.cfg | grep '###'
     fi
     rm /system/etc/vanir.cfg
     sync
