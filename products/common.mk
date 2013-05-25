@@ -122,12 +122,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/init.vanir.rc:root/init.vanir.rc \
     vendor/vanir/proprietary/common/bin/sysinit:system/bin/sysinit \
-    vendor/vanir/proprietary/common/bin/cronlogger:system/bin/cronlogger
+    vendor/vanir/proprietary/common/bin/cronlogger:system/bin/cronlogger \
+    vendor/vanir/proprietary/common/xbin/CB_RunHaveged:system/xbin/CB_RunHaveged \
+    vendor/vanir/proprietary/common/xbin/haveged:system/xbin/haveged \
+    vendor/vanir/proprietary/common/xbin/vanirentropy:system/xbin/vanirentropy
+ 
 
 # init.d Tweaks
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/vanir/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties \
+    vendor/vanir/proprietary/common/etc/init.d/06ENTROPY:system/etc/init.d/06ENTROPY \
     vendor/vanir/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
     vendor/vanir/proprietary/common/etc/init.d/99vanir:system/etc/init.d/99vanir \
@@ -135,12 +140,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/cron/cron.minutely/00nicetweaks:/system/etc/cron/cron.minutely/00nicetweaks \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
-#RNGD MODS
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/xbin/vanirentropy:system/xbin/vanirentropy \
-    vendor/vanir/proprietary/common/xbin/rngd:system/xbin/rngd
-
-#LatinIME core files
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
 
 #Define thirdparty for Koush's SU
