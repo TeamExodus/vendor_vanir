@@ -132,9 +132,60 @@ menu_hp()
 }
 menu_gpu()
 {
+    sectionheader "GPU Control"
+    . $SDWTF/vanir.cfg
+    echo "1) GPU Overclock"
+    echo "2) GPU Governor"
+    echo "M) Return to main menu"
+    echo "Q) Quit"
+    read -p "Enter option: " opt
+    choice=""
+    case $opt in
+      1) menu gpu_oc;;
+      2) menu gpu_gov;;
+      [Mm]) return 0;;
+      [Qq]) apply; exit 0;;
+      *) echo "Invalid option"; sleep 1; menu_gpu; return 0;;
+    esac
+    menu gpu
+    return 0;
+}
+menu_gpu_oc()
+{
     sectionheader "GPU Overclock"
     . $SDWTF/vanir.cfg
     prompt gpuOC "(0=307MHz--default, 1=384MHz, 2=512MHz)" num 0 2
+    return 0
+}
+menu_gpu_gov()
+{
+    sectionheader "GPU Governor"
+    . $SDWTF/vanir.cfg
+    eval curr=$gpuGOV
+    [ -z "$curr" ] && curr="D"
+    echo "1) ondemand (default)"
+    echo "2) performance"
+    echo "3) powersave"
+    echo "C: to use current setting"
+    echo "D: to use the stock value"
+    echo "Current governor: $curr"
+    read -p "Enter choice: " val  
+    case $val in
+        [Cc]) apply; return 0;;
+        [Dd]) export VAL=; commit $1; return 0;;
+        [Mm]) return 0;;
+        [Qq]) exit 0;;
+        1)  export VAL="ondemand";
+            commit gpuGOV;
+            apply;;
+        2)  export VAL="performance";
+            commit gpuGOV;
+            apply;;
+        3)  export VAL="powersave";
+            commit gpuGOV;
+            apply;;
+         *) echo "Invalid option"; sleep 1; menu_gpu_gov; return 0;;
+    esac
     return 0
 }
 menu_fc()
