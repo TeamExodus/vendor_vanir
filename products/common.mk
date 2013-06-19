@@ -12,7 +12,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     Email
 
-Vanir_Version=4.2.2.1
+Vanir_Version=4.2.2.2
 
 Vanir_BUILD=$(Vanir_Version)
 
