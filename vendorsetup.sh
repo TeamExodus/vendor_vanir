@@ -6,6 +6,7 @@ add_lunch_combo vanir_grouper-userdebug
 add_lunch_combo vanir_manta-userdebug
 add_lunch_combo vanir_mako-userdebug
 add_lunch_combo vanir_i605-userdebug
+add_lunch_combo vanir_jfltevzw-userdebug
 add_lunch_combo vanir_toro-user
 add_lunch_combo vanir_maguro-user
 add_lunch_combo vanir_toroplus-user
@@ -14,3 +15,4 @@ add_lunch_combo vanir_tilapia-user
 add_lunch_combo vanir_manta-user
 add_lunch_combo vanir_mako-user
 add_lunch_combo vanir_i605-user
+add_lunch_combo vanir_jfltevzw-user
