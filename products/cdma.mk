@@ -8,3 +8,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     gsm.current.phone-type=2
+
+# SIM Toolkit
+PRODUCT_PACKAGES += \
+    Stk
