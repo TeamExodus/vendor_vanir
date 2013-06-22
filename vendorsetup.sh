@@ -1,18 +1,25 @@
-add_lunch_combo vanir_toro-userdebug
-add_lunch_combo vanir_maguro-userdebug
-add_lunch_combo vanir_toroplus-userdebug
-add_lunch_combo vanir_tilapia-userdebug
-add_lunch_combo vanir_grouper-userdebug
-add_lunch_combo vanir_manta-userdebug
-add_lunch_combo vanir_mako-userdebug
-add_lunch_combo vanir_i605-userdebug
-add_lunch_combo vanir_jfltevzw-userdebug
-add_lunch_combo vanir_toro-user
-add_lunch_combo vanir_maguro-user
-add_lunch_combo vanir_toroplus-user
-add_lunch_combo vanir_grouper-user
-add_lunch_combo vanir_tilapia-user
-add_lunch_combo vanir_manta-user
-add_lunch_combo vanir_mako-user
-add_lunch_combo vanir_i605-user
-add_lunch_combo vanir_jfltevzw-user
+#!/bin/bash
+ZOMG_ITS_A_COMBO_COMBO()
+{
+  for x in \
+    toro \
+    maguro \
+    toroplus \
+    tilapia \
+    manta \
+    mako \
+    i605 \
+    jflteatt \
+    jfltecan \
+    jfltecri \
+    jfltespr \
+    jfltetmo \
+    jfltevzw \
+    jfltexx;
+  do
+    add_lunch_combo vanir_$x-$1
+  done
+}
+
+ZOMG_ITS_A_COMBO_COMBO userdebug
+ZOMG_ITS_A_COMBO_COMBO user
