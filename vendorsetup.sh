@@ -5,6 +5,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     toro \
     maguro \
     toroplus \
+    grouper \
     tilapia \
     manta \
     mako \
