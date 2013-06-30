@@ -50,6 +50,3 @@ cd $DESKCLOCK
 echo "Starting to build your rom"
 echo "Please be patient"
 cd $SOURCE
-
-
-

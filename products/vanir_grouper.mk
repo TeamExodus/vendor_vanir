@@ -11,7 +11,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-GROUPER
 
-    
 # Tablet Overlays no radios
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio
 

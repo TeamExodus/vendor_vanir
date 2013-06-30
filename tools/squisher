@@ -106,7 +106,6 @@ cd $REPACK/ota
 rm -rf $REPACK/parallel
 )
 
-
 if [ "$WANT_SQUASHFS" -eq 1 ]; then
     squash_opts="-force-uid 1000 -force-gid 1000 -no-progress -noappend -no-exports -no-recovery"
     updater=$REPACK/ota/META-INF/com/google/android/updater-script
@@ -140,7 +139,7 @@ $SED -i \
      -e '/ro\.kernel\.android\.checkjni/d' \
      -e '/ro\.build\.type/s/eng/user/' \
      $REPACK/ota/system/build.prop
-	
+
 # Fix build.prop step 2
 echo "Fixing \"move hyst\" property name... whoever put a space in it is a butthead."
 $SED 's/movehyst/move hyst/g' -i $REPACK/ota/system/build.prop

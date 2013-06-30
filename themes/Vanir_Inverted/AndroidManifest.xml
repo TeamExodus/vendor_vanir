@@ -24,7 +24,6 @@
         android:label="Vanir Inverted"
         android:name="VanirInverted"
         android:icon="@drawable/icon">
-
 </application>
 
 <theme
