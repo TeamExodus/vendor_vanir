@@ -145,6 +145,10 @@ $SED -i \
 echo "Fixing \"move hyst\" property name... whoever put a space in it is a butthead."
 $SED 's/movehyst/move hyst/g' -i $REPACK/ota/system/build.prop
 
+# Reduce size of beats effects by ALOT (these soundimage text files are more than 50% comments, and there ARE LOADS OF THEM)
+echo "66% of Beats' configs are comments... which are USELESS. BUH BYE BEATS COMMENTS!"
+for x in $REPACK/ota/system/etc/soundimage/*.txt; do $SED -i 's/ *\#.*//g' $x; done
+
 # No need for recovery
 rm -rf $REPACK/ota/recovery
 
