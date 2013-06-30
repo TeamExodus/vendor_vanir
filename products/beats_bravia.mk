@@ -1,3 +1,6 @@
+PRODUCT_PACKAGES += \
+    DSPManager
+
 # Blobs necessary for drm
 PRODUCT_COPY_FILES += \
    vendor/vanir/proprietary/common/lib/libfrsdk.so:system/lib/libfrsdk.so \

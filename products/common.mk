@@ -9,7 +9,6 @@ PRODUCT_DEVICE := generic
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     busybox \
-    DSPManager \
     Email
 
 Vanir_Version=4.2.2.2
