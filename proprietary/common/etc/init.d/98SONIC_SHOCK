@@ -30,7 +30,7 @@ for i in /sys/block/*/queue; do
   echo 0 > $i/rotational;
 done;
 
-for i in `find /sys/device/platform -name iostats`; do echo "0" > $i; done
+for i in `find /sys/devices/platform -name iostats`; do echo "0" > $i; done
 
 #
 # File System Tweaks & Cleanup
