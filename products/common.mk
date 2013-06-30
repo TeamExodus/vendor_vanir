@@ -33,8 +33,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
     ro.modversion=$(Vanir_BUILD) \
-    ro.goo.version=$(Vanir_BUILD)
+    ro.goo.version=$(Vanir_BUILD) \
+    ro.rommanager.developerid=vanir \
+    wifi.supplicant_scan_interval=300 \
+    persist.sys.root_access=3
 
+ifeq ($(VANIR_FAILSAFE),)
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false \
@@ -62,10 +66,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.dec.jpeg.memcap=8000000 \
     ro.media.enc.jpeg.quality=100 \
     ro.min.fling_velocity=10000 \
-    ro.rommanager.developerid=vanir \
-    video.accelerate.hw=1 \
-    wifi.supplicant_scan_interval=300 \
-    persist.sys.root_access=3
+    video.accelerate.hw=1
+endif
 
 # Questionable stuff -- just trusting stock values on these
 #    movfilter=40 \
@@ -88,18 +90,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Version information used on all builds
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JDQ39E BUILD_ID=JDQ39E BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
 
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/xbin/sysrw:system/xbin/sysrw \
+    vendor/vanir/proprietary/common/xbin/sysro:system/xbin/sysro \
+    vendor/vanir/proprietary/common/xbin/vanirinteractivegovernorgovernor:system/xbin/vanirinteractivegovernorgovernor \
+    vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
+    vendor/vanir/proprietary/common/init.vanir.rc:root/init.vanir.rc \
+    vendor/vanir/proprietary/common/bin/sysinit:system/bin/sysinit \
+    vendor/vanir/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties
+
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
+    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
+
+ifeq ($(VANIR_FAILSAFE),)
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/bin/fix_permissions:system/bin/fix_permissions \
-    vendor/vanir/proprietary/common/xbin/sysrw:system/xbin/sysrw \
-    vendor/vanir/proprietary/common/xbin/sysro:system/xbin/sysro \
     vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd \
     vendor/vanir/proprietary/common/xbin/vanircheckcpu:system/xbin/vanircheckcpu \
     vendor/vanir/proprietary/common/xbin/vanirtweakapply:system/xbin/vanirtweakapply \
     vendor/vanir/proprietary/common/xbin/vanir:system/xbin/vanir \
-    vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
-    vendor/vanir/proprietary/common/xbin/vanirnice:system/xbin/vanirnice \
-    vendor/vanir/proprietary/common/xbin/vanirinteractivegovernorgovernor:system/xbin/vanirinteractivegovernorgovernor
+    vendor/vanir/proprietary/common/xbin/vanirnice:system/xbin/vanirnice
 
 #Imoseyon's zram script
 PRODUCT_COPY_FILES += \
@@ -112,25 +124,19 @@ PRODUCT_COPY_FILES += \
 
 # proprietary guts
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
-    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so \
     vendor/vanir/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
-# init.vanir.rc, 2 copies of it for compatibility, and some shell scripts from CM
+# entropy mumbo jump
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/init.vanir.rc:root/init.vanir.rc \
-    vendor/vanir/proprietary/common/bin/sysinit:system/bin/sysinit \
-    vendor/vanir/proprietary/common/bin/cronlogger:system/bin/cronlogger \
     vendor/vanir/proprietary/common/xbin/CB_RunHaveged:system/xbin/CB_RunHaveged \
     vendor/vanir/proprietary/common/xbin/haveged:system/xbin/haveged \
-    vendor/vanir/proprietary/common/xbin/vanirentropy:system/xbin/vanirentropy
+    vendor/vanir/proprietary/common/xbin/vanirentropy:system/xbin/vanirentropy \
+    vendor/vanir/proprietary/common/bin/cronlogger:system/bin/cronlogger
  
-
 # init.d Tweaks
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
-    vendor/vanir/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties \
     vendor/vanir/proprietary/common/etc/init.d/06ENTROPY:system/etc/init.d/06ENTROPY \
     vendor/vanir/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
     vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
@@ -138,6 +144,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/init.d/ZZafterboot:system/etc/init.d/ZZafterboot \
     vendor/vanir/proprietary/common/etc/cron/cron.minutely/00nicetweaks:/system/etc/cron/cron.minutely/00nicetweaks \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
+endif
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
 
