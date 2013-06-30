@@ -15,7 +15,7 @@ menu()
 
 menu_main()
 {
-    [ ! $TESTING ] && [ ! -e $SDWTF/vanir.cfg ] && echo "$SDWTF/vanir.cfg is missing. Popcorn scripts modification cannot continue."
+    [ ! $TESTING ] && [ ! -e $SDWTF/vanir.cfg ] && echo "$SDWTF/vanir.cfg is missing. Cannot continue."
     sectionheader "Main Menu"
     echo "1) CPU Tweaks"
     echo "2) GPU Overclock"
@@ -169,7 +169,7 @@ menu_gpu_gov()
     echo "C: to use current setting"
     echo "D: to use the stock value"
     echo "Current governor: $curr"
-    read -p "Enter choice: " val  
+    read -p "Enter choice: " val
     case $val in
         [Cc]) apply; return 0;;
         [Dd]) export VAL=; commit $1; return 0;;
@@ -361,7 +361,7 @@ menu_freq()
                     break;
                 fi;
             done;
-            if [ $success  -eq 0 ]; then
+            if [ $success -eq 0 ]; then
                 echo "Invalid option"; sleep 1; menu_freq; return 0;
             fi;;
     esac
