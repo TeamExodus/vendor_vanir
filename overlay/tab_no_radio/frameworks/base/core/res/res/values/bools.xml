@@ -15,10 +15,6 @@
 -->
 
 <resources>
-
-
 <!-- Set Dual-Pane Mode to true for tablets -->
     <bool name="preferences_prefer_dual_pane">true</bool>
-
 </resources>
-

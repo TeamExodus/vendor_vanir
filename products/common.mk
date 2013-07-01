@@ -133,7 +133,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/haveged:system/xbin/haveged \
     vendor/vanir/proprietary/common/xbin/vanirentropy:system/xbin/vanirentropy \
     vendor/vanir/proprietary/common/bin/cronlogger:system/bin/cronlogger
- 
+
 # init.d Tweaks
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
@@ -159,7 +159,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     Superuser \
     su
-    
+
 # Optional CM packages
 PRODUCT_PACKAGES += \
     Basic \

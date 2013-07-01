@@ -9,9 +9,9 @@
         <item name="android:editTextColor">@color/holo_blue_light</item>
         <item name="android:textCursorDrawable">@drawable/text_cursor_holo_light</item>
     </style>
-    <style name="TextAppearance.StatusBar.Expanded" parent="@*android:style/Animation.PopupWindow" />    
+    <style name="TextAppearance.StatusBar.Expanded" parent="@*android:style/Animation.PopupWindow" />
     <style name="TextAppearance.StatusBar.Expanded.Network" parent="@style/TextAppearance.StatusBar.Expanded">
-        <item name="android:textSize">14dp</item>        
+        <item name="android:textSize">14dp</item>
         <item name="android:textColor">#33b5e5</item>
     </style>
     <style name="MmsHoloTheme" parent="@*android:style/Theme.Holo">

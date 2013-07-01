@@ -81,9 +81,9 @@ echo "CLOBBER=$CLOBBER">> "$CONFIG"
 echo "FTPYN=$FTPYN" >> "$CONFIG"
 echo "SCPYN=$SCPYN" >> "$CONFIG")
 (if [[ "$FTPYN" == "Y" || "$FTPYN" == "y" ]]; then
-(if [ -e $FTPCONFIG ]; then 
+(if [ -e $FTPCONFIG ]; then
 echo "FTP configuration is as follows:"
-cat $FTPCONFIG 
+cat $FTPCONFIG
 echo "If you wish to change these edit/delete ftp-config and run this script again"
 else
 echo -n "Enter FTP USERNAME and press [ENTER]: "
@@ -103,7 +103,7 @@ fi)
 (if [[ "$SCPYN" == "Y" || "$SCPYN" == "y" ]]; then
 (if [ -e $SCPCONFIG ]; then
 echo "SCP configuration is as follows:"
-cat $SCPCONFIG 
+cat $SCPCONFIG
 echo "If you wish to change these edit/delete scp-config and run this script again"
 else
 echo -n "Enter SCP USERNAME and press [ENTER]: "
@@ -122,12 +122,6 @@ fi)
 fi)
 fi)
 fi
-
-
-
-
-
-
 DIR1="${BASH_SOURCE[0]}"
 while [ -h "$DIR1" ]; do # resolve $SOURCE until the file is no longer a symlink
   DIR="$( cd -P "$( dirname "$DIR1" )" && pwd )"
@@ -165,10 +159,8 @@ exec < $term
 echo
 echo -n "Enter -j flag sync number and press [ENTER]: "
 read SYNC
-
 echo -n "Enter -j flag brunch number and press [ENTER]: "
 read BRUNCH
-
 echo "SYNC=$SYNC" > "$CRONCONFIG"
 echo "BRUNCH=$BRUNCH">> "$CRONCONFIG"
 echo "Starting with a fresh source"
