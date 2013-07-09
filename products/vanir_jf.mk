@@ -6,6 +6,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/jf/media/bootanimation.zip:system/media/bootanimation.zip
 
 # Inherit common product files.
+NO_DRM_BLOBS := true
 $(call inherit-product, vendor/vanir/products/beats_bravia.mk)
 
 # Enhanced NFC

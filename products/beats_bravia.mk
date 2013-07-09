@@ -1,6 +1,7 @@
 PRODUCT_PACKAGES += \
     DSPManager
 
+ifneq ($(NO_DRM_BLOBS),true)
 # Blobs necessary for drm
 PRODUCT_COPY_FILES += \
    vendor/vanir/proprietary/common/lib/libfrsdk.so:system/lib/libfrsdk.so \
@@ -8,6 +9,7 @@ PRODUCT_COPY_FILES += \
    vendor/vanir/proprietary/common/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
    vendor/vanir/proprietary/common/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
    vendor/vanir/proprietary/common/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so
+endif
 
 # Bravia 2 engine
 PRODUCT_COPY_FILES += \
@@ -52,7 +54,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/bin/peqimage_ibeats_solo.bin:system/bin/peqimage_ibeats_solo.bin \
     vendor/vanir/proprietary/tuna/bin/peqimage_ibeats_solo_x.bin:system/bin/peqimage_ibeats_solo_x.bin \
     vendor/vanir/proprietary/tuna/bin/peqimage_ibeats_x.bin:system/bin/peqimage_ibeats_x.bin \
-    vendor/vanir/proprietary/tuna/bin/snd:system/bin/snd \
     vendor/vanir/proprietary/tuna/bin/snd:system/bin/snd \
     vendor/vanir/proprietary/tuna/bin/snd3254:system/bin/snd3254 \
     vendor/vanir/proprietary/tuna/bin/sound:system/bin/sound \
