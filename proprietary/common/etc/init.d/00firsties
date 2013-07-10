@@ -14,7 +14,8 @@ echo '  \\//   \\\\| \\|====|| \\\\'
 [ -e /sys/devices/platform/omapdss/manager0/gamma ] && chown system:system /sys/devices/platform/omapdss/manager0/gamma && chmod 0666 /sys/devices/platform/omapdss/manager0/gamma
 
 # blow away the thumbnail caches until our image stuff is stabilized
-bash -c 'for x in `find /storage/sdcard*/ -type d -name .thumbnails`; do rm -Rf $x; done
-for x in `ps | grep -v grep | grep gallery | sed '\''s/^ //g'\'' | sed '\''s/ .*//g'\''
+bash -c 'purge() { for x in `find /storage/sdcard*/ -type d -name .thumbnails`; do rm -Rf $x; done
+for x in `ps | grep -v grep | grep gallery | sed "s/^ //g" | sed "s/ .\*//g"
 `; do kill $x; done
-for x in `find /storage/sdcard*/ -type d -name '\''*gallery*'\''`; do for y in `find $x -type d -name cache`; do rm -Rf $y; done; done; echo "GALLERY THUMBNAILS PURGED"' &
+for x in `find /storage/sdcard*/ -type d -name "\*gallery\*"`; do for y in `find $x -type d -name cache`; do rm -Rf $y; done; done; echo "GALLERY THUMBNAILS PURGED"; }
+purge &'
