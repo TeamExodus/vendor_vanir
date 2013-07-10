@@ -97,7 +97,8 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
     vendor/vanir/proprietary/common/init.vanir.rc:root/init.vanir.rc \
     vendor/vanir/proprietary/common/bin/sysinit:system/bin/sysinit \
-    vendor/vanir/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties
+    vendor/vanir/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties \
+    vendor/vanir/proprietary/common/xbin/purgethumbnails:system/xbin/purgethumbnails
 
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
