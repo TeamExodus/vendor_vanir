@@ -10,6 +10,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     manta \
     mako \
     i605 \
+    t0ltetmo \
     jflteatt \
     jfltecan \
     jfltecri \

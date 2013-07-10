@@ -7,6 +7,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_mako.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
+    $(LOCAL_DIR)/vanir_t0ltetmo.mk \
     $(LOCAL_DIR)/vanir_jfltevzw.mk \
     $(LOCAL_DIR)/vanir_jflteatt.mk \
     $(LOCAL_DIR)/vanir_jfltecan.mk \
