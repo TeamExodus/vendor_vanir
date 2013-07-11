@@ -38,7 +38,8 @@ if [ ! -f "$OTAPACKAGE" ]; then
     exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/vanir/tools/opticharger
+export OPTICHARGER=$ANDROID_BUILD_TOP/vendor/vanir/tools/opticharger
+PARALLELIZER=$ANDROID_BUILD_TOP/vendor/vanir/tools/parallelizer
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
@@ -83,7 +84,7 @@ mkdir $REPACK/ota
 cd $REPACK/ota
 printf "Unpacking $OTAPACKAGE..."
 unzip $QUIET $OTAPACKAGE
-cp -r $OUT/data $REPACK/ota/data
+ln -s  $OUT/data $REPACK/ota/data
 echo
 
 # Move all apks to the same directory so xargs can
@@ -91,15 +92,11 @@ echo
 # framework-res.apk in parallel with other apks
 mkdir -p $REPACK/parallel
 cd $REPACK/parallel
-cp $REPACK/ota/system/framework/framework-res.apk .
-cp $REPACK/ota/system/app/*.apk .
+ln -s $REPACK/ota/system/framework/framework-res.apk .
+for x in $REPACK/ota/system/app/*.apk; do ln -s $x .; done
 
-# Do optimization in parallel
-find ./ -name \*.apk | $XARGS $OPTICHARGER
-
-# Move optimized apks to repack directory
-mv -f $REPACK/parallel/framework-res.apk $REPACK/ota/system/framework/framework-res.apk
-mv -f $REPACK/parallel/*.apk $REPACK/ota/system/app/
+# Do optimization in parallel - NUKE WAS HERE!
+$PARALLELIZER `find ./ -name \*.apk`
 
 # Return to directory
 cd $REPACK/ota
@@ -144,10 +141,6 @@ $SED -i \
 echo "Fixing \"move hyst\" property name... whoever put a space in it is a butthead."
 $SED 's/movehyst/move hyst/g' -i $REPACK/ota/system/build.prop
 
-# Reduce size of beats effects by ALOT (these soundimage text files are more than 50% comments, and there ARE LOADS OF THEM)
-echo "66% of Beats' configs are comments... which are USELESS. BUH BYE BEATS COMMENTS!"
-for x in $REPACK/ota/system/etc/soundimage/*.txt; do $SED -i 's/ *\#.*//g' $x; done
-
 # No need for recovery
 rm -rf $REPACK/ota/recovery
 
@@ -166,7 +159,7 @@ printf "Zipping package..."
 echo
 printf "Signing package..."
 SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
-java -Xmx1024m \
+java -Xmx2048m \
     -jar $ANDROID_BUILD_TOP/out/host/$OUT_TARGET_HOST/framework/signapk.jar \
     -w $SECURITYDIR/testkey.x509.pem $SECURITYDIR/testkey.pk8 \
     $REPACK/update.zip $OUTFILE

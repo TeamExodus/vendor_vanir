@@ -1,0 +1,33 @@
+#!/bin/bash
+if [ "$1" = "worker" ]; then   
+        schedtool -B -n 1 -e ionice -n 1 $OPTICHARGER $2
+        exit
+fi
+
+reaper () {
+        wait
+        exit 0
+}
+trap reaper 0 1 2 3 11 15
+
+# parallel child processes
+PP=`grep -c ^processor /proc/cpuinfo`
+
+while :;
+do      J=$(jobs -p)
+#        echo "running: "$J
+#        for x in $J; do ps -aF | grep $x | grep -v grep | sed 's/.*[0-9][0-9]:[0-9][0-9]:[0-9][0-9][ \t]*//g'; done
+        N=$(echo $J|wc -w)
+        if [ $1 ] && [ -z "$N" -o "$N" -lt $PP ]; then
+            current=$1
+            shift
+            $0 worker $current &
+        fi
+
+        if [ $N -eq 1 ] && [ $# -eq 0 ]; then
+            break
+        else
+#            echo $*
+            sleep .2
+        fi
+done
