@@ -131,22 +131,8 @@ if [ "$WANT_SQUASHFS" -eq 1 ]; then
     $SED -i -e's,system/xbin/su,system/bin/su,g' -e'/xbin/d' $updater
 fi
 
-# Fix build.prop
-$SED -i \
-     -e '/ro\.kernel\.android\.checkjni/d' \
-     -e '/ro\.build\.type/s/eng/user/' \
-     $REPACK/ota/system/build.prop
-
-# Fix build.prop step 2
-echo "Fixing \"move hyst\" property name... whoever put a space in it is a butthead."
-$SED 's/movehyst/move hyst/g' -i $REPACK/ota/system/build.prop
-
 # No need for recovery
 rm -rf $REPACK/ota/recovery
-
-# Strip modules
-[ -d $REPACK/ota/system/lib/modules ] && \
-    find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
