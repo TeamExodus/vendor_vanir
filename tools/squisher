@@ -1,24 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Squish a Vanir otapackage for distribution
 # credit for original version: CM
 #
 
-. $ANDROID_BUILD_TOP/vendor/vanir/tools/functions
+export ANDROID_BUILD_TOP=$ANDROID_BUILD_TOP
 
-OUT_TARGET_HOST=`uname -a | grep Darwin`
-if [ -z "$OUT_TARGET_HOST" ]
-then
-   OUT_TARGET_HOST=linux-x86
-   MD5=md5sum
-   XARGS="xargs --max-args=1 --max-procs `grep 'processor' /proc/cpuinfo|wc -l`"
-   SED=sed
-else
-   OUT_TARGET_HOST=darwin-x86
-   MD5=md5
-   XARGS="xargs -n 1 -P `sysctl hw.ncpu | awk '{print $2}'`"
-   SED=gsed
-fi
+. $ANDROID_BUILD_TOP/vendor/vanir/tools/functions
 
 if [ -z "$OUT" -o ! -d "$OUT" ]; then
     echo -e $CL_RED"ERROR: $0 only works with a full build environment. $OUT should exist."$CL_RST
@@ -38,8 +26,6 @@ if [ ! -f "$OTAPACKAGE" ]; then
     exit 1
 fi
 
-export OPTICHARGER=$ANDROID_BUILD_TOP/vendor/vanir/tools/opticharger
-PARALLELIZER=$ANDROID_BUILD_TOP/vendor/vanir/tools/parallelizer
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
@@ -156,30 +142,30 @@ echo
 
 # Create a md5 checksum image of the repacked package
 (
-echo ""
-echo ""
-echo $CL_GRN"================  "$CL_RST OTA package information $CL_GRN"  ================"$CL_RST
-echo ""
-echo $CL_BLU"Product name:"$CL_RST $TARGET_PRODUCT-ota-eng.$USER.zip
+echo -e ""
+echo -e ""
+echo -e $CL_GRN"================  "$CL_RST OTA package information $CL_GRN"  ================"$CL_RST
+echo -e ""
+echo -e $CL_BLU"Product name:"$CL_RST $TARGET_PRODUCT-ota-eng.$USER.zip
 
 img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
 STRING="$TARGET_PRODUCT-ota-eng.$USER.zip"
 OTASIZE=`ls -lah $STRING | awk '{ print $5}' `
-echo $CL_BLU"Package Size: "$CL_YLW "$OTASIZE" $CL_RST
-echo $CL_BLU"Target Location: " $CL_RST
-echo $CL_YLW"$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip" $CL_RST
+echo -e $CL_BLU"Package Size: "$CL_YLW "$OTASIZE" $CL_RST
+echo -e $CL_BLU"Target Location: " $CL_RST
+echo -e $CL_YLW"$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip" $CL_RST
 echo ""
 
 $MD5 $img >$img.md5
 ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
-echo $CL_GRN"================"$CL_RST $TARGET_PRODUCT-$TARGET_BUILD_VARIANT: $CL_RED"completed"$CL_RST $CL_GRN"================"$CL_RST
+echo -e $CL_GRN"================"$CL_RST $TARGET_PRODUCT-$TARGET_BUILD_VARIANT: $CL_RED"completed"$CL_RST $CL_GRN"================"$CL_RST
 echo ""
-echo $CL_BLU"Product name:"$CL_RST $OUTVERSION.zip
-echo $CL_BLU"Package Size: "$CL_YLW"$ZIPSIZE     "
-echo $CL_BLU"md5:"$CL_RST $CL_YLW" $(cat $img.md5 | awk '{ print $1 }')"$CL_RST
-echo $CL_BLU"Target location:"$CL_RST
-echo $CL_YLW $OUTFILE $CL_RST
+echo -e $CL_BLU"Product name:"$CL_RST $OUTVERSION.zip
+echo -e $CL_BLU"Package Size: "$CL_YLW"$ZIPSIZE     "
+echo -e $CL_BLU"md5:"$CL_RST $CL_YLW" $(cat $img.md5 | awk '{ print $1 }')"$CL_RST
+echo -e $CL_BLU"Target location:"$CL_RST
+echo -e $CL_YLW $OUTFILE $CL_RST
 echo ""
 echo ""
 )

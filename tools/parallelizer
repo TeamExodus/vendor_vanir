@@ -1,4 +1,10 @@
 #!/bin/bash
+
+export ANDROID_BUILD_TOP=$ANDROID_BUILD_TOP
+
+. $ANDROID_BUILD_TOP/vendor/vanir/tools/functions
+
+
 if [ "$1" = "worker" ]; then   
         schedtool -B -n 1 -e ionice -n 1 $OPTICHARGER $2
         exit
@@ -11,7 +17,9 @@ reaper () {
 trap reaper 0 1 2 3 11 15
 
 # parallel child processes
-PP=`grep -c ^processor /proc/cpuinfo`
+# use half of #cores, as each job will have #cores parallel optipngers - which are only running for part of the opticharge)
+#     should still be enough TO KILL YOUR FACE OFFFFFFF
+PP=`expr $(grep -c ^processor /proc/cpuinfo) / 2`
 
 while :;
 do      J=$(jobs -p)

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Super-mega opticharger of doom
 # Shrinks apks by running pngcrush or optipng or pngout on png images
@@ -14,6 +14,8 @@ QUIET=1
 BASE=`pwd`
 BRUTECRUSH="-brute"
 TMPDIR=/tmp/opticharge-$$
+
+export ANDROID_BUILD_TOP=$ANDROID_BUILD_TOP
 
 . $ANDROID_BUILD_TOP/vendor/vanir/tools/functions
 
@@ -41,32 +43,28 @@ then
     echo -e $CL_RED"Invalid path to apkcerts.txt, set APKCERTS to the correct path."$CL_RST
 fi
 
-if [ "$(which optipng)" != "" ];
+if [ "$(which optipng)" = "" ];
 then
-    optimize_png () {
-        optipng -o3 -quiet $1 1> /dev/null 2> /dev/null
-    }
-else
-    echo $CL_RED"Please install optipng, DICKBAG!"$CL_RST
+    echo -e $CL_RED"Please install optipng, DICKBAG!"$CL_RST
     exit 1;
 fi
 
 if [ "`which aapt`" = "" ];
 then
-    echo $CL_RED"Please ensure aapt is in your \$PATH"$CL_RST
+    echo -e $CL_RED"Please ensure aapt is in your \$PATH"$CL_RST
     exit 1;
 fi
 
 if [ "`which zipalign`" = "" ];
 then
-    echo $CL_RED"Please ensure zipalign is in your \$PATH"$CL_RST
+    echo -e $CL_RED"Please ensure zipalign is in your \$PATH"$CL_RST
     exit 1;
 fi
 
 if [ -e "$1" ];
 then
     NAME=`basename $1`;
-    echo $CL_YLW"Optimize:"$CL_RST" $NAME..";
+    echo -e $CL_YLW"Optimize:"$CL_RST" $NAME..";
 
     if [ "$2" != "" ];
     then
@@ -74,7 +72,7 @@ then
         KEY=build/target/product/security/$2.pk8
         if [ ! -f "$ANDROID_BUILD_TOP/$CERT" ];
         then
-            echo $CL_RED"$CERT does not exist!"$CL_RST;
+            echo -e $CL_RED"$CERT does not exist!"$CL_RST;
             exit 1;
         fi
     else
@@ -94,7 +92,7 @@ then
         fi
         if [ "$CERT" = "PRESIGNED" ];
         then
-            echo $CL_YLW"$NAME is presigned, skipping"$CL_RST
+            echo -e $CL_YLW"$NAME is presigned, skipping"$CL_RST
             exit 1;
         fi
     fi
@@ -106,21 +104,18 @@ then
     trap "rm -rf $TMPDIR; exit" INT TERM EXIT
     cd $TMPDIR/$NAME
     unzip -q $BASE/$1
-    for x in `find . -name "*.png" | grep -v "\.9.png$" | tr "\n" " "`
-    do
-        [ $QUIET ] || echo -e $CL_YLW"Crushing $x"$CL_RST
-        optimize_png $x
-    done
+
+    find . -name "*.png" | grep -v "\.9.png$" | tr "\n" " " | $XARGS optipng -nc -nb -O3 -quiet
+
     cp $BASE/$1 $BASE/$1.old
 
-    [ $QUIET ] || echo $CL_YLW"Repacking apk.."$CL_RST
+    [ $QUIET ] || echo -e $CL_YLW"Repacking apk.."$CL_RST
     aapt p -0 .dat -0 .dict -0 .arsc -F $NAME .
     
-    [ $QUIET ] || echo $CL_YLW"Resigning with cert: `echo $CERT`"$CL_RST
+    [ $QUIET ] || echo -e $CL_YLW"Resigning with cert: `echo $CERT`"$CL_RST
 
-    [ $QUIET ] || echo java -jar $ANDROID_HOST_OUT/framework/signapk.jar $ANDROID_BUILD_TOP/$CERT $ANDROID_BUILD_TOP/$KEY $NAME signed_$NAME
     java -jar $ANDROID_HOST_OUT/framework/signapk.jar $ANDROID_BUILD_TOP/$CERT $ANDROID_BUILD_TOP/$KEY $NAME signed_$NAME
-    [ $QUIET ] || echo $CL_YLW"Zipaligning.."$CL_RST
+    [ $QUIET ] || echo -e $CL_YLW"Zipaligning.."$CL_RST
     zipalign -f 4 signed_$NAME $BASE/$1
     if [ ! $QUIET ]; then
         ls -l $BASE/$1.old
