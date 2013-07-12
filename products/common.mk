@@ -145,6 +145,12 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/init.d/ZZafterboot:system/etc/init.d/ZZafterboot \
     vendor/vanir/proprietary/common/etc/cron/cron.minutely/00nicetweaks:/system/etc/cron/cron.minutely/00nicetweaks \
     vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
+
+# Backup Tools
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/vanir/proprietary/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/vanir/proprietary/common/bin/50-vanir.sh:system/addon.d/50-vanir.sh
 endif
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
@@ -194,10 +200,10 @@ PRODUCT_PACKAGES += \
 
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
-       ThemeManager \
-       ThemeChooser \
-       com.tmobile.themes \
-       Vanir_Inverted
+    ThemeManager \
+    ThemeChooser \
+    com.tmobile.themes \
+    Vanir_Inverted
 
 PRODUCT_COPY_FILES += \
-       vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
+    vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
