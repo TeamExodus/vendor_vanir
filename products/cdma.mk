@@ -12,3 +12,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # SIM Toolkit
 PRODUCT_PACKAGES += \
     Stk
+
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/vanir/overlay/cdma_phone
