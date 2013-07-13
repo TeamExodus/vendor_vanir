@@ -24,6 +24,7 @@
         <item>WIFITETHER</item>
         <item>USBTETHER</item>
         <item>TORCH</item>
+        <item>LTE</item>
         <item>QUICKRECORD</item>
         <item>MEMORY</item>
         <item>REBOOTMENU</item>
@@ -53,6 +54,7 @@
         <item>@string/toggle_wifi_ap</item>
         <item>@string/toggle_usb_tether</item>
         <item>@string/toggle_torch</item>
+        <item>@string/toggle_lte</item>
         <item>@string/toggle_quickrecord</item>
         <item>@string/toggle_memory</item>
         <item>@string/toggle_rebootmenu</item>
