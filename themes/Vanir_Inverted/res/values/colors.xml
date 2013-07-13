@@ -40,8 +40,8 @@
     <color name="com_android_mms_white">#ffffffff</color>
     <color name="com_android_mms_black">#ff000000</color>
     <color name="com_android_mms_text_hairline">#ffffffff</color>
-    <color name="com_android_mms_message_count_color">#ffe98726</color>
-    <color name="com_android_mms_timestamp_color">#ffa1c61e</color>
+    <color name="com_android_mms_message_count_color">#ff33b5e5</color>
+    <color name="com_android_mms_timestamp_color">#ffb2b2b2</color>
     <color name="com_android_mms_unread_bgcolor">#ff3f3f3f</color>
     <color name="com_android_mms_read_bgcolor">#ff000000</color>
     <color name="com_android_mms_widget_sender_text_color_read">#ff33b5e5</color>
@@ -57,8 +57,8 @@
     <color name="com_android_mms_delivery_report_status">#ffffffff</color>
     <color name="com_android_mms_delivery_report_date">#ffffffff</color>
     <color name="com_android_mms_button_text">#ffffffff</color>
-    <color name="com_android_mms_message_received">#ff33b5e5</color>
-    <color name="com_android_mms_message_sent">#ffffffff</color>
+    <color name="com_android_mms_message_received">#ffffffff</color>
+    <color name="com_android_mms_message_sent">#ff33b5e5</color>
     <color name="com_android_mms_widget_unread_text">#ffffffff</color>
     <color name="com_android_mms_widget_loading">#ff000000</color>
     <color name="com_android_mms_background">#ff000000</color>

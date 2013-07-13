@@ -40,9 +40,6 @@
     <item name="drawable/ic_dialog_attach">@drawable/com_android_mms_ic_dialog_attach</item>
     <item name="mipmap/ic_launcher_smsmms">@mipmap/ic_launcher_smsmms</item>
     <item name="drawable/ic_lock_message_sms">@drawable/com_android_mms_ic_lock_message_sms</item>
-    <item name="drawable/ic_send_disabled_holo_light">@drawable/com_android_mms_ic_send_disabled_holo_light</item>
-    <item name="drawable/ic_send_holo_light">@drawable/com_android_mms_ic_send_holo_light</item>
-    <item name="drawable/ic_sms_mms_delivered">@drawable/com_android_mms_ic_sms_mms_delivered</item>
     <item name="drawable/ic_sms_mms_delivered">@drawable/com_android_mms_ic_sms_mms_delivered</item>
     <item name="drawable/ic_sms_mms_details">@drawable/com_android_mms_ic_sms_mms_details</item>
     <item name="drawable/ic_sms_mms_not_delivered">@drawable/com_android_mms_ic_sms_mms_not_delivered</item>
