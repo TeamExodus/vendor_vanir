@@ -4,7 +4,8 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     busybox \
-    Email
+    Email \
+    VoicePlus
 
 Vanir_Version=4.2.2.2
 
