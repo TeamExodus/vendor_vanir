@@ -585,13 +585,19 @@ showusage()
     echo "                        (optional) ADDITIONAL ZIPS TO FLASH MUST BE IN $SDWTF/vanir_addons/"
 }
 
+amiroot()
+{
+    ret=`whoami 2>&1`
+    [ "$ret" = "root" ] && return 0 || [ `echo $ret | egrep "uid 0" | wc -l` -gt 0 ] && return 0 || return 1
+}
+
 if [ ! $1 ]; then
     showusage
 else
     case $1 in
-        "enable") [ $TESTING ] && enable || [ $(whoami) = "root" ] && enable || echo "You must run this as root. run: su -c vanir enable";;
+        "enable") [ $TESTING ] && enable || amiroot && enable || echo "You must run this as root. run: su -c vanir enable";;
         "disable") disable;;
-        "config") [ $TESTING ] && menu || [ $(whoami) = "root" ] && menu || echo "You must run this as root. run: su -c vanir config";;
+        "config") [ $TESTING ] && menu || amiroot && menu || echo "You must run this as root. run: su -c vanir config";;
         "flash") [ $TESTING ] || dovanirflash;;
         *) showusage;;
     esac
