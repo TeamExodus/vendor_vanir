@@ -13,5 +13,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_jfltecan.mk \
     $(LOCAL_DIR)/vanir_jfltecri.mk \
     $(LOCAL_DIR)/vanir_jfltespr.mk \
-    $(LOCAL_DIR)/vanir_jfltetmo.mk \
-    $(LOCAL_DIR)/vanir_jfltexx.mk
+    $(LOCAL_DIR)/vanir_jfltetmo.mk

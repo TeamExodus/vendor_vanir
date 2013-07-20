@@ -1,10 +1,5 @@
-# Generic product
-PRODUCT_NAME := vanir
-PRODUCT_BRAND := vanir
-PRODUCT_DEVICE := generic
-
 # Theme files
-    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
