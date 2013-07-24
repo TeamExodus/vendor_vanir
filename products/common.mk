@@ -7,7 +7,7 @@ PRODUCT_PACKAGES += \
     Email \
     VoicePlus
 
-Vanir_Version=4.2.2.2
+Vanir_Version=4.3
 
 Vanir_BUILD=$(Vanir_Version)
 
