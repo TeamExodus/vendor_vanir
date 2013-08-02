@@ -1,5 +1,6 @@
 # Theme files
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/vanir/overlay/theme
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
@@ -150,7 +151,8 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/bin/50-vanir.sh:system/addon.d/50-vanir.sh
 endif
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/core_dictionaries
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/vanir/overlay/dictionaries
 
 #Define thirdparty for Koush's SU
 #SUPERUSER_PACKAGE := com.vanir.superuser
