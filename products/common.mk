@@ -162,6 +162,7 @@ SUPERUSER_EMBEDDED := true
 PRODUCT_PACKAGES += \
     Camera \
     Development \
+    Focal \
     LatinIME \
     Superuser \
     su
