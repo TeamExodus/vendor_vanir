@@ -7,6 +7,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     toroplus \
     grouper \
     tilapia \
+    flo \
     manta \
     mako \
     i605 \
