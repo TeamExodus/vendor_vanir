@@ -37,7 +37,7 @@ for i in `find /sys/devices/platform -name iostats`; do echo "0" > $i; done
 #
 busybox mount -o remount,noatime,noauto_da_alloc,nodiratime,barrier=0,data=writeback /system
 for m in "/data" "/cache"; do
-  busybox mount -o remount,commit=19,barrier=0,discard,nomblk_io_submit,noauto_da_alloc,errors=continue,noatime,nodiratime,nosuid,nodev,data=writeback $m
+  busybox mount -o remount,commit=19,barrier=0,nomblk_io_submit,noauto_da_alloc,errors=continue,noatime,nodiratime,nosuid,nodev,data=writeback $m
 done
 
 sync
