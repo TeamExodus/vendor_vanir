@@ -187,7 +187,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/tuna/etc/soundimage/srsfx_trumedia_music_wide.cfg:system/etc/soundimage/srsfx_trumedia_music_wide.cfg \
     vendor/vanir/proprietary/tuna/etc/soundimage/srsfx_trumedia_voice.cfg:system/etc/soundimage/srsfx_trumedia_voice.cfg \
     vendor/vanir/proprietary/tuna/framework/semc_audioeffectif.jar:system/framework/semc_audioeffectif.jar \
-    vendor/vanir/proprietary/tuna/lib/libaudioeffect_jni.so:system/lib/libaudioeffect_jni.so \
     vendor/vanir/proprietary/tuna/lib/libbeatscorehtc.so:system/lib/libbeatscorehtc.so \
     vendor/vanir/proprietary/tuna/lib/libsrscorehtc.so:system/lib/libsrscorehtc.so \
     vendor/vanir/proprietary/tuna/lib/libsrsprocessing.so:system/lib/libsrsprocessing.so \
@@ -217,6 +216,7 @@ PRODUCT_COPY_FILES += \
 # Did not include any precompiled lib/hw ,... very well may be needed on some devices
 # did not include precompiled libaudioflinger.so, libtinyalsa/so
 # try compiling without audio_effects.conf + media_profiles.xml and compare files
+# 4.3     vendor/vanir/proprietary/tuna/lib/libaudioeffect_jni.so:system/lib/libaudioeffect_jni.so \
 
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
