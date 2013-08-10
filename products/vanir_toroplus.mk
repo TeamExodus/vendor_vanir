@@ -28,4 +28,4 @@ PRODUCT_DEVICE := toroplus
 PRODUCT_MODEL := Galaxy Nexus
 PRODUCT_MANUFACTURER := samsung
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mysidspr BUILD_FINGERPRINT="google/mysidspr/toroplus:4.3/JWR66V/737497:user/release-keys" PRIVATE_BUILD_DESC="mysidspr-user 4.3 JWR66V 737497 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mysidspr BUILD_FINGERPRINT="google/mysidspr/toroplus:4.3/JSS15J/737497:user/release-keys" PRIVATE_BUILD_DESC="mysidspr-user 4.3 JSS15J 737497 release-keys"
