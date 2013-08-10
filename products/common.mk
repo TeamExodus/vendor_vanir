@@ -168,6 +168,11 @@ PRODUCT_PACKAGES += \
     Superuser \
     su
 
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 # Optional CM packages
 PRODUCT_PACKAGES += \
     Basic \
