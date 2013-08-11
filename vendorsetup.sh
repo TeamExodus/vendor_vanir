@@ -8,6 +8,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     grouper \
     tilapia \
     flo \
+    deb \
     manta \
     mako \
     i605 \
