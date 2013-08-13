@@ -99,6 +99,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/xbin/purgethumbnails:system/xbin/purgethumbnails
 
 PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/lib/liblightcycle.so:system/lib/liblightcycle.so \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
 
