@@ -2,6 +2,9 @@
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/vanir/overlay/theme
 
+# DSPManager and bravia
+$(call inherit-product, vendor/vanir/products/media_sexificators.mk)
+
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     busybox \
