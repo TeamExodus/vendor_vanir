@@ -9,9 +9,6 @@ PRODUCT_COPY_FILES += \
 NO_DRM_BLOBS := true
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
-
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 

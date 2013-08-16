@@ -4,6 +4,7 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 # DSPManager and bravia
 $(call inherit-product, vendor/vanir/products/media_sexificators.mk)
+$(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
