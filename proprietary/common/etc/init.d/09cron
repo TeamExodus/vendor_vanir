@@ -66,4 +66,4 @@ if busybox [ ! -d /system/etc/cron/cron.hourly ] || [ ! -d /system/etc/cron/cron
     sync
     busybox mount -o remount,ro /system
 fi
-busybox crond -c /data/cron
+crond -c /data/cron
