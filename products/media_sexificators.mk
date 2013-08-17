@@ -1,5 +1,6 @@
 PRODUCT_PACKAGES += \
-    DSPManager
+    DSPManager \
+    libcyanogen-dsp
 
 ifneq ($(NO_DRM_BLOBS),true)
 # Blobs necessary for drm
