@@ -5,6 +5,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_tilapia.mk \
     $(LOCAL_DIR)/vanir_manta.mk \
     $(LOCAL_DIR)/vanir_mako.mk \
+    $(LOCAL_DIR)/vanir_maserati.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
     $(LOCAL_DIR)/vanir_deb.mk \

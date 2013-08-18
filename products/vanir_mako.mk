@@ -9,7 +9,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.fast.dormancy.rule=0 \
     ro.goo.rom=vanir-MAKO
 
-# place boot animation here once we make one
+# Boot animation
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/mako/media/bootanimation.zip:system/media/bootanimation.zip
 

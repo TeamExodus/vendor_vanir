@@ -11,6 +11,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     deb \
     manta \
     mako \
+    maserati \
     i605 \
     t0ltetmo \
     jflteatt \
