@@ -7,8 +7,11 @@ KERNEL_SPAM := jassy-release6
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-FLO
 
-# Tablet Overlays no radios
-    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio
+# Tablet Overlays with radios
+    PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_radio
+
+# GSM APNs and Simcard app
+$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 ## FIX ME: bootanimation
 PRODUCT_COPY_FILES += \
