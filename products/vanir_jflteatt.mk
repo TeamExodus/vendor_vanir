@@ -13,7 +13,7 @@ $(call inherit-product, vendor/vanir/products/vanir_jf.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Setup device specific product configuration.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jflteuc TARGET_DEVICE=jflteatt BUILD_FINGERPRINT="samsung/jflteuc/jflteatt:4.3/JSS15J/I337UCUAMDL:user/release-keys" PRIVATE_BUILD_DESC="jflteuc-user 4.3 JSS15J I337UCUAMDL release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jflteuc TARGET_DEVICE=jflteatt BUILD_FINGERPRINT="samsung/jflteuc/jflteatt:4.3/JSS15Q/I337UCUAMDL:user/release-keys" PRIVATE_BUILD_DESC="jflteuc-user 4.3 JSS15Q I337UCUAMDL release-keys"
 
 PRODUCT_NAME := vanir_jflteatt
 PRODUCT_DEVICE := jflteatt
