@@ -9,9 +9,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     tilapia \
     flo \
     deb \
-    manta \
-    mako \
-    maserati \
+    hercules \
     i605 \
     t0ltetmo \
     jflteatt \
@@ -19,7 +17,10 @@ ZOMG_ITS_A_COMBO_COMBO()
     jfltecri \
     jfltespr \
     jfltetmo \
-    jfltevzw;
+    jfltevzw \
+    manta \
+    mako \
+    maserati;
   do
     add_lunch_combo vanir_$x-$1
   done

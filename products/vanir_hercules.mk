@@ -1,0 +1,31 @@
+#Squisher Choosing
+DHO_VENDOR := vanir
+ 
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true \
+    ro.goo.rom=vanir-hercules
+
+# place boot animation here once we make one
+# PRODUCT_COPY_FILES += \
+#    vendor/vanir/proprietary/mako/media/bootanimation.zip:system/media/bootanimation.zip
+
+# Vanir configuration
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
+# $(call inherit-product, vendor/vanir/products/beats.mk)
+$(call inherit-product, vendor/vanir/products/gsm.mk)
+ 
+# Inherit AOSP device configuration for hercules.
+$(call inherit-product, device/samsung/hercules/full_hercules.mk)
+ 
+#... and then make the AOSP device configuration for hercules get on its knees and sing the national anthem into our "microphones"
+PRODUCT_LOCALES := en_US
+
+# Setup device specific product configuration.
+PRODUCT_NAME := vanir_hercules
+PRODUCT_DEVICE := hercules
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := SAMSUNG-SGH-T989
+
+# Setup device specific product configuration.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGH-T989 TARGET_DEVICE=SGH-T989 BUILD_FINGERPRINT="samsung/SGH-T989/SGH-T989:4.3/JSS15Q/T989UVMC6:user/release-keys" PRIVATE_BUILD_DESC="SGH-T989-user 4.13 JSS15Q UVMC6 release-keys"
