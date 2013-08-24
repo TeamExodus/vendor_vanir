@@ -2,25 +2,26 @@
 ZOMG_ITS_A_COMBO_COMBO()
 {
   for x in \
-    toro \
-    maguro \
-    toroplus \
-    grouper \
-    tilapia \
-    flo \
     deb \
+    flo \
+    grouper \
     hercules \
     i605 \
-    t0ltetmo \
     jflteatt \
     jfltecan \
     jfltecri \
     jfltespr \
     jfltetmo \
     jfltevzw \
+    maguro \
     manta \
     mako \
-    maserati;
+    maserati \
+    t0ltetmo \
+    tilapia \
+    toro \
+    toroplus \
+    yuga;
   do
     add_lunch_combo vanir_$x-$1
   done
