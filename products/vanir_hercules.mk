@@ -6,8 +6,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-hercules
 
 # place boot animation here once we make one
-# PRODUCT_COPY_FILES += \
-#    vendor/vanir/proprietary/mako/media/bootanimation.zip:system/media/bootanimation.zip
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/boot_animations/480x480.zip:system/media/bootanimation.zip
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)

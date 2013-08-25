@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
 
 # bootanimation
 PRODUCT_COPY_FILES += \
-   vendor/vanir/proprietary/manta/media/bootanimation.zip:system/media/bootanimation.zip
+   vendor/vanir/proprietary/boot_animations/1280x800.zip:system/media/bootanimation.zip
 
 # Tablet Overlays no radios
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio

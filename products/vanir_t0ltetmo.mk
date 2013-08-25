@@ -7,7 +7,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # place boot animation here once we make one
 # PRODUCT_COPY_FILES += \
-#    vendor/vanir/proprietary/mako/media/bootanimation.zip:system/media/bootanimation.zip
+#    vendor/vanir/proprietary/boot_animations/768x1280.zip:system/media/bootanimation.zip
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
