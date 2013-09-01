@@ -6,7 +6,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-m7vzw
 
 # Inherit AOSP device configuration for toro.
-$(call inherit-product, device/samsung/jfltevzw/full_jfltevzw.mk)
+$(call inherit-product, device/htc/m7vzw/full_m7vzw.mk)
 
 $(call inherit-product, vendor/vanir/products/vanir_m7.mk)
 
