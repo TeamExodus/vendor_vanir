@@ -174,7 +174,8 @@ PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     Superuser \
-    su
+    su \
+    BluetoothExt
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
