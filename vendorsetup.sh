@@ -14,6 +14,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     jfltespr \
     jfltetmo \
     jfltevzw \
+    m7ul \
     m7vzw \
     maguro \
     manta \
