@@ -1,11 +1,5 @@
 #!/system/bin/sh
 
-#Dearest Ian,
-#    In the future, when you want to change the default value of a checkbox in phone's settings, I want you to think "com.android.Phone"... NOT "let's increase the database version number on com.android.providers.settings and add the row in onUpgrade()"
-#                  Sincerely,
-#                  Your biggest fan - Nuclearmistake
-sqlite3 /data/data/com.android.providers.settings/databases/settings.db "PRAGMA user_version = 97"
-
 #toot toot
 echo '\\\\   //\\ ||\\||====||=\\\\'
 echo ' \\\\ //=\\\\||\\\\| || ||=//'
