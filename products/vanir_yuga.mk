@@ -12,9 +12,6 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 # $(call inherit-product, vendor/vanir/products/beats.mk)
 
-#... and then make the AOSP device configuration for toro get on its knees and sing the national anthem into our "microphones"
-PRODUCT_LOCALES := en_US
-
 # Inherit AOSP device configuration for yuga.
 $(call inherit-product, device/sony/yuga/full_yuga.mk)
 

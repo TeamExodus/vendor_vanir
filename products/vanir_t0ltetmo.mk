@@ -19,9 +19,6 @@ $(call inherit-product, vendor/vanir/products/gsm.mk)
 # Inherit AOSP device configuration for Note 2.
 $(call inherit-product, device/samsung/t0ltetmo/full_t0ltetmo.mk)
 
-#... and then make the AOSP device configuration for i605 get on its knees and sing the national anthem into our "microphones"
-PRODUCT_LOCALES := en_US
-
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_t0ltetmo
 PRODUCT_DEVICE := t0ltetmo
