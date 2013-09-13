@@ -20,6 +20,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     manta \
     mako \
     maserati \
+    pollux \
     t0ltetmo \
     tilapia \
     toro \
