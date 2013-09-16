@@ -1,7 +1,7 @@
 #Squisher Choosing
 DHO_VENDOR := vanir
 
-KERNEL_SPAM := jassy-release6
+KERNEL_SPAM := CM-AOSP 3.4.0-g8e41961
 
 # Run these first or they will not stick
 PRODUCT_PROPERTY_OVERRIDES += \
