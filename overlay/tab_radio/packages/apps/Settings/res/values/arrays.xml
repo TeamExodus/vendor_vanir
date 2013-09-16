@@ -22,7 +22,6 @@
         <item>VIBRATE</item>
         <item>SYNC</item>
         <item>FCHARGE</item>
-        <item>TORCH</item>
         <item>WIFITETHER</item>
         <item>USBTETHER</item>
         <item>REBOOTMENU</item>
@@ -52,7 +51,6 @@
         <item>@string/toggle_vibrate</item>
         <item>@string/toggle_sync</item>
         <item>@string/toggle_fcharge</item>
-        <item>@string/toggle_torch</item>
         <item>@string/toggle_wifi_ap</item>
         <item>@string/toggle_usb_tether</item>
         <item>@string/toggle_rebootmenu</item>
