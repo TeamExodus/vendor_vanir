@@ -13,7 +13,7 @@ $(call inherit-product, vendor/vanir/products/vanir_jf.mk)
 $(call inherit-product, vendor/vanir/products/cdma.mk)
 
 # Setup device specific product configuration.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jfltevzw TARGET_DEVICE=jfltevzw BUILD_FINGERPRINT="Verizon/jfltevzw/jfltevzw:4.3/JSS15Q/I545VRUAMDK:user/release-keys" PRIVATE_BUILD_DESC="jfltevzw-user 4.3 JSS15Q I545VRUAMDK release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jfltevzw TARGET_DEVICE=jfltevzw BUILD_FINGERPRINT="Verizon/jfltevzw/jfltevzw:4.3/JLS36C/I545VRUAMDK:user/release-keys" PRIVATE_BUILD_DESC="jfltevzw-user 4.3 JLS36C I545VRUAMDK release-keys"
 
 PRODUCT_NAME := vanir_jfltevzw
 PRODUCT_DEVICE := jfltevzw

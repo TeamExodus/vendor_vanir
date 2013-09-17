@@ -32,5 +32,5 @@ PRODUCT_RELEASE_NAME := Droid4
 PRODUCT_MODEL := XT894
 PRODUCT_MANUFACTURER := Motorola
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=maserati BUILD_FINGERPRINT=verizon/maserati/maserati:4.3/JSS15Q/737497:user/release-keys PRIVATE_BUILD_DESC="maserati-user 4.3 JSS15Q 737497 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=maserati BUILD_FINGERPRINT=verizon/maserati/maserati:4.3/JLS36C/737497:user/release-keys PRIVATE_BUILD_DESC="maserati-user 4.3 JLS36C 737497 release-keys"
 
