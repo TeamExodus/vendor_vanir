@@ -7,7 +7,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/gsm.mk)
-$(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
 
 # Inherit model specific configuration.
 $(call inherit-product, vendor/vanir/products/vanir_m7.mk)
