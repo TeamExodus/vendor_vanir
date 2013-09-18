@@ -1,10 +1,15 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_deb.mk \
+	$(LOCAL_DIR)/vanir_e975.mk \
+	$(LOCAL_DIR)/vanir_e980.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hercules.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
     $(LOCAL_DIR)/vanir_jewel.mk \
+    $(LOCAL_DIR)/vanir_m7att.mk \
+    $(LOCAL_DIR)/vanir_m7spt.mk \
+    $(LOCAL_DIR)/vanir_m7tmo.mk \
     $(LOCAL_DIR)/vanir_m7ul.mk \
     $(LOCAL_DIR)/vanir_m7vzw.mk \
     $(LOCAL_DIR)/vanir_manta.mk \
@@ -23,6 +28,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_toro.mk \
     $(LOCAL_DIR)/vanir_toroplus.mk \
     $(LOCAL_DIR)/vanir_tilapia.mk \
-	$(LOCAL_DIR)/vanir_e980.mk \
-	$(LOCAL_DIR)/vanir_e975.mk \
     $(LOCAL_DIR)/vanir_yuga.mk
