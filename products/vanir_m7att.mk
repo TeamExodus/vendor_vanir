@@ -12,7 +12,7 @@ $(call inherit-product, vendor/vanir/products/gsm.mk)
 $(call inherit-product, vendor/vanir/products/vanir_m7.mk)
 
 # Inherit AOSP device configuration for HTC One.
-$(call inherit-product, device/htc/m7ul/full_m7att.mk)
+$(call inherit-product, device/htc/m7att/full_m7att.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_m7att

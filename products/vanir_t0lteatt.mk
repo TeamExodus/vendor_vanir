@@ -17,7 +17,7 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Inherit AOSP device configuration for Note 2.
-$(call inherit-product, device/samsung/t0ltetmo/full_t0lteatt.mk)
+$(call inherit-product, device/samsung/t0lteatt/full_t0lteatt.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_t0lteatt
