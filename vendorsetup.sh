@@ -27,6 +27,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     maserati \
     p880 \
     pollux \
+    t0lteatt \
     t0ltetmo \
     tilapia \
     toro \
