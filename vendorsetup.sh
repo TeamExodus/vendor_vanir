@@ -9,6 +9,8 @@ ZOMG_ITS_A_COMBO_COMBO()
     grouper \
     hercules \
     i605 \
+    i9300 \
+    i9305 \
     jewel \
     jflteatt \
     jfltecan \

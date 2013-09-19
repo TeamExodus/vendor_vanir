@@ -6,6 +6,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hercules.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
+    $(LOCAL_DIR)/vanir_i9300.mk \
+    $(LOCAL_DIR)/vanir_i9305.mk \
     $(LOCAL_DIR)/vanir_jewel.mk \
     $(LOCAL_DIR)/vanir_m7att.mk \
     $(LOCAL_DIR)/vanir_m7spt.mk \
