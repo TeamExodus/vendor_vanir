@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/jf/etc/vanir.cfg:system/etc/vanir.cfg
 
 # Inherit AOSP device configuration for GS3.
-$(call inherit-product, device/samsung/i9300/i9300.mk)
+$(call inherit-product, device/samsung/i9300/full_i9300.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_i9300
