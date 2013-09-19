@@ -3,6 +3,8 @@ ZOMG_ITS_A_COMBO_COMBO()
 {
   for x in \
     deb \
+    e975 \
+    e980 \
     flo \
     grouper \
     hercules \
@@ -14,6 +16,9 @@ ZOMG_ITS_A_COMBO_COMBO()
     jfltespr \
     jfltetmo \
     jfltevzw \
+    m7att \
+    m7spr \
+    m7tmo \
     m7ul \
     m7vzw \
     maguro \
@@ -22,12 +27,11 @@ ZOMG_ITS_A_COMBO_COMBO()
     maserati \
     p880 \
     pollux \
+    t0lteatt \
     t0ltetmo \
     tilapia \
     toro \
     toroplus \
-    e975 \
-    e980 \
     yuga;
   do
     add_lunch_combo vanir_$x-$1
