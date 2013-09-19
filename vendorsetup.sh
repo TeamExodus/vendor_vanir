@@ -3,6 +3,10 @@ ZOMG_ITS_A_COMBO_COMBO()
 {
   for x in \
     deb \
+    d2att \
+    d2spr \
+    d2tmo \
+    d2vzw \
     e975 \
     e980 \
     flo \
