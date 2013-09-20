@@ -36,4 +36,5 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_toroplus.mk \
     $(LOCAL_DIR)/vanir_p700.mk \
     $(LOCAL_DIR)/vanir_tilapia.mk \
-    $(LOCAL_DIR)/vanir_yuga.mk
+    $(LOCAL_DIR)/vanir_yuga.mk \
+    $(LOCAL_DIR)/vanir_vigor.mk
