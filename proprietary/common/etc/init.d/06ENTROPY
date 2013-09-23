@@ -1,13 +1,13 @@
-#!/system/xbin/busybox ash
+#!/system/xbin/bash
 # Consolidated CrossBreeder Script
 # aosp
 BUSYBOX="/system/xbin/busybox"
 
 if [ -f /system/lib/modules/frandom.ko ]; then
   insmod /system/lib/modules/frandom.ko 2>/dev/null
-  BUSYBOX insmod /system/lib/modules/frandom.ko 2>/dev/null
+  $BUSYBOX insmod /system/lib/modules/frandom.ko 2>/dev/null
   insmod -f /system/lib/modules/frandom.ko 2>/dev/null
-  BUSYBOX insmod -f /system/lib/modules/frandom.ko 2>/dev/null
+  $BUSYBOX insmod -f /system/lib/modules/frandom.ko 2>/dev/null
 fi
 
 if [ -f /system/lib/modules/frandom.ko ]; then sleep 5; fi
@@ -22,14 +22,14 @@ if [ -c /dev/erandom ]; then
     sleep 2
   fi
   if [ ! -c /dev/urandom.ORIG ]; then
-    BUSYBOX mknod -m 666 /dev/urandom.ORIG c 1 9
+    $BUSYBOX mknod -m 666 /dev/urandom.ORIG c 1 9
     sleep 2
   fi
   ( CB_RunHaveged /dev/urandom.ORIG 0<&- &>/dev/null 2>&1 ) &
-  RANDOMDEVICE=frandom
+  $RANDOMDEVICE=frandom
 else
   if [ ! -c /dev/urandom ]; then
-    BUSYBOX mknod -m 666 /dev/urandom c 1 9
+    $BUSYBOX mknod -m 666 /dev/urandom c 1 9
     sleep 2
   fi
   ( CB_RunHaveged /dev/urandom 0<&- &>/dev/null 2>&1 ) &
@@ -40,10 +40,10 @@ if [ ! -f /dev/random.MOD ]; then
   rm /dev/random && ln /dev/$RANDOMDEVICE /dev/random
 fi
 
-sys_pid=`BUSYBOX pgrep system_server 2>/dev/null`
+sys_pid=`$BUSYBOX pgrep system_server 2>/dev/null`
 
-BUSYBOX renice -10 $sys_pid 2>/dev/null
+$BUSYBOX renice -10 $sys_pid 2>/dev/null
 
-for i in $(BUSYBOX pgrep haveged 2>/dev/null); do
-  BUSYBOX renice +20 $i 2>/dev/null
+for i in $($BUSYBOX pgrep haveged 2>/dev/null); do
+  $BUSYBOX renice +20 $i 2>/dev/null
 done
