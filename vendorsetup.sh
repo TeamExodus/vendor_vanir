@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 ZOMG_ITS_A_COMBO_COMBO()
 {
   for x in \
@@ -36,6 +36,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     pollux \
     t0lteatt \
     t0ltetmo \
+    tf700 \
     tilapia \
     toro \
     p700 \

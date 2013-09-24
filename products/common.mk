@@ -14,7 +14,6 @@ PRODUCT_PACKAGES += \
     VanirUpdater
 
 Vanir_Version=4.3
-
 Vanir_BUILD=$(Vanir_Version)
 
 ifeq ($(RELEASE),)
