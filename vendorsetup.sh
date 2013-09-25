@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 ZOMG_ITS_A_COMBO_COMBO()
 {
   for x in \
