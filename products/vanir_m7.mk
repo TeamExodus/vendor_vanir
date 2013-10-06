@@ -12,3 +12,4 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
+$(call inherrit-product, vendor/vanir/tweaks/m7/tweaks.mk

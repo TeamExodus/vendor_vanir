@@ -21,10 +21,6 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 # Inherit AOSP device configuration for Optimus G Pro.
 $(call inherit-product, device/lge/e980/e980.mk)
 
-# Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/mako-vanir.cfg:system/etc/vanir.cfg
-
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_e980
 PRODUCT_DEVICE := e980

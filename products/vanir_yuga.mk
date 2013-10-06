@@ -16,11 +16,6 @@ $(call inherit-product, vendor/vanir/products/gsm.mk)
 # Inherit AOSP device configuration for yuga.
 $(call inherit-product, device/sony/yuga/full_yuga.mk)
 
-# Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
-# TODO, UPDATE THIS FOR Xpera Z
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/jf/etc/vanir.cfg:system/etc/vanir.cfg
-
 #
 # Setup device specific product configuration.
 #

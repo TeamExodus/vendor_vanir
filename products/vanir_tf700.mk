@@ -11,8 +11,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Vanir Overlays
 # Vanir config should be updated
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/boot_animations/1280x1920.zip:system/media/bootanimation.zip \
-    vendor/vanir/proprietary/common/etc/vanir.cfg:system/etc/vanir.cfg
+    vendor/vanir/proprietary/boot_animations/1280x1920.zip:system/media/bootanimation.zip
 
 # Vanir specific overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio

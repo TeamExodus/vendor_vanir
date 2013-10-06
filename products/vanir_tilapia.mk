@@ -27,10 +27,6 @@ $(call inherit-product, vendor/vanir/products/gsm.mk)
 # Inherit AOSP device configuration for grouper
 $(call inherit-product, device/asus/tilapia/full_tilapia.mk)
 
-# Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/vanir.cfg:system/etc/vanir.cfg
-
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_tilapia
 PRODUCT_BRAND := google

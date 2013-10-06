@@ -16,11 +16,6 @@ $(call inherit-product, vendor/vanir/products/cdma.mk)
 # Inherit AOSP device configuration for maserati.
 $(call inherit-product, device/motorola/maserati/full_maserati.mk)
 
-# Default values used by 99vanir. copied to /sdcard on first run, and presently it lives there forever... todo: make a runonce script that adds new default values to the copy on the sdcard as we add them or something
-# TODO, UPDATE THIS FOR DROID 4
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/jf/etc/vanir.cfg:system/etc/vanir.cfg
-
 #
 # Setup device specific product configuration.
 #
