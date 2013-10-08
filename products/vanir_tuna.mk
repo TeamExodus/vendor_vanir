@@ -1,5 +1,5 @@
 # Variable for zip installerscript spam about kernel
-KERNEL_SPAM := Popcorn Kernel v12 just rolled up in a retro custom van with an airbrushed wizard on the side
+KERNEL_SPAM := Vanir Kernel v12 just rolled up in a retro custom van with an airbrushed Dan Trifan the Wizard on the side
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
