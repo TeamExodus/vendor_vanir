@@ -33,6 +33,10 @@ ZOMG_ITS_A_COMBO_COMBO()
     mako \
     maserati \
     ovation \
+    p3100 \
+    p3110 \
+    p5100 \
+    p5110 \
     p880 \
     pollux \
     t0lteatt \
