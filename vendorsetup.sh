@@ -10,7 +10,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     e975 \
     e980 \
     flo \
-    g2 \
     grouper \
     hercules \
     honami \
@@ -52,6 +51,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     p700 \
     toroplus \
     vigor \
+    vs980 \
     yuga;
   do
     add_lunch_combo vanir_$x-$1
