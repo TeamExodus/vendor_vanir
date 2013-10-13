@@ -7,7 +7,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product, device/samsung/jfltexx/full_jfltexx.mk)
 
-$(call inherit-product, vendor/vanir/products/vanir_jf.mk)
+$(call inherit-product, vendor/vanir/products/vanir_jf-common.mk)
 
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 

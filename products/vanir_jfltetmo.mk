@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Inherit AOSP device configuration for toro.
 $(call inherit-product, device/samsung/jfltetmo/full_jfltetmo.mk)
 
-$(call inherit-product, vendor/vanir/products/vanir_jf.mk)
+$(call inherit-product, vendor/vanir/products/vanir_jf-common.mk)
 
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
