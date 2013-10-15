@@ -8,19 +8,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     ro.goo.rom=vanir-d2att
 
-# Boot Animation
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/boot_animations/720x1280.zip:system/media/bootanimation.zip
-
-# Inherit common phone stuff
-$(call inherit-product, vendor/vanir/products/common_phones.mk)
-
-# Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/gsm.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
-
 # Inherit AOSP device configuration for GS3 ATT.
 $(call inherit-product, device/samsung/d2att/full_d2att.mk)
+# Inherit common vanir files.
+$(call inherit-product, vendor/vanir/products/vanir_d2-common.mk)
+
+$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_d2att
