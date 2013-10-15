@@ -10,6 +10,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     e975 \
     e980 \
     flo \
+    g2 \
     grouper \
     hercules \
     honami \
