@@ -28,6 +28,7 @@
         <item>REBOOTMENU</item>
         <item>QUICKRECORD</item>
         <item>PIE</item>
+        <item>HALO</item>
         <item>EXPANDED_DESKTOP</item>
         <item>IME</item>
     </string-array>
@@ -58,6 +59,7 @@
         <item>@string/toggle_rebootmenu</item>
         <item>@string/toggle_quickrecord</item>
         <item>@string/toggle_pie</item>
+        <item>@string/toggle_halo</item>
         <item>@string/toggle_expanded_desktop</item>
         <item>@string/toggle_ime</item>
     </string-array>
