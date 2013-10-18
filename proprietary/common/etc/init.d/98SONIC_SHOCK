@@ -4,7 +4,7 @@
 # With inspiration from DroidTh3ory
 
 sync
-sysrw
+mount -o remount,rw /system
 
 #
 # Enable Sysctl Tweaks
@@ -41,4 +41,4 @@ for m in "/data" "/cache"; do
 done
 
 sync
-sysro
+mount -o remount,ro /system
