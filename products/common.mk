@@ -228,6 +228,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sqlite3
 
+## STREAMING DMESG?
+PRODUCT_PACKAGES += \
+    klogripper
+
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
 
