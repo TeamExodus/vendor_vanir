@@ -17,6 +17,9 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 
 $(call inherit-product, vendor/vanir/products/cdma.mk)
 
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/etc/init.d/dasboot:system/etc/init.d/dasboot
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := g2
 PRODUCT_NAME := vanir_g2
