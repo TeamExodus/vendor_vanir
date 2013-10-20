@@ -16,12 +16,12 @@ PRODUCT_COPY_FILES += \
 # Vanir specific overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio
 
+# Inherit AOSP device configuration for the Nook HD+.
+$(call inherit-product, device/bn/ovation/full_ovation.mk)
+
 # Inherit common Vanir stuff
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for the Nook HD+.
-$(call inherit-product, device/bn/ovation/full_ovation.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_ovation
