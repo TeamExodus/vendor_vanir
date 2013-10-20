@@ -39,6 +39,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     p3110 \
     p5100 \
     p5110 \
+    p700 \
     p880 \
     pollux \
     quincyatt \

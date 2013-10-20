@@ -30,6 +30,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_p3110.mk \
     $(LOCAL_DIR)/vanir_p5100.mk \
     $(LOCAL_DIR)/vanir_p5110.mk \
+    $(LOCAL_DIR)/vanir_p700.mk \
     $(LOCAL_DIR)/vanir_p880.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_quincyatt.mk \
