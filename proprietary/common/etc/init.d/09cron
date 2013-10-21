@@ -58,7 +58,7 @@ echo '# Prime Directive, Nuclearmistake, Sonicxml
 
 
 
-if busybox [ ! -d /system/etc/cron/cron.hourly ] || [ ! -d /system/etc/cron/cron.daily ] || [ ! -d /system/etc/cron/cron.weekly ] || [ ! -d /storage/emulated/0 ] || [ -d /storage/sdcard1 ] && [ ! -d /mnt/extSdCard ]; then
+if busybox [ ! -d /system/etc/cron/cron.hourly ] || [ ! -d /system/etc/cron/cron.daily ] || [ ! -d /system/etc/cron/cron.weekly ]; then
     sync
     busybox mount -o remount,rw /system
     busybox mkdir -p /system/etc/cron/cron.minutely
