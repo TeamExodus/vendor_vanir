@@ -13,7 +13,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     flo \
     grouper \
     hercules \
-    honami \
     i605 \
     i9300 \
     i9305 \
@@ -41,7 +40,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     p5110 \
     p700 \
     p880 \
-    pollux \
     quincyatt \
     quincytmo \
     t0lteatt \
@@ -52,8 +50,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     p700 \
     toroplus \
     vigor \
-    vs980 \
-    yuga;
+    vs980;
   do
     add_lunch_combo vanir_$x-$1
   done
@@ -61,3 +58,9 @@ ZOMG_ITS_A_COMBO_COMBO()
 
 ZOMG_ITS_A_COMBO_COMBO userdebug
 ZOMG_ITS_A_COMBO_COMBO user
+
+#BROKEN: 
+#    apache \
+#    honami \
+#    pollux \
+#    yuga \
