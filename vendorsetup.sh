@@ -10,6 +10,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     d710 \
     d800 \
     d802 \
+    dlx \
     e975 \
     e980 \
     flo \
