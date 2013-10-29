@@ -25,6 +25,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     jfltecri \
     jfltespr \
     jfltetmo \
+    jflteusc \
     jfltevzw \
     jfltexx \
     m7att \
