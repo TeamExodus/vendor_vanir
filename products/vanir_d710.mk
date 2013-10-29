@@ -1,28 +1,25 @@
-#Squisher Choosing
-DHO_VENDOR := vanir
- 
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true \
-    ro.goo.rom=vanir-d710
+#
+# Copyright (C) 2012 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-# Boot Animation
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/boot_animations/480x480.zip:system/media/bootanimation.zip
 
-# Vanir configuration
-$(call inherit-product, vendor/vanir/products/common_phones.mk)
-# $(call inherit-product, vendor/vanir/products/beats.mk)
-$(call inherit-product, vendor/vanir/products/cdma.mk)
- 
-# Inherit AOSP device configuration for d710.
+
 $(call inherit-product, device/samsung/d710/full_d710.mk)
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
+$(call inherit-product, vendor/vanir/products/cdma.mk)
 
-# Setup device specific product configuration.
 PRODUCT_NAME := vanir_d710
-PRODUCT_DEVICE := d710
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SGH-D710
 
-# Setup device specific product configuration.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGH-D710 TARGET_DEVICE=SGH-D710 BUILD_FINGERPRINT="samsung/SGH-D710/SGH-D710:4.3.1/JLS36I/T989UVMC6:user/release-keys" PRIVATE_BUILD_DESC="SGH-D710-user 4.13 JLS36I UVMC6 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SPH-D710 TARGET_DEVICE=SPH-D710 BUILD_FINGERPRINT=samsung/SPH-D710/SPH-D710:4.1.2/JZO54K/SPH-D710.GB27:user/release-keys PRIVATE_BUILD_DESC="SPH-D710-user 4.1.2 JZO54K SPH-D710.GB27 release-keys"
