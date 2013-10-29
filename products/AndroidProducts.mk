@@ -33,6 +33,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_p5110.mk \
     $(LOCAL_DIR)/vanir_p700.mk \
     $(LOCAL_DIR)/vanir_p880.mk \
+    $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_quincyatt.mk \
     $(LOCAL_DIR)/vanir_quincytmo.mk \
     $(LOCAL_DIR)/vanir_jfltevzw.mk \
@@ -50,11 +51,10 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_toro.mk \
     $(LOCAL_DIR)/vanir_toroplus.mk \
     $(LOCAL_DIR)/vanir_p700.mk \
+    $(LOCAL_DIR)/vanir_yuga.mk \
     $(LOCAL_DIR)/vanir_vigor.mk \
     $(LOCAL_DIR)/vanir_vs980.mk
 
 # BROKEN
 #    $(LOCAL_DIR)/vanir_apache.mk \
 #    $(LOCAL_DIR)/vanir_honami.mk \
-#    $(LOCAL_DIR)/vanir_pollux.mk \
-#    $(LOCAL_DIR)/vanir_yuga.mk \

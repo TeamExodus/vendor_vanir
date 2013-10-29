@@ -44,6 +44,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     p5110 \
     p700 \
     p880 \
+    pollux \
     quincyatt \
     quincytmo \
     t0lteatt \
@@ -54,17 +55,16 @@ ZOMG_ITS_A_COMBO_COMBO()
     p700 \
     toroplus \
     vigor \
-    vs980;
+    vs980 \
+    yuga;
   do
     add_lunch_combo vanir_$x-$1
   done
 }
 
+#BROKEN:
+#   apache \
+#   honami \
+
 ZOMG_ITS_A_COMBO_COMBO userdebug
 ZOMG_ITS_A_COMBO_COMBO user
-
-#BROKEN: 
-#    apache \
-#    honami \
-#    pollux \
-#    yuga \
