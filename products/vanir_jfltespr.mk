@@ -13,7 +13,7 @@ $(call inherit-product, vendor/vanir/products/vanir_jf-common.mk)
 $(call inherit-product, vendor/vanir/products/cdma.mk)
 
 # Setup device specific product configuration.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jfltespr TARGET_DEVICE=jfltespr BUILD_FINGERPRINT="samsung/jfltespr/jfltespr:4.3.1/JLS36I/L720VPUAMDL:user/release-keys" PRIVATE_BUILD_DESC="jfltespr-user 4.3.1 JLS36I L720VPUAMDL release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=jfltespr TARGET_DEVICE=jfltespr BUILD_FINGERPRINT="samsung/jfltespr/jfltespr:4.3.1/KRT16M/L720VPUAMDL:user/release-keys" PRIVATE_BUILD_DESC="jfltespr-user 4.3.1 KRT16M L720VPUAMDL release-keys"
 
 PRODUCT_NAME := vanir_jfltespr
 PRODUCT_DEVICE := jfltespr

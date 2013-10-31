@@ -27,4 +27,4 @@ PRODUCT_BRAND := Samsung
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_MODEL := GT-P3100
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=espressorfxx TARGET_DEVICE=espressorf BUILD_FINGERPRINT=samsung/espressorfxx/espressorf:4.3.1/JLS36I/P3100XWALE2:user/release-keys PRIVATE_BUILD_DESC="espressorfxx-user 4.3.1 JLS36I P3100XWALE2 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=espressorfxx TARGET_DEVICE=espressorf BUILD_FINGERPRINT=samsung/espressorfxx/espressorf:4.3.1/KRT16M/P3100XWALE2:user/release-keys PRIVATE_BUILD_DESC="espressorfxx-user 4.3.1 KRT16M P3100XWALE2 release-keys"
