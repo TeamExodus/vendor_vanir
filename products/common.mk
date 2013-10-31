@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
     VoicePlus \
     VanirUpdater
 
-Vanir_Version=4.3.1
+Vanir_Version=4.4
 Vanir_BUILD=$(Vanir_Version)
 
 ifeq ($(RELEASE),)
