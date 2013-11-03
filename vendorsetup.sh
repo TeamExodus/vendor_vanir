@@ -15,6 +15,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     e980 \
     flo \
     grouper \
+    hammerhead \
     hercules \
     i605 \
     i9300 \
