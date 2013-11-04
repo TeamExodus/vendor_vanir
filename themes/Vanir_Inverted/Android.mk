@@ -5,6 +5,6 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_PACKAGE_NAME := Vanir_Inverted
 
-LOCAL_AAPT_FLAGS := -c xhdpi -x 10
+LOCAL_AAPT_FLAGS := -c xhdpi -x
 
 include $(BUILD_PACKAGE)
