@@ -221,14 +221,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rsync
 
-<!--
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
     ThemeManager \
     ThemeChooser \
     com.tmobile.themes \
     Vanir_Inverted
--->
 
 # sqlite3 - for bad voodoo :-D
 PRODUCT_PACKAGES += \
