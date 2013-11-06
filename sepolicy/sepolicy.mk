@@ -3,8 +3,9 @@
 # inherit from CM
 #
 
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
     vendor/vanir/sepolicy
 
-BOARD_SEPOLICY_UNION := \
-    mac_permissions.xml
+BOARD_SEPOLICY_UNION += \
+    mac_permissions.xml \
+    seapp_contexts
