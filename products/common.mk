@@ -14,7 +14,7 @@ $(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
 PRODUCT_PACKAGES += \
     busybox \
     Email \
-    VoicePlus \
+    Launcher3 \
     VanirUpdater
 
 Vanir_Version=4.4
