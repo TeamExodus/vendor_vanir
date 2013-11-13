@@ -1,4 +1,5 @@
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/vanir_apache.mk \
     $(LOCAL_DIR)/vanir_deb.mk \
     $(LOCAL_DIR)/vanir_d2att.mk \
     $(LOCAL_DIR)/vanir_d2spr.mk \
@@ -14,6 +15,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_flo.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hercules.mk \
+    $(LOCAL_DIR)/vanir_honami.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
     $(LOCAL_DIR)/vanir_i9300.mk \
     $(LOCAL_DIR)/vanir_i9305.mk \
@@ -54,7 +56,3 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_yuga.mk \
     $(LOCAL_DIR)/vanir_vigor.mk \
     $(LOCAL_DIR)/vanir_vs980.mk
-
-# BROKEN
-#    $(LOCAL_DIR)/vanir_apache.mk \
-#    $(LOCAL_DIR)/vanir_honami.mk \

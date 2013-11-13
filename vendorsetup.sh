@@ -2,6 +2,7 @@
 ZOMG_ITS_A_COMBO_COMBO()
 {
   for x in \
+    apache \
     deb \
     d2att \
     d2spr \
@@ -17,6 +18,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     flo \
     grouper \
     hercules \
+    honami \
     i605 \
     i9300 \
     i9305 \
@@ -62,10 +64,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     add_lunch_combo vanir_$x-$1
   done
 }
-
-#BROKEN:
-#   apache \
-#   honami \
 
 ZOMG_ITS_A_COMBO_COMBO userdebug
 ZOMG_ITS_A_COMBO_COMBO user
