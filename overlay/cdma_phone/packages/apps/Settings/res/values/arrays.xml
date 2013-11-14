@@ -2,7 +2,7 @@
 <!-- CDMA PHONE OVERLAY... NO 2G TOGGLE -->
 <resources>
 
-    <string-array name="available_toggles_entries" translatable="false">
+    <!--<string-array name="available_toggles_entries" translatable="false">
         <item>USER</item>
         <item>FAVCONTACT</item>
         <item>BATTERY</item>
@@ -64,6 +64,6 @@
         <item>@string/toggle_expanded_desktop</item>
         <item>@string/toggle_ime</item>
         <item>@string/toggle_timeout</item>
-    </string-array>
+    </string-array>-->
 
 </resources>
