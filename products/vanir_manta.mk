@@ -30,6 +30,6 @@ PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 10
 PRODUCT_MANUFACTURER := Samsung
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mantaray BUILD_FINGERPRINT=google/mantaray/manta:4.4/KRT16M/737497:user/release-keys PRIVATE_BUILD_DESC="mantaray-user 4.4 KRT16M 737497 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mantaray BUILD_FINGERPRINT=google/mantaray/manta:4.4/KRT16O/737497:user/release-keys PRIVATE_BUILD_DESC="mantaray-user 4.4 KRT16O 737497 release-keys"
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=Vanir-MANTA
