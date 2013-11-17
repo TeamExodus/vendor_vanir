@@ -190,7 +190,8 @@ PRODUCT_PACKAGES += \
 # Optional CM packages
 PRODUCT_PACKAGES += \
     Basic \
-    SoundRecorder
+    SoundRecorder \
+    libemoji
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
@@ -208,7 +209,14 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat \
     ntfsfix \
-    ntfs-3g
+    ntfs-3g \
+    gdbserver \
+    micro_bench \
+    oprofiled \
+    procmem \
+    procrank \
+    sqlite3 \
+    strace
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -230,10 +238,6 @@ PRODUCT_PACKAGES += \
     ThemeChooser \
     com.tmobile.themes \
     Vanir_Inverted
-
-# sqlite3 - for bad voodoo :-D
-PRODUCT_PACKAGES += \
-    sqlite3
 
 ## STREAMING DMESG?
 PRODUCT_PACKAGES += \

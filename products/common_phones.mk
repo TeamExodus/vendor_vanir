@@ -14,7 +14,8 @@ PRODUCT_PACKAGES += \
     Stk
 
 PRODUCT_PACKAGES += \
-    SpeakerProximity
+    SpeakerProximity \
+    CellBroadcastReceiver
 
 # Audio Packages
 include frameworks/base/data/sounds/AudioPackage7.mk
