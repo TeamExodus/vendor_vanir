@@ -3,15 +3,6 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp
 
-ifneq ($(NO_DRM_BLOBS),true)
-# Blobs necessary for drm
-PRODUCT_COPY_FILES += \
-   vendor/vanir/proprietary/common/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
-   vendor/vanir/proprietary/common/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
-   vendor/vanir/proprietary/common/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
-   vendor/vanir/proprietary/common/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so
-endif
-
 # Bravia 3 engine, credit C0deF0x
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/bravia/etc/be_movie:system/etc/be_movie \
