@@ -2,6 +2,7 @@
 ZOMG_ITS_A_COMBO_COMBO()
 {
   for x in \
+    apache \
     deb \
     d2att \
     d2spr \
@@ -16,6 +17,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     e980 \
     flo \
     grouper \
+    hercules \
     honami \
     i605 \
     i9300 \
