@@ -2,10 +2,6 @@
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/vanir/overlay/theme
 
-# dmesg and logcat dumper that sticks logs in /data so they can be pulled off in recovery for post-hoc diagnosis of boots without adb
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/init.d/dasboot:system/etc/init.d/dasboot
-
 # DSPManager and bravia
 $(call inherit-product, vendor/vanir/products/media_sexificators.mk)
 $(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
