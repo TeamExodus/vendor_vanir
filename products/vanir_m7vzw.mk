@@ -13,7 +13,7 @@ $(call inherit-product, vendor/vanir/products/vanir_m7.mk)
 $(call inherit-product, vendor/vanir/products/cdma.mk)
 
 # Setup device specific product configuration.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m7wlv BUILD_ID=KRT16O BUILD_FINGERPRINT="VERIZON/HTCOneVZW/m7wlv:4.4/KRT16O/221778.8:user/release-k" PRIVATE_BUILD_DESC="1.10.605.8 CL221778 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m7wlv BUILD_ID=KRT16S BUILD_FINGERPRINT="VERIZON/HTCOneVZW/m7wlv:4.4/KRT16S/221778.8:user/release-k" PRIVATE_BUILD_DESC="1.10.605.8 CL221778 release-keys"
 
 PRODUCT_NAME := vanir_m7vzw
 PRODUCT_DEVICE := m7vzw

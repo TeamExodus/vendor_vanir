@@ -27,4 +27,4 @@ PRODUCT_BRAND := Samsung
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_MODEL := GT-P3110
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=espressowifixx TARGET_DEVICE=espressowifi BUILD_FINGERPRINT=samsung/espressowifixx/espressowifi:4.4/KRT16O/P3110XWALD2:user/release-keys PRIVATE_BUILD_DESC="espressowifixx-user 4.4 KRT16O P3110XWALD2 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=espressowifixx TARGET_DEVICE=espressowifi BUILD_FINGERPRINT=samsung/espressowifixx/espressowifi:4.4/KRT16S/P3110XWALD2:user/release-keys PRIVATE_BUILD_DESC="espressowifixx-user 4.4 KRT16S P3110XWALD2 release-keys"
