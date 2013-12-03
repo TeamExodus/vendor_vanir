@@ -166,8 +166,8 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/vanir/overlay/dictionaries
 
 #Define thirdparty for Koush's SU
-#SUPERUSER_PACKAGE := com.vanir.superuser
 SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 # Required CM packages
 PRODUCT_PACKAGES += \
