@@ -15,9 +15,6 @@ $(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
 # Inherit AOSP device configuration for toroplus.
 $(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 
-PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/vanir/overlay/cdma_phone
-
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_toroplus
 PRODUCT_BRAND := google
