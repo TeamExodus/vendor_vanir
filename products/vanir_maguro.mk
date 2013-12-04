@@ -5,9 +5,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     ro.goo.rom=vanir-MAGURO
 
-# More Language support for Maguro LatinIME
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
-
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)

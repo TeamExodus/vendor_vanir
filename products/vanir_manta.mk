@@ -21,9 +21,6 @@ PRODUCT_COPY_FILES += \
 # Inherit AOSP device configuration for Manta.
 $(call inherit-product, device/samsung/manta/full_manta.mk)
 
-# More Language support for International LatinIME
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/dictionaries
-
 PRODUCT_NAME := vanir_manta
 PRODUCT_DEVICE := manta
 PRODUCT_BRAND := Google
