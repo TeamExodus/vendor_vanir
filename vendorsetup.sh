@@ -39,16 +39,9 @@ ZOMG_ITS_A_COMBO_COMBO()
     manta \
     mako \
     maserati \
-    ovation \
-    p3100 \
-    p3110 \
-    p5100 \
-    p5110 \
     p700 \
     p880 \
     pollux \
-    quincyatt \
-    quincytmo \
     t0lteatt \
     t0ltetmo \
     tf700 \
@@ -64,9 +57,18 @@ ZOMG_ITS_A_COMBO_COMBO()
   done
 }
 
-#BROKEN:
+# BROKEN:
 #   apache \
 #   honami \
+
+# Obsolete
+#    ovation \
+#    p3100 \
+#    p3110 \
+#    p5100 \
+#    p5110 \
+#    quincyatt \
+#    quincytmo \
 
 ZOMG_ITS_A_COMBO_COMBO userdebug
 ZOMG_ITS_A_COMBO_COMBO user
