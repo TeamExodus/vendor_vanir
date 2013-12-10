@@ -44,7 +44,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     pollux \
     t0lteatt \
     t0ltetmo \
-    tf700 \
     tilapia \
     toro \
     p700 \
@@ -69,6 +68,7 @@ ZOMG_ITS_A_COMBO_COMBO()
 #    p5110 \
 #    quincyatt \
 #    quincytmo \
+#    tf700 \
 
 ZOMG_ITS_A_COMBO_COMBO userdebug
 ZOMG_ITS_A_COMBO_COMBO user
