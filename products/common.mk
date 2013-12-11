@@ -17,7 +17,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     VanirUpdater
 
-Vanir_Version=4.4.1
+Vanir_Version=4.4.2
 Vanir_BUILD=$(Vanir_Version)
 
 ifeq ($(RELEASE),)
