@@ -18,7 +18,7 @@ PRODUCT_COPY_FILES += \
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
-# Inherit AOSP device configuration for grouper
+# Inherit AOSP device configuration for Tablet Z GSM
 $(call inherit-product, device/sony/pollux/full_pollux.mk)
 
 # Set those variables here to overwrite the inherited values.
@@ -28,5 +28,5 @@ PRODUCT_BRAND := Sony
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_MODEL := SGP321
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGP321 BUILD_FINGERPRINT=Sony/SGP321_1275-5841/SGP321:4.1.2/10.1.1.A.1.253/Avt3rw:user/release-keys PRIVATE_BUILD_DESC="SGP321-user 4.1.2 10.1.1.A.1.253 Avt3rw test-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGP321 BUILD_FINGERPRINT=Sony/SGP321_1275-5841/SGP321:4.4.2/10.1.1.A.1.253/Avt3rw:user/release-keys PRIVATE_BUILD_DESC="SGP321-user 4.4.2 10.1.1.A.1.253 Avt3rw test-keys"
 
