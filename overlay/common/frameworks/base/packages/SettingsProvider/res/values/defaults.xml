@@ -19,13 +19,6 @@
 <resources>
     <string name="def_backup_transport">com.google.android.backup/.BackupTransportService</string>
 
-<string name="def_lockscreen_targets">#Intent;action=android.intent.action.MAIN;category=android
-.intent.category.LAUNCHER;component=com.android.mms/.ui.ConversationList;S.icon_resource=ic_lockscre
-en_sms_normal;end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHE
-R;S.icon_resource=ic_lockscreen_music_normal;end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=c
-om.android.dialer/.DialtactsActivity;S.icon_resource=ic_lockscreen_phone_normal;end|#Intent;action=a
-ndroid.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.android.browser/.B
-rowserActivity;S.icon_resource=ic_lockscreen_browser_normal;end</string>
  <!-- Default lockscreen targets for devices without telephony -->
 <string name="def_lockscreen_targets_no_telephony">empty|#Intent;action=android.intent.action.MA
 IN;category=android.intent.category.LAUNCHER;component=com.android.browser/.BrowserActivity;S.icon_r
