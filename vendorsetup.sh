@@ -51,6 +51,8 @@ ZOMG_ITS_A_COMBO_COMBO()
     toroplus \
     vigor \
     vs980 \
+    xt907 \
+    xt1060 \
     yuga;
   do
     add_lunch_combo vanir_$x-$1

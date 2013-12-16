@@ -19,6 +19,14 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_i9300.mk \
     $(LOCAL_DIR)/vanir_i9305.mk \
     $(LOCAL_DIR)/vanir_jewel.mk \
+    $(LOCAL_DIR)/vanir_jfltevzw.mk \
+    $(LOCAL_DIR)/vanir_jflteatt.mk \
+    $(LOCAL_DIR)/vanir_jfltecan.mk \
+    $(LOCAL_DIR)/vanir_jfltecri.mk \
+    $(LOCAL_DIR)/vanir_jfltespr.mk \
+    $(LOCAL_DIR)/vanir_jfltetmo.mk \
+    $(LOCAL_DIR)/vanir_jflteusc.mk \
+    $(LOCAL_DIR)/vanir_jfltexx.mk \
     $(LOCAL_DIR)/vanir_m7att.mk \
     $(LOCAL_DIR)/vanir_m7spr.mk \
     $(LOCAL_DIR)/vanir_m7tmo.mk \
@@ -32,22 +40,16 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_p880.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_pollux_windy.mk \
-    $(LOCAL_DIR)/vanir_jfltevzw.mk \
-    $(LOCAL_DIR)/vanir_jflteatt.mk \
-    $(LOCAL_DIR)/vanir_jfltecan.mk \
-    $(LOCAL_DIR)/vanir_jfltecri.mk \
-    $(LOCAL_DIR)/vanir_jfltespr.mk \
-    $(LOCAL_DIR)/vanir_jfltetmo.mk \
-    $(LOCAL_DIR)/vanir_jflteusc.mk \
-    $(LOCAL_DIR)/vanir_jfltexx.mk \
     $(LOCAL_DIR)/vanir_t0lteatt.mk \
     $(LOCAL_DIR)/vanir_t0ltetmo.mk \
     $(LOCAL_DIR)/vanir_tilapia.mk \
     $(LOCAL_DIR)/vanir_toro.mk \
     $(LOCAL_DIR)/vanir_toroplus.mk \
-    $(LOCAL_DIR)/vanir_yuga.mk \
     $(LOCAL_DIR)/vanir_vigor.mk \
-    $(LOCAL_DIR)/vanir_vs980.mk
+    $(LOCAL_DIR)/vanir_vs980.mk \
+    $(LOCAL_DIR)/vanir_xt907.mk \
+    $(LOCAL_DIR)/vanir_xt1060.mk \
+    $(LOCAL_DIR)/vanir_yuga.mk
 
 # BROKEN
 #    $(LOCAL_DIR)/vanir_apache.mk \
@@ -55,10 +57,10 @@ PRODUCT_MAKEFILES := \
 
 # Obsolete
 #    $(LOCAL_DIR)/vanir_ovation.mk \
-#    $(LOCAL_DIR)/vanir_quincyatt.mk \
-#    $(LOCAL_DIR)/vanir_quincytmo.mk \
 #    $(LOCAL_DIR)/vanir_p3100.mk \
 #    $(LOCAL_DIR)/vanir_p3110.mk \
 #    $(LOCAL_DIR)/vanir_p5100.mk \
 #    $(LOCAL_DIR)/vanir_p5110.mk \
+#    $(LOCAL_DIR)/vanir_quincyatt.mk \
+#    $(LOCAL_DIR)/vanir_quincytmo.mk \
 #    $(LOCAL_DIR)/vanir_tf700.mk \
