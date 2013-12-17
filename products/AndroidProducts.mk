@@ -14,6 +14,9 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_e975.mk \
     $(LOCAL_DIR)/vanir_e980.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
+    $(LOCAL_DIR)/vanir_geeb.mk \
+    $(LOCAL_DIR)/vanir_geehrc.mk \
+    $(LOCAL_DIR)/vanir_geespr.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
     $(LOCAL_DIR)/vanir_hercules.mk \

@@ -17,6 +17,9 @@ ZOMG_ITS_A_COMBO_COMBO()
     e975 \
     e980 \
     flo \
+    geeb \
+    geehrc \
+    geespr \
     grouper \
     hammerhead \
     hercules \
