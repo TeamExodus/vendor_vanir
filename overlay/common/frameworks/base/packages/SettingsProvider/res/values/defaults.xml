@@ -18,12 +18,4 @@
 -->
 <resources>
     <string name="def_backup_transport">com.google.android.backup/.BackupTransportService</string>
-
- <!-- Default lockscreen targets for devices without telephony -->
-<string name="def_lockscreen_targets_no_telephony">empty|#Intent;action=android.intent.action.MA
-IN;category=android.intent.category.LAUNCHER;component=com.android.browser/.BrowserActivity;S.icon_r
-esource=ic_lockscreen_browser_normal;end|empty|#Intent;action=android.intent.action.MAIN;category=an
-droid.intent.category.LAUNCHER;S.icon_resour
-ce=ic_lockscreen_music_normal;end</string>
-
 </resources>
