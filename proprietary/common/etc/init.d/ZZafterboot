@@ -9,6 +9,18 @@ while busybox [ ! $(logcat -d *:I *:D | grep -c android.intent.action.BOOT_COMPL
 echo Boot completed... vanirnice-ing like a bauss
 vanirnice
 
-echo '\''\\   //\ ||\||====||=\\'\''
-echo '\'' \\ //=\\||\\| || ||=//'\''
-echo '\''  \//   \\| \|====|| \\'\''' &
+# Def Leppard ascii art ftw
+echo "                   L.                            "
+echo "                   EW:        ,ft t   j.         "
+echo "                .. E##;       t#E Ej  EW,        "
+echo "  t      .DD.  ;W, E###t      t#E E#, E##j       "
+echo "  EK:   ,WK.  j##, E#fE#f     t#E E#t E###D.     "
+echo "  E#t  i#D   G###, E#t D#G    t#E E#t E#jG#W;    "
+echo "  E#t j#f  :E####, E#t  f#E.  t#E E#t E#t t##f   "
+echo "  E#tL#i  ;W#DG##, E#t   t#K: t#E E#t E#t  :K#E: "
+echo "  E#WW,  j###DW##, E#t    ;#W,t#E E#t E#KDDDD###i"
+echo "  E#K:  G##i,,G##, E#t     :K#D#E E#t E#f,t#Wi,,,"
+echo "  ED. :K#K:   L##, E#t      .E##E E#t E#t  ;#W:  "
+echo "  t  ;##D.    L##, ..         G#E E#t DWi   ,KK: "
+echo "     ,,,      .,,              fE ,;.            "
+echo "                                ,                "' &
