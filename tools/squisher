@@ -125,6 +125,26 @@ MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
 OUTVERSION="$TARGET_PRODUCT"_"$MODVERSION"
 OUTFILE=$OUT/$OUTVERSION.zip
 
+# add qcom optimized dalvikVM
+case $1 in msm8610|msm8x26|msm8226|msm8x74|msm8974|msm8960|msm8660|msm7627a|msm7630_surf|apq8084|mpq8092)
+  echo -e $CL_GRN"Proprietary transplant:" $CL_RST" MOTO X QCOM BLOBS!"
+  echo -e $CL_RED"\
+ ____ ____ ____ _________ ____ ____ ____ 
+||"$CL_YLW"W"$CL_RED" |||"$CL_YLW"T"$CL_RED" |||"$CL_YLW"F"$CL_RED" |||       |||"$CL_YLW"B"$CL_RED" |||"$CL_YLW"B"$CL_RED" |||"$CL_YLW"Q"$CL_RED" ||
+||__|||__|||__|||_______|||__|||__|||__||
+|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|
+"$CL_RST
+  for blob in \
+    bin/dalvikvm \
+    bin/dexopt \
+    lib/libcutils.so \
+    lib/libdvm.so \
+    lib/libqc-opt.so
+  do
+    cp -f "$ANDROID_BUILD_TOP/vendor/vanir/proprietary/qcom/$blob" "$REPACK/ota/system/$blob"
+  done;;
+esac
+
 # Pack it up and sign
 printf "Zipping package..."
 ( cd $REPACK/ota; zip $QUIET -r $REPACK/update.zip . )
