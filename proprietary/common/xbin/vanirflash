@@ -9,8 +9,8 @@ checkminimum()
 checkminimum || return 0
 echo "generating auto-flash script"
 mkdir -p /cache/recovery
-[ -e /cache/recovery/openrecoveryscript ] && rm /cache/recovery/openrecoveryscript && touch /cache/recovery/openrecoveryscript
-for C in "wipe cache" "wipe dalvik" "install /sdcard/vanir_rom.zip" "install /sdcard/vanir_gapps.zip"; do
+echo -n > /cache/recovery/openrecoveryscript
+for C in "install /sdcard/vanir_rom.zip" "install /sdcard/vanir_gapps.zip"; do
     echo $C >> /cache/recovery/openrecoveryscript
 done
 if  [ -d /sdcard/vanir_addons ]; then
