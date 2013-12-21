@@ -142,7 +142,9 @@ case $1 in msm8610|msm8x26|msm8226|msm8x74|msm8974|msm8960|msm8660|msm7627a|msm7
     lib/libqc-opt.so
   do
     cp -f "$ANDROID_BUILD_TOP/vendor/vanir/proprietary/qcom/$blob" "$REPACK/ota/system/$blob"
-  done;;
+  done
+  grep -c dalvik.vm.dexopt-data-only $REPACK/ota/system/build.prop && sed -i 's/dalvik\.vm\.dexopt-data-only=0/dalvik\.vm\.dexopt-data-only=1/g' $REPACK/ota/system/build.prop || echo dalvik.vm.dexopt-data-only=1 >> $REPACK/ota/system/build.prop
+  ;;
 esac
 
 # Pack it up and sign
