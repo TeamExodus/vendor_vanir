@@ -81,8 +81,7 @@ cd $REPACK/parallel
 ln -s $REPACK/ota/system/framework/framework-res.apk .
 for x in $REPACK/ota/system/app/*.apk; do ln -s $x .; done
 
-# Do optimization in parallel - NUKE WAS HERE!
-$PARALLELIZER `find ./ -name \*.apk`
+find ./ -name \*.apk | $HALFXARGS schedtool -B -n 1 -e ionice -n 1 $OPTICHARGER
 
 # Return to directory
 cd $REPACK/ota
