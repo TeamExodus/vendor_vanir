@@ -10,4 +10,7 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
+# OPT OUT of moto blobs
+QCOM_FORCE_NONMOTO_DALVIK := true
+
 #$(call inherrit-product, vendor/vanir/tweaks/m7/tweaks.mk
