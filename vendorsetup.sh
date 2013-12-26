@@ -18,6 +18,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     grouper \
     hammerhead \
     hercules \
+    honami \
     i605 \
     i9300 \
     i9305 \
@@ -61,7 +62,6 @@ ZOMG_ITS_A_COMBO_COMBO()
 
 # BROKEN:
 #   apache \
-#   honami \
 
 # Obsolete
 #    ovation \

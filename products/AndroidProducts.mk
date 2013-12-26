@@ -15,6 +15,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
     $(LOCAL_DIR)/vanir_hercules.mk \
+    $(LOCAL_DIR)/vanir_honami.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
     $(LOCAL_DIR)/vanir_i9300.mk \
     $(LOCAL_DIR)/vanir_i9305.mk \
@@ -53,7 +54,6 @@ PRODUCT_MAKEFILES := \
 
 # BROKEN
 #    $(LOCAL_DIR)/vanir_apache.mk \
-#    $(LOCAL_DIR)/vanir_honami.mk \
 
 # Obsolete
 #    $(LOCAL_DIR)/vanir_ovation.mk \
