@@ -5,6 +5,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     ro.goo.rom=vanir-d710
 
+# Boot Animation
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/boot_animations/480x800.zip:system/media/bootanimation.zip
+
 # Inherit device configuration
 $(call inherit-product, device/samsung/d710/full_d710.mk)
 
