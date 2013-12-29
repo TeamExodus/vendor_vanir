@@ -14,7 +14,7 @@ $(call inherit-product, device/samsung/hltexx/full_hltexx.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/cdma.mk)
+$(call inherit-product, vendor/vanir/products/gsm.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Device identifier. This must come after all inclusions
