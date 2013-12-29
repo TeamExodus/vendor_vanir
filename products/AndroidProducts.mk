@@ -15,6 +15,9 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
     $(LOCAL_DIR)/vanir_hercules.mk \
+    $(LOCAL_DIR)/vanir_hltespr.mk \
+    $(LOCAL_DIR)/vanir_hltetmo.mk \
+    $(LOCAL_DIR)/vanir_hltexx.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
     $(LOCAL_DIR)/vanir_i9300.mk \
     $(LOCAL_DIR)/vanir_i9305.mk \
