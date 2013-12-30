@@ -19,3 +19,6 @@ PRODUCT_PACKAGES += \
 
 # Audio Packages
 include frameworks/base/data/sounds/AudioPackage7.mk
+
+# Torch
+PRODUCT_PACKAGES += Torch
