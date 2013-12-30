@@ -10,3 +10,6 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
 $(call inherit-product, vendor/vanir/tweaks/tuna/tweaks.mk)
+
+# Torch
+PRODUCT_PACKAGES += Torch
