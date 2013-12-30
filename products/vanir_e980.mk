@@ -21,6 +21,9 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 # Inherit AOSP device configuration for Optimus G Pro.
 $(call inherit-product, device/lge/e980/e980.mk)
 
+# Torch
+PRODUCT_PACKAGES += Torch
+
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_e980
 PRODUCT_DEVICE := e980
