@@ -223,6 +223,11 @@ PRODUCT_PACKAGES += \
 # rsync
 PRODUCT_PACKAGES += \
     rsync
+	
+# HFM Files
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/etc/hosts.alt:system/etc/hosts.alt \
+    vendor/vanir/proprietary/common/etc/hosts.og:system/etc/hosts.og
 
 # Theme engine
 PRODUCT_PACKAGES += \
