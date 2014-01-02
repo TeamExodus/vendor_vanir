@@ -5,7 +5,7 @@ KERNEL_SPAM := CM-AOSP 3.4.0-g8e41961
 
 # Run these first or they will not stick
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.rom=vanir-FLO
+    ro.goo.rom=vanir-DEB
 
 # Tablet Overlays with radios
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_radio
