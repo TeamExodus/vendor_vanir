@@ -1,5 +1,5 @@
 #Squisher Choosing
-DHO_VENOR := vanir
+DHO_VENDOR := vanir
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-P880
