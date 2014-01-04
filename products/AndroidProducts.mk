@@ -1,6 +1,7 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_deb.mk \
     $(LOCAL_DIR)/vanir_d2att.mk \
+    $(LOCAL_DIR)/vanir_d2cri.mk \
     $(LOCAL_DIR)/vanir_d2spr.mk \
     $(LOCAL_DIR)/vanir_d2tmo.mk \
     $(LOCAL_DIR)/vanir_d2usc.mk \
