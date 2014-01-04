@@ -24,7 +24,12 @@ Vanir_Version=4.4.2
 Vanir_BUILD=$(Vanir_Version)
 
 ifeq ($(RELEASE),)
-Vanir_BUILD=$(Vanir_Version)$(shell date +".%m%d%y")
+ifneq ($(FORCE_BUILD_DATE),)
+BUILD_DATE:=.$(FORCE_BUILD_DATE)
+else
+BUILD_DATE:=$(shell date +".%m%d%y")
+endif
+Vanir_BUILD=$(Vanir_Version)$(BUILD_DATE)
 endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
