@@ -6,6 +6,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     d2att \
     d2spr \
     d2tmo \
+    d2usc \
     d2vzw \
     d710 \
     d800 \
