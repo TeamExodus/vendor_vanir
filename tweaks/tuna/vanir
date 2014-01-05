@@ -411,29 +411,19 @@ menu_mm()
 {
     sectionheader "Memory mgmt"
     . $SDWTF/vanir.cfg
-    echo "1) ZRAM"
-    echo "2) KSM"
+    echo "1) KSM"
     echo "M) Return to main menu"
     echo "Q) Quit"
     read -p "Enter option: " opt
     choice=""
     case $opt in
-      1) menu zram;;
-      2) menu ksm;;
+      1) menu ksm;;
       [Mm]) return 0;;
       [Qq]) apply; exit 0;;
       *) echo "Invalid option"; sleep 1; menu_mm; return 0;;
     esac
     menu mm
     return 0;
-}
-
-menu_zram()
-{
-    sectionheader "ZRAM enable/disable"
-    . $SDWTF/vanir.cfg
-    prompt zramStatus "(1=increases virtual memory using compression or something, 0=doesn't)" bool
-    return 0
 }
 
 menu_ksm()
