@@ -171,7 +171,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/vanir/proprietary/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/vanir/proprietary/common/bin/50-vanir.sh:system/addon.d/50-vanir.sh
+    vendor/vanir/proprietary/common/bin/50-vanir.sh:system/addon.d/50-vanir.sh \
+    vendor/vanir/proprietary/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/vanir/proprietary/common/bin/whitelist:system/addon.d/whitelist
 endif
 
 PRODUCT_PACKAGE_OVERLAYS += \

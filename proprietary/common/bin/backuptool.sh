@@ -7,20 +7,6 @@ export C=/tmp/backupdir
 export S=/system
 export V=4.4
 
-# Mount /system if it is not already mounted
-mount_system() {
-if [ ! -f "$S/build.prop" ]; then
-  mount $S
-fi
-}
-
-# Unmount /system unless it is already unmounted
-umount_system() {
-if [ -f "$S/build.prop" ]; then
-  umount $S
-fi
-}
-
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   mkdir -p /tmp/addon.d/
@@ -34,43 +20,85 @@ restore_addon_d() {
   rm -rf /tmp/addon.d/
 }
 
-# Proceed only if /system is the expected major version
+# Proceed only if /system is the expected major and minor version
 check_prereq() {
 if ( ! grep -q "^ro.goo.version=$V.*" /system/build.prop ); then
-  echo "Not backing up files from incompatible version."
-  umount_system
-  exit 127
+  echo "Not backing up files from incompatible version: $V"
+  return 0
 fi
+return 1
+}
+
+check_blacklist() {
+  if [ -f /system/addon.d/blacklist ];then
+      ## Discard any known bad backup scripts
+      cd /$1/addon.d/
+      for f in *sh; do
+          s=$(md5sum $f | awk {'print $1'})
+          grep -q $s /system/addon.d/blacklist && rm -f $f
+      done
+  fi
+}
+
+check_whitelist() {
+  found=0
+  if [ -f /system/addon.d/whitelist ];then
+      ## forcefully keep any version-independent stuff
+      cd /$1/addon.d/
+      for f in *sh; do
+          s=$(md5sum $f | awk {'print $1'})
+          grep -q $s /system/addon.d/whitelist
+          if [ $? -eq 0 ]; then
+              found=1
+          else
+              rm -f $f
+          fi
+      done
+  fi
+  return $found
 }
 
 # Execute /system/addon.d/*.sh scripts with $1 parameter
 run_stage() {
 for script in $(find /tmp/addon.d/ -name '*.sh' |sort -n); do
-  $script $1
+  /sbin/sh $script $1
 done
 }
 
+backup() {
+  if check_prereq; then
+    if check_whitelist system; then
+      echo "Failed to check whitelist!"
+      exit 127
+    fi
+  fi
+  check_blacklist system
+  preserve_addon_d
+  run_stage pre-backup
+  run_stage backup
+  run_stage post-backup
+}
+
+restore() {
+  if check_prereq; then
+    if check_whitelist tmp; then
+      echo "Failed to check whitelist!"
+      exit 127
+    fi
+  fi
+  check_blacklist tmp
+  run_stage pre-restore
+  run_stage restore
+  run_stage post-restore
+  restore_addon_d
+  rm -rf $C
+  sync
+}
+
 case "$1" in
-  backup)
+  backup|restore)
     mkdir -p $C
-    mount_system
-    check_prereq
-    preserve_addon_d
-    run_stage pre-backup
-    run_stage backup
-    run_stage post-backup
-    umount_system
-  ;;
-  restore)
-    mount_system
-    check_prereq
-    run_stage pre-restore
-    run_stage restore
-    run_stage post-restore
-    restore_addon_d
-    umount_system
-    rm -rf $C
-    sync
+    $1
   ;;
   *)
     echo "Usage: $0 {backup|restore}"
