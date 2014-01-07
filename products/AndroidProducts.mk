@@ -19,7 +19,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_geespr.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
-    $(LOCAL_DIR)/vanir_hercules.mk \
     $(LOCAL_DIR)/vanir_hltespr.mk \
     $(LOCAL_DIR)/vanir_hltetmo.mk \
     $(LOCAL_DIR)/vanir_hltexx.mk \
@@ -63,6 +62,7 @@ PRODUCT_MAKEFILES := \
 #    $(LOCAL_DIR)/vanir_apache.mk \
 
 # Obsolete
+#    $(LOCAL_DIR)/vanir_hercules.mk \
 #    $(LOCAL_DIR)/vanir_honami.mk \
 #    $(LOCAL_DIR)/vanir_ovation.mk \
 #    $(LOCAL_DIR)/vanir_p3100.mk \

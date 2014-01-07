@@ -22,7 +22,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     geespr \
     grouper \
     hammerhead \
-    hercules \
     hltespr \
     hltetmo \
     hltexx \
@@ -71,6 +70,7 @@ ZOMG_ITS_A_COMBO_COMBO()
 #   apache \
 
 # Obsolete
+#    hercules \
 #    honami \
 #    ovation \
 #    p3100 \
