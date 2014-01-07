@@ -1,7 +1,7 @@
-# Theme files
-PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/vanir/overlay/theme \
-    vendor/vanir/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/common
+
+#optional theme files
+PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
 
 # Disable dex preopt
 DISABLE_DEXPREOPT := true
