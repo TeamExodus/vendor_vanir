@@ -19,6 +19,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_geespr.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
+    $(LOCAL_DIR)/vanir_hltecan.mk \
     $(LOCAL_DIR)/vanir_hltespr.mk \
     $(LOCAL_DIR)/vanir_hltetmo.mk \
     $(LOCAL_DIR)/vanir_hltevzw.mk \

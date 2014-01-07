@@ -22,6 +22,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     geespr \
     grouper \
     hammerhead \
+    hltecan \
     hltespr \
     hltetmo \
     hltevzw \
