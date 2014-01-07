@@ -24,6 +24,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     hammerhead \
     hltespr \
     hltetmo \
+    hltevzw \
     hltexx \
     i605 \
     i9300 \
