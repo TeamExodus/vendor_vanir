@@ -253,6 +253,6 @@ PRODUCT_PACKAGES += \
     klogripper
 
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
+    vendor/vanir/config/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
 
 -include vendor/cyngn/product.mk
