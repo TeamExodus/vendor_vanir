@@ -72,7 +72,6 @@ on boot
     chmod 0664 /sys/kernel/mm/ksm/sleep_millisecs
     chown root system /sys/kernel/mm/ksm/run
     chmod 0664 /sys/kernel/mm/ksm/run
-    write /sys/kernel/mm/ksm/run 0
 
     # Add UKSM Support
     chown root system /sys/kernel/mm/uksm/run
@@ -89,7 +88,6 @@ on boot
     chmod 0664 /sys/kernel/mm/uksm/eval_intervals
     chown root system /sys/kernel/mm/uksm/abundant_threshold
     chmod 0664 /sys/kernel/mm/uksm/abundant_threshold
-    write /sys/kernel/mm/uksm/run 1
 
     # Assume SMP uses shared cpufreq policy for all CPUs
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor

@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+# Use uksm if kernel supports it
+
+[ -e /sys/kernel/mm/uksm ] && write /sys/kernel/mm/uksm/run 1 && return 0
+write /sys/kernel/mm/ksm/run 0 && return 0
