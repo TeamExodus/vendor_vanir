@@ -1,4 +1,4 @@
-#!/system/xbin/bash
+#!/system/xbin/sh
 
 checkminimum()
 {
@@ -6,20 +6,22 @@ checkminimum()
     [ -e /sdcard/vanir_gapps.zip ] || echo "You must copy the gapps zip you want to flash to /sdcard/vanir_gapps.zip" && return 0
     return 1
 }
-checkminimum || return 0
+
+checkminimum || exit 1
 echo "generating auto-flash script"
-mkdir -p /cache/recovery
-echo -n > /cache/recovery/openrecoveryscript
+mkdir -p /cache/recovery || exit 1
+echo -n > /cache/recovery/openrecoveryscript || exit 1
 for C in "install /sdcard/vanir_rom.zip" "install /sdcard/vanir_gapps.zip"; do
-    echo $C >> /cache/recovery/openrecoveryscript
+    echo $C >> /cache/recovery/openrecoveryscript || exit 1
 done
 if  [ -d /sdcard/vanir_addons ]; then
     for C in $(ls /sdcard/vanir_addons/ | grep -i .zip)
     do
-        echo install /sdcard/vanir_addons/$C >> /cache/recovery/openrecoveryscript
+        echo install /sdcard/vanir_addons/$C >> /cache/recovery/openrecoveryscript || exit 1
     done
 else
     echo "If you would like to install more zips than just the rom in gapps, you can do so automagically by placing them in /sdcard/vanir_addons/"
+    mkdir -p /sdcard/vanir_addons
 fi
 echo "THIS IS HAPPENING. COME TO TERMS WITH IT!"
 sleep 1
