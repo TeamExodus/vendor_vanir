@@ -257,3 +257,5 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/config/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
 
 -include vendor/cyngn/product.mk
+
+$(call inherit-product-if-exists, vendor/vanir-private/Private.mk)
