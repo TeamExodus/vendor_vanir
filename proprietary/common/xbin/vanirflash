@@ -21,8 +21,6 @@ if  [ -d /sdcard/vanir_addons ]; then
 else
     echo "If you would like to install more zips than just the rom in gapps, you can do so automagically by placing them in /sdcard/vanir_addons/"
 fi
-sync
-cat /cache/recovery/openrecoveryscript
 echo "THIS IS HAPPENING. COME TO TERMS WITH IT!"
 sleep 1
 reboot recovery
