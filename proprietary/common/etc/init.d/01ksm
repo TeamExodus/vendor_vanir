@@ -2,5 +2,5 @@
 
 # Use uksm if kernel supports it
 
-[ -e /sys/kernel/mm/uksm ] && write /sys/kernel/mm/uksm/run 1 && return 0
-write /sys/kernel/mm/ksm/run 0 && return 0
+[ -e /sys/kernel/mm/uksm ] && echo 1 > /sys/kernel/mm/uksm/run && echo 0 > /sys/kernel/mm/ksm/run  || echo 1 > /sys/kernel/mm/ksm/run
+exit 0
