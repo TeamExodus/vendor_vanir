@@ -1,8 +1,9 @@
 import /init.superuser.rc
 
 on init
-    export ANDROID_CACHE /cache
     export TERMINFO /system/etc/terminfo
+    export TERM linux
+    export ANDROID_CACHE /cache
 
 on post-fs-data
     mkdir /cache/dalvik-cache 0771 system system
