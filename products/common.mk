@@ -56,6 +56,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.version=$(Vanir_BUILD) \
     ro.rommanager.developerid=vanir \
     wifi.supplicant_scan_interval=300 \
+    persist.sys.root_access=3 \
     ro.build.selinux=1
 
 ifeq ($(VANIR_FAILSAFE),)
