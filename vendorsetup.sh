@@ -14,7 +14,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     d801 \
     d802 \
     dlx \
-    e975 \
     e980 \
     flo \
     geeb \
@@ -72,6 +71,7 @@ ZOMG_ITS_A_COMBO_COMBO()
 #   apache \
 
 # Obsolete
+#    e975 \
 #    hercules \
 #    honami \
 #    ovation \

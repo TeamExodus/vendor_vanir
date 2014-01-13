@@ -11,7 +11,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_d801.mk \
     $(LOCAL_DIR)/vanir_d802.mk \
     $(LOCAL_DIR)/vanir_dlx.mk \
-    $(LOCAL_DIR)/vanir_e975.mk \
     $(LOCAL_DIR)/vanir_e980.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
     $(LOCAL_DIR)/vanir_geeb.mk \
@@ -64,6 +63,7 @@ PRODUCT_MAKEFILES := \
 #    $(LOCAL_DIR)/vanir_apache.mk \
 
 # Obsolete
+#    $(LOCAL_DIR)/vanir_e975.mk \
 #    $(LOCAL_DIR)/vanir_hercules.mk \
 #    $(LOCAL_DIR)/vanir_honami.mk \
 #    $(LOCAL_DIR)/vanir_ovation.mk \
