@@ -24,6 +24,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_hltevzw.mk \
     $(LOCAL_DIR)/vanir_hltexx.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
+    $(LOCAL_DIR)/vanir_i9100g.mk \
     $(LOCAL_DIR)/vanir_i9300.mk \
     $(LOCAL_DIR)/vanir_i9305.mk \
     $(LOCAL_DIR)/vanir_jewel.mk \

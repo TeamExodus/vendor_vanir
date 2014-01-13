@@ -26,6 +26,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     hltetmo \
     hltevzw \
     hltexx \
+    i9100g \
     i605 \
     i9300 \
     i9305 \
