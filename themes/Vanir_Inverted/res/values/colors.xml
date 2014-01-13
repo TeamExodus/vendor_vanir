@@ -116,4 +116,5 @@
     <color name="com_android_contacts_voicemail_playback_seek_bar_yet_to_play">#44ffffff</color>
     <color name="com_android_contacts_voicemail_playback_seek_bar_already_played">#ccffffff</color>
     <color name="com_android_contacts_white_text">#ffffffff</color>
+    <color name="com_android_dialer_incall_call_txt_contact_name">#eaeaea</color>
 </resources>
