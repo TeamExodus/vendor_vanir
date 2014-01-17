@@ -1,0 +1,66 @@
+#!/bin/bash
+# NUCLEARMISTAKE 2014
+#    STEP YOUR BASH UP, SON
+
+[ ! $ANDROID_BUILD_TOP ] && echo "ANDROID_BUILD_TOP not defined. source build/envsetup.sh before running $0" && exit 1
+mkdir -p $ANDROID_BUILD_TOP/CHANGELOGS/
+CHANGELOGOUT=$ANDROID_BUILD_TOP/CHANGELOGS/vanir_`date +"%m-%d-%y"`
+echo "" > $CHANGELOGOUT
+ln -sf $CHANGELOGOUT $ANDROID_BUILD_TOP/CHANGES.LOG
+logit()
+{
+    if [ `cat /tmp/currentlog | wc -l` -gt 0 ]; then
+        project=`git remote -v | grep $remote | grep fetch | sed "s/^$remote[ \t][ \t]*//g" | sed 's/[ \t]*(fetch)//g'`
+        echo "**** $project ****" | tee -a $CHANGELOGOUT
+        cat /tmp/currentlog | tee -a $CHANGELOGOUT
+        echo " " | tee -a $CHANGELOGOUT
+    fi
+}
+getbranch()
+{
+  branches=`git --work-tree $ANDROID_BUILD_TOP/.repo/manifests/ --git-dir $ANDROID_BUILD_TOP/.repo/manifests/.git lg  | grep HEAD | sed 's/.*HEAD, //g' | sed 's/).*//g' | sed 's/[, ]*default[, ]*//g' | sed 's/,//g' | sed 's/[a-zA-Z]*\///g'`
+  file=`mktemp`
+  for x in $branches; do
+    echo $x >> $file
+  done
+  sort $file | uniq -c | sort -nr | head -n1 | sed 's/.* //g'
+  rm $file
+}
+version=`getbranch`
+newversion=HEAD
+if [ $1 ]; then lastversion=$1; fi
+if [ $2 ]; then newversion=$2; fi
+pushd . >& /dev/null
+repo forall -c pwd | while read PROJECT; do
+cd $PROJECT
+remote=`git branch -a | grep remotes/m/$version | sed 's/.* -> //g' | sed 's/\/.*//g' | sort -u`; 
+if [ $FORCE_BUILD_DATE ]; then
+  Y=${FORCE_BUILD_DATE:4:2}
+  M=${FORCE_BUILD_DATE:0:2}
+  D=${FORCE_BUILD_DATE:2:2}
+  d=$Y$M$D
+else
+  d=`date +"%y%m%d"`
+fi
+if [ `git remote -v | grep $remote | grep -v aosp | wc -l` -gt 0 ]; then
+    if [ ! $lastversion ]; then
+      prev=`git tag | sort -uh | grep -x '[0-9][0-9]*' | grep -v "$d"  | tail -n 1`
+      if [ $prev ] && [ `echo $prev | wc -w` -eq 1 ]; then
+        lastversion="$prev"
+      elif [ `git tag | sort -uh | grep vanir_ | wc -l` -gt 0 ]; then
+        lastversion="`git tag | sort -uh | grep vanir_ | tail -n 1`"
+      else
+        lastversion=m/$version
+      fi
+    fi
+    echo "CHANGELOG SINCE $lastversion... TAGGING $d"
+    if [ $lastversion ]; then
+        git log $lastversion..$newversion --no-merges --format="%h : %s <%an> %ar" > /tmp/currentlog
+    else
+        git log --no-merges --format="%h : %s <%an> %ar" > /tmp/currentlog
+    fi
+    logit
+    git tag -d $d >& /dev/null
+    git tag $d
+fi
+done
