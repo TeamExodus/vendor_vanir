@@ -40,7 +40,6 @@ version=`getbranch`
 newversion=HEAD
 if [ $1 ]; then lastversion=$1; fi
 if [ $2 ]; then newversion=$2; fi
-pushd . >& /dev/null
 repo forall -c pwd | while read PROJECT; do
 cd $PROJECT
 remote=`git branch -a | grep remotes/m/$version | sed 's/.* -> //g' | sed 's/\/.*//g' | sort -u`;
