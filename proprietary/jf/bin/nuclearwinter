@@ -25,7 +25,7 @@ handle_hotplug() {
                   echo "Disabling kernel autohotplug"
                   echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/enable_auto_hotplug
                 fi;;
-             1) if [ $needs mpdecision ]; then
+             1) if [ $needsmpdecision ]; then
                   echo "Starting mpdecision"
                   start mpdecision
                 else
