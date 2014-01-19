@@ -16,6 +16,13 @@ needsthermal=
 # Always, all the time
 [ ! $needsthermal ] && stop `getprop qcom.thermal`
 
+write() {
+  for x in cpu0 cpu1 cpu2 cpu3; do
+    [ -e /sys/devices/system/cpu/$x/$1 ] && echo $2 > /sys/devices/system/cpu/$x/$1
+  done
+  return 0
+}
+
 # Conditional hotplugging handing
 handle_hotplug() {
   [ ! $needsmpdecision ] && stop mpdecision
@@ -24,14 +31,14 @@ handle_hotplug() {
                   stop mpdecision
                 else
                   echo "Disabling kernel autohotplug"
-                  echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/enable_auto_hotplug
+                  write cpufreq/enable_auto_hotplug 0
                 fi;;
              1) if [ $needsmpdecision ]; then
                   echo "Starting mpdecision"
                   start mpdecision
                 else
                   echo "Enabling kernel autohotplug"
-                  echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/enable_auto_hotplug
+                  write cpufreq/enable_auto_hotplug 1
                 fi;;
   esac
   return 0;
@@ -39,13 +46,20 @@ handle_hotplug() {
 
 # account for performance profiles
 case `getprop sys.perf.profile` in
-  0|1) #powersave or balanced
+  2) #performance
+    write cpufreq/scaling_governor performance
+    echo performance >  /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
+    handle_hotplug 0
+    write online 1 >& /dev/null
+    ;;
+  1) #balanced
+    write cpufreq/scaling_governor interactive
+    echo ondemand >  /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
     handle_hotplug 1
     ;;
-  2) #performance
-    handle_hotplug 0
-    ;;
-  *) #who the fuck knows
-    echo "Your phone will self destruct in 5... 4..."
+  *) #powersave, or who the fuck knows
+    write cpufreq/scaling_governor conservative
+    echo ondemand >  /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
+    handle_hotplug 1
     ;;
 esac'
