@@ -18,6 +18,7 @@ needsthermal=
 
 # Conditional hotplugging handing
 handle_hotplug() {
+  [ ! $needsmpdecision ] && stop mpdecision
   case $1 in 0) if [ $needsmpdecision ]; then
                   echo "Stopping mpdecision"
                   stop mpdecision
