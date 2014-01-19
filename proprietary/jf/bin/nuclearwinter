@@ -1,11 +1,13 @@
 #!/system/bin/sh
 export PATH=/sbin:/system/sbin:/system/bin:/system/xbin
-/system/bin/logwrapper bash -c '
+
 #### set permissions
-for x in `find /sys -name cpufreq`; do for y in `ls $x`; do   
-  chown system.system $x/$y
-  chmod 664 $x/$y
-done; done
+thankyousirmayihaveanother() {
+  for x in cpu0 cpu1 cpu2 cpu3; do for y in `find /sys/devices/system/cpu/$x -type f`; do   
+    chown system.system $y
+    chmod 664 $y
+  done; done
+}
 
 #### handle kernels with built-in thermal and hotplug handling
 needsmpdecision=
@@ -27,17 +29,17 @@ write() {
 handle_hotplug() {
   [ ! $needsmpdecision ] && stop mpdecision
   case $1 in 0) if [ $needsmpdecision ]; then
-                  echo "Stopping mpdecision"
+                  log "Stopping mpdecision"
                   stop mpdecision
                 else
-                  echo "Disabling kernel autohotplug"
+                  log "Disabling kernel autohotplug"
                   write cpufreq/enable_auto_hotplug 0
                 fi;;
              1) if [ $needsmpdecision ]; then
-                  echo "Starting mpdecision"
+                  log "Starting mpdecision"
                   start mpdecision
                 else
-                  echo "Enabling kernel autohotplug"
+                  log "Enabling kernel autohotplug"
                   write cpufreq/enable_auto_hotplug 1
                 fi;;
   esac
@@ -46,20 +48,23 @@ handle_hotplug() {
 
 # account for performance profiles
 case `getprop sys.perf.profile` in
-  2) #performance
-    write cpufreq/scaling_governor performance
-    echo performance >  /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
-    handle_hotplug 0
-    write online 1 >& /dev/null
+  0) #powersave
+    write cpufreq/scaling_governor conservative
+    thankyousirmayihaveanother
+    echo ondemand > /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
+    handle_hotplug 1
     ;;
   1) #balanced
     write cpufreq/scaling_governor interactive
-    echo ondemand >  /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
+    thankyousirmayihaveanother
+    echo ondemand > /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
     handle_hotplug 1
     ;;
-  *) #powersave, or who the fuck knows
-    write cpufreq/scaling_governor conservative
-    echo ondemand >  /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
-    handle_hotplug 1
+  2) #performance, or who the fuck knows
+    write cpufreq/scaling_governor performance
+    thankyousirmayihaveanother
+    echo performance > /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
+    handle_hotplug 0
+    write online 1  2>&1 > /dev/null
     ;;
-esac'
+esac
