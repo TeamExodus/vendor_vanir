@@ -57,6 +57,10 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_vigor.mk \
     $(LOCAL_DIR)/vanir_vs980.mk \
     $(LOCAL_DIR)/vanir_xt907.mk \
+    $(LOCAL_DIR)/vanir_xt925.mk \
+    $(LOCAL_DIR)/vanir_xt926.mk \
+    $(LOCAL_DIR)/vanir_xt1053.mk \
+    $(LOCAL_DIR)/vanir_xt1058.mk \
     $(LOCAL_DIR)/vanir_xt1060.mk \
     $(LOCAL_DIR)/vanir_yuga.mk
 

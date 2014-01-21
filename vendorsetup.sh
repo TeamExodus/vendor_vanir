@@ -61,6 +61,10 @@ ZOMG_ITS_A_COMBO_COMBO()
     vigor \
     vs980 \
     xt907 \
+    xt925 \
+    xt926 \
+    xt1053 \
+    xt1058 \
     xt1060 \
     yuga;
   do
