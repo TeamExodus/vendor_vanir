@@ -1,0 +1,7 @@
+#!/system/bin/sh
+
+until [ `pidof mpdecision` ]; do
+log "I'm playing with my dick while I wait for mpdecision";
+  sleep 1;
+done;
+wedontgotoravenholmanymore
