@@ -3,9 +3,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/common
 #optional theme files
 PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
 
-# Disable dex preopt
-DISABLE_DEXPREOPT := true
-
 # DSPManager and bravia
 $(call inherit-product, vendor/vanir/products/media_sexificators.mk)
 $(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
