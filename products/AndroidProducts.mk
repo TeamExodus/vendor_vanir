@@ -64,9 +64,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_xt1060.mk \
     $(LOCAL_DIR)/vanir_yuga.mk
 
-# BROKEN
-#    $(LOCAL_DIR)/vanir_apache.mk \
-
 # Obsolete
 #    $(LOCAL_DIR)/vanir_e975.mk \
 #    $(LOCAL_DIR)/vanir_hercules.mk \

@@ -72,9 +72,6 @@ ZOMG_ITS_A_COMBO_COMBO()
   done
 }
 
-# BROKEN:
-#   apache \
-
 # Obsolete
 #    e975 \
 #    hercules \
