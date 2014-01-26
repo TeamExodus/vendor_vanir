@@ -58,7 +58,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     toro \
     p700 \
     toroplus \
-    vigor \
     vs980 \
     xt907 \
     xt925 \
