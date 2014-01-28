@@ -15,6 +15,7 @@ PRODUCT_PACKAGES += \
     busybox \
     Email \
     Launcher3 \
+    PerformanceControl \
     VanirUpdater
 
 Vanir_Version=4.4.2
