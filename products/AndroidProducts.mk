@@ -57,16 +57,3 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_xt1058.mk \
     $(LOCAL_DIR)/vanir_xt1060.mk \
     $(LOCAL_DIR)/vanir_yuga.mk
-
-# Obsolete
-#    $(LOCAL_DIR)/vanir_e975.mk \
-#    $(LOCAL_DIR)/vanir_hercules.mk \
-#    $(LOCAL_DIR)/vanir_honami.mk \
-#    $(LOCAL_DIR)/vanir_ovation.mk \
-#    $(LOCAL_DIR)/vanir_p3100.mk \
-#    $(LOCAL_DIR)/vanir_p3110.mk \
-#    $(LOCAL_DIR)/vanir_p5100.mk \
-#    $(LOCAL_DIR)/vanir_p5110.mk \
-#    $(LOCAL_DIR)/vanir_quincyatt.mk \
-#    $(LOCAL_DIR)/vanir_quincytmo.mk \
-#    $(LOCAL_DIR)/vanir_tf700.mk \

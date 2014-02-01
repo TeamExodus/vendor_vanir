@@ -65,17 +65,4 @@ ZOMG_ITS_A_COMBO_COMBO()
   done
 }
 
-# Obsolete
-#    e975 \
-#    hercules \
-#    honami \
-#    ovation \
-#    p3100 \
-#    p3110 \
-#    p5100 \
-#    p5110 \
-#    quincyatt \
-#    quincytmo \
-#    tf700 \
-
 ZOMG_ITS_A_COMBO_COMBO userdebug
