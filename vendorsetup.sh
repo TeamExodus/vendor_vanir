@@ -44,7 +44,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     manta \
     mako \
     maserati \
-    p700 \
     p880 \
     pollux \
     pollux_windy \
@@ -52,7 +51,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     t0ltetmo \
     tilapia \
     toro \
-    p700 \
     toroplus \
     vs980 \
     xt907 \

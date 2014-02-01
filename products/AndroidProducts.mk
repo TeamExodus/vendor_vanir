@@ -41,7 +41,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_maguro.mk \
     $(LOCAL_DIR)/vanir_mako.mk \
     $(LOCAL_DIR)/vanir_maserati.mk \
-    $(LOCAL_DIR)/vanir_p700.mk \
     $(LOCAL_DIR)/vanir_p880.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_pollux_windy.mk \
