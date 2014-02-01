@@ -21,11 +21,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     geespr \
     grouper \
     hammerhead \
-    hltecan \
-    hltespr \
-    hltetmo \
-    hltevzw \
-    hltexx \
+    hlte \
     i9100g \
     i605 \
     i9300 \
