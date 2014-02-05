@@ -57,6 +57,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3 \
     ro.build.selinux=1
 
+# nomnomnom
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
+
 ifeq ($(VANIR_FAILSAFE),)
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
