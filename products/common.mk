@@ -16,6 +16,7 @@ PRODUCT_PACKAGES += \
     Email \
     Launcher3 \
     PerformanceControl \
+    OmniSwitch \
     VanirUpdater
 
 Vanir_Version=4.4.2
