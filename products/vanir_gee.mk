@@ -7,7 +7,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ring.delay=0 \
     ro.telephony.call_ring.delay=50 \
     ro.ril.fast.dormancy.rule=0 \
-    ro.goo.rom=vanir-geehrc
+    ro.goo.rom=vanir-gee
 
 # Boot animation
 PRODUCT_COPY_FILES += \
@@ -18,12 +18,12 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
-# Inherit AOSP device configuration for geehrc.
-$(call inherit-product, device/lge/geehrc/full_geehrc.mk)
+# Inherit AOSP device configuration for gee.
+$(call inherit-product, device/lge/gee/full_gee.mk)
 
 # Setup device specific product configuration.
-PRODUCT_NAME := vanir_geehrc
-PRODUCT_DEVICE := geehrc
+PRODUCT_NAME := vanir_gee
+PRODUCT_DEVICE := gee
 PRODUCT_BRAND := LGE
 PRODUCT_MODEL := Optimus G
 PRODUCT_MANUFACTURER := LGE
