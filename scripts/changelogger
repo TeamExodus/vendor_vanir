@@ -19,10 +19,14 @@ echo "" > $CHANGELOGOUT
 ln -sf $CHANGELOGOUT $ANDROID_BUILD_TOP/CHANGES.LOG
 logit()
 {
-    if [ `cat /tmp/currentlog | wc -l` -gt 0 ]; then
+    lines=`cat /tmp/currentlog | wc -l`
+    if [ $lines ] && [ $lines -gt 0 ]; then        
         project=`git remote -v | grep $remote | grep fetch | sed "s/^$remote[ \t][ \t]*//g" | sed 's/[ \t]*(fetch)//g'`
         echo "**** $project ****" | tee -a $CHANGELOGOUT
-        cat /tmp/currentlog | tee -a $CHANGELOGOUT
+        head -n 50 /tmp/currentlog | tee -a $CHANGELOGOUT
+        if [ $lines -gt 50 ]; then
+            echo "* ... `expr $lines - 50` lines truncated ... *"
+        fi
         echo " " | tee -a $CHANGELOGOUT
     fi
 }
