@@ -13,6 +13,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     d800 \
     d801 \
     d802 \
+    d803 \
     dlx \
     e980 \
     flo \
@@ -34,6 +35,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     jflteusc \
     jfltevzw \
     jfltexx \
+    ls980 \
     m7att \
     m7spr \
     m7tmo \

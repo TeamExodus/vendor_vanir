@@ -10,6 +10,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_d800.mk \
     $(LOCAL_DIR)/vanir_d801.mk \
     $(LOCAL_DIR)/vanir_d802.mk \
+    $(LOCAL_DIR)/vanir_d803.mk \
     $(LOCAL_DIR)/vanir_dlx.mk \
     $(LOCAL_DIR)/vanir_e980.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
@@ -31,6 +32,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_jfltetmo.mk \
     $(LOCAL_DIR)/vanir_jflteusc.mk \
     $(LOCAL_DIR)/vanir_jfltexx.mk \
+    $(LOCAL_DIR)/vanir_ls980.mk \
     $(LOCAL_DIR)/vanir_m7att.mk \
     $(LOCAL_DIR)/vanir_m7spr.mk \
     $(LOCAL_DIR)/vanir_m7tmo.mk \
