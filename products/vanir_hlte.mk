@@ -20,9 +20,3 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hlte
 PRODUCT_NAME := vanir_hlte
-PRODUCT_BRAND := Samsung
-PRODUCT_MANUFACTURER := Samsung
-PRODUCT_MODEL := SM-N900T
-
-# Setup device specific product configuration.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=hlte TARGET_DEVICE=hlte BUILD_FINGERPRINT="samsung/hlte/hlte:4.4.2/KOT49H/N900TUVUBMI7:user/release-keys" PRIVATE_BUILD_DESC="hlte-user 4.4.2 KOT49H N900TUVUBMI7 release-keys"
