@@ -27,14 +27,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     i9300 \
     i9305 \
     jewel \
-    jflteatt \
-    jfltecan \
-    jfltecri \
-    jfltespr \
-    jfltetmo \
-    jflteusc \
-    jfltevzw \
-    jfltexx \
+    jflte \
     ls980 \
     m7att \
     m7spr \

@@ -1,6 +1,8 @@
 # Variable for zip installerscript spam about kernel
 KERNEL_SPAM := WHY DOESNT THIS JUST WORK AMGGGG #not related to the kernel... but this build step didn't work anyways, so lulpwned.
 
+$(call inherit-product, device/samsung/jflte/full_jflte.mk)
+
 # Boot Animation
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/1080x1920.zip:system/media/bootanimation.zip
@@ -10,12 +12,12 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/jf/etc/init.d/00kernelcompat:system/etc/init.d/00kernelcompat \
     vendor/vanir/proprietary/jf/bin/nuclearwinter:system/bin/nuclearwinter
 
-# OPT OUT of moto blobs
-QCOM_FORCE_NONMOTO_DALVIK := true
-
 # Inherit common product files.
 NO_DRM_BLOBS := true
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
+
+
+PRODUCT_NAME := vanir_jflte
