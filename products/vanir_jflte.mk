@@ -1,6 +1,10 @@
 # Variable for zip installerscript spam about kernel
 KERNEL_SPAM := WHY DOESNT THIS JUST WORK AMGGGG #not related to the kernel... but this build step didn't work anyways, so lulpwned.
 
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.goo.rom=vanir-jflte
+
 $(call inherit-product, device/samsung/jflte/full_jflte.mk)
 
 # Boot Animation
