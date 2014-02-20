@@ -12,6 +12,8 @@ ZOMG_ITS_A_COMBO_COMBO()
     dlx \
     e980 \
     flo \
+    galaxysbmtd \
+    galaxysmtd \
     geeb \
     gee \
     grouper \
