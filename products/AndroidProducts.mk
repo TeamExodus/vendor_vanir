@@ -35,6 +35,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_maguro.mk \
     $(LOCAL_DIR)/vanir_mako.mk \
     $(LOCAL_DIR)/vanir_maserati.mk \
+    $(LOCAL_DIR)/vanir_moto_msm8960.mk \
+    $(LOCAL_DIR)/vanir_moto_msm8960dt.mk \
     $(LOCAL_DIR)/vanir_nicki.mk \
     $(LOCAL_DIR)/vanir_p880.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
@@ -46,10 +48,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_toro.mk \
     $(LOCAL_DIR)/vanir_toroplus.mk \
     $(LOCAL_DIR)/vanir_vs980.mk \
-    $(LOCAL_DIR)/vanir_xt907.mk \
-    $(LOCAL_DIR)/vanir_xt925.mk \
-    $(LOCAL_DIR)/vanir_xt926.mk \
-    $(LOCAL_DIR)/vanir_xt1053.mk \
-    $(LOCAL_DIR)/vanir_xt1058.mk \
-    $(LOCAL_DIR)/vanir_xt1060.mk \
     $(LOCAL_DIR)/vanir_yuga.mk

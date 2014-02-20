@@ -42,6 +42,8 @@ ZOMG_ITS_A_COMBO_COMBO()
     manta \
     mako \
     maserati \
+    moto_msm8960 \
+    moto_msm8960dt \
     nicki \
     p880 \
     pollux \
@@ -56,12 +58,6 @@ ZOMG_ITS_A_COMBO_COMBO()
     toroplus \
     urushi \
     vs980 \
-    xt907 \
-    xt925 \
-    xt926 \
-    xt1053 \
-    xt1058 \
-    xt1060 \
     yuga;
   do
     add_lunch_combo vanir_$x-$1
