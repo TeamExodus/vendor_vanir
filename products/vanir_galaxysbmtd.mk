@@ -9,7 +9,7 @@ $(call inherit-product, vendor/vanir/products/vanir_galaxys-common.mk)
 
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
-$(call inherit-product, device/samsung/galaxysmtd/full_galaxysbmtd.mk)
+$(call inherit-product, device/samsung/galaxysbmtd/full_galaxysbmtd.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := galaxysbmtd
