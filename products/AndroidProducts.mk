@@ -1,4 +1,5 @@
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/vanir_anzu.mk \
     $(LOCAL_DIR)/vanir_deb.mk \
     $(LOCAL_DIR)/vanir_d2lte.mk \
     $(LOCAL_DIR)/vanir_d710.mk \
