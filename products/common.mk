@@ -257,6 +257,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     klogripper
 
+## FOR HOTFIXING KERNELS MAINTAINED BY BUNGHOLES
+PRODUCT_PACKAGES += \
+    utility_mkbootimg \
+    utility_unpackbootimg
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/etc/init.d/0000kernelassimilator:system/etc/init.d/0000kernelassimilator \
+    vendor/vanir/proprietary/common/etc/kernelassimilator.d/00bootclasspath:system/etc/kernelassimilator.d/00bootclasspath
+
 PRODUCT_COPY_FILES += \
     vendor/vanir/config/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
 

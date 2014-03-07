@@ -88,6 +88,9 @@ cd $REPACK/ota
 rm -rf $REPACK/parallel
 )
 
+# move utilities
+[ -e $OUT/utilities ] && cp $OUT/utilities/* $REPACK/ota/system/xbin/
+
 if [ "$WANT_SQUASHFS" -eq 1 ]; then
     squash_opts="-force-uid 1000 -force-gid 1000 -no-progress -noappend -no-exports -no-recovery"
     updater=$REPACK/ota/META-INF/com/google/android/updater-script

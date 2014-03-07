@@ -1,0 +1,52 @@
+#!/system/xbin/bash
+### Copyright 2014 VanirAOSP
+###
+### Licensed under the Apache License, Version 2.0 (the "License");
+### you may not use this file except in compliance with the License.
+### You may obtain a copy of the License at
+###
+###      http://www.apache.org/licenses/LICENSE-2.0
+###
+### Unless required by applicable law or agreed to in writing, software
+### distributed under the License is distributed on an "AS IS" BASIS,
+### WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+### See the License for the specific language governing permissions and
+### limitations under the License.
+######################################################################################
+# Eric McCann @nuclearmistake 2014
+######################################################################################
+
+### makes sure that telephony-msim.jar is on BOOTCLASSPATH in init.environ.rc
+
+requires_modification()
+{
+  # if /init.environ.rc already has telephony-msim on BOOTCLASSPATH, then GTFO
+  if [ $BOOTCLASSPATH ] &&
+        [ $(echo $BOOTCLASSPATH | grep -c telephony-msim.jar) -gt 0 ] ||
+     [ -e /init.environ.rc ] &&
+        [ $(grep -c telephony-msim.jar /init.environ.rc) -gt 0 ];
+  then
+      echo "[+++] BOOTCLASSPATH does not need modification"
+      return 1
+  fi
+  echo "[+++] ramdisk modifications are needed to fix BOOTCLASSPATH"
+  return 0
+}
+
+apply_modification()
+{
+    echo "[+++] CORRECTING BOOTCLASSPATH CONTENTS"
+    echo "[vvv] BEFORE: `cat init.environ.rc | grep BOOTCLASSPATH`"
+    sed -i 's/export BOOTCLASSPATH.*/&:\/system\/framework\/telephony-msim\.jar/g' init.environ.rc
+    echo "[vvv] AFTER: `cat init.environ.rc | grep BOOTCLASSPATH`"
+    
+    # if you mess with the bull, you get KILLED, FEWL
+    stop zygote
+    pgrep -f dex | xargs kill
+
+    # after zygote and its army of dexopt/dex2oat processes hit the ground,
+    #        wipe dalvik-cache so the new bootclasspath is reflected in it
+    rm -Rf /cache/dalvik-cache /data/dalvik-cache && sync
+    echo "[+++] dalvik-cache wiped... while booted... don't ask."
+    return 0
+}

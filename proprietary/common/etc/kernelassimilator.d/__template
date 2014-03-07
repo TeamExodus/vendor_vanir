@@ -1,0 +1,40 @@
+#!/system/xbin/bash
+### Copyright 2014 VanirAOSP
+###
+### Licensed under the Apache License, Version 2.0 (the "License");
+### you may not use this file except in compliance with the License.
+### You may obtain a copy of the License at
+###
+###      http://www.apache.org/licenses/LICENSE-2.0
+###
+### Unless required by applicable law or agreed to in writing, software
+### distributed under the License is distributed on an "AS IS" BASIS,
+### WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+### See the License for the specific language governing permissions and
+### limitations under the License.
+######################################################################################
+# Eric McCann @nuclearmistake 2014
+######################################################################################
+
+
+
+# returns whether or not modifications are required. 0==modifications required, 1==no modifications required
+requires_modification()
+{
+  # this file does nothing. it never needs to run. always return 1.
+  return 1
+}
+
+# this function is called between when the ramdisk is unpacked and when the ramdisk is repacked.
+# the ramdisk's contents are IN THE CURRENT DIRECTORY when this is run
+apply_modification()
+{
+    # this function DOES NOT NEED to check if modifications are required,
+    #    as only tasks that need to make modifications are told to apply them.
+
+    echo "[+++] 1. step 1"
+    echo "[+++] 2. step 2"
+    echo "[---] 3. ????"
+    echo "[\$\$\$] 4. profit."
+    return 0
+}
