@@ -16,14 +16,5 @@ $(call inherit-product, device/samsung/d2lte/full_d2lte.mk)
 # Enhanced NFC
 $(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
 
-
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=d2uc \
-    TARGET_DEVICE=d2lte \
-    BUILD_FINGERPRINT="xxxxxxxxxx" \
-    PRIVATE_BUILD_DESC="xxxxxxxxxx"
-
 PRODUCT_NAME := vanir_d2lte
-PRODUCT_DEVICE := d2lte
 
