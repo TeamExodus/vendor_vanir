@@ -3,6 +3,7 @@ ZOMG_ITS_A_COMBO_COMBO()
 {
   for x in \
     anzu \
+    coconut \
     codinalte \
     deb \
     d2lte \
