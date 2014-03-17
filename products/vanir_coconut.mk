@@ -23,7 +23,7 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/semc/anzu/full_coconut.mk)
+$(call inherit-product, device/semc/coconut/full_coconut.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
