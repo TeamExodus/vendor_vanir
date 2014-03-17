@@ -15,6 +15,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_galaxysmtd.mk \
     $(LOCAL_DIR)/vanir_geeb.mk \
     $(LOCAL_DIR)/vanir_gee.mk \
+    $(LOCAL_DIR)/vanir_golden.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
     $(LOCAL_DIR)/vanir_hlte.mk \
@@ -38,6 +39,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_p880.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_pollux_windy.mk \
+    $(LOCAL_DIR)/vanir_skomer.mk \
     $(LOCAL_DIR)/vanir_t0lteatt.mk \
     $(LOCAL_DIR)/vanir_t0ltetmo.mk \
     $(LOCAL_DIR)/vanir_tilapia.mk \

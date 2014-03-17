@@ -18,6 +18,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     galaxysmtd \
     geeb \
     gee \
+    golden \
     grouper \
     hammerhead \
     hlte \
@@ -41,6 +42,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     p880 \
     pollux \
     pollux_windy \
+    skomer \
     t0lteatt \
     t0ltetmo \
     tilapia \
