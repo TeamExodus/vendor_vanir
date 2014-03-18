@@ -23,25 +23,25 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/semc/anzu/full_anzu.mk)
+$(call inherit-product, device/semc/smultron/full_smultron.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/boot_animations/480x854.zip:system/media/bootanimation.zip
+    vendor/vanir/proprietary/boot_animations/480x480.zip:system/media/bootanimation.zip
 
 PRODUCT_PACKAGES += \
     Torch
 
 # Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=LT18i \
-    PRODUCT_DEVICE=LT18i \
-    BUILD_FINGERPRINT="SEMC/LT18i_1254-2184/LT18i:4.0.4/4.1.B.0.587/tL1_3w:user/release-keys" \
-    PRIVATE_BUILD_DESC="LT18i-user 4.0.4 4.1.B.0.587 tL1_3w test-keys"
+    PRODUCT_NAME=ST15i \
+    PRODUCT_DEVICE=ST15i \
+    BUILD_FINGERPRINT="SEMC/ST15i_1254-2184/ST15i:4.0.4/4.1.B.0.587/tL1_3w:user/release-keys" \
+    PRIVATE_BUILD_DESC="ST15i-user 4.0.4 4.1.B.0.587 tL1_3w test-keys"
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := vanir_anzu
-PRODUCT_RELEASE_NAME := anzu
+PRODUCT_NAME := vanir_smultron
+PRODUCT_RELEASE_NAME := smultron
 
 # Enable Sony apps in play store
 PRODUCT_GMS_CLIENTID_BASE := android-sonyericsson

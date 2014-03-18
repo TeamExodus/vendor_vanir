@@ -20,12 +20,15 @@ ZOMG_ITS_A_COMBO_COMBO()
     gee \
     golden \
     grouper \
+    haida \
+    hallon \
     hammerhead \
     hlte \
     i9100g \
     i605 \
     i9300 \
     i9305 \
+    iyokan \
     jewel \
     jflte \
     ls980 \
@@ -35,6 +38,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     m7ul \
     m7vzw \
     maguro \
+    mango \
     manta \
     mako \
     maserati \
@@ -42,12 +46,15 @@ ZOMG_ITS_A_COMBO_COMBO()
     p880 \
     pollux \
     pollux_windy \
+    satsuma \
     skomer \
+    smultron \
     t0lteatt \
     t0ltetmo \
     tilapia \
     toro \
     toroplus \
+    urushi \
     vs980 \
     xt907 \
     xt925 \

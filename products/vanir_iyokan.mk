@@ -23,7 +23,7 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/semc/anzu/full_anzu.mk)
+$(call inherit-product, device/semc/iyokan/full_iyokan.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
@@ -34,14 +34,14 @@ PRODUCT_PACKAGES += \
 
 # Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=LT18i \
-    PRODUCT_DEVICE=LT18i \
-    BUILD_FINGERPRINT="SEMC/LT18i_1254-2184/LT18i:4.0.4/4.1.B.0.587/tL1_3w:user/release-keys" \
-    PRIVATE_BUILD_DESC="LT18i-user 4.0.4 4.1.B.0.587 tL1_3w test-keys"
+    PRODUCT_NAME=MK16i \
+    PRODUCT_DEVICE=MK16i \
+    BUILD_FINGERPRINT="SEMC/MK16i_1254-2184/MK16i:4.0.4/4.1.B.0.587/tL1_3w:user/release-keys" \
+    PRIVATE_BUILD_DESC="MK16i-user 4.0.4 4.1.B.0.587 tL1_3w test-keys"
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := vanir_anzu
-PRODUCT_RELEASE_NAME := anzu
+PRODUCT_NAME := vanir_iyokan
+PRODUCT_RELEASE_NAME := iyokan
 
 # Enable Sony apps in play store
 PRODUCT_GMS_CLIENTID_BASE := android-sonyericsson
