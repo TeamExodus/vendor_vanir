@@ -3,7 +3,9 @@ KERNEL_SPAM := WHY DOESNT THIS JUST WORK AMGGGG #not related to the kernel... bu
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.rom=vanir-jflte
+    ro.goo.rom=vanir-jflte \
+    ro.com.google.clientidbase=android-samsung \
+    ro.com.google.clientidbase.gmm=android-samsung
 
 $(call inherit-product, device/samsung/jflte/full_jflte.mk)
 
