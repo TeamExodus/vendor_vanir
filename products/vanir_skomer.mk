@@ -8,6 +8,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/480x800.zip:system/media/bootanimation.zip
 
+# Low Volume In call fix - pure hack
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/codinalte/CallService.apk:system/app/CallService.apk
+
 # Inherit device configuration
 $(call inherit-product, device/samsung/skomer/full_skomer.mk)
 
