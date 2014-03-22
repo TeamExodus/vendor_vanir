@@ -4,7 +4,8 @@
 # Thanks to mike1986 for the wait for boot code
 
 bash -c '
-while busybox [ ! $(logcat -d *:I *:D | grep -c android.intent.action.BOOT_COMPLETED) ] || [ `pm list packages 2>&1 | grep "Error" | wc -l` -gt 0 ]; do sleep 1; done
+while busybox [ ! $(getprop sys.boot_completed) ] || [ $(getprop sys.boot_completed) -ne 1 ]; do sleep 1; done
+while [ `pm list packages 2>&1 | grep "Error" | wc -l` -gt 0 ]; do sleep 1; done
 
 echo Boot completed... vanirnice-ing like a bauss
 vanirnice
