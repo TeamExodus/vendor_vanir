@@ -44,8 +44,8 @@ fi
 export TZ
 
 # rebuild crontab if it got pwned somehow
-if busybox [ ! -d /data/cron ]; then
-  busybox mkdir -p /data/cron
+if busybox [ ! -d /cache/cron ]; then
+  busybox mkdir -p /cache/cron
 fi
 
 echo '# Prime Directive, Nuclearmistake, Sonicxml
@@ -54,7 +54,7 @@ echo '# Prime Directive, Nuclearmistake, Sonicxml
 */5 * * * * /system/bin/cronlogger /system/etc/cron/cron.minutely
 01 * * * * /system/bin/cronlogger /system/etc/cron/cron.hourly
 02 4 * * * /system/bin/cronlogger /system/etc/cron/cron.daily
-03 4 * * 0 /system/bin/cronlogger /system/etc/cron/cron.weekly' > /data/cron/root
+03 4 * * 0 /system/bin/cronlogger /system/etc/cron/cron.weekly' > /cache/cron/root
 
 
 
@@ -68,4 +68,4 @@ if busybox [ ! -d /system/etc/cron/cron.hourly ] || [ ! -d /system/etc/cron/cron
     sync
     busybox mount -o remount,ro /system
 fi
-crond -c /data/cron
+crond -c /cache/cron
