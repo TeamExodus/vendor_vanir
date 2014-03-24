@@ -25,6 +25,9 @@ $(call inherit-product, vendor/vanir/products/gsm.mk)
 # Inherit device configuration
 $(call inherit-product, device/semc/coconut/full_coconut.mk)
 
+TARGET_SCREEN_HEIGHT := 854
+TARGET_SCREEN_WIDTH := 480
+
 # Boot Animation
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/480x480.zip:system/media/bootanimation.zip
