@@ -26,6 +26,8 @@ export PATH=/sbin:/system/sbin:/system/bin:/system/xbin
     return 0
   }
 
+  write cpufreq/scaling_booted 1
+
   # Conditional hotplugging handing
   handle_hotplug() {
     [ ! $needsmpdecision ] && stop mpdecision
