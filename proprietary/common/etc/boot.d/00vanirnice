@@ -3,10 +3,6 @@
 # PrimeDirective and Sonicxml
 # Thanks to mike1986 for the wait for boot code
 
-bash -c '
-while busybox [ ! $(getprop sys.boot_completed) ] || [ $(getprop sys.boot_completed) -ne 1 ]; do sleep 1; done
-while [ `pm list packages 2>&1 | grep "Error" | wc -l` -gt 0 ]; do sleep 1; done
-
 echo Boot completed... vanirnice-ing like a bauss
 vanirnice
 
@@ -24,4 +20,5 @@ echo "  E#K:  G##i,,G##, E#t     :K#D#E E#t E#f,t#Wi,,,"
 echo "  ED. :K#K:   L##, E#t      .E##E E#t E#t  ;#W:  "
 echo "  t  ;##D.    L##, ..         G#E E#t DWi   ,KK: "
 echo "     ,,,      .,,              fE ,;.            "
-echo "                                ,                "' &
+echo "                                ,                "
+
