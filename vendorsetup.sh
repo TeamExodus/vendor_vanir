@@ -30,6 +30,7 @@ ZOMG_ITS_A_COMBO_COMBO()
     i9305 \
     iyokan \
     jewel \
+    ville \
     jflte \
     ls980 \
     m7att \
