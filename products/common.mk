@@ -17,7 +17,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     PerformanceControl \
     OmniSwitch \
-    VanirUpdater
+    VanirUpdater \
+    VoicePlus
 
 Vanir_Version=4.4.2
 Vanir_BUILD=$(Vanir_Version)
