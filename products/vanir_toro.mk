@@ -16,6 +16,9 @@ $(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
 # Inherit AOSP device configuration for toro.
 $(call inherit-product, device/samsung/toro/full_toro.mk)
 
+# Inherit common Verizon Wireless Perms and Lib
+$(call inherit-product, vendor/vanir/products/vzw.mk)
+
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_toro
 PRODUCT_BRAND := google

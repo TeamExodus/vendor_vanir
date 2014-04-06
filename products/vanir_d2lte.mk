@@ -16,5 +16,11 @@ $(call inherit-product, device/samsung/d2lte/full_d2lte.mk)
 # Enhanced NFC
 $(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
 
+# Unified device flag for Verizon permissions
+VZW_UNIFIED := true
+
+# Inherit common Verizon Wireless Perms and Lib
+$(call inherit-product, vendor/vanir/products/vzw.mk)
+
 PRODUCT_NAME := vanir_d2lte
 
