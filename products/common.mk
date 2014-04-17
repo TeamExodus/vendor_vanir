@@ -15,7 +15,6 @@ PRODUCT_PACKAGES += \
     busybox \
     Email \
     Launcher3 \
-    PerformanceControl \
     OmniSwitch \
     VanirUpdater \
     VoicePlus
