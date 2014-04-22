@@ -23,9 +23,5 @@
     <integer name="def_notif_count">0</integer>
     <!-- Right QS pulldown -->
     <integer name="def_qs_quick_pulldown">1</integer>
-    <!-- Default lockscreen targets -->
-    <string name="def_lockscreen_targets">empty|empty|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.android.dialer/.DialtactsActivity;S.icon_resource=ic_lockscreen_phone_normal;end</string>
-    <string name="def_lockscreen_targets_no_telephony">empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.android.browser/.BrowserActivity;S.icon_resource=ic_lockscreen_browser_normal;
-    end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.andrew.apollo/.ui.activities.HomeActivity;S.icon_resource=ic_lockscreen_music_normal;end</string>
 
 </resources>
