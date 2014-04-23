@@ -21,7 +21,9 @@ PRODUCT_PACKAGES += \
     SpeakerProximity \
     CellBroadcastReceiver \
     Mms \
-    SoundRecorder
+    SoundRecorder \
+    VoicePlus
+
 
 # Audio Packages
 include frameworks/base/data/sounds/AudioPackage7.mk

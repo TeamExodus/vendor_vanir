@@ -16,8 +16,7 @@ PRODUCT_PACKAGES += \
     Email \
     Launcher3 \
     OmniSwitch \
-    VanirUpdater \
-    VoicePlus
+    VanirUpdater
 
 Vanir_Version=4.4.2
 Vanir_BUILD=$(Vanir_Version)
