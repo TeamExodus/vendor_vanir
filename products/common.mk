@@ -55,6 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.rommanager.developerid=vanir \
     wifi.supplicant_scan_interval=300 \
     persist.sys.root_access=3 \
+    persist.sys.purgeable_assets=1 \
     ro.build.selinux=1
 
 # nomnomnom
