@@ -43,6 +43,7 @@ mango
 manta
 mako
 maserati
+mondrianwifi
 moto_msm8960
 moto_msm8960dt
 nicki

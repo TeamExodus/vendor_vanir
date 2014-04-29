@@ -41,6 +41,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_mango.mk \
     $(LOCAL_DIR)/vanir_mako.mk \
     $(LOCAL_DIR)/vanir_maserati.mk \
+    $(LOCAL_DIR)/vanir_mondrianwifi.mk \
     $(LOCAL_DIR)/vanir_moto_msm8960.mk \
     $(LOCAL_DIR)/vanir_moto_msm8960dt.mk \
     $(LOCAL_DIR)/vanir_nicki.mk \
