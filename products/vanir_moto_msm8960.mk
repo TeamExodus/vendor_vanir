@@ -13,11 +13,6 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 
 $(call inherit-product, device/motorola/moto_msm8960/full_moto_msm8960.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
-
-
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=moto_msm8960 \
     TARGET_DEVICE=moto_msm8960
