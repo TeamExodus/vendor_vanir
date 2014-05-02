@@ -12,7 +12,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_dlx.mk \
     $(LOCAL_DIR)/vanir_e980.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
-    $(LOCAL_DIR)/vanir_galaxysmtd.mk \
     $(LOCAL_DIR)/vanir_geeb.mk \
     $(LOCAL_DIR)/vanir_gee.mk \
     $(LOCAL_DIR)/vanir_golden.mk \

@@ -16,7 +16,6 @@ d803
 dlx
 e980
 flo
-galaxysmtd
 geeb
 gee
 golden
@@ -63,6 +62,7 @@ vs980
 yuga
 EOF
 }
+#galaxysmtd
 
 for x in `COMBOS | sort -h`; do 
   add_lunch_combo vanir_$x-userdebug
