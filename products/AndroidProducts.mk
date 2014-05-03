@@ -11,6 +11,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_d803.mk \
     $(LOCAL_DIR)/vanir_dlx.mk \
     $(LOCAL_DIR)/vanir_e980.mk \
+    $(LOCAL_DIR)/vanir_find5.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
     $(LOCAL_DIR)/vanir_geeb.mk \
     $(LOCAL_DIR)/vanir_gee.mk \
@@ -26,7 +27,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_i9305.mk \
     $(LOCAL_DIR)/vanir_iyokan.mk \
     $(LOCAL_DIR)/vanir_jewel.mk \
-    $(LOCAL_DIR)/vanir_ville.mk \
     $(LOCAL_DIR)/vanir_jflte.mk \
     $(LOCAL_DIR)/vanir_ls980.mk \
     $(LOCAL_DIR)/vanir_m4.mk \
@@ -40,8 +40,10 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_mango.mk \
     $(LOCAL_DIR)/vanir_mako.mk \
     $(LOCAL_DIR)/vanir_maserati.mk \
+    $(LOCAL_DIR)/vanir_mondrianwifi.mk \
     $(LOCAL_DIR)/vanir_moto_msm8960.mk \
     $(LOCAL_DIR)/vanir_moto_msm8960dt.mk \
+    $(LOCAL_DIR)/vanir_n1.mk \
     $(LOCAL_DIR)/vanir_nicki.mk \
     $(LOCAL_DIR)/vanir_p880.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
@@ -55,5 +57,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_toro.mk \
     $(LOCAL_DIR)/vanir_toroplus.mk \
     $(LOCAL_DIR)/vanir_urushi.mk \
+    $(LOCAL_DIR)/vanir_ville.mk \
     $(LOCAL_DIR)/vanir_vs980.mk \
     $(LOCAL_DIR)/vanir_yuga.mk

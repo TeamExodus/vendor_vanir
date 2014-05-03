@@ -15,6 +15,7 @@ d802
 d803
 dlx
 e980
+find5
 flo
 geeb
 gee
@@ -42,8 +43,10 @@ mango
 manta
 mako
 maserati
+mondrianwifi
 moto_msm8960
 moto_msm8960dt
+n1
 nicki
 p880
 pollux
