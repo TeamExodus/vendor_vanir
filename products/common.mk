@@ -205,6 +205,13 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     libemoji
 
+# Stagefright FFMPEG plugin
+PRODUCT_PACKAGES += \
+    libstagefright_soft_ffmpegadec \
+    libstagefright_soft_ffmpegvdec \
+    libFFmpegExtractor \
+    libnamparser
+
 # Extra tools in CM
 PRODUCT_PACKAGES += \
     libsepol \
