@@ -38,6 +38,7 @@ m7spr
 m7tmo
 m7ul
 m7vzw
+m8
 maguro
 mango
 manta
