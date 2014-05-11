@@ -11,5 +11,7 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 
 $(call inherit-product, vendor/vanir/tweaks/tuna/tweaks.mk)
 
-# Torch
-PRODUCT_PACKAGES += Torch
+# Extra Packages for Tunas
+PRODUCT_PACKAGES += \
+    Mira4U \
+    Torch
