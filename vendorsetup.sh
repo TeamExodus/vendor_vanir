@@ -32,6 +32,7 @@ i9500
 iyokan
 jewel
 jflte
+klte
 ls980
 m4
 m7att
