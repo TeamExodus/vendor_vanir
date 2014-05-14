@@ -28,6 +28,7 @@ i9100g
 i605
 i9300
 i9305
+i9500
 iyokan
 jewel
 jflte
