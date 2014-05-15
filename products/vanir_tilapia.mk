@@ -4,7 +4,8 @@ DHO_VENDOR := vanir
 KERNEL_SPAM := Faux Kernel v013u IN THE HIZNOUSE
 
 PRODUCT_PACKAGES += \
-    LiveWallpapersPicker
+    LiveWallpapersPicker \
+    Mira4U
 
 # Run these first or they will not stick
 PRODUCT_PROPERTY_OVERRIDES += \

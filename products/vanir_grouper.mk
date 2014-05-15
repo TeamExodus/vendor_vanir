@@ -5,7 +5,8 @@ KERNEL_SPAM := Faux Kernel v013u IN THE H1ZNOUSE
 
 PRODUCT_PACKAGES += \
     Camera \
-    LiveWallpapersPicker
+    LiveWallpapersPicker \
+    Mira4U
 
 # Run these first or they will not stick
 PRODUCT_PROPERTY_OVERRIDES += \
