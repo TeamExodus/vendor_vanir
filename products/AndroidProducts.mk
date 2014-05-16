@@ -1,6 +1,7 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_anzu.mk \
     $(LOCAL_DIR)/vanir_coconut.mk \
+    $(LOCAL_DIR)/vanir_codina.mk \
     $(LOCAL_DIR)/vanir_codinalte.mk \
     $(LOCAL_DIR)/vanir_deb.mk \
     $(LOCAL_DIR)/vanir_d2lte.mk \

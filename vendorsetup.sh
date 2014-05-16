@@ -5,6 +5,7 @@ cat<<EOF
 hammerhead
 anzu
 coconut
+codina
 codinalte
 deb
 d2lte
