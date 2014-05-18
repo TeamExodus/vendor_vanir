@@ -63,6 +63,7 @@ tilapia
 toro
 toroplus
 urushi
+v500
 ville
 vs980
 yuga
