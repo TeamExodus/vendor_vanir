@@ -19,6 +19,9 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
+# dump logcat and dmesg to /data/ in case adbd doesn't start
+$(call inherit-product, vendor/vanir/products/debug.mk)
+
 # Unified device flag for Verizon permissions
 VZW_UNIFIED := true
 
