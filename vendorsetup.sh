@@ -74,3 +74,4 @@ for x in `COMBOS | sort -h`; do
   add_lunch_combo vanir_$x-userdebug
   add_lunch_combo vanir_$x-user
 done
+add_lunch_combo vanir_klte-eng
