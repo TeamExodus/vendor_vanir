@@ -52,6 +52,7 @@ moto_msm8960
 moto_msm8960dt
 n1
 nicki
+p3110
 p880
 pollux
 pollux_windy

@@ -49,6 +49,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_moto_msm8960dt.mk \
     $(LOCAL_DIR)/vanir_n1.mk \
     $(LOCAL_DIR)/vanir_nicki.mk \
+    $(LOCAL_DIR)/vanir_p3110.mk \
     $(LOCAL_DIR)/vanir_p880.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_pollux_windy.mk \
