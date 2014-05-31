@@ -60,8 +60,8 @@ skomer
 smultron
 t0lteatt
 t0ltetmo
-tf700
-tf701
+tf700t
+tf701t
 tilapia
 toro
 toroplus

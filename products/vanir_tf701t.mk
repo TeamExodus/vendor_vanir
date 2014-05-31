@@ -20,7 +20,7 @@ $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := tf701t
-PRODUCT_NAME := vanir_tf701
+PRODUCT_NAME := vanir_tf701t
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := K00C
 PRODUCT_MANUFACTURER := asus
