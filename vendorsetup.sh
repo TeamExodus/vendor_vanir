@@ -56,6 +56,7 @@ p880
 pollux
 pollux_windy
 satsuma
+sirius
 skomer
 smultron
 t0lteatt

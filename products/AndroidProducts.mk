@@ -53,6 +53,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_pollux_windy.mk \
     $(LOCAL_DIR)/vanir_satsuma.mk \
+    $(LOCAL_DIR)/vanir_sirius.mk \
     $(LOCAL_DIR)/vanir_skomer.mk \
     $(LOCAL_DIR)/vanir_smultron.mk \
     $(LOCAL_DIR)/vanir_t0lteatt.mk \
