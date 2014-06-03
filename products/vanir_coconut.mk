@@ -39,8 +39,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=WT19i \
     PRODUCT_DEVICE=WT19i \
-    BUILD_FINGERPRINT="SEMC/WT19i_1254-2184/WT19i:4.4.2/4.1.B.0.587/tL1_3w:user/release-keys" \
-    PRIVATE_BUILD_DESC="WT19i-user 4.4.2 4.1.B.0.587 tL1_3w test-keys"
+    BUILD_FINGERPRINT="SEMC/WT19i_1254-2184/WT19i:4.4.3/4.1.B.0.587/tL1_3w:user/release-keys" \
+    PRIVATE_BUILD_DESC="WT19i-user 4.4.3 4.1.B.0.587 tL1_3w test-keys"
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := vanir_coconut

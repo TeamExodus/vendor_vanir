@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += \
     OmniSwitch \
     VanirUpdater
 
-Vanir_Version=4.4.2
+Vanir_Version=4.4.3
 Vanir_BUILD=$(Vanir_Version)
 
 ifeq ($(RELEASE),)
