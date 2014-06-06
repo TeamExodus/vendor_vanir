@@ -10,7 +10,7 @@ $(call inherit-product, device/samsung/klte/full_klte.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/boot_animations/1440x2560.zip:system/media/bootanimation.zip
+    vendor/vanir/proprietary/boot_animations/1080x1920.zip:system/media/bootanimation.zip
 
 # Inherit common product files.
 NO_DRM_BLOBS := true
