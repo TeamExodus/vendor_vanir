@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resource-redirections>
-    <item name="drawable/incoming_call_card">@drawable/com_android_dialer_incoming_call_card</item>
-    <item name="color/incall_call_txt_contact_name">@color/com_android_dialer_incall_call_txt_contact_name</item>
-    <item name="color/incall_call_btn_reject_txt">@color/white</item>
-    <item name="color/incall_call_txt_separator">@color/com_android_dialer_incall_call_txt_contact_name</item>
-    <item name="color/incall_call_btn_answer_txt">@color/white</item>
-</resource-redirections>
