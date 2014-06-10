@@ -21,6 +21,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_hallon.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
     $(LOCAL_DIR)/vanir_hlte.mk \
+    $(LOCAL_DIR)/vanir_honami.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
     $(LOCAL_DIR)/vanir_i9100g.mk \
     $(LOCAL_DIR)/vanir_i9300.mk \

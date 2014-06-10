@@ -24,6 +24,7 @@ grouper
 haida
 hallon
 hlte
+honami
 i9100g
 i605
 i9300
