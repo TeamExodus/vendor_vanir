@@ -16,7 +16,8 @@ PRODUCT_PACKAGES += \
     Email \
     Launcher3 \
     OmniSwitch \
-    VanirUpdater
+    VanirUpdater \
+    Vanir442BootAnimation
 
 Vanir_Version=4.4.3
 Vanir_BUILD=$(Vanir_Version)
