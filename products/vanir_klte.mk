@@ -19,8 +19,11 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
-# dump logcat and dmesg to /data/ in case adbd doesn't start
-#$(call inherit-product, vendor/vanir/products/debug.mk)
+# MPDecision and thermal(d/-engine) auto-disablers for KT-based kernels (like ours)
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/jf/etc/boot.d/69nuclearwinter:system/etc/boot.d/69nuclearwinter \
+    vendor/vanir/proprietary/jf/bin/nuclearwinter:system/bin/nuclearwinter \
+    vendor/vanir/proprietary/jf/bin/nuclearwinterinternal:system/bin/nuclearwinterinternal
 
 # Unified device flag for Verizon permissions
 VZW_UNIFIED := true
