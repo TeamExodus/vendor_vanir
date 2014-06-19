@@ -63,6 +63,7 @@ skomer
 smultron
 t0lteatt
 t0ltetmo
+taoshan
 tf700t
 tf701t
 tilapia
