@@ -23,7 +23,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/samsung/jflte/proprietary/app/QuickBoot.apk:system/app/QuickBoot.apk
 
-Vanir_Version=4.4.3
+Vanir_Version=4.4.4
 Vanir_BUILD=$(Vanir_Version)
 
 ifeq ($(RELEASE),)

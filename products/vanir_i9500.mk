@@ -29,5 +29,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=ja3gxx \
     PRODUCT_DEVICE=ja3g \
     TARGET_DEVICE=ja3g \
-    BUILD_FINGERPRINT="samsung/ja3gxx/ja3g:4.4.3/KOT49H/I9500XXUFNB3:user/release-keys" \
-    PRIVATE_BUILD_DESC="ja3gxx-user 4.4.3 KOT49H I9500XXUFNB3 release-keys"
+    BUILD_FINGERPRINT="samsung/ja3gxx/ja3g:4.4.4/KOT49H/I9500XXUFNB3:user/release-keys" \
+    PRIVATE_BUILD_DESC="ja3gxx-user 4.4.4 KOT49H I9500XXUFNB3 release-keys"
