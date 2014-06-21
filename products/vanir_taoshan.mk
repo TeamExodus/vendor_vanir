@@ -1,16 +1,9 @@
-﻿# Squisher Choosing
+#Squisher Choosing
 DHO_VENDOR := vanir
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
+    drm.service.enabled=true \
     ro.goo.rom=vanir-taoshan
-
-# Torch
-PRODUCT_PACKAGES += Torch
-
-# Vanir configuration
-$(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
@@ -19,10 +12,14 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 854
 TARGET_SCREEN_WIDTH := 480
 
-# Inherit AOSP device configuration
+# Inherit device configuration
 $(call inherit-product, device/sony/taoshan/full_taoshan.mk)
 
-# Override some inherited values
+# Inherit common vanir files.
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
+$(call inherit-product, vendor/vanir/products/gsm.mk)
+
+## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := taoshan
 PRODUCT_NAME := vanir_taoshan
 PRODUCT_RELEASE_NAME := XperiaL
