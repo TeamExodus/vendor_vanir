@@ -10,7 +10,7 @@ PRODUCT_COPY_FILES += \
 
 # Low Volume In call fix - pure hack
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/codinalte/CallService.apk:system/app/CallService.apk
+    vendor/vanir/proprietary/u8500/CallService.apk:system/app/CallService.apk
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/golden/full_golden.mk)
