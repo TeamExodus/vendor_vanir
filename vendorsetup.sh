@@ -33,6 +33,7 @@ i9300
 i9305
 i9500
 jactiveltexx
+janice
 iyokan
 jewel
 jflte
