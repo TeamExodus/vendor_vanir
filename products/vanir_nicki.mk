@@ -1,5 +1,5 @@
-# Copyright (C) 2013 The CyanogenMod Project
-# Copyright (C) 2014 rebelos <ks50497@gmail.com>
+# Copyright (C) 2014 The VanirAOSP Project
+# Copyright (C) 2014 nolinuxnoparty <nolinuxnoparty@vanir.us>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,9 +17,7 @@
 DHO_VENDOR := vanir
 
 PRODUCT_PROPERTY_OVERRIDES += \
-drm.service.enabled=true
-
-PRODUCT_PACKAGES += Torch
+    drm.service.enabled=true
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
@@ -30,10 +28,7 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/480x854.zip:system/media/bootanimation.zip
 
 # Inherit device configuration
-$(call inherit-product, device/sony/nicki/nicki.mk)
-
-TARGET_SCREEN_HEIGHT := 854
-TARGET_SCREEN_WIDTH := 480
+$(call inherit-product, device/sony/nicki/full_nicki.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nicki
@@ -42,11 +37,3 @@ PRODUCT_BRAND := Sony
 PRODUCT_MODEL := C1905
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_CHARACTERISTICS := phone
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=C1905 \
-    BUILD_FINGERPRINT="Sony/C1905_1274-5551/C1905:4.4.4/15.1.C.2.8/7bd96g:user/release-keys" \
-    PRIVATE_BUILD_DESC="C1905-user 4.4.4 2.11.J.2.18 7bd96g test-keys"
-
-# Release name
-PRODUCT_RELEASE_NAME := Xperiam
