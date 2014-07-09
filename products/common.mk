@@ -35,6 +35,9 @@ endif
 Vanir_BUILD=$(Vanir_Version)$(BUILD_DATE)
 endif
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.dalvik.multithread=false
+
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-google
