@@ -40,7 +40,6 @@ jewel
 jflte
 klte
 ls980
-m4
 m7att
 m7spr
 m7tmo
