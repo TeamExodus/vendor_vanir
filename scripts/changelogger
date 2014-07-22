@@ -1,7 +1,6 @@
 #!/bin/bash
 # NUCLEARMISTAKE 2014
 #    STEP YOUR BASH UP, SON
-
 [ ! $ANDROID_BUILD_TOP ] && echo "ANDROID_BUILD_TOP not defined. source build/envsetup.sh before running $0" && exit 1
 mkdir -p $ANDROID_BUILD_TOP/CHANGELOGS/
 if [ $FORCE_BUILD_DATE ]; then
@@ -32,11 +31,8 @@ logit()
 }
 getbranch()
 {
-  branches=`git --work-tree $ANDROID_BUILD_TOP/.repo/manifests/ --git-dir $ANDROID_BUILD_TOP/.repo/manifests/.git lg  | grep HEAD | sed 's/.*HEAD, //g' | sed 's/).*//g' | sed 's/[, ]*default[, ]*//g' | sed 's/,//g' | sed 's/[a-zA-Z]*\///g'`
   file=`mktemp`
-  for x in $branches; do
-    echo $x >> $file
-  done
+  git --work-tree $ANDROID_BUILD_TOP/.repo/manifests/ --git-dir $ANDROID_BUILD_TOP/.repo/manifests/.git  log --graph --pretty=format:'%h -%d %s (%ci%x08%x08%x08%x08%x08%x08) <%an>' --no-color --decorate=no --abbrev-commit --date=iso  | grep --color=never HEAD | sed 's/.*HEAD, //g' | sed 's/).*//g' | sed 's/[, ]*default[, ]*//g' | sed 's/,//g' | sed 's/[a-zA-Z]*\///g' > $file
   sort $file | uniq -c | sort -nr | head -n1 | sed 's/.* //g'
   rm $file
 }
