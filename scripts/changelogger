@@ -31,10 +31,7 @@ logit()
 }
 getbranch()
 {
-  file=`mktemp`
-  git --work-tree $ANDROID_BUILD_TOP/.repo/manifests/ --git-dir $ANDROID_BUILD_TOP/.repo/manifests/.git  log --graph --pretty=format:'%h -%d %s (%ci%x08%x08%x08%x08%x08%x08) <%an>' --no-color --decorate=no --abbrev-commit --date=iso  | grep --color=never HEAD | sed 's/.*HEAD, //g' | sed 's/).*//g' | sed 's/[, ]*default[, ]*//g' | sed 's/,//g' | sed 's/[a-zA-Z]*\///g' > $file
-  sort $file | uniq -c | sort -nr | head -n1 | sed 's/.* //g'
-  rm $file
+   (repo info 2>/dev/null || true)  | head -n 5 | grep Manifest\ merge\ branch --color=never | sed 's/.*: //g'
 }
 version=`getbranch`
 newversion=HEAD
