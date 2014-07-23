@@ -1,6 +1,8 @@
 # Variable for zip installerscript spam about kernel
 KERNEL_SPAM := WHY DOESNT THIS JUST WORK AMGGGG #not related to the kernel... but this build step didn't work anyways, so lulpwned.
 
+VANIR_FAILSAFE := true
+BONE_STOCK := true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-m4
@@ -18,6 +20,9 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
+
+# Inherit device configuration - this is redundant, but cm's audio works, so ytf not
+$(call inherit-product, device/htc/m4/device.mk)
 
 # Device naming
 PRODUCT_DEVICE := m4
