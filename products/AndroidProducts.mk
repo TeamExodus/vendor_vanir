@@ -13,8 +13,9 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_dlx.mk \
     $(LOCAL_DIR)/vanir_e980.mk \
     $(LOCAL_DIR)/vanir_evita.mk \
-   $(LOCAL_DIR)/vanir_falcon.mk \
+    $(LOCAL_DIR)/vanir_falcon.mk \
     $(LOCAL_DIR)/vanir_find5.mk \
+    $(LOCAL_DIR)/vanir_find7.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
     $(LOCAL_DIR)/vanir_geeb.mk \
     $(LOCAL_DIR)/vanir_gee.mk \
