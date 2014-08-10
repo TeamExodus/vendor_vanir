@@ -3,7 +3,7 @@ DHO_VENDOR := vanir
 
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
-    ro.goo.rom=vanir-T889
+    ro.goo.rom=vanir-t0lte
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
@@ -17,13 +17,13 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Inherit AOSP device configuration for Note 2.
-$(call inherit-product, device/samsung/t0ltetmo/full_t0ltetmo.mk)
+$(call inherit-product, device/samsung/t0lte/full_t0lte.mk)
 
 # Setup device specific product configuration.
-PRODUCT_NAME := vanir_t0ltetmo
-PRODUCT_DEVICE := t0ltetmo
+PRODUCT_NAME := vanir_t0lte
+PRODUCT_DEVICE := t0lte
 PRODUCT_BRAND := Samsung
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_MODEL := SGH-T889
+PRODUCT_MODEL := GT-N7105
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0ltetmo BUILD_FINGERPRINT="samsung/t0ltetmo/t0ltetmo:4.4.4/KTU84Q/937116:user/release-keys" PRIVATE_BUILD_DESC="t0ltetmo-user 4.4.4 KTU84Q 937116 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0lte TARGET_DEVICE=t0lte BUILD_FINGERPRINT="samsung/t0ltexx/t0lte:4.4.4/KTU84Q/N7105XXDLL4:user/release-keys" PRIVATE_BUILD_DESC="t0ltexx-user 4.4.4 KTU84Q N7105XXDLL4 release-keys"

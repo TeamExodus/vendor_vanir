@@ -67,8 +67,7 @@ satsuma
 sirius
 skomer
 smultron
-t0lteatt
-t0ltetmo
+t0lte
 taoshan
 tf700t
 tf701t
