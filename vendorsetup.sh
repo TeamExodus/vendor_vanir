@@ -5,7 +5,6 @@ cat<<EOF
 anzu
 bacon
 coconut
-codina
 codinalte
 deb
 d2lte
