@@ -73,6 +73,7 @@ tf701t
 tilapia
 toro
 toroplus
+tsubasa
 urushi
 v500
 ville

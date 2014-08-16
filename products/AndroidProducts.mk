@@ -70,6 +70,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_tilapia.mk \
     $(LOCAL_DIR)/vanir_toro.mk \
     $(LOCAL_DIR)/vanir_toroplus.mk \
+    $(LOCAL_DIR)/vanir_tsubasa.mk \
     $(LOCAL_DIR)/vanir_urushi.mk \
     $(LOCAL_DIR)/vanir_v500.mk \
     $(LOCAL_DIR)/vanir_ville.mk \
