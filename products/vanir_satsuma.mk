@@ -27,7 +27,7 @@ $(call inherit-product, device/semc/satsuma/full_satsuma.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/boot_animations/480x480.zip:system/media/bootanimation.zip
+    vendor/vanir/proprietary/boot_animations/320x480.zip:system/media/bootanimation.zip
 
 PRODUCT_PACKAGES += \
     Torch
