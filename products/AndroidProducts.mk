@@ -31,9 +31,9 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_i9300.mk \
     $(LOCAL_DIR)/vanir_i9305.mk \
     $(LOCAL_DIR)/vanir_i9500.mk \
+    $(LOCAL_DIR)/vanir_iyokan.mk \
     $(LOCAL_DIR)/vanir_jactiveltexx.mk \
     $(LOCAL_DIR)/vanir_janice.mk \
-    $(LOCAL_DIR)/vanir_iyokan.mk \
     $(LOCAL_DIR)/vanir_jewel.mk \
     $(LOCAL_DIR)/vanir_jflte.mk \
     $(LOCAL_DIR)/vanir_klte.mk \
