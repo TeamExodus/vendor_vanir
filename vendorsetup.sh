@@ -57,6 +57,9 @@ mondrianwifi
 moto_msm8960
 moto_msm8960dt
 n1
+n5100
+n5110
+n5120
 nicki
 p3110
 p880
