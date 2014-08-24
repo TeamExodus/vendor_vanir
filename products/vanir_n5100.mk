@@ -3,6 +3,9 @@ DHO_VENDOR := vanir
 
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
+    persist.sys.root_access=1 \
+    persist.sys.strictmode.visual=0 \
+    persist.sys.strictmode.disable=1 \
     ro.goo.rom=vanir-n5100
 
 # Boot Animation
