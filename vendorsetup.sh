@@ -39,6 +39,8 @@ janice
 jewel
 jflte
 klte
+kltespr
+kltevzw
 ls980
 m4
 m7att

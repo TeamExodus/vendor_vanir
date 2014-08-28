@@ -2,11 +2,11 @@
 # you might want to wait to try this unless you have a giant pair of low-hanging huevos
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.rom=vanir-klte \
+    ro.goo.rom=vanir-kltevzw \
     ro.com.google.clientidbase=android-samsung \
     ro.com.google.clientidbase.gmm=android-samsung
 
-$(call inherit-product, device/samsung/klte/full_klte.mk)
+$(call inherit-product, device/samsung/kltevzw/full_kltevzw.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
@@ -25,4 +25,10 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/jf/bin/nuclearwinter:system/bin/nuclearwinter \
     vendor/vanir/proprietary/jf/bin/nuclearwinterinternal:system/bin/nuclearwinterinternal
 
-PRODUCT_NAME := vanir_klte
+# Unified device flag for Verizon permissions
+VZW_UNIFIED := true
+
+# Inherit common Verizon Wireless Perms and Lib
+$(call inherit-product, vendor/vanir/products/vzw.mk)
+
+PRODUCT_NAME := vanir_kltevzw
