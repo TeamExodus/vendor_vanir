@@ -25,9 +25,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/jf/bin/nuclearwinter:system/bin/nuclearwinter \
     vendor/vanir/proprietary/jf/bin/nuclearwinterinternal:system/bin/nuclearwinterinternal
 
-# Unified device flag for Verizon permissions
-VZW_UNIFIED := true
-
 # Inherit common Verizon Wireless Perms and Lib
 $(call inherit-product, vendor/vanir/products/vzw.mk)
 
