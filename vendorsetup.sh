@@ -2,9 +2,7 @@
 COMBOS()
 {
 cat<<EOF
-anzu
 bacon
-coconut
 codinalte
 deb
 d2lte
@@ -22,8 +20,6 @@ geeb
 gee
 golden
 grouper
-haida
-hallon
 hammerhead
 hlte
 i9100g
@@ -31,7 +27,6 @@ i605
 i9300
 i9305
 i9500
-iyokan
 janice
 jewel
 jflte
@@ -47,7 +42,6 @@ m7ul
 m7vzw
 m8
 maguro
-mango
 manta
 mako
 maserati
@@ -62,10 +56,8 @@ p3110
 p880
 pollux
 pollux_windy
-satsuma
 sirius
 skomer
-smultron
 t0lte
 taoshan
 tf700t
@@ -74,7 +66,6 @@ tilapia
 toro
 toroplus
 tsubasa
-urushi
 v500
 ville
 vs980
