@@ -15,8 +15,6 @@ d802
 d803
 dlx
 e980
-evita
-falcon
 find5
 find7
 flo
@@ -28,7 +26,6 @@ haida
 hallon
 hammerhead
 hlte
-honami
 i9100g
 i605
 i9300
@@ -61,7 +58,6 @@ n1
 n5100
 n5110
 n5120
-nicki
 p3110
 p880
 pollux
@@ -85,6 +81,14 @@ vs980
 wx_na_wf
 yuga
 EOF
+if [ $I_CANT_HANDLE_MY_SHIT ]; then
+cat<<EOF
+evita
+falcon
+honami
+nicki
+EOF
+fi
 }
 #galaxysmtd
 
