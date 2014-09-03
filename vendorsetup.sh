@@ -50,6 +50,7 @@ mako
 maserati
 mondrianwifi
 moto_msm8960
+moto_msm8960_jbbl
 moto_msm8960dt
 n1
 n5100
