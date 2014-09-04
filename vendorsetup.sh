@@ -24,6 +24,8 @@ golden
 grouper
 hammerhead
 hlte
+hltespr
+hltevzw
 honami
 i9100g
 i605
