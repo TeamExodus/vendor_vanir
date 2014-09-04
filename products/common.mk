@@ -15,6 +15,7 @@ PRODUCT_PACKAGES += \
     busybox \
     Email \
     Launcher3 \
+    LiveWallpapersPicker \
     OmniSwitch \
     VanirUpdater \
     Vanir442BootAnimation
