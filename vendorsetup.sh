@@ -25,6 +25,7 @@ grouper
 hammerhead
 hlte
 hltespr
+hlteusc
 hltevzw
 honami
 huashan

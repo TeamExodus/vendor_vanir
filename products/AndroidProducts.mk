@@ -26,6 +26,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
     $(LOCAL_DIR)/vanir_hlte.mk \
     $(LOCAL_DIR)/vanir_hltespr.mk \
+    $(LOCAL_DIR)/vanir_hlteusc.mk \
     $(LOCAL_DIR)/vanir_hltevzw.mk \
     $(LOCAL_DIR)/vanir_honami.mk \
     $(LOCAL_DIR)/vanir_huashan.mk \
