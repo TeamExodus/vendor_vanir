@@ -20,7 +20,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/semc/smultron/full_smultron.mk)

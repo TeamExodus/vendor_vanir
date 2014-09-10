@@ -18,7 +18,6 @@ NO_DRM_BLOBS := true
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Inherit common phone stuff
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Inherit device configuration - this is redundant, but cm's audio works, so ytf not

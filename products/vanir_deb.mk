@@ -11,7 +11,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_radio
 
 # GSM APNs and Simcard app
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \

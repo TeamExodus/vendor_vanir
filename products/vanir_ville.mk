@@ -10,7 +10,6 @@ DHO_VENDOR := vanir
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Inherit device configuration

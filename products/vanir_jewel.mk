@@ -9,7 +9,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/cdma.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
 PRODUCT_COPY_FILES += \

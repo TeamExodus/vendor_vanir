@@ -17,7 +17,6 @@ $(call inherit-product, device/samsung/n5100/full_n5100.mk)
 
 # Inherit common bacon files.
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Inherit VANIR overlays.
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_radio

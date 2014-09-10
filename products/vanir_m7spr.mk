@@ -6,7 +6,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-m7spr
 
 # Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/cdma.mk)
 
 # Inherit model specific configuration.
 $(call inherit-product, vendor/vanir/products/vanir_m7-common.mk)

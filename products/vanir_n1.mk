@@ -14,7 +14,6 @@ $(call inherit-product, device/oppo/n1/full_n1.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := vanir_n1

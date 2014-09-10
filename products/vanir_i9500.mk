@@ -9,7 +9,6 @@ PRODUCT_COPY_FILES += \
 
 
 # Inherit some common CM stuff
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)

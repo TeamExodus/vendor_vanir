@@ -10,7 +10,6 @@ $(call inherit-product, device/htc/m7vzw/full_m7vzw.mk)
 
 $(call inherit-product, vendor/vanir/products/vanir_m7-common.mk)
 
-$(call inherit-product, vendor/vanir/products/cdma.mk)
 
 # Inherit common Verizon Wireless Perms and Lib
 $(call inherit-product, vendor/vanir/products/vzw.mk)

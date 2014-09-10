@@ -10,7 +10,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/u8500/CallService.apk:system/app/CallService.apk
 
 # Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 $(call inherit-product, vendor/vanir/products/common.mk)
 
 # Inherit AOSP device configuration for janice

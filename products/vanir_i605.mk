@@ -14,7 +14,6 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 # $(call inherit-product, vendor/vanir/products/beats.mk)
 
 # CDMA APNs and Simcard app
-$(call inherit-product, vendor/vanir/products/cdma.mk)
 
 # Inherit AOSP device configuration for Note 2.
 $(call inherit-product, device/samsung/i605/full_i605.mk)

@@ -10,7 +10,6 @@ $(call inherit-product, device/lge/d801/d801.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/vanir_g2-common.mk)
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := d801

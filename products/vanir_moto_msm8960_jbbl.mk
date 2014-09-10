@@ -14,7 +14,6 @@ $(call inherit-product, device/motorola/moto_msm8960_jbbl/full_moto_msm8960.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := moto_msm8960_jbbl

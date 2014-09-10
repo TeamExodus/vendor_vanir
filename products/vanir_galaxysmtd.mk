@@ -7,7 +7,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product, vendor/vanir/products/vanir_galaxys-common.mk)
 
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 
 $(call inherit-product, device/samsung/galaxysmtd/full_galaxysmtd.mk)
 

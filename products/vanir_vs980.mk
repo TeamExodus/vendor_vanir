@@ -10,7 +10,6 @@ $(call inherit-product, device/lge/vs980/vs980.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/vanir_g2-common.mk)
-$(call inherit-product, vendor/vanir/products/cdma.mk)
 
 # Inherit common Verizon Wireless Perms and Lib
 $(call inherit-product, vendor/vanir/products/vzw.mk)

@@ -6,7 +6,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-p3110
 
 # Inherit VANIR files.
-$(call inherit-product, vendor/vanir/products/gsm.mk)
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
