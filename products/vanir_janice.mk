@@ -5,15 +5,15 @@ DHO_VENDOR := vanir
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/480x800.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for janice
+$(call inherit-product, device/samsung/janice/full_janice.mk)
+
 # Low Volume In call fix - pure hack
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/u8500/CallService.apk:system/app/CallService.apk
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/common.mk)
-
-# Inherit AOSP device configuration for janice
-$(call inherit-product, device/samsung/janice/full_janice.mk)
 
 # Setup device specific product configuration
 PRODUCT_DEVICE := janice

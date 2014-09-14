@@ -13,12 +13,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/768x1280.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for mako.
+$(call inherit-product, device/lge/mako/full_mako.mk)
+
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for mako.
-$(call inherit-product, device/lge/mako/full_mako.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_mako

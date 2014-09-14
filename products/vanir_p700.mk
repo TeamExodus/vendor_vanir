@@ -9,12 +9,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/480x480.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for p700.
+$(call inherit-product, device/lge/p700/p700.mk)
+
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for p700.
-$(call inherit-product, device/lge/p700/p700.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_p700

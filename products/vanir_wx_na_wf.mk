@@ -4,11 +4,11 @@ DHO_VENDOR := vanir
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
-# Vanir configuration
-$(call inherit-product, vendor/vanir/products/common_tabs.mk)
-
 # Inherit device configuration for shieldtablet (wifi only)
 $(call inherit-product, device/nvidia/wx_na_wf/full_wx_na_wf.mk)
+
+# Vanir configuration
+$(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \

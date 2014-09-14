@@ -18,14 +18,14 @@ PRODUCT_COPY_FILES += \
 # Tablet Overlays with radios
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_radio
 
+# Inherit AOSP device configuration for grouper
+$(call inherit-product, device/asus/tilapia/full_tilapia.mk)
+
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
 
 # GSM APNs and Simcard app
-
-# Inherit AOSP device configuration for grouper
-$(call inherit-product, device/asus/tilapia/full_tilapia.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_tilapia

@@ -12,14 +12,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/1080x1920.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for Z1.
+$(call inherit-product, device/sony/honami/full_honami.mk)
+
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for Z1.
-$(call inherit-product, device/sony/honami/full_honami.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_honami

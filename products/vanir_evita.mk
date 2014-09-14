@@ -6,14 +6,14 @@ PRODUCT_COPY_FILES += \
 #Squisher Choosing
 DHO_VENDOR := vanir
 
+# Inherit device configuration
+$(call inherit-product, device/htc/evita/device_evita.mk)
+
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/htc/evita/device_evita.mk)
 
 # Device naming
 PRODUCT_DEVICE := evita

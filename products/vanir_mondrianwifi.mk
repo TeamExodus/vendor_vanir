@@ -1,5 +1,5 @@
-#Squisher Choosing
 DHO_VENDOR := vanir
+#Squisher Choosing
 
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \

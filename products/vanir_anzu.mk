@@ -18,11 +18,11 @@ DHO_VENDOR := vanir
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
-# Vanir configuration
-$(call inherit-product, vendor/vanir/products/common_phones.mk)
-
 # Inherit device configuration
 $(call inherit-product, device/semc/anzu/full_anzu.mk)
+
+# Vanir configuration
+$(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \

@@ -14,11 +14,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/1280x1920.zip:system/media/bootanimation.zip
 
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/common_tabs.mk)
-
 # Inherit AOSP device configuration for grouper
 $(call inherit-product, device/asus/flo/full_flo.mk)
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/common_tabs.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_flo

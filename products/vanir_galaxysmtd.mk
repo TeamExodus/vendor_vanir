@@ -5,10 +5,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     ro.goo.rom=vanir-galaxysmtd
 
-$(call inherit-product, vendor/vanir/products/vanir_galaxys-common.mk)
-
-
 $(call inherit-product, device/samsung/galaxysmtd/full_galaxysmtd.mk)
+
+$(call inherit-product, vendor/vanir/products/vanir_galaxys-common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := galaxysmtd

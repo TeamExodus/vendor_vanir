@@ -5,11 +5,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     ro.goo.rom=vanir-MAGURO
 
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
-
 # Inherit AOSP device configuration for maguro.
 $(call inherit-product, device/samsung/maguro/full_maguro.mk)
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_maguro

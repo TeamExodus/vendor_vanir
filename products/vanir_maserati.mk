@@ -8,12 +8,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/540x960.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for maserati.
+$(call inherit-product, device/motorola/maserati/full_maserati.mk)
+
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 # $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for maserati.
-$(call inherit-product, device/motorola/maserati/full_maserati.mk)
 
 #
 # Setup device specific product configuration.

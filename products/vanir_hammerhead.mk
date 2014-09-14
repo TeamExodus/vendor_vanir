@@ -5,6 +5,9 @@ DHO_VENDOR := vanir
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-hammerhead
 
+# Inherit device configuration
+$(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
+
 # Inherit VANIR files.
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
@@ -18,9 +21,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/hammerhead/etc/init.d/00kernelcompat:system/etc/init.d/00kernelcompat \
     vendor/vanir/proprietary/hammerhead/bin/wedontgotoravenholmanymore:system/bin/wedontgotoravenholmanymore \
     vendor/vanir/proprietary/hammerhead/bin/unforeseenconsequences:system/bin/unforeseenconsequences
-
-# Inherit device configuration
-$(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hammerhead

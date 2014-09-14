@@ -4,6 +4,9 @@ DHO_VENDOR := vanir
 PRODUCT_PROPERTY_OVERRIDES := \
     drm.service.enabled=true
 
+# Inherit AOSP device configuration for Manta.
+$(call inherit-product, device/samsung/manta/full_manta.mk)
+
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
@@ -17,9 +20,6 @@ PRODUCT_COPY_FILES += \
 
 # Tablet Overlays no radios
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_no_radio
-
-# Inherit AOSP device configuration for Manta.
-$(call inherit-product, device/samsung/manta/full_manta.mk)
 
 PRODUCT_NAME := vanir_manta
 PRODUCT_DEVICE := manta

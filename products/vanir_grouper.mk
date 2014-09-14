@@ -19,12 +19,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/800x1280.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for grouper
+$(call inherit-product, device/asus/grouper/full_grouper.mk)
+
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for grouper
-$(call inherit-product, device/asus/grouper/full_grouper.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_grouper

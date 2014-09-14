@@ -13,12 +13,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/1080x1920.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for Optimus G Pro.
+$(call inherit-product, device/lge/e980/e980.mk)
+
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for Optimus G Pro.
-$(call inherit-product, device/lge/e980/e980.mk)
 
 # Torch
 PRODUCT_PACKAGES += Torch

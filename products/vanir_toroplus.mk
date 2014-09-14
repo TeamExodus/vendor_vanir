@@ -9,11 +9,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.fast.dormancy.rule=0 \
     ro.goo.rom=vanir-TOROPLUS
 
-# Inherit common product files.
-$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
-
 # Inherit AOSP device configuration for toroplus.
 $(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
+
+# Inherit common product files.
+$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_toroplus

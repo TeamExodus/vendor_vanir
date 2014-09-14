@@ -11,14 +11,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/480x800.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for GS2G.
+$(call inherit-product, device/samsung/i9100g/full_i9100g.mk)
+
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for GS2G.
-$(call inherit-product, device/samsung/i9100g/full_i9100g.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_i9100g

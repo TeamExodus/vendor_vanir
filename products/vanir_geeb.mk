@@ -13,12 +13,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/768x1280.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for geeb.
+$(call inherit-product, device/lge/geeb/full_geeb.mk)
+
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
-
-# Inherit AOSP device configuration for geeb.
-$(call inherit-product, device/lge/geeb/full_geeb.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_geeb

@@ -5,6 +5,9 @@ DHO_VENDOR := vanir
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-p3110
 
+# Inherit AOSP device configuration for Tab 2 7.0 WiFi + GSM
+$(call inherit-product, device/samsung/p3110/full_p3110.mk)
+
 # Inherit VANIR files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
 $(call inherit-product, vendor/vanir/products/beats.mk)
@@ -15,9 +18,6 @@ PRODUCT_COPY_FILES += \
 
 # Inherit VANIR overlays.
     PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/tab_radio
-
-# Inherit AOSP device configuration for Tab 2 7.0 WiFi + GSM
-$(call inherit-product, device/samsung/p3110/full_p3110.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_p3110

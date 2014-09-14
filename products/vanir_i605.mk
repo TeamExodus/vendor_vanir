@@ -9,14 +9,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/768x1280.zip:system/media/bootanimation.zip
 
+# Inherit AOSP device configuration for Note 2.
+$(call inherit-product, device/samsung/i605/full_i605.mk)
+
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 # $(call inherit-product, vendor/vanir/products/beats.mk)
 
 # CDMA APNs and Simcard app
-
-# Inherit AOSP device configuration for Note 2.
-$(call inherit-product, device/samsung/i605/full_i605.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_i605
