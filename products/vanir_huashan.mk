@@ -7,7 +7,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
-    vendor/commotio/proprietary/boot_animations/720x1280.zip:system/media/bootanimation.zip
+    vendor/vanir/proprietary/boot_animations/720x1280.zip:system/media/bootanimation.zip
 
 # Inherit device configuration
 $(call inherit-product, device/sony/huashan/full_huashan.mk)
