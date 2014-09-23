@@ -25,4 +25,5 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/jf/bin/nuclearwinter:system/bin/nuclearwinter \
     vendor/vanir/proprietary/jf/bin/nuclearwinterinternal:system/bin/nuclearwinterinternal
 
+PRODUCT_DEVICE := klte
 PRODUCT_NAME := vanir_klte
