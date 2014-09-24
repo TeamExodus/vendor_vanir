@@ -92,10 +92,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.checkjni=0 \
     ro.lge.proximity.delay=20 \
     ro.max.fling_velocity=15000 \
-    ro.media.enc.hprof.vid.bps=8000000 \
-    ro.media.enc.hprof.vid.fps=65 \
-    ro.media.dec.jpeg.memcap=8000000 \
-    ro.media.enc.jpeg.quality=100 \
     ro.min.fling_velocity=10000
 endif
 
