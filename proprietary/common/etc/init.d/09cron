@@ -59,13 +59,11 @@ echo '# Prime Directive, Nuclearmistake, Sonicxml
 
 
 if busybox [ ! -d /system/etc/cron/cron.hourly ] || [ ! -d /system/etc/cron/cron.daily ] || [ ! -d /system/etc/cron/cron.weekly ]; then
-    sync
-    busybox mount -o remount,rw /system
+    sysrw
     busybox mkdir -p /system/etc/cron/cron.minutely
     busybox mkdir -p /system/etc/cron/cron.hourly
     busybox mkdir -p /system/etc/cron/cron.daily
     busybox mkdir -p /system/etc/cron/cron.weekly
-    sync
-    busybox mount -o remount,ro /system
+    sysro
 fi
 crond -c /cache/cron
