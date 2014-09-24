@@ -90,9 +90,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.developerid=vanir \
     ro.kernel.android.checkjni=0 \
     ro.kernel.checkjni=0 \
-    ro.lge.proximity.delay=20 \
-    ro.max.fling_velocity=15000 \
-    ro.min.fling_velocity=10000
+    ro.lge.proximity.delay=20
 endif
 
 # Disable GC freed lines
