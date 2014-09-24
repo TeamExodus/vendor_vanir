@@ -96,8 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.enc.hprof.vid.fps=65 \
     ro.media.dec.jpeg.memcap=8000000 \
     ro.media.enc.jpeg.quality=100 \
-    ro.min.fling_velocity=10000 \
-    video.accelerate.hw=1
+    ro.min.fling_velocity=10000
 endif
 
 # Disable GC freed lines
