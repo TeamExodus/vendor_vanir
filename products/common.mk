@@ -95,24 +95,6 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
-# Questionable stuff -- just trusting stock values on these
-#    movfilter=40 \
-#    per_sec=300 \
-#    windowsmgr.max_events_per_sec=280 \
-#    ro.mot.eri.losalert.delay=600 \
-#    debug.composition.type=gpu \
-#    debug.performance.tuning=1 \
-#    debug.sf.hw=1
-#    ro.VISIBLE_APP_MEM=8192 \
-#    ro.HOME_APP_ADJ=1 \
-#    ro.HOME_APP_MEM=8192 \
-#    ro.FOREGROUND_APP_MEM=8192 \
-#    dalvik.vm.lockprof.threshold=850 \
-
-### These will prevent any FC popups from showing... ever. (lol)
-#    profiler.force_disable_err_rpt=1 \
-#    profiler.force_disable_ulog=1 \
-
 # Version information used on all builds
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=KTU84Q BUILD_ID=KTU84Q BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
 
