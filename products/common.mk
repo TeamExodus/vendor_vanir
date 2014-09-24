@@ -234,6 +234,14 @@ PRODUCT_PACKAGES += \
     sqlite3 \
     strace
 
+
+# Stagefright FFMPEG plugin
+PRODUCT_PACKAGES += \
+    libstagefright_soft_ffmpegadec \
+    libstagefright_soft_ffmpegvdec \
+    libFFmpegExtractor \
+    libnamparser
+
 # Openssh
 PRODUCT_PACKAGES += \
     scp \
