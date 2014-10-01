@@ -282,3 +282,4 @@ PRODUCT_COPY_FILES += \
 -include vendor/cyngn/product.mk
 
 $(call inherit-product-if-exists, vendor/vanir-private/Private.mk)
+$(call inherit-product-if-exists, vendor/extra/product.mk)
