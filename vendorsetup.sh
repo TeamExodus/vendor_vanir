@@ -39,6 +39,7 @@ jewel
 jflte
 klimtwifi
 klte
+kltedv
 kltespr
 kltevzw
 ls980

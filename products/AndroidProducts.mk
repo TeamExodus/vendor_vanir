@@ -41,6 +41,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_jflte.mk \
     $(LOCAL_DIR)/vanir_klimtwifi.mk \
     $(LOCAL_DIR)/vanir_klte.mk \
+    $(LOCAL_DIR)/vanir_kltedv.mk \
     $(LOCAL_DIR)/vanir_kltespr.mk \
     $(LOCAL_DIR)/vanir_kltevzw.mk \
     $(LOCAL_DIR)/vanir_ls980.mk \
