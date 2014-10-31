@@ -203,6 +203,8 @@ PRODUCT_PACKAGES += \
     fibmap.f2fs \
     bash \
     vim \
+    zip \
+    unrar \
     nano \
     htop \
     powertop \
@@ -219,7 +221,6 @@ PRODUCT_PACKAGES += \
     procrank \
     sqlite3 \
     strace
-
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
