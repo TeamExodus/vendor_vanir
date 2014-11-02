@@ -46,10 +46,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_kltevzw.mk \
     $(LOCAL_DIR)/vanir_ls980.mk \
     $(LOCAL_DIR)/vanir_m4.mk \
-    $(LOCAL_DIR)/vanir_m7att.mk \
     $(LOCAL_DIR)/vanir_m7spr.mk \
-    $(LOCAL_DIR)/vanir_m7tmo.mk \
-    $(LOCAL_DIR)/vanir_m7ul.mk \
+    $(LOCAL_DIR)/vanir_m7.mk \
     $(LOCAL_DIR)/vanir_m7vzw.mk \
     $(LOCAL_DIR)/vanir_m8.mk \
     $(LOCAL_DIR)/vanir_manta.mk \

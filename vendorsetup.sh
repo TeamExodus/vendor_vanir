@@ -44,10 +44,8 @@ kltespr
 kltevzw
 ls980
 m4
-m7att
 m7spr
-m7tmo
-m7ul
+m7
 m7vzw
 m8
 maguro
