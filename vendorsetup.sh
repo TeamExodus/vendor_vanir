@@ -11,6 +11,7 @@ d800
 d801
 d802
 d803
+d851
 dlx
 e980
 evita
@@ -43,6 +44,7 @@ kltedv
 kltespr
 kltevzw
 ls980
+ls990
 m4
 m7spr
 m7
@@ -80,6 +82,7 @@ tsubasa
 v500
 ville
 vs980
+vs985
 wx_na_wf
 yuga
 EOF
