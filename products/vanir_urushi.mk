@@ -36,7 +36,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=ST18i \
     PRODUCT_DEVICE=ST18i \
     BUILD_FINGERPRINT="SEMC/ST18i_1254-2184/ST18i:4.2.2/4.1.B.0.587/tL1_3w:user/release-keys" \
-    PRIVATE_BUILD_DESC="ST18i-user 4.4.4 4.1.B.0.587 tL1_3w test-keys"
+    PRIVATE_BUILD_DESC="ST18i-user 5.0 4.1.B.0.587 tL1_3w test-keys"
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := vanir_urushi
