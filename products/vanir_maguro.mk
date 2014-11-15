@@ -18,4 +18,4 @@ PRODUCT_DEVICE := maguro
 PRODUCT_MODEL := Galaxy Nexus
 PRODUCT_MANUFACTURER := Samsung
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=yakju BUILD_FINGERPRINT="google/yakju/maguro:5.0/LRX21M/937116:user/release-keys" PRIVATE_BUILD_DESC="yakju-user 5.0 LRX21M 937116 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=yakju BUILD_FINGERPRINT="google/yakju/maguro:5.0/LRX21T/937116:user/release-keys" PRIVATE_BUILD_DESC="yakju-user 5.0 LRX21T 937116 release-keys"
