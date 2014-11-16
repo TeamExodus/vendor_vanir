@@ -4,7 +4,7 @@
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/vanir/sepolicy
+    vendor/cm/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file.te \
