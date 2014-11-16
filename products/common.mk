@@ -74,11 +74,6 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 ifeq ($(VANIR_FAILSAFE),)
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.checkjni=false \
-    dalvik.vm.dexopt-flags=m=y \
-    dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.stack-trace-file=/data/anr/traces.txt \
-    dalvik.vm.verify-bytecode=false \
     mot.proximity.delay=20 \
     net.bt.name=Android \
     ro.ril.disable.power.collapse=0 \
@@ -90,10 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.checkjni=0 \
     ro.lge.proximity.delay=20
 endif
-
-# Disable GC freed lines
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.debug.alloc=0
 
 # Version information used on all builds
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=LRX21T BUILD_ID=LRX21T BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
@@ -109,11 +100,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties \
     vendor/vanir/proprietary/common/xbin/purgethumbnails:system/xbin/purgethumbnails \
     vendor/vanir/proprietary/common/etc/init.d/20purgethumbnailsonce:system/etc/init.d/20purgethumbnailsonce
-
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/lib/liblightcycle.so:system/lib/liblightcycle.so \
-    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
-    vendor/vanir/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
 
 ifeq ($(VANIR_FAILSAFE),)
 # Blobs common to all devices
