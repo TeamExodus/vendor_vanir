@@ -15,6 +15,7 @@ PRODUCT_COPY_FILES += \
 # Inherit common product files.
 NO_DRM_BLOBS := true
 $(call inherit-product, vendor/vanir/products/beats.mk)
+$(call inherit-product, vendor/vanir/products/vzw.mk)
 
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
