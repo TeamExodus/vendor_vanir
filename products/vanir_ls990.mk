@@ -2,9 +2,7 @@
 # you might want to wait to try this unless you have a giant pair of low-hanging huevos
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.rom=vanir-ls990 \
-    ro.com.google.clientidbase=android-samsung \
-    ro.com.google.clientidbase.gmm=android-samsung
+    ro.goo.rom=vanir-ls990
 
 $(call inherit-product, device/lge/ls990/full_ls990.mk)
 
