@@ -37,7 +37,9 @@ i9305
 i9500
 janice
 jewel
-jflte
+fflte
+jfltetmo
+jfltevzw
 klimtwifi
 klte
 kltedv
