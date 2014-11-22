@@ -5,7 +5,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_codinalte.mk \
     $(LOCAL_DIR)/vanir_deb.mk \
     $(LOCAL_DIR)/vanir_d2lte.mk \
-    $(LOCAL_DIR)/vanir_d710.mk \
     $(LOCAL_DIR)/vanir_d800.mk \
     $(LOCAL_DIR)/vanir_d801.mk \
     $(LOCAL_DIR)/vanir_d802.mk \

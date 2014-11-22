@@ -6,7 +6,6 @@ bacon
 codinalte
 deb
 d2lte
-d710
 d800
 d801
 d802
@@ -88,7 +87,6 @@ wx_na_wf
 yuga
 EOF
 }
-#galaxysmtd
 
 for x in `COMBOS | sort -h`; do 
   add_lunch_combo vanir_$x-userdebug
