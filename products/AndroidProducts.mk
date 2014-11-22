@@ -1,7 +1,5 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/vanir_anzu.mk \
     $(LOCAL_DIR)/vanir_bacon.mk \
-    $(LOCAL_DIR)/vanir_coconut.mk \
     $(LOCAL_DIR)/vanir_codinalte.mk \
     $(LOCAL_DIR)/vanir_deb.mk \
     $(LOCAL_DIR)/vanir_d2lte.mk \
@@ -21,8 +19,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_gee.mk \
     $(LOCAL_DIR)/vanir_golden.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
-    $(LOCAL_DIR)/vanir_haida.mk \
-    $(LOCAL_DIR)/vanir_hallon.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
     $(LOCAL_DIR)/vanir_hlte.mk \
     $(LOCAL_DIR)/vanir_hltespr.mk \
@@ -35,7 +31,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_i9300.mk \
     $(LOCAL_DIR)/vanir_i9305.mk \
     $(LOCAL_DIR)/vanir_i9500.mk \
-    $(LOCAL_DIR)/vanir_iyokan.mk \
     $(LOCAL_DIR)/vanir_janice.mk \
     $(LOCAL_DIR)/vanir_jewel.mk \
     $(LOCAL_DIR)/vanir_jflte.mk \
@@ -55,7 +50,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_m8.mk \
     $(LOCAL_DIR)/vanir_manta.mk \
     $(LOCAL_DIR)/vanir_maguro.mk \
-    $(LOCAL_DIR)/vanir_mango.mk \
     $(LOCAL_DIR)/vanir_mako.mk \
     $(LOCAL_DIR)/vanir_maserati.mk \
     $(LOCAL_DIR)/vanir_mondrianwifi.mk \
@@ -72,10 +66,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_peregrine.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_pollux_windy.mk \
-    $(LOCAL_DIR)/vanir_satsuma.mk \
     $(LOCAL_DIR)/vanir_sirius.mk \
     $(LOCAL_DIR)/vanir_skomer.mk \
-    $(LOCAL_DIR)/vanir_smultron.mk \
     $(LOCAL_DIR)/vanir_t0lte.mk \
     $(LOCAL_DIR)/vanir_tf700t.mk \
     $(LOCAL_DIR)/vanir_tf701t.mk \
@@ -84,7 +76,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_toro.mk \
     $(LOCAL_DIR)/vanir_toroplus.mk \
     $(LOCAL_DIR)/vanir_tsubasa.mk \
-    $(LOCAL_DIR)/vanir_urushi.mk \
     $(LOCAL_DIR)/vanir_v500.mk \
     $(LOCAL_DIR)/vanir_ville.mk \
     $(LOCAL_DIR)/vanir_vs980.mk \
