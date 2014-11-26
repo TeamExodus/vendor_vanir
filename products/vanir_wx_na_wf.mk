@@ -17,8 +17,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=wx_na_wf \
     TARGET_DEVICE=shieldtablet \
-    BUILD_FINGERPRINT="nvidia/wx_na_wf/shieldtablet:5.0.2/KOT49H/22229_438.1909:user/release-keys" \
-    PRIVATE_BUILD_DESC="wx_na_wf-user 5.0.2 KOT49H 22229_438.1909 release-keys"
+    BUILD_FINGERPRINT="nvidia/wx_na_wf/shieldtablet:5.0.2/LRX21T/22229_438.1909:user/release-keys" \
+    PRIVATE_BUILD_DESC="wx_na_wf-user 5.0.2 LRX21T 22229_438.1909 release-keys"
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_wx_na_wf
