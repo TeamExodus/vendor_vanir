@@ -117,13 +117,6 @@ PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
-# entropy mumbo jump
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/xbin/CB_RunHaveged:system/xbin/CB_RunHaveged \
-    vendor/vanir/proprietary/common/xbin/haveged:system/xbin/haveged \
-    vendor/vanir/proprietary/common/xbin/vanirentropy:system/xbin/vanirentropy \
-    vendor/vanir/proprietary/common/bin/cronlogger:system/bin/cronlogger
-
 # init.d Tweaks
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
