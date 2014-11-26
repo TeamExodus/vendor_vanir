@@ -236,8 +236,7 @@ PRODUCT_PACKAGES += \
 # Theme engine
 PRODUCT_PACKAGES += \
     ThemeChooser \
-    ThemesProvider \
-    Vanir_Inverted
+    ThemesProvider
 
 PRODUCT_COPY_FILES += \
     vendor/vanir/config/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml \
