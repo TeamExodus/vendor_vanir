@@ -29,7 +29,6 @@ hlteusc
 hltevzw
 honami
 huashan
-i9100g
 i605
 i9300
 i9305
@@ -64,7 +63,6 @@ n5110
 n5120
 n7100
 nicki
-p3110
 p880
 peregrine
 pollux

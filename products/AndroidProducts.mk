@@ -27,7 +27,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_honami.mk \
     $(LOCAL_DIR)/vanir_huashan.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
-    $(LOCAL_DIR)/vanir_i9100g.mk \
     $(LOCAL_DIR)/vanir_i9300.mk \
     $(LOCAL_DIR)/vanir_i9305.mk \
     $(LOCAL_DIR)/vanir_i9500.mk \
@@ -61,7 +60,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_n5120.mk \
     $(LOCAL_DIR)/vanir_n7100.mk \
     $(LOCAL_DIR)/vanir_nicki.mk \
-    $(LOCAL_DIR)/vanir_p3110.mk \
     $(LOCAL_DIR)/vanir_p880.mk \
     $(LOCAL_DIR)/vanir_peregrine.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
