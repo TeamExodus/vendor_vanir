@@ -261,10 +261,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     utility_mkbootimg \
     utility_unpackbootimg
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/init.d/0000kernelassimilator:system/etc/init.d/0000kernelassimilator \
-    vendor/vanir/proprietary/common/etc/kernelassimilator.d/00bootclasspath:system/etc/kernelassimilator.d/00bootclasspath
-
 
 -include vendor/cyngn/product.mk
 
