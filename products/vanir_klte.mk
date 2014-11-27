@@ -6,8 +6,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-samsung \
     ro.com.google.clientidbase.gmm=android-samsung
 
-$(call inherit-product, device/samsung/klte/full_klte.mk)
-
 # Boot Animation
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/1080x1920.zip:system/media/bootanimation.zip
@@ -18,6 +16,8 @@ $(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
+
+$(call inherit-product, device/samsung/klte/full_klte.mk)
 
 # MPDecision and thermal(d/-engine) auto-disablers for KT-based kernels (like ours)
 PRODUCT_COPY_FILES += \

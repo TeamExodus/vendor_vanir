@@ -6,8 +6,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-samsung \
     ro.com.google.clientidbase.gmm=android-samsung
 
-$(call inherit-product, device/samsung/kltevzw/full_kltevzw.mk)
-
 # Boot Animation
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/1080x1920.zip:system/media/bootanimation.zip
@@ -27,5 +25,7 @@ PRODUCT_COPY_FILES += \
 
 # Inherit common Verizon Wireless Perms and Lib
 $(call inherit-product, vendor/vanir/products/vzw.mk)
+
+$(call inherit-product, device/samsung/kltevzw/full_kltevzw.mk)
 
 PRODUCT_NAME := vanir_kltevzw
