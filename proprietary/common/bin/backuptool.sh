@@ -7,6 +7,10 @@ export C=/tmp/backupdir
 export S=/system
 export V=5.0
 
+export OUTFD=$(ps | grep -v "grep" | grep -o -E "update_binary(.*)" | cut -d " " -f 3); #BIG props to Chainfire
+[ ! $OUTFD ] && export OUTFD=$(ps | grep -v "grep" | grep -o -E "/tmp/updater(.*)" | cut -d " " -f 3); #BIG props nuclearmistake for TWRP-izing
+ui_print() { if [ $OUTFD ]; then echo "ui_print $*" 1>&$OUTFD; else echo $*; fi; return 0; }
+
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   mkdir -p /tmp/addon.d/
@@ -22,8 +26,8 @@ restore_addon_d() {
 
 # Proceed only if /system is the expected major and minor version
 check_prereq() {
-if (( ! grep -q "^ro.vanir.base=$V.*" /system/build.prop ) && ( ! grep -q "^ro.goo.version=$V.*" /system/build.prop )); then
-  echo "Not backing up files from incompatible version: $V"
+if (( ! grep -q "^ro.modversion=$V.*" /system/build.prop ) && ( ! grep -q "^ro.modversion=$V.*" /system/build.prop )); then
+  ui_print "Not backing up files from incompatible version: $V"
   return 0
 fi
 return 1
@@ -68,7 +72,7 @@ done
 backup() {
   if check_prereq; then
     if check_whitelist system; then
-      echo "Failed to check whitelist!"
+      ui_print "Failed to check whitelist!"
       exit 127
     fi
   fi
@@ -82,7 +86,7 @@ backup() {
 restore() {
   if check_prereq; then
     if check_whitelist tmp; then
-      echo "Failed to check whitelist!"
+      ui_print "Failed to check whitelist!"
       exit 127
     fi
   fi
@@ -101,7 +105,7 @@ case "$1" in
     $1
   ;;
   *)
-    echo "Usage: $0 {backup|restore}"
+    ui_print "Usage: $0 {backup|restore}"
     exit 1
 esac
 
