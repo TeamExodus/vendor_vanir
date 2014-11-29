@@ -26,7 +26,7 @@ restore_addon_d() {
 
 # Proceed only if /system is the expected major and minor version
 check_prereq() {
-if (( ! grep -q "^ro.modversion=$V.*" /system/build.prop ) && ( ! grep -q "^ro.modversion=$V.*" /system/build.prop )); then
+if ! grep -q "^ro.modversion=$V.*" /system/build.prop; then
   ui_print "Not backing up files from incompatible version: $V"
   return 0
 fi
@@ -70,6 +70,7 @@ done
 }
 
 backup() {
+  ui_print "backuptool: backup"
   if check_prereq; then
     if check_whitelist system; then
       ui_print "Failed to check whitelist!"
@@ -84,6 +85,7 @@ backup() {
 }
 
 restore() {
+  ui_print "backuptool: restore"
   if check_prereq; then
     if check_whitelist tmp; then
       ui_print "Failed to check whitelist!"
