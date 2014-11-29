@@ -72,8 +72,9 @@ echo
 # framework-res.apk in parallel with other apks
 mkdir -p $REPACK/parallel
 cd $REPACK/parallel
-ln -s $REPACK/ota/system/framework/framework-res.apk .
-for x in $REPACK/ota/system/app/*.apk; do ln -s $x .; done
+find $REPACK/ota/system -name '*.apk' | while read APK; do
+    ln -s $APK .
+done
 
 find ./ -name \*.apk | $HALFXARGS schedtool -B -n 1 -e ionice -n 1 $OPTICHARGER
 
