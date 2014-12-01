@@ -7,6 +7,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_d801.mk \
     $(LOCAL_DIR)/vanir_d802.mk \
     $(LOCAL_DIR)/vanir_d803.mk \
+    $(LOCAL_DIR)/vanir_d850.mk \
     $(LOCAL_DIR)/vanir_d851.mk \
     $(LOCAL_DIR)/vanir_dlx.mk \
     $(LOCAL_DIR)/vanir_e980.mk \
