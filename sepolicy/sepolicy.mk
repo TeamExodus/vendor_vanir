@@ -14,7 +14,6 @@ BOARD_SEPOLICY_UNION += \
     seapp_contexts \
     service_contexts \
     auditd.te \
-    adbd.te \
     healthd.te \
     hostapd.te \
     installd.te \
