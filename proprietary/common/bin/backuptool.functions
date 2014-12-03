@@ -17,7 +17,7 @@ backup_file() {
     local D=`dirname "$1"`
     # dont backup any apps that have odex files, they are useless
     if ( echo "$F" | grep -q "\.apk$" ) && [ -e `echo "$1" | sed -e 's/\.apk$/\.odex/'` ]; then
-      ui_print "Skipping odexed apk $1";
+      echo "Skipping odexed apk $1";
     else
       mkdir -p "$C/$D"
       cp -p $1 "$C/$D/$F"
@@ -34,7 +34,7 @@ restore_file() {
     fi
     cp -p "$C/$DIR/$FILE" "$1";
     if [ -n "$2" ]; then
-      ui_print "Deleting obsolete file $2"
+      echo "Deleting obsolete file $2"
       rm "$2";
     fi
   fi
