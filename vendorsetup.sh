@@ -33,7 +33,6 @@ huashan
 i605
 i9300
 i9305
-i9500
 janice
 jewel
 fflte
