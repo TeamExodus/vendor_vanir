@@ -12,9 +12,6 @@ $(call inherit-product, device/htc/evita/device_evita.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
-# Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/beats.mk)
-
 # Device naming
 PRODUCT_DEVICE := evita
 PRODUCT_NAME := vanir_evita

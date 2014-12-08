@@ -12,9 +12,6 @@ $(call inherit-product, device/motorola/peregrine/full_peregrine.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
-# Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/beats.mk)
-
 # device name
 PRODUCT_RELEASE_NAME := MOTO G 4G
 PRODUCT_NAME := vanir_peregrine

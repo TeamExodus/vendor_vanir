@@ -10,7 +10,6 @@ PRODUCT_COPY_FILES += \
 
 # Inherit common vanir stuff
 $(call inherit-product, vendor/commotio/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 $(call inherit-product, device/samsung/d2att/full_d2att.mk)
 

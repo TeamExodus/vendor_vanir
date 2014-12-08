@@ -12,7 +12,6 @@ $(call inherit-product, device/motorola/moto_msm8960/full_moto_msm8960.mk)
 
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=moto_msm8960 \

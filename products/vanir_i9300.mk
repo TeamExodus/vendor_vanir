@@ -18,9 +18,6 @@ $(call inherit-product, device/samsung/i9300/full_i9300.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
-# Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/beats.mk)
-
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_i9300
 PRODUCT_DEVICE := i9300

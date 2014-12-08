@@ -14,7 +14,6 @@ $(call inherit-product, device/lge/p700/p700.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_p700

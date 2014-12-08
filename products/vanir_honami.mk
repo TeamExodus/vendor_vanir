@@ -18,9 +18,6 @@ $(call inherit-product, device/sony/honami/full_honami.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
-# Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/beats.mk)
-
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_honami
 PRODUCT_DEVICE := honami

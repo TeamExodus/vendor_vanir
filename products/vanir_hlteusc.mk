@@ -14,8 +14,6 @@ $(call inherit-product, device/samsung/hlteusc/full_hlteusc.mk)
 
 # Inherit common vanir files.
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
-
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hlteusc

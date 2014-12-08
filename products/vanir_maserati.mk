@@ -13,7 +13,6 @@ $(call inherit-product, device/motorola/maserati/full_maserati.mk)
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-# $(call inherit-product, vendor/vanir/products/beats.mk)
 
 #
 # Setup device specific product configuration.

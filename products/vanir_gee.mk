@@ -18,7 +18,6 @@ $(call inherit-product, device/lge/gee/full_gee.mk)
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_gee

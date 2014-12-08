@@ -18,7 +18,6 @@ $(call inherit-product, device/lge/e980/e980.mk)
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Torch
 PRODUCT_PACKAGES += Torch

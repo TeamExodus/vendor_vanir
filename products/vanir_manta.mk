@@ -9,7 +9,6 @@ $(call inherit-product, device/samsung/manta/full_manta.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker

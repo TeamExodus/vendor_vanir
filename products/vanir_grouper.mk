@@ -24,7 +24,6 @@ $(call inherit-product, device/asus/grouper/full_grouper.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_grouper

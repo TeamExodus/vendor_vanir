@@ -11,9 +11,6 @@ $(call inherit-product, device/htc/jewel/jewel.mk)
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
-# Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/beats.mk)
-
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/800x1280.zip:system/media/bootanimation.zip 
 

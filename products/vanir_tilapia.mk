@@ -23,7 +23,6 @@ $(call inherit-product, device/asus/tilapia/full_tilapia.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 # GSM APNs and Simcard app
 

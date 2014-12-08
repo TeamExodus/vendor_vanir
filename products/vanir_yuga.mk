@@ -13,7 +13,6 @@ $(call inherit-product, device/sony/yuga/full_yuga.mk)
 
 # Vanir configuration
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-# $(call inherit-product, vendor/vanir/products/beats.mk)
 
 #
 # Setup device specific product configuration.

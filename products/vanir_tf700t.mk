@@ -18,7 +18,6 @@ $(call inherit-product, device/asus/tf700t/full_tf700t.mk)
 
 # Inherit common Vanir stuff
 $(call inherit-product, vendor/vanir/products/common_tabs.mk)
-$(call inherit-product, vendor/vanir/products/beats.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_tf700t
