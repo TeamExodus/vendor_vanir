@@ -11,6 +11,9 @@ export OUTFD=$(ps | grep -v "grep" | grep -o -E "update_binary(.*)" | cut -d " "
 [ ! $OUTFD ] && export OUTFD=$(ps | grep -v "grep" | grep -o -E "/tmp/updater(.*)" | cut -d " " -f 3); #BIG props nuclearmistake for TWRP-izing
 ui_print() { if [ $OUTFD ]; then echo "ui_print $*" 1>&$OUTFD; else echo $*; fi; return 0; }
 
+# Scripts in /system/addon.d expect to find backuptool.functions in /tmp
+cp -f /tmp/install/bin/backuptool.functions /tmp
+
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   mkdir -p /tmp/addon.d/
