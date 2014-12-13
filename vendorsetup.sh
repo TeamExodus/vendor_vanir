@@ -69,6 +69,7 @@ p880
 peregrine
 pollux
 pollux_windy
+shamu
 sirius
 skomer
 t0lte
