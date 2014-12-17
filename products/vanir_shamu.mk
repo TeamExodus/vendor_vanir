@@ -10,10 +10,6 @@ PRODUCT_COPY_FILES += \
 
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
-$(call inherit-product, device/motorola/shamu/full_shamu.mk)
+$(call inherit-product, device/moto/shamu/aosp_shamu.mk)
 
 PRODUCT_NAME := vanir_shamu
-PRODUCT_DEVICE := shamu
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on Shamu
-PRODUCT_MANUFACTURER := motorola
