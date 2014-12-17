@@ -3,6 +3,7 @@
 # Squish a Vanir otapackage for distribution
 # credit for original version: CM
 #
+EXODUS_PRODUCT="exodus"
 
 export ANDROID_BUILD_TOP=$ANDROID_BUILD_TOP
 
@@ -46,7 +47,9 @@ find $REPACK/ota/system -name '*.apk' | while read APK; do
     ln -s $APK .
 done
 
-find ./ -name \*.apk | $HALFXARGS schedtool -B -n 1 -e ionice -n 1 $OPTICHARGER
+echo -e $CL_YLW "  Hey squisher: how about not wasting time optimizing pre-optimized images. Kthnx."
+# this was a huge waste of time
+#find ./ -name \*.apk | $HALFXARGS schedtool -B -n 1 -e ionice -n 1 $OPTICHARGER
 
 # Return to directory
 cd $REPACK/ota
@@ -58,7 +61,7 @@ rm -rf $REPACK/parallel
 
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $OUT/system/build.prop`
-OUTVERSION="$TARGET_PRODUCT"_"$MODVERSION"
+OUTVERSION="exodus-$TARGET_PRODUCT"_"$MODVERSION"
 OUTFILE=$OUT/$OUTVERSION.zip
 
 # Pack it up and sign
@@ -91,11 +94,11 @@ OTASIZE=`ls -lah $STRING | awk '{ print $5}' `
 echo -e $CL_BLU"Package Size: "$CL_YLW "$OTASIZE" $CL_RST
 echo -e $CL_BLU"Target Location: " $CL_RST
 echo -e $CL_YLW"$OTA_PACKAGE_PATH" $CL_RST
-echo ""
+echo "" 
 
 $MD5 $img >$img.md5
 ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
-echo -e $CL_GRN"================"$CL_RST $TARGET_PRODUCT-$TARGET_BUILD_VARIANT: $CL_RED"completed"$CL_RST $CL_GRN"================"$CL_RST
+echo -e $CL_GRN"================"$CL_RST $EXODUS_PRODUCT-$TARGET_BUILD_VARIANT: $CL_RED"completed"$CL_RST $CL_GRN"================"$CL_RST
 echo ""
 echo -e $CL_BLU"Product name:"$CL_RST $OUTVERSION.zip
 echo -e $CL_BLU"Package Size: "$CL_YLW"$ZIPSIZE     "
