@@ -34,8 +34,11 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_i9305.mk \
     $(LOCAL_DIR)/vanir_janice.mk \
     $(LOCAL_DIR)/vanir_jewel.mk \
-    $(LOCAL_DIR)/vanir_jflte.mk \
+    $(LOCAL_DIR)/vanir_jflteatt.mk \
+    $(LOCAL_DIR)/vanir_jfltespr.mk \
     $(LOCAL_DIR)/vanir_jfltetmo.mk \
+    $(LOCAL_DIR)/vanir_jflteusc.mk \
+    $(LOCAL_DIR)/vanir_jfltexx.mk \
     $(LOCAL_DIR)/vanir_jfltevzw.mk \
     $(LOCAL_DIR)/vanir_klimtwifi.mk \
     $(LOCAL_DIR)/vanir_klte.mk \
