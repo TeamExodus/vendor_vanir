@@ -17,7 +17,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapersPicker \
     OmniSwitch \
-    VanirUpdater
+    VanirUpdater \
+    LockClock
 
 # QuickBoot (included automagically for non-oppo qcom devices)
 PRODUCT_PACKAGES += \
