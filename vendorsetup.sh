@@ -69,7 +69,6 @@ n5120
 n7100
 nicki
 p880
-peregrine
 pollux
 pollux_windy
 shamu
