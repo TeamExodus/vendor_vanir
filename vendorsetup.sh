@@ -87,7 +87,6 @@ v500
 ville
 vs980
 vs985
-wx_na_wf
 yuga
 EOF
 }
