@@ -26,10 +26,8 @@ gee
 golden
 grouper
 hammerhead
-hlte
 hltespr
-hlteusc
-hltevzw
+hltetmo
 honami
 huashan
 i605
@@ -69,7 +67,6 @@ n5120
 n7100
 nicki
 p880
-peregrine
 pollux
 pollux_windy
 shamu
@@ -87,7 +84,6 @@ v500
 ville
 vs980
 vs985
-wx_na_wf
 yuga
 EOF
 }

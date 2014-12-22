@@ -23,10 +23,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_golden.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
-    $(LOCAL_DIR)/vanir_hlte.mk \
     $(LOCAL_DIR)/vanir_hltespr.mk \
-    $(LOCAL_DIR)/vanir_hlteusc.mk \
-    $(LOCAL_DIR)/vanir_hltevzw.mk \
+    $(LOCAL_DIR)/vanir_hltetmo.mk \
     $(LOCAL_DIR)/vanir_honami.mk \
     $(LOCAL_DIR)/vanir_huashan.mk \
     $(LOCAL_DIR)/vanir_i605.mk \
@@ -66,7 +64,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_n7100.mk \
     $(LOCAL_DIR)/vanir_nicki.mk \
     $(LOCAL_DIR)/vanir_p880.mk \
-    $(LOCAL_DIR)/vanir_peregrine.mk \
     $(LOCAL_DIR)/vanir_pollux.mk \
     $(LOCAL_DIR)/vanir_pollux_windy.mk \
     $(LOCAL_DIR)/vanir_shamu.mk \
@@ -84,5 +81,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_ville.mk \
     $(LOCAL_DIR)/vanir_vs980.mk \
     $(LOCAL_DIR)/vanir_vs985.mk \
-    $(LOCAL_DIR)/vanir_wx_na_wf.mk \
     $(LOCAL_DIR)/vanir_yuga.mk
