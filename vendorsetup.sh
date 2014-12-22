@@ -26,10 +26,8 @@ gee
 golden
 grouper
 hammerhead
-hlte
 hltespr
-hlteusc
-hltevzw
+hltetmo
 honami
 huashan
 i605
