@@ -41,7 +41,6 @@ jfltetmo
 jflteusc
 jfltevzw
 jfltexx
-klimtwifi
 klte
 kltedv
 kltespr
