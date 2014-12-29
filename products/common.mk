@@ -253,6 +253,11 @@ PRODUCT_PACKAGES += \
     utility_mkbootimg \
     utility_unpackbootimg
 
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
+endif
+
 -include vendor/cyngn/product.mk
 
 $(call inherit-product-if-exists, vendor/vanir-private/Private.mk)
