@@ -134,6 +134,7 @@ PRODUCT_COPY_FILES += \
 
 # Backup Tools
 PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/bin/automagic.sh:system/bin/automagic.sh \
     vendor/vanir/proprietary/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/vanir/proprietary/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/vanir/proprietary/common/bin/50-vanir.sh:system/addon.d/50-vanir.sh \
