@@ -12,6 +12,7 @@ $(call inherit-product, vendor/vanir/proprietary/ringtones/VanirRingtones.mk)
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
+    Terminal \
     busybox \
     Email \
     Launcher3 \
