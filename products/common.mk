@@ -12,6 +12,7 @@ $(call inherit-product, vendor/vanir/proprietary/ringtones/VanirRingtones.mk)
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
+    Terminal \
     busybox \
     Email \
     Launcher3 \
@@ -43,9 +44,10 @@ else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
-
+CM_BUILD=true
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cm.version=cm-12.0 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.android.wifi-watchlist=GoogleGuest \
@@ -145,16 +147,11 @@ endif
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/vanir/overlay/dictionaries
 
-#Define thirdparty for Koush's SU
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.vanir.superuser
-
 # Required CM packages
 PRODUCT_PACKAGES += \
     Camera \
     Development \
     LatinIME \
-    Superuser \
     su \
     BluetoothExt
 
