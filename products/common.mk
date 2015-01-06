@@ -17,14 +17,15 @@ PRODUCT_PACKAGES += \
     Email \
     Launcher3 \
     LiveWallpapersPicker \
-    VanirUpdater
+    ExodusUpdater \
+    LockClock
 
 # QuickBoot (included automagically for non-oppo qcom devices)
 PRODUCT_PACKAGES += \
     QuickBoot \
     init.vanir.quickboot.rc
 
-Vanir_Version=5.0.0
+Vanir_Version=5.0.2
 Vanir_BUILD=$(Vanir_Version)
 
 ifeq ($(RELEASE),)
@@ -161,6 +162,8 @@ PRODUCT_PACKAGES += \
 # Optional CM packages
 PRODUCT_PACKAGES += \
     Basic \
+    libscreenrecorder \
+    ScreenRecorder \
     SoundRecorder \
     libemoji
 
@@ -248,6 +251,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     utility_mkbootimg \
     utility_unpackbootimg
+
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
+endif
 
 -include vendor/cyngn/product.mk
 
