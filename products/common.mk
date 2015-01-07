@@ -44,10 +44,9 @@ else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
-CM_BUILD=true
+
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cm.version=cm-12.0 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.android.wifi-watchlist=GoogleGuest \

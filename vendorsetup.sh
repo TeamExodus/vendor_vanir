@@ -89,7 +89,9 @@ yuga
 EOF
 }
 
-for x in `COMBOS | sort -h`; do 
-  add_lunch_combo vanir_$x-userdebug
+for x in `COMBOS | sort -h`; do
+  ## ordered based on testicular circumference: decreasing
   add_lunch_combo vanir_$x-eng
+  add_lunch_combo vanir_$x-userdebug
+  add_lunch_combo vanir_$x-user
 done
