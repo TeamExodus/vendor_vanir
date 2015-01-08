@@ -68,17 +68,26 @@ sed s/__DEVICE__/$DEVICE/g > $PREBUILT_DIR/chromium_prebuilt.mk << EOF
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+ifeq (,$(strip $(OUT_DIR)))
+    ifeq (,$(strip $(OUT_DIR_COMMON_BASE)))
+        ifneq ($(TOPDIR),)
+            OUT_DIR := $(TOPDIR)out
+        else
+            OUT_DIR := $(CURDIR)/out
+        endif
+    else
+        OUT_DIR := $(OUT_DIR_COMMON_BASE)/$(notdir $(PWD))
+    endif
+endif
 LOCAL_PATH := prebuilts/chromium/__DEVICE__/
-
 PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/app/webview/webview.apk:system/app/webview/webview.apk \\
     \$(LOCAL_PATH)/lib/libwebviewchromium.so:system/lib/libwebviewchromium.so \\
     \$(LOCAL_PATH)/lib/libwebviewchromium_plat_support.so:system/lib/libwebviewchromium_plat_support.so \\
     \$(LOCAL_PATH)/lib/libwebviewchromium_loader.so:system/lib/libwebviewchromium_loader.so
 
-\$(shell mkdir -p out/target/product/__DEVICE__/system/app/webview/lib/arm/)
-\$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm/libwebviewchromium.so out/target/product/__DEVICE__/system/app/webview/lib/arm/libwebviewchromium.so)
+\$(shell mkdir -p $(OUT_DIR)/target/product/__DEVICE__/system/app/webview/lib/arm/)
+\$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm/libwebviewchromium.so $(OUT_DIR)/target/product/__DEVICE__/system/app/webview/lib/arm/libwebviewchromium.so)
 
 EOF
 
