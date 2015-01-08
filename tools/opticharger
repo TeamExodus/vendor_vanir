@@ -9,7 +9,6 @@
 # cyanogen - shade@chemlab.org
 # ChrisSoyars - me@ctso.me
 
-set -e
 QUIET=1
 BASE=`pwd`
 BRUTECRUSH="-brute"
@@ -117,11 +116,8 @@ then
     java -jar $ANDROID_HOST_OUT/framework/signapk.jar $ANDROID_BUILD_TOP/$CERT $ANDROID_BUILD_TOP/$KEY $NAME signed_$NAME
     [ $QUIET ] || echo -e $CL_YLW"Zipaligning.."$CL_RST
     zipalign -f 4 signed_$NAME $BASE/$1
-    if [ ! $QUIET ]; then
-        ls -l $BASE/$1.old
-        ls -l $BASE/$1
-    fi
-    rm $BASE/$1.old
+    rm -f $BASE/$1.old
 else
     echo "Usage: $0 [apk file]"
 fi
+exit 0
