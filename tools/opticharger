@@ -9,7 +9,7 @@
 # cyanogen - shade@chemlab.org
 # ChrisSoyars - me@ctso.me
 
-#QUIET=1
+QUIET=1
 BASE=`pwd`
 BRUTECRUSH="-brute"
 TMPDIR=/tmp/opticharge-$$
