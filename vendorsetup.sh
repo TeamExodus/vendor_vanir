@@ -71,6 +71,7 @@ p880
 pollux
 pollux_windy
 shamu
+shamu_encrypted
 sirius
 skomer
 t0lte

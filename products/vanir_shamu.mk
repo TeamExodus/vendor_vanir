@@ -1,8 +1,12 @@
 # when this builds, it will probably mess your phone up.
 # you might want to wait to try this unless you have a giant pair of low-hanging huevos
-
+ifneq ($(ENABLE_FORCED_ENCRYPTION),true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.goo.rom=vanir-shamu-encrypted
+else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-shamu
+endif
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
