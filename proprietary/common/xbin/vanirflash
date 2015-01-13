@@ -1,28 +1,39 @@
 #!/system/xbin/sh
 
-checkminimum()
-{
-    [ -e /sdcard/vanir_rom.zip ] || echo "You must copy the ROM zip you want to flash to /sdcard/vanir_rom.zip" && return 0
-    [ -e /sdcard/vanir_gapps.zip ] || echo "You must copy the gapps zip you want to flash to /sdcard/vanir_gapps.zip" && return 0
-    return 1
-}
+ZIP_LIST=
 
-checkminimum || exit 1
+if [ $# -eq 0 ]; then     # no args == flash /sdcard/vanir_rom.zip, /sdcard/vanir_gapps.zip (if it exists), and any zip in /sdcard/vanir_addons
+    if [ ! -e /sdcard/vanir_rom.zip ]; then
+        echo "You must copy the ROM zip you want to flash to /sdcard/vanir_rom.zip"
+        exit 1
+    else
+        ZIP_LIST="$ZIPLIST /sdcard/vanir_rom.zip"
+    fi
+
+    if [ ! -e /sdcard/vanir_gapps.zip ]; then
+        echo "You may copy a gapps zip you want to always flash to /sdcard/vanir_gapps.zip"
+    else
+        ZIP_LIST="$ZIP_LIST /sdcard/vanir_gapps.zip"
+    fi
+
+    if  [ -d /sdcard/vanir_addons ]; then
+        for C in $(ls /sdcard/vanir_addons/ | grep -i .zip)
+        do
+            ZIP_LIST="$ZIP_LIST /sdcard/vanir_addons/$C"
+        done
+    else
+        echo "If you would like to install more zips than just the rom and gapps, you can do so automagically by placing them in /sdcard/vanir_addons/"
+        mkdir -p /sdcard/vanir_addons
+    fi
+else        # args == flash argument zips in specified order - GOD HELP YOU IF THERE ARE SPACES IN THIS. MUAHAHAHA
+    ZIP_LIST="$*"
+fi
 echo "generating auto-flash script"
 mkdir -p /cache/recovery || exit 1
 echo -n > /cache/recovery/openrecoveryscript || exit 1
-for C in "install /sdcard/vanir_rom.zip" "install /sdcard/vanir_gapps.zip"; do
-    echo $C >> /cache/recovery/openrecoveryscript || exit 1
+for C in $ZIP_LIST; do
+    echo "install $C" >> /cache/recovery/openrecoveryscript || exit 1
 done
-if  [ -d /sdcard/vanir_addons ]; then
-    for C in $(ls /sdcard/vanir_addons/ | grep -i .zip)
-    do
-        echo install /sdcard/vanir_addons/$C >> /cache/recovery/openrecoveryscript || exit 1
-    done
-else
-    echo "If you would like to install more zips than just the rom in gapps, you can do so automagically by placing them in /sdcard/vanir_addons/"
-    mkdir -p /sdcard/vanir_addons
-fi
 echo "THIS IS HAPPENING. COME TO TERMS WITH IT!"
 sleep 1
 reboot recovery
