@@ -74,7 +74,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_skomer.mk \
     $(LOCAL_DIR)/vanir_t0lte.mk \
     $(LOCAL_DIR)/vanir_tf700t.mk \
-    $(LOCAL_DIR)/vanir_tf701t.mk \
     $(LOCAL_DIR)/vanir_taoshan.mk \
     $(LOCAL_DIR)/vanir_tilapia.mk \
     $(LOCAL_DIR)/vanir_toro.mk \

@@ -76,7 +76,6 @@ sirius
 t0lte
 taoshan
 tf700t
-tf701t
 tilapia
 toro
 toroplus
