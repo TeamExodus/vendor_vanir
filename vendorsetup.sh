@@ -4,7 +4,6 @@ COMBOS()
 cat<<EOF
 amami
 bacon
-codinalte
 deb
 d2att
 d2spr
@@ -26,7 +25,6 @@ flo
 flounder
 geeb
 gee
-golden
 grouper
 hammerhead
 hlte
@@ -75,11 +73,9 @@ pollux_windy
 shamu
 shamu_encrypted
 sirius
-skomer
 t0lte
 taoshan
 tf700t
-tf701t
 tilapia
 toro
 toroplus
@@ -98,3 +94,8 @@ for x in `COMBOS | sort -h`; do
   add_lunch_combo vanir_$x-userdebug
   add_lunch_combo vanir_$x-user
 done
+
+#doghouse
+#codinalte
+#golden
+#skomer
