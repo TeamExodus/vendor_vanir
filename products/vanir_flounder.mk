@@ -12,7 +12,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/boot_animations/1280x1920.zip:system/media/bootanimation.zip
+    vendor/vanir/proprietary/boot_animations/832x520.zip:system/media/bootanimation.zip
 
 # Inherit AOSP device configuration for grouper
 $(call inherit-product, device/htc/flounder/full_flounder.mk)
