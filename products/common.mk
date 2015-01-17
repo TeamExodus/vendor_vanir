@@ -20,6 +20,10 @@ PRODUCT_PACKAGES += \
     ExodusUpdater \
     LockClock
 
+#Cabinet
+PRODUCT_COPY_FILES += \
+    vendor/vanir/proprietary/common/app/Cabinet.apk:system/app/Cabinet/Cabinet.apk
+
 # QuickBoot (included automagically for non-oppo qcom devices)
 PRODUCT_PACKAGES += \
     QuickBoot \
