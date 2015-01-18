@@ -26,6 +26,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_golden.mk \
     $(LOCAL_DIR)/vanir_grouper.mk \
     $(LOCAL_DIR)/vanir_hammerhead.mk \
+    $(LOCAL_DIR)/vanir_hlte.mk \
     $(LOCAL_DIR)/vanir_hltespr.mk \
     $(LOCAL_DIR)/vanir_hltetmo.mk \
     $(LOCAL_DIR)/vanir_honami.mk \
