@@ -15,6 +15,7 @@ d803
 d850
 d851
 d855
+d855_3gb
 dlx
 e980
 evita

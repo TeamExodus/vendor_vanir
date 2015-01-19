@@ -13,6 +13,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_d850.mk \
     $(LOCAL_DIR)/vanir_d851.mk \
     $(LOCAL_DIR)/vanir_d855.mk \
+    $(LOCAL_DIR)/vanir_d855_3gb.mk \
     $(LOCAL_DIR)/vanir_dlx.mk \
     $(LOCAL_DIR)/vanir_e980.mk \
     $(LOCAL_DIR)/vanir_evita.mk \
