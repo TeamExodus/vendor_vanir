@@ -19,6 +19,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_falcon.mk \
     $(LOCAL_DIR)/vanir_find5.mk \
     $(LOCAL_DIR)/vanir_find7.mk \
+    $(LOCAL_DIR)/vanir_find7s.mk \
     $(LOCAL_DIR)/vanir_flo.mk \
     $(LOCAL_DIR)/vanir_flounder.mk \
     $(LOCAL_DIR)/vanir_geeb.mk \
