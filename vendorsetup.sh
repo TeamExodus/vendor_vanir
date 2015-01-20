@@ -21,6 +21,7 @@ evita
 falcon
 find5
 find7
+find7s
 flo
 flounder
 geeb
