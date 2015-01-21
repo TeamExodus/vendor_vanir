@@ -15,7 +15,7 @@ PRODUCT_PACKAGES += \
     Terminal \
     busybox \
     Email \
-    Launcher3 \
+    Trebuchet \
     LiveWallpapersPicker \
     ExodusUpdater \
     LockClock
