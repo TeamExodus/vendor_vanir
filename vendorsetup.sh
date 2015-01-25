@@ -77,6 +77,8 @@ tf700t
 tilapia
 toro
 toroplus
+trltespr
+trltetmo
 tsubasa
 v500
 ville
