@@ -2,9 +2,9 @@
 # you might want to wait to try this unless you have a giant pair of low-hanging huevos
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.rom=vanir-vs985
+    ro.goo.rom=vanir-trltetmo
 
-$(call inherit-product, device/lge/vs985/full_vs985.mk)
+$(call inherit-product, device/samsung/trltetmo/full_trltetmo.mk)
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
@@ -13,5 +13,5 @@ PRODUCT_COPY_FILES += \
 # Inherit common phone stuff
 $(call inherit-product, vendor/vanir/products/common_phones.mk)
 
-PRODUCT_DEVICE := vs985
-PRODUCT_NAME := vanir_vs985
+PRODUCT_DEVICE := trltetmo
+PRODUCT_NAME := vanir_trltetmo
