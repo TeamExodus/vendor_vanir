@@ -80,4 +80,5 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vanir_ville.mk \
     $(LOCAL_DIR)/vanir_vs980.mk \
     $(LOCAL_DIR)/vanir_vs985.mk \
+    $(LOCAL_DIR)/vanir_xt926.mk \
     $(LOCAL_DIR)/vanir_yuga.mk
