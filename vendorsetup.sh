@@ -24,8 +24,6 @@ find7
 find7s
 flo
 flounder
-geeb
-gee
 grouper
 hammerhead
 hlte
@@ -61,7 +59,6 @@ mako
 maserati
 mondrianwifi
 moto_msm8960
-moto_msm8960_jbbl
 n1
 n5100
 n5110
@@ -80,6 +77,8 @@ tf700t
 tilapia
 toro
 toroplus
+trltespr
+trltetmo
 tsubasa
 v500
 ville
@@ -100,3 +99,7 @@ done
 #codinalte
 #golden
 #skomer
+#geeb
+#gee
+#moto_msm8960_jbbl
+
