@@ -168,14 +168,6 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     libemoji
 
-PRODUCT_PACKAGES += \
-    VideoEditor \
-    libvideoeditor_jni \
-    libvideoeditor_core \
-    libvideoeditor_osal \
-    libvideoeditor_videofilters \
-    libvideoeditorplayer
-
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegadec \
@@ -218,13 +210,6 @@ PRODUCT_PACKAGES += \
     powertop
 endif
 
-# Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libstagefright_soft_ffmpegadec \
-    libstagefright_soft_ffmpegvdec \
-    libFFmpegExtractor \
-    libnamparser
-
 # Openssh
 PRODUCT_PACKAGES += \
     scp \
@@ -245,7 +230,6 @@ PRODUCT_PACKAGES += \
     ThemesProvider
 
 PRODUCT_COPY_FILES += \
-    vendor/vanir/config/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml \
     vendor/vanir/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml
 
 ## STREAMING DMESG?
