@@ -11,7 +11,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, device/htc/m7spr/full_m7spr.mk)
 
 # Inherit model specific configuration.
-$(call inherit-product, vendor/vanir/products/vanir_m7-common.mk)
+$(call inherit-product, vendor/vanir/products/multi_m7-common.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := vanir_m7spr
