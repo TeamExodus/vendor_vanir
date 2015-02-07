@@ -13,7 +13,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 
 # Inherit common product files.
-$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
+$(call inherit-product, vendor/vanir/products/multi_tuna.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := vanir_toroplus

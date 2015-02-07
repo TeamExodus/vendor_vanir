@@ -9,7 +9,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, device/lge/ls980/ls980.mk)
 
 # Inherit common vanir files.
-$(call inherit-product, vendor/vanir/products/vanir_g2-common.mk)
+$(call inherit-product, vendor/vanir/products/multi_g2-common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ls980

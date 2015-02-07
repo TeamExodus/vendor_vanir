@@ -14,7 +14,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Inherit AOSP device configuration for toro.
 $(call inherit-product, device/samsung/toro/full_toro.mk)
 
-$(call inherit-product, vendor/vanir/products/vanir_tuna.mk)
+$(call inherit-product, vendor/vanir/products/multi_tuna.mk)
 
 # Inherit common Verizon Wireless Perms and Lib
 $(call inherit-product, vendor/vanir/products/vzw.mk)

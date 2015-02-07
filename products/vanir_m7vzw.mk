@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Inherit AOSP device configuration for HTC One.
 $(call inherit-product, device/htc/m7vzw/full_m7vzw.mk)
 
-$(call inherit-product, vendor/vanir/products/vanir_m7-common.mk)
+$(call inherit-product, vendor/vanir/products/multi_m7-common.mk)
 
 
 # Inherit common Verizon Wireless Perms and Lib
