@@ -1,5 +1,5 @@
 type afterboot, domain;
-type afterboott_exec, exec_type, file_type;
+type afterboot_exec, exec_type, file_type;
 
 init_daemon_domain(afterboot)
 
