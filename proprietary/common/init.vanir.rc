@@ -131,7 +131,7 @@ on boot
     setprop net.tcp.usercfg.lte        1
 
 on property:sys.boot_completed=1
-    start userinit
+    start afterboot
  
 # sysinit (/system/etc/init.d)
 service sysinit /system/bin/sysinit
@@ -139,7 +139,7 @@ service sysinit /system/bin/sysinit
     group root
     oneshot
 
-service userinit /system/bin/userinit
+service afterboot /system/bin/afterboot
     user root
     group root
     oneshot

@@ -131,7 +131,7 @@ PRODUCT_COPY_FILES += \
 
 # system and persistent /data boot.d Tweaks - triggered when ro.boot_complete is set to 1
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/bin/userinit:system/bin/userinit \
+    vendor/vanir/proprietary/common/bin/afterboot:system/bin/afterboot \
     vendor/vanir/proprietary/common/etc/boot.d/00vanirnice:system/etc/boot.d/00vanirnice
 
 # Backup Tools
