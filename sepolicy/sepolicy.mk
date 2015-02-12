@@ -31,6 +31,8 @@ BOARD_SEPOLICY_UNION += \
     system.te \
     system_app.te \
     ueventd.te \
+    afterboot.te \
+    uncrypt.te \
     userinit.te \
     vold.te \
     zygote.te \
