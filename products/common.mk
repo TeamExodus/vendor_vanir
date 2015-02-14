@@ -12,10 +12,8 @@ $(call inherit-product, vendor/vanir/proprietary/ringtones/VanirRingtones.mk)
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
-    LockClock \
     Terminal \
     busybox \
-    Email \
     Trebuchet \
     LiveWallpapersPicker \
     ExodusUpdater \
