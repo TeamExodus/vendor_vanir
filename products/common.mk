@@ -7,9 +7,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
 $(call inherit-product, vendor/vanir/products/media_sexificators.mk)
 $(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
 
-# Add some tones (if this grows to more than like... 5 ringtones and 5 notifications, old ones will be dropped)
-$(call inherit-product, vendor/vanir/proprietary/ringtones/VanirRingtones.mk)
-
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
     Terminal \
