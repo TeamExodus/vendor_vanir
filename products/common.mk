@@ -16,6 +16,12 @@ PRODUCT_PACKAGES += \
     ExodusUpdater \
     LockClock
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+   vendor/vanir/proprietary/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+   vendor/vanir/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
+
 # QuickBoot (included automagically for non-oppo qcom devices)
 PRODUCT_PACKAGES += \
     QuickBoot \
