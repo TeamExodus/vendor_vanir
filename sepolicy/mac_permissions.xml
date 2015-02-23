@@ -14,4 +14,11 @@
     <allow-all />
     <seinfo value="release" />
   </signer>
+  
+ <!-- ExodusUpdater -->
+ <signer signature="@RELEASE" >
+ <package name="com.exodus.updater" >
+ <seinfo value="exodusupdater" />
+ </package>
+ </signer>  
 </policy>
