@@ -1,9 +1,0 @@
-#!/system/bin/sh
-export PATH=/sbin:/system/sbin:/system/bin:/system/xbin
-
-#### handle kernels with built-in hotplug
-needsmpdecision=
-[ ! -d /sys/module/msm_hotplug ] && [ ! -d /sys/kernel/msm_mpdecision ] && needsmpdecision=1
-
-# Always, all the time
-[ ! $needsmpdecision ] && stop mpdecision

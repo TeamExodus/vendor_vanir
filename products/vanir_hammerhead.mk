@@ -15,12 +15,6 @@ $(call inherit-product, vendor/vanir/products/common_phones.mk)
 PRODUCT_COPY_FILES += \
     vendor/vanir/proprietary/boot_animations/1080x1920.zip:system/media/bootanimation.zip
 
-# MPDecision auto-disabler for kernels (like ours)
-PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/hammerhead/etc/init.d/00kernelcompat:system/etc/init.d/00kernelcompat \
-    vendor/vanir/proprietary/hammerhead/bin/wedontgotoravenholmanymore:system/bin/wedontgotoravenholmanymore \
-    vendor/vanir/proprietary/hammerhead/bin/unforeseenconsequences:system/bin/unforeseenconsequences
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hammerhead
 PRODUCT_NAME := vanir_hammerhead
