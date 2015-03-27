@@ -9,4 +9,3 @@ for x in `COMBOS | sort -h`; do
   add_lunch_combo vanir_$x-userdebug
   add_lunch_combo vanir_$x-user
 done
-
