@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Inherit common product files.
 
 # Inherit AOSP device configuration for HTC One Unlocked edition.
-$(call inherit-product, device/htc/m7/full_m7.mk)
+$(call inherit-product, vendor/vanir/devices/full_m7.mk)
 
 $(call inherit-product, vendor/vanir/products/multi_m7-common.mk)
 

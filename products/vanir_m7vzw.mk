@@ -6,7 +6,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=vanir-m7vzw
 
 # Inherit AOSP device configuration for HTC One.
-$(call inherit-product, device/htc/m7vzw/full_m7vzw.mk)
+$(call inherit-product, vendor/vanir/devices/full_m7vzw.mk)
 
 $(call inherit-product, vendor/vanir/products/multi_m7-common.mk)
 
